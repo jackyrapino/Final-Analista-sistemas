@@ -1,0 +1,6 @@
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\DAL\bin\Debug\DAL.dll
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\DAL\bin\Debug\DAL.pdb
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\DAL\obj\Debug\DAL.dll
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\DAL\obj\Debug\DAL.pdb

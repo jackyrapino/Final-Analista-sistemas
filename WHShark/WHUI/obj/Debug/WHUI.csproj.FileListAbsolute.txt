@@ -1,0 +1,4 @@
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\WHUI\obj\Debug\WHUI.csproj.AssemblyReference.cache
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\WHUI\obj\Debug\WHUI.Properties.Resources.resources
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\WHUI\obj\Debug\WHUI.csproj.GenerateResource.cache
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\WHUI\obj\Debug\WHUI.csproj.CoreCompileInputs.cache

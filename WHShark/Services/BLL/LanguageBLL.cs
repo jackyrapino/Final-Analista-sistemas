@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Services.DAL.Factories;
+using Services.DomainModel.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,21 @@ using System.Threading.Tasks;
 
 namespace Services.BLL
 {
-    internal class LanguageBLL
+    internal static class LanguageBLL
     {
+        //Aplicar reglas de negocio:
+        //Exception, null, bool
+        public static string Translate(string word)
+        {
+            try
+            {
+                return ServiceFactory.LanguageRepository.Find(word);
+            }
+            catch (WordNotFoundException ex)
+            {
+                ServiceFactory.LanguageRepository.WriteNewWord(word, String.Empty);
+                return word;
+            }
+        }
     }
 }

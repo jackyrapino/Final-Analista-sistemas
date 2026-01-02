@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Services.Services.Extensions
 {
-    internal class ExceptionExtension
+    public static class ExceptionExtension
     {
+        public static void Handle(this Exception ex, object sender)
+        {
+            BLL.ExceptionBLL.Handle(ex, sender);
+        }
     }
 }

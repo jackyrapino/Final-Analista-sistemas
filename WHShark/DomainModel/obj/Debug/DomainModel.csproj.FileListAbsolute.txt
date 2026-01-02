@@ -1,0 +1,6 @@
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\DomainModel\bin\Debug\DomainModel.dll
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\DomainModel\bin\Debug\DomainModel.pdb
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\DomainModel\obj\Debug\DomainModel.csproj.AssemblyReference.cache
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\DomainModel\obj\Debug\DomainModel.csproj.CoreCompileInputs.cache
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\DomainModel\obj\Debug\DomainModel.dll
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\DomainModel\obj\Debug\DomainModel.pdb

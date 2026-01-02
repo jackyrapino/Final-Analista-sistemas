@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Services.Services
 {
-    internal class LanguageManager
+    internal static class LanguageManager
     {
+        public static string Translate(string word)
+        {
+            return BLL.LanguageBLL.Translate(word);
+        }
+
     }
 }
