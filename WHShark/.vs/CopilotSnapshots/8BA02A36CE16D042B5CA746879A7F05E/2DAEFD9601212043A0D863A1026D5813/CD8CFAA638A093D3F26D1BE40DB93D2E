@@ -1,0 +1,26 @@
+﻿using BLL.Interfaces;
+using Services.Services.Security;
+using BLL.Services;
+using DomainModel;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
+using WHFront;
+
+namespace WHFront.Sales
+{
+    public partial class Sales : Form
+    {
+        public Sales()
+        {
+
+            InitializeComponent();
+
+        }
+    }
+}

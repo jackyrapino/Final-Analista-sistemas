@@ -1,0 +1,209 @@
+﻿using System;
+using System.Windows.Forms;
+using System.Drawing;
+
+namespace WHUI.Suppliers
+{
+    partial class SuppliersEdit
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+        private TableLayoutPanel tlp;
+        private Label lblName;
+        private TextBox txtName;
+        private Label lblEmail;
+        private TextBox txtEmail;
+        private Label lblPhone;
+        private TextBox txtPhone;
+        private Label lblAddress;
+        private TextBox txtAddress;
+        private FlowLayoutPanel pnlButtons;
+        private Button btnOK;
+        private Button btnCancel;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            tlp = new TableLayoutPanel();
+            lblName = new Label();
+            txtName = new TextBox();
+            lblEmail = new Label();
+            txtEmail = new TextBox();
+            lblPhone = new Label();
+            txtPhone = new TextBox();
+            lblAddress = new Label();
+            txtAddress = new TextBox();
+            pnlButtons = new FlowLayoutPanel();
+            btnCancel = new Button();
+            btnOK = new Button();
+            tlp.SuspendLayout();
+            pnlButtons.SuspendLayout();
+            SuspendLayout();
+            // 
+            // tlp
+            // 
+            tlp.ColumnCount = 2;
+            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120F));
+            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlp.Controls.Add(lblName, 0, 0);
+            tlp.Controls.Add(txtName, 1, 0);
+            tlp.Controls.Add(lblEmail, 0, 1);
+            tlp.Controls.Add(txtEmail, 1, 1);
+            tlp.Controls.Add(lblPhone, 0, 2);
+            tlp.Controls.Add(txtPhone, 1, 2);
+            tlp.Controls.Add(lblAddress, 0, 3);
+            tlp.Controls.Add(txtAddress, 1, 3);
+            tlp.Controls.Add(pnlButtons, 0, 4);
+            tlp.Dock = DockStyle.Fill;
+            tlp.Location = new Point(0, 0);
+            tlp.Name = "tlp";
+            tlp.RowCount = 5;
+            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 120F));
+            tlp.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlp.Size = new Size(520, 300);
+            tlp.TabIndex = 0;
+            // 
+            // lblName
+            // 
+            lblName.Dock = DockStyle.Fill;
+            lblName.Location = new Point(3, 0);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(114, 40);
+            lblName.TabIndex = 0;
+            lblName.Text = "Name";
+            lblName.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtName
+            // 
+            txtName.Dock = DockStyle.Fill;
+            txtName.Location = new Point(123, 3);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(394, 27);
+            txtName.TabIndex = 1;
+            // 
+            // lblEmail
+            // 
+            lblEmail.Dock = DockStyle.Fill;
+            lblEmail.Location = new Point(3, 40);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(114, 40);
+            lblEmail.TabIndex = 2;
+            lblEmail.Text = "Email";
+            lblEmail.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Dock = DockStyle.Fill;
+            txtEmail.Location = new Point(123, 43);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(394, 27);
+            txtEmail.TabIndex = 3;
+            // 
+            // lblPhone
+            // 
+            lblPhone.Dock = DockStyle.Fill;
+            lblPhone.Location = new Point(3, 80);
+            lblPhone.Name = "lblPhone";
+            lblPhone.Size = new Size(114, 40);
+            lblPhone.TabIndex = 4;
+            lblPhone.Text = "Phone";
+            lblPhone.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtPhone
+            // 
+            txtPhone.Dock = DockStyle.Fill;
+            txtPhone.Location = new Point(123, 83);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(394, 27);
+            txtPhone.TabIndex = 5;
+            // 
+            // lblAddress
+            // 
+            lblAddress.Dock = DockStyle.Fill;
+            lblAddress.Location = new Point(3, 120);
+            lblAddress.Name = "lblAddress";
+            lblAddress.Size = new Size(114, 120);
+            lblAddress.TabIndex = 6;
+            lblAddress.Text = "Address";
+            lblAddress.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtAddress
+            // 
+            txtAddress.Dock = DockStyle.Fill;
+            txtAddress.Location = new Point(123, 123);
+            txtAddress.Multiline = true;
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(394, 114);
+            txtAddress.TabIndex = 7;
+            // 
+            // pnlButtons
+            // 
+            tlp.SetColumnSpan(pnlButtons, 2);
+            pnlButtons.Controls.Add(btnCancel);
+            pnlButtons.Controls.Add(btnOK);
+            pnlButtons.Dock = DockStyle.Fill;
+            pnlButtons.FlowDirection = FlowDirection.RightToLeft;
+            pnlButtons.Location = new Point(3, 243);
+            pnlButtons.Name = "pnlButtons";
+            pnlButtons.Size = new Size(514, 54);
+            pnlButtons.TabIndex = 8;
+            // 
+            // btnCancel
+            // 
+            btnCancel.AutoSize = true;
+            btnCancel.Location = new Point(436, 3);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 30);
+            btnCancel.TabIndex = 0;
+            btnCancel.Text = "Cancel";
+            // 
+            // btnOK
+            // 
+            btnOK.AutoSize = true;
+            btnOK.Location = new Point(355, 3);
+            btnOK.Name = "btnOK";
+            btnOK.Size = new Size(75, 30);
+            btnOK.TabIndex = 1;
+            btnOK.Text = "OK";
+            // 
+            // SuppliersEdit
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(520, 300);
+            Controls.Add(tlp);
+            Name = "SuppliersEdit";
+            Text = "Supplier";
+            tlp.ResumeLayout(false);
+            tlp.PerformLayout();
+            pnlButtons.ResumeLayout(false);
+            pnlButtons.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+    }
+}

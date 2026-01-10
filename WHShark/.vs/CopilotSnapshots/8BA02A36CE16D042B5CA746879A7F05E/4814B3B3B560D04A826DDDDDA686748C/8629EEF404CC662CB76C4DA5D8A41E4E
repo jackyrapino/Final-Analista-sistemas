@@ -1,0 +1,438 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WHUI.Sales
+{
+    partial class SalesEdit
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            tlpMain = new TableLayoutPanel();
+            lblCustomer = new Label();
+            txtCustomerId = new ComboBox();
+            lblBranch = new Label();
+            txtBranchId = new ComboBox();
+            lblUser = new Label();
+            txtUserId = new ComboBox();
+            lblDate = new Label();
+            dtpSaleDate = new DateTimePicker();
+            lblPayment = new Label();
+            txtPaymentMethod = new TextBox();
+            lblStatus = new Label();
+            txtStatus = new TextBox();
+            lblTotal = new Label();
+            numTotal = new NumericUpDown();
+            grpItems = new GroupBox();
+            dgvItems = new DataGridView();
+            colProductId = new DataGridViewTextBoxColumn();
+            colSKU = new DataGridViewTextBoxColumn();
+            colName = new DataGridViewTextBoxColumn();
+            colQuantity = new DataGridViewTextBoxColumn();
+            colUnitPrice = new DataGridViewTextBoxColumn();
+            colTotalPrice = new DataGridViewTextBoxColumn();
+            pnlItemsTop = new Panel();
+            btnRemoveItem = new Button();
+            btnAddItem = new Button();
+            txtItemSearch = new TextBox();
+            pnlButtons = new FlowLayoutPanel();
+            btnCancel = new Button();
+            btnOK = new Button();
+            tlpMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numTotal).BeginInit();
+            grpItems.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvItems).BeginInit();
+            pnlItemsTop.SuspendLayout();
+            pnlButtons.SuspendLayout();
+            SuspendLayout();
+            // 
+            // tlpMain
+            // 
+            tlpMain.ColumnCount = 2;
+            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140F));
+            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpMain.Controls.Add(lblCustomer, 0, 0);
+            tlpMain.Controls.Add(txtCustomerId, 1, 0);
+            tlpMain.Controls.Add(lblBranch, 0, 1);
+            tlpMain.Controls.Add(txtBranchId, 1, 1);
+            tlpMain.Controls.Add(lblUser, 0, 2);
+            tlpMain.Controls.Add(txtUserId, 1, 2);
+            tlpMain.Controls.Add(lblDate, 0, 3);
+            tlpMain.Controls.Add(dtpSaleDate, 1, 3);
+            tlpMain.Controls.Add(lblPayment, 0, 4);
+            tlpMain.Controls.Add(txtPaymentMethod, 1, 4);
+            tlpMain.Controls.Add(lblStatus, 0, 5);
+            tlpMain.Controls.Add(txtStatus, 1, 5);
+            tlpMain.Controls.Add(lblTotal, 0, 6);
+            tlpMain.Controls.Add(numTotal, 1, 6);
+            tlpMain.Controls.Add(grpItems, 0, 7);
+            tlpMain.Controls.Add(pnlButtons, 0, 8);
+            tlpMain.Dock = DockStyle.Fill;
+            tlpMain.Location = new Point(0, 0);
+            tlpMain.Name = "tlpMain";
+            tlpMain.RowCount = 9;
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 44F));
+            tlpMain.Size = new Size(960, 640);
+            tlpMain.TabIndex = 0;
+            // 
+            // lblCustomer
+            // 
+            lblCustomer.Dock = DockStyle.Fill;
+            lblCustomer.Location = new Point(3, 0);
+            lblCustomer.Name = "lblCustomer";
+            lblCustomer.Size = new Size(134, 34);
+            lblCustomer.TabIndex = 0;
+            lblCustomer.Text = "Customer";
+            lblCustomer.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtCustomerId
+            // 
+            txtCustomerId.Dock = DockStyle.Fill;
+            txtCustomerId.DropDownStyle = ComboBoxStyle.DropDownList;
+            txtCustomerId.FormattingEnabled = true;
+            txtCustomerId.Location = new Point(143, 3);
+            txtCustomerId.Name = "txtCustomerId";
+            txtCustomerId.Size = new Size(814, 28);
+            txtCustomerId.TabIndex = 1;
+            // 
+            // lblBranch
+            // 
+            lblBranch.Dock = DockStyle.Fill;
+            lblBranch.Location = new Point(3, 34);
+            lblBranch.Name = "lblBranch";
+            lblBranch.Size = new Size(134, 34);
+            lblBranch.TabIndex = 2;
+            lblBranch.Text = "Branch";
+            lblBranch.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtBranchId
+            // 
+            txtBranchId.Dock = DockStyle.Fill;
+            txtBranchId.DropDownStyle = ComboBoxStyle.DropDownList;
+            txtBranchId.FormattingEnabled = true;
+            txtBranchId.Location = new Point(143, 37);
+            txtBranchId.Name = "txtBranchId";
+            txtBranchId.Size = new Size(814, 28);
+            txtBranchId.TabIndex = 3;
+            // 
+            // lblUser
+            // 
+            lblUser.Dock = DockStyle.Fill;
+            lblUser.Location = new Point(3, 68);
+            lblUser.Name = "lblUser";
+            lblUser.Size = new Size(134, 34);
+            lblUser.TabIndex = 4;
+            lblUser.Text = "User";
+            lblUser.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtUserId
+            // 
+            txtUserId.Dock = DockStyle.Fill;
+            txtUserId.DropDownStyle = ComboBoxStyle.DropDownList;
+            txtUserId.FormattingEnabled = true;
+            txtUserId.Location = new Point(143, 71);
+            txtUserId.Name = "txtUserId";
+            txtUserId.Size = new Size(814, 28);
+            txtUserId.TabIndex = 5;
+            // 
+            // lblDate
+            // 
+            lblDate.Dock = DockStyle.Fill;
+            lblDate.Location = new Point(3, 102);
+            lblDate.Name = "lblDate";
+            lblDate.Size = new Size(134, 34);
+            lblDate.TabIndex = 6;
+            lblDate.Text = "Date";
+            lblDate.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // dtpSaleDate
+            // 
+            dtpSaleDate.Dock = DockStyle.Left;
+            dtpSaleDate.Location = new Point(143, 105);
+            dtpSaleDate.Name = "dtpSaleDate";
+            dtpSaleDate.Size = new Size(220, 27);
+            dtpSaleDate.TabIndex = 7;
+            // 
+            // lblPayment
+            // 
+            lblPayment.Dock = DockStyle.Fill;
+            lblPayment.Location = new Point(3, 136);
+            lblPayment.Name = "lblPayment";
+            lblPayment.Size = new Size(134, 34);
+            lblPayment.TabIndex = 8;
+            lblPayment.Text = "Payment";
+            lblPayment.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtPaymentMethod
+            // 
+            txtPaymentMethod.Dock = DockStyle.Fill;
+            txtPaymentMethod.Location = new Point(143, 139);
+            txtPaymentMethod.Name = "txtPaymentMethod";
+            txtPaymentMethod.Size = new Size(814, 27);
+            txtPaymentMethod.TabIndex = 9;
+            // 
+            // lblStatus
+            // 
+            lblStatus.Dock = DockStyle.Fill;
+            lblStatus.Location = new Point(3, 170);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(134, 34);
+            lblStatus.TabIndex = 10;
+            lblStatus.Text = "Status";
+            lblStatus.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtStatus
+            // 
+            txtStatus.Dock = DockStyle.Fill;
+            txtStatus.Location = new Point(143, 173);
+            txtStatus.Name = "txtStatus";
+            txtStatus.Size = new Size(814, 27);
+            txtStatus.TabIndex = 11;
+            // 
+            // lblTotal
+            // 
+            lblTotal.Dock = DockStyle.Fill;
+            lblTotal.Location = new Point(3, 204);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(134, 34);
+            lblTotal.TabIndex = 12;
+            lblTotal.Text = "Total";
+            lblTotal.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // numTotal
+            // 
+            numTotal.DecimalPlaces = 2;
+            numTotal.Dock = DockStyle.Left;
+            numTotal.Location = new Point(143, 207);
+            numTotal.Maximum = new decimal(new int[] { 1000000000, 0, 0, 0 });
+            numTotal.Name = "numTotal";
+            numTotal.Size = new Size(160, 27);
+            numTotal.TabIndex = 13;
+            // 
+            // grpItems
+            // 
+            tlpMain.SetColumnSpan(grpItems, 2);
+            grpItems.Controls.Add(dgvItems);
+            grpItems.Controls.Add(pnlItemsTop);
+            grpItems.Dock = DockStyle.Fill;
+            grpItems.Location = new Point(3, 241);
+            grpItems.Name = "grpItems";
+            grpItems.Padding = new Padding(8);
+            grpItems.Size = new Size(954, 352);
+            grpItems.TabIndex = 14;
+            grpItems.TabStop = false;
+            grpItems.Text = "Items";
+            // 
+            // dgvItems
+            // 
+            dgvItems.AllowUserToAddRows = false;
+            dgvItems.AllowUserToDeleteRows = false;
+            dgvItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvItems.ColumnHeadersHeight = 29;
+            dgvItems.Columns.AddRange(new DataGridViewColumn[] { colProductId, colSKU, colName, colQuantity, colUnitPrice, colTotalPrice });
+            dgvItems.Dock = DockStyle.Fill;
+            dgvItems.Location = new Point(8, 72);
+            dgvItems.Name = "dgvItems";
+            dgvItems.ReadOnly = true;
+            dgvItems.RowHeadersWidth = 51;
+            dgvItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvItems.Size = new Size(938, 272);
+            dgvItems.TabIndex = 0;
+            // 
+            // colProductId
+            // 
+            colProductId.DataPropertyName = "ProductId";
+            colProductId.HeaderText = "ProductId";
+            colProductId.MinimumWidth = 6;
+            colProductId.Name = "colProductId";
+            colProductId.ReadOnly = true;
+            colProductId.Visible = false;
+            // 
+            // colSKU
+            // 
+            colSKU.DataPropertyName = "SKU";
+            colSKU.HeaderText = "SKU";
+            colSKU.MinimumWidth = 6;
+            colSKU.Name = "colSKU";
+            colSKU.ReadOnly = true;
+            // 
+            // colName
+            // 
+            colName.DataPropertyName = "Name";
+            colName.HeaderText = "Product";
+            colName.MinimumWidth = 6;
+            colName.Name = "colName";
+            colName.ReadOnly = true;
+            // 
+            // colQuantity
+            // 
+            colQuantity.DataPropertyName = "Quantity";
+            colQuantity.HeaderText = "Qty";
+            colQuantity.MinimumWidth = 6;
+            colQuantity.Name = "colQuantity";
+            colQuantity.ReadOnly = true;
+            // 
+            // colUnitPrice
+            // 
+            colUnitPrice.DataPropertyName = "UnitPrice";
+            colUnitPrice.HeaderText = "Unit Price";
+            colUnitPrice.MinimumWidth = 6;
+            colUnitPrice.Name = "colUnitPrice";
+            colUnitPrice.ReadOnly = true;
+            // 
+            // colTotalPrice
+            // 
+            colTotalPrice.DataPropertyName = "TotalPrice";
+            colTotalPrice.HeaderText = "Total";
+            colTotalPrice.MinimumWidth = 6;
+            colTotalPrice.Name = "colTotalPrice";
+            colTotalPrice.ReadOnly = true;
+            // 
+            // pnlItemsTop
+            // 
+            pnlItemsTop.Controls.Add(btnRemoveItem);
+            pnlItemsTop.Controls.Add(btnAddItem);
+            pnlItemsTop.Controls.Add(txtItemSearch);
+            pnlItemsTop.Dock = DockStyle.Top;
+            pnlItemsTop.Location = new Point(8, 28);
+            pnlItemsTop.Name = "pnlItemsTop";
+            pnlItemsTop.Padding = new Padding(8);
+            pnlItemsTop.Size = new Size(938, 44);
+            pnlItemsTop.TabIndex = 1;
+            // 
+            // btnRemoveItem
+            // 
+            btnRemoveItem.Location = new Point(116, 8);
+            btnRemoveItem.Name = "btnRemoveItem";
+            btnRemoveItem.Size = new Size(120, 30);
+            btnRemoveItem.TabIndex = 0;
+            btnRemoveItem.Text = "Remove Item";
+            // 
+            // btnAddItem
+            // 
+            btnAddItem.Location = new Point(8, 8);
+            btnAddItem.Name = "btnAddItem";
+            btnAddItem.Size = new Size(100, 30);
+            btnAddItem.TabIndex = 1;
+            btnAddItem.Text = "Add Item";
+            // 
+            // txtItemSearch
+            // 
+            txtItemSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtItemSearch.Location = new Point(642, 8);
+            txtItemSearch.Name = "txtItemSearch";
+            txtItemSearch.Size = new Size(280, 27);
+            txtItemSearch.TabIndex = 2;
+            // 
+            // pnlButtons
+            // 
+            tlpMain.SetColumnSpan(pnlButtons, 2);
+            pnlButtons.Controls.Add(btnCancel);
+            pnlButtons.Controls.Add(btnOK);
+            pnlButtons.Dock = DockStyle.Fill;
+            pnlButtons.FlowDirection = FlowDirection.RightToLeft;
+            pnlButtons.Location = new Point(3, 599);
+            pnlButtons.Name = "pnlButtons";
+            pnlButtons.Size = new Size(954, 38);
+            pnlButtons.TabIndex = 15;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(851, 3);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(100, 23);
+            btnCancel.TabIndex = 0;
+            btnCancel.Text = "Cancel";
+            // 
+            // btnOK
+            // 
+            btnOK.Location = new Point(745, 3);
+            btnOK.Name = "btnOK";
+            btnOK.Size = new Size(100, 23);
+            btnOK.TabIndex = 1;
+            btnOK.Text = "OK";
+            // 
+            // SalesEdit
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(960, 640);
+            Controls.Add(tlpMain);
+            Name = "SalesEdit";
+            Text = "Sale";
+            tlpMain.ResumeLayout(false);
+            tlpMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numTotal).EndInit();
+            grpItems.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvItems).EndInit();
+            pnlItemsTop.ResumeLayout(false);
+            pnlItemsTop.PerformLayout();
+            pnlButtons.ResumeLayout(false);
+            ResumeLayout(false);
+        }
+
+        private System.Windows.Forms.TableLayoutPanel tlpMain;
+        private System.Windows.Forms.Label lblCustomer;
+        private System.Windows.Forms.ComboBox txtCustomerId;
+        private System.Windows.Forms.Label lblBranch;
+        private System.Windows.Forms.ComboBox txtBranchId;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.ComboBox txtUserId;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.DateTimePicker dtpSaleDate;
+        private System.Windows.Forms.Label lblPayment;
+        private System.Windows.Forms.TextBox txtPaymentMethod;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.TextBox txtStatus;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.NumericUpDown numTotal;
+        private System.Windows.Forms.GroupBox grpItems;
+        private System.Windows.Forms.DataGridView dgvItems;
+        private System.Windows.Forms.Panel pnlItemsTop;
+        private System.Windows.Forms.TextBox txtItemSearch;
+        private System.Windows.Forms.Button btnAddItem;
+        private System.Windows.Forms.Button btnRemoveItem;
+        private System.Windows.Forms.FlowLayoutPanel pnlButtons;
+        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSKU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUnitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalPrice;
+        #endregion
+    }
+}

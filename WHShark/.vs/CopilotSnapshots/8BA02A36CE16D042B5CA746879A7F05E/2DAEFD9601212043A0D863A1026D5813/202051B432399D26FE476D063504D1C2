@@ -1,0 +1,363 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WHFront.StockMovements
+{
+    partial class StockMovements
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            pnlTop = new Panel();
+            lblBranch = new Label();
+            cbBranch = new ComboBox();
+            lblDirection = new Label();
+            cbDirection = new ComboBox();
+            lblStatus = new Label();
+            cbStatus = new ComboBox();
+            txtSearch = new TextBox();
+            btnRefresh = new Button();
+            btnClear = new Button();
+            btnNew = new Button();
+            btnApprove = new Button();
+            btnReject = new Button();
+            btnMarkSent = new Button();
+            btnMarkReceived = new Button();
+            btnDelete = new Button();
+            btnDetails = new Button();
+            dgv = new DataGridView();
+            colMovementId = new DataGridViewTextBoxColumn();
+            colFromBranchId = new DataGridViewTextBoxColumn();
+            colToBranchId = new DataGridViewTextBoxColumn();
+            colFromBranch = new DataGridViewTextBoxColumn();
+            colToBranch = new DataGridViewTextBoxColumn();
+            colRequestDate = new DataGridViewTextBoxColumn();
+            colStatus = new DataGridViewTextBoxColumn();
+            colNotes = new DataGridViewTextBoxColumn();
+            lblBottom = new Label();
+            pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
+            SuspendLayout();
+            // 
+            // pnlTop
+            // 
+            pnlTop.Controls.Add(lblBranch);
+            pnlTop.Controls.Add(cbBranch);
+            pnlTop.Controls.Add(lblDirection);
+            pnlTop.Controls.Add(cbDirection);
+            pnlTop.Controls.Add(lblStatus);
+            pnlTop.Controls.Add(cbStatus);
+            pnlTop.Controls.Add(txtSearch);
+            pnlTop.Controls.Add(btnRefresh);
+            pnlTop.Controls.Add(btnClear);
+            pnlTop.Controls.Add(btnNew);
+            pnlTop.Controls.Add(btnApprove);
+            pnlTop.Controls.Add(btnReject);
+            pnlTop.Controls.Add(btnMarkSent);
+            pnlTop.Controls.Add(btnMarkReceived);
+            pnlTop.Controls.Add(btnDelete);
+            pnlTop.Controls.Add(btnDetails);
+            pnlTop.Dock = DockStyle.Top;
+            pnlTop.Location = new Point(0, 0);
+            pnlTop.Name = "pnlTop";
+            pnlTop.Padding = new Padding(8);
+            pnlTop.Size = new Size(1228, 84);
+            pnlTop.TabIndex = 1;
+            // 
+            // lblBranch
+            // 
+            lblBranch.AutoSize = true;
+            lblBranch.Location = new Point(12, 14);
+            lblBranch.Name = "lblBranch";
+            lblBranch.Size = new Size(54, 20);
+            lblBranch.TabIndex = 0;
+            lblBranch.Text = "Branch";
+            // 
+            // cbBranch
+            // 
+            cbBranch.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbBranch.Location = new Point(70, 10);
+            cbBranch.Name = "cbBranch";
+            cbBranch.Size = new Size(180, 28);
+            cbBranch.TabIndex = 1;
+            // 
+            // lblDirection
+            // 
+            lblDirection.AutoSize = true;
+            lblDirection.Location = new Point(260, 14);
+            lblDirection.Name = "lblDirection";
+            lblDirection.Size = new Size(70, 20);
+            lblDirection.TabIndex = 2;
+            lblDirection.Text = "Direction";
+            // 
+            // cbDirection
+            // 
+            cbDirection.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbDirection.Location = new Point(330, 10);
+            cbDirection.Name = "cbDirection";
+            cbDirection.Size = new Size(140, 28);
+            cbDirection.TabIndex = 3;
+            // 
+            // lblStatus
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.Location = new Point(480, 14);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(49, 20);
+            lblStatus.TabIndex = 4;
+            lblStatus.Text = "Status";
+            // 
+            // cbStatus
+            // 
+            cbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbStatus.Location = new Point(530, 10);
+            cbStatus.Name = "cbStatus";
+            cbStatus.Size = new Size(160, 28);
+            cbStatus.TabIndex = 5;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtSearch.Location = new Point(706, 10);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(320, 27);
+            txtSearch.TabIndex = 6;
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnRefresh.Location = new Point(1034, 8);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(90, 30);
+            btnRefresh.TabIndex = 7;
+            btnRefresh.Text = "Refresh";
+            // 
+            // btnClear
+            // 
+            btnClear.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClear.Location = new Point(1132, 8);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(80, 30);
+            btnClear.TabIndex = 8;
+            btnClear.Text = "Clear";
+            // 
+            // btnNew
+            // 
+            btnNew.Location = new Point(12, 46);
+            btnNew.Name = "btnNew";
+            btnNew.Size = new Size(120, 27);
+            btnNew.TabIndex = 9;
+            btnNew.Text = "New Request";
+            // 
+            // btnApprove
+            // 
+            btnApprove.Location = new Point(140, 46);
+            btnApprove.Name = "btnApprove";
+            btnApprove.Size = new Size(100, 27);
+            btnApprove.TabIndex = 10;
+            btnApprove.Text = "Approve";
+            // 
+            // btnReject
+            // 
+            btnReject.Location = new Point(246, 46);
+            btnReject.Name = "btnReject";
+            btnReject.Size = new Size(100, 27);
+            btnReject.TabIndex = 11;
+            btnReject.Text = "Reject";
+            // 
+            // btnMarkSent
+            // 
+            btnMarkSent.Location = new Point(352, 46);
+            btnMarkSent.Name = "btnMarkSent";
+            btnMarkSent.Size = new Size(110, 27);
+            btnMarkSent.TabIndex = 12;
+            btnMarkSent.Text = "Mark Sent";
+            // 
+            // btnMarkReceived
+            // 
+            btnMarkReceived.Location = new Point(468, 46);
+            btnMarkReceived.Name = "btnMarkReceived";
+            btnMarkReceived.Size = new Size(130, 27);
+            btnMarkReceived.TabIndex = 13;
+            btnMarkReceived.Text = "Mark Received";
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(606, 46);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(100, 27);
+            btnDelete.TabIndex = 14;
+            btnDelete.Text = "Delete";
+            // 
+            // btnDetails
+            // 
+            btnDetails.Location = new Point(712, 46);
+            btnDetails.Name = "btnDetails";
+            btnDetails.Size = new Size(100, 27);
+            btnDetails.TabIndex = 15;
+            btnDetails.Text = "Details";
+            // 
+            // dgv
+            // 
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.ColumnHeadersHeight = 29;
+            dgv.Columns.AddRange(new DataGridViewColumn[] { colMovementId, colFromBranchId, colToBranchId, colFromBranch, colToBranch, colRequestDate, colStatus, colNotes });
+            dgv.Dock = DockStyle.Fill;
+            dgv.Location = new Point(0, 84);
+            dgv.Name = "dgv";
+            dgv.ReadOnly = true;
+            dgv.RowHeadersVisible = false;
+            dgv.RowHeadersWidth = 51;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.Size = new Size(1228, 586);
+            dgv.TabIndex = 0;
+            // 
+            // colMovementId
+            // 
+            colMovementId.DataPropertyName = "MovementId";
+            colMovementId.HeaderText = "MovementId";
+            colMovementId.MinimumWidth = 6;
+            colMovementId.Name = "colMovementId";
+            colMovementId.ReadOnly = true;
+            colMovementId.Visible = false;
+            // 
+            // colFromBranchId
+            // 
+            colFromBranchId.DataPropertyName = "FromBranchId";
+            colFromBranchId.HeaderText = "FromBranchId";
+            colFromBranchId.MinimumWidth = 6;
+            colFromBranchId.Name = "colFromBranchId";
+            colFromBranchId.ReadOnly = true;
+            colFromBranchId.Visible = false;
+            // 
+            // colToBranchId
+            // 
+            colToBranchId.DataPropertyName = "ToBranchId";
+            colToBranchId.HeaderText = "ToBranchId";
+            colToBranchId.MinimumWidth = 6;
+            colToBranchId.Name = "colToBranchId";
+            colToBranchId.ReadOnly = true;
+            colToBranchId.Visible = false;
+            // 
+            // colFromBranch
+            // 
+            colFromBranch.DataPropertyName = "FromBranch";
+            colFromBranch.HeaderText = "From";
+            colFromBranch.MinimumWidth = 6;
+            colFromBranch.Name = "colFromBranch";
+            colFromBranch.ReadOnly = true;
+            // 
+            // colToBranch
+            // 
+            colToBranch.DataPropertyName = "ToBranch";
+            colToBranch.HeaderText = "To";
+            colToBranch.MinimumWidth = 6;
+            colToBranch.Name = "colToBranch";
+            colToBranch.ReadOnly = true;
+            // 
+            // colRequestDate
+            // 
+            colRequestDate.DataPropertyName = "RequestDate";
+            colRequestDate.HeaderText = "Requested";
+            colRequestDate.MinimumWidth = 6;
+            colRequestDate.Name = "colRequestDate";
+            colRequestDate.ReadOnly = true;
+            // 
+            // colStatus
+            // 
+            colStatus.DataPropertyName = "Status";
+            colStatus.HeaderText = "Status";
+            colStatus.MinimumWidth = 6;
+            colStatus.Name = "colStatus";
+            colStatus.ReadOnly = true;
+            // 
+            // colNotes
+            // 
+            colNotes.DataPropertyName = "Notes";
+            colNotes.HeaderText = "Notes";
+            colNotes.MinimumWidth = 6;
+            colNotes.Name = "colNotes";
+            colNotes.ReadOnly = true;
+            // 
+            // lblBottom
+            // 
+            lblBottom.Dock = DockStyle.Bottom;
+            lblBottom.Location = new Point(0, 670);
+            lblBottom.Name = "lblBottom";
+            lblBottom.Padding = new Padding(8, 4, 8, 4);
+            lblBottom.Size = new Size(1228, 30);
+            lblBottom.TabIndex = 2;
+            // 
+            // StockMovements
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1228, 700);
+            Controls.Add(dgv);
+            Controls.Add(pnlTop);
+            Controls.Add(lblBottom);
+            Name = "StockMovements";
+            Text = "Stock Movements";
+            pnlTop.ResumeLayout(false);
+            pnlTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv).EndInit();
+            ResumeLayout(false);
+        }
+
+        private System.Windows.Forms.Panel pnlTop;
+        private System.Windows.Forms.Label lblBranch;
+        private System.Windows.Forms.ComboBox cbBranch;
+        private System.Windows.Forms.Label lblDirection;
+        private System.Windows.Forms.ComboBox cbDirection;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ComboBox cbStatus;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Button btnApprove;
+        private System.Windows.Forms.Button btnReject;
+        private System.Windows.Forms.Button btnMarkSent;
+        private System.Windows.Forms.Button btnMarkReceived;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnDetails;
+        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Label lblBottom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMovementId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFromBranchId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colToBranchId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFromBranch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colToBranch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRequestDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNotes;
+
+        #endregion
+    }
+}

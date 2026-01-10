@@ -1,0 +1,331 @@
+﻿// Added necessary using directives for .NET Framework 4.7 compatibility
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WHUI.Users
+{
+    partial class UsersEdit
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            contentPanel = new Panel();
+            tlp = new TableLayoutPanel();
+            lblFirst = new Label();
+            txtFirst = new TextBox();
+            lblLast = new Label();
+            txtLast = new TextBox();
+            lblEmail = new Label();
+            txtEmail = new TextBox();
+            lblUsername = new Label();
+            txtUsername = new TextBox();
+            lblRole = new Label();
+            cbRole = new ComboBox();
+            lblBranch = new Label();
+            cbBranch = new ComboBox();
+            lblPwd = new Label();
+            txtPwd = new TextBox();
+            lblPwd2 = new Label();
+            txtPwd2 = new TextBox();
+            pnlButtons = new FlowLayoutPanel();
+            btnCancel = new Button();
+            btnOK = new Button();
+            contentPanel.SuspendLayout();
+            tlp.SuspendLayout();
+            pnlButtons.SuspendLayout();
+            SuspendLayout();
+            // 
+            // contentPanel
+            // 
+            contentPanel.AutoScroll = true;
+            contentPanel.Controls.Add(tlp);
+            contentPanel.Dock = DockStyle.Fill;
+            contentPanel.Location = new Point(0, 0);
+            contentPanel.Name = "contentPanel";
+            contentPanel.Padding = new Padding(8);
+            contentPanel.Size = new Size(700, 376);
+            contentPanel.TabIndex = 0;
+            // 
+            // tlp
+            // 
+            tlp.AutoSize = true;
+            tlp.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tlp.ColumnCount = 2;
+            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140F));
+            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlp.Controls.Add(lblFirst, 0, 0);
+            tlp.Controls.Add(txtFirst, 1, 0);
+            tlp.Controls.Add(lblLast, 0, 1);
+            tlp.Controls.Add(txtLast, 1, 1);
+            tlp.Controls.Add(lblEmail, 0, 2);
+            tlp.Controls.Add(txtEmail, 1, 2);
+            tlp.Controls.Add(lblUsername, 0, 3);
+            tlp.Controls.Add(txtUsername, 1, 3);
+            tlp.Controls.Add(lblRole, 0, 4);
+            tlp.Controls.Add(cbRole, 1, 4);
+            tlp.Controls.Add(lblBranch, 0, 5);
+            tlp.Controls.Add(cbBranch, 1, 5);
+            tlp.Controls.Add(lblPwd, 0, 7);
+            tlp.Controls.Add(txtPwd, 1, 7);
+            tlp.Controls.Add(lblPwd2, 0, 8);
+            tlp.Controls.Add(txtPwd2, 1, 8);
+            tlp.Dock = DockStyle.Top;
+            tlp.Location = new Point(8, 8);
+            tlp.Name = "tlp";
+            tlp.RowCount = 9;
+            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlp.Size = new Size(684, 324);
+            tlp.TabIndex = 0;
+            // 
+            // lblFirst
+            // 
+            lblFirst.Dock = DockStyle.Fill;
+            lblFirst.Location = new Point(3, 0);
+            lblFirst.Name = "lblFirst";
+            lblFirst.Size = new Size(134, 38);
+            lblFirst.TabIndex = 0;
+            lblFirst.Text = "First Name";
+            lblFirst.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtFirst
+            // 
+            txtFirst.Dock = DockStyle.Fill;
+            txtFirst.Location = new Point(143, 3);
+            txtFirst.Name = "txtFirst";
+            txtFirst.Size = new Size(538, 27);
+            txtFirst.TabIndex = 1;
+            // 
+            // lblLast
+            // 
+            lblLast.Dock = DockStyle.Fill;
+            lblLast.Location = new Point(3, 38);
+            lblLast.Name = "lblLast";
+            lblLast.Size = new Size(134, 38);
+            lblLast.TabIndex = 2;
+            lblLast.Text = "Last Name";
+            lblLast.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtLast
+            // 
+            txtLast.Dock = DockStyle.Fill;
+            txtLast.Location = new Point(143, 41);
+            txtLast.Name = "txtLast";
+            txtLast.Size = new Size(538, 27);
+            txtLast.TabIndex = 3;
+            // 
+            // lblEmail
+            // 
+            lblEmail.Dock = DockStyle.Fill;
+            lblEmail.Location = new Point(3, 76);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(134, 38);
+            lblEmail.TabIndex = 4;
+            lblEmail.Text = "Email";
+            lblEmail.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Dock = DockStyle.Fill;
+            txtEmail.Location = new Point(143, 79);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(538, 27);
+            txtEmail.TabIndex = 5;
+            // 
+            // lblUsername
+            // 
+            lblUsername.Dock = DockStyle.Fill;
+            lblUsername.Location = new Point(3, 114);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(134, 38);
+            lblUsername.TabIndex = 6;
+            lblUsername.Text = "Username";
+            lblUsername.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtUsername
+            // 
+            txtUsername.Dock = DockStyle.Fill;
+            txtUsername.Location = new Point(143, 117);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(538, 27);
+            txtUsername.TabIndex = 7;
+            // 
+            // lblRole
+            // 
+            lblRole.Dock = DockStyle.Fill;
+            lblRole.Location = new Point(3, 152);
+            lblRole.Name = "lblRole";
+            lblRole.Size = new Size(134, 38);
+            lblRole.TabIndex = 8;
+            lblRole.Text = "Role";
+            lblRole.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // cbRole
+            // 
+            cbRole.Dock = DockStyle.Left;
+            cbRole.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbRole.Location = new Point(143, 155);
+            cbRole.Name = "cbRole";
+            cbRole.Size = new Size(220, 28);
+            cbRole.TabIndex = 9;
+            // 
+            // lblBranch
+            // 
+            lblBranch.Dock = DockStyle.Fill;
+            lblBranch.Location = new Point(3, 190);
+            lblBranch.Name = "lblBranch";
+            lblBranch.Size = new Size(134, 38);
+            lblBranch.TabIndex = 10;
+            lblBranch.Text = "Branch";
+            lblBranch.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // cbBranch
+            // 
+            cbBranch.Dock = DockStyle.Left;
+            cbBranch.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbBranch.Location = new Point(143, 193);
+            cbBranch.Name = "cbBranch";
+            cbBranch.Size = new Size(220, 28);
+            cbBranch.TabIndex = 11;
+            // 
+            // lblPwd
+            // 
+            lblPwd.Dock = DockStyle.Fill;
+            lblPwd.Location = new Point(3, 266);
+            lblPwd.Name = "lblPwd";
+            lblPwd.Size = new Size(134, 38);
+            lblPwd.TabIndex = 12;
+            lblPwd.Text = "Password";
+            lblPwd.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtPwd
+            // 
+            txtPwd.Dock = DockStyle.Fill;
+            txtPwd.Location = new Point(143, 269);
+            txtPwd.Name = "txtPwd";
+            txtPwd.Size = new Size(538, 27);
+            txtPwd.TabIndex = 13;
+            txtPwd.UseSystemPasswordChar = true;
+            // 
+            // lblPwd2
+            // 
+            lblPwd2.Dock = DockStyle.Fill;
+            lblPwd2.Location = new Point(3, 304);
+            lblPwd2.Name = "lblPwd2";
+            lblPwd2.Size = new Size(134, 20);
+            lblPwd2.TabIndex = 14;
+            lblPwd2.Text = "Confirm Password";
+            lblPwd2.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // txtPwd2
+            // 
+            txtPwd2.Dock = DockStyle.Fill;
+            txtPwd2.Location = new Point(143, 307);
+            txtPwd2.Name = "txtPwd2";
+            txtPwd2.Size = new Size(538, 27);
+            txtPwd2.TabIndex = 15;
+            txtPwd2.UseSystemPasswordChar = true;
+            // 
+            // pnlButtons
+            // 
+            pnlButtons.Controls.Add(btnCancel);
+            pnlButtons.Controls.Add(btnOK);
+            pnlButtons.Dock = DockStyle.Bottom;
+            pnlButtons.FlowDirection = FlowDirection.RightToLeft;
+            pnlButtons.Location = new Point(0, 376);
+            pnlButtons.Name = "pnlButtons";
+            pnlButtons.Padding = new Padding(8);
+            pnlButtons.Size = new Size(700, 44);
+            pnlButtons.TabIndex = 1;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(581, 11);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(100, 23);
+            btnCancel.TabIndex = 0;
+            btnCancel.Text = "Cancel";
+            // 
+            // btnOK
+            // 
+            btnOK.Location = new Point(475, 11);
+            btnOK.Name = "btnOK";
+            btnOK.Size = new Size(100, 23);
+            btnOK.TabIndex = 1;
+            btnOK.Text = "OK";
+            // 
+            // UsersEdit
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(700, 420);
+            Controls.Add(contentPanel);
+            Controls.Add(pnlButtons);
+            MinimumSize = new Size(600, 380);
+            Name = "UsersEdit";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "User";
+            contentPanel.ResumeLayout(false);
+            contentPanel.PerformLayout();
+            tlp.ResumeLayout(false);
+            tlp.PerformLayout();
+            pnlButtons.ResumeLayout(false);
+            ResumeLayout(false);
+        }
+
+        private System.Windows.Forms.Panel contentPanel;
+        private System.Windows.Forms.TableLayoutPanel tlp;
+        private System.Windows.Forms.Label lblFirst;
+        private System.Windows.Forms.TextBox txtFirst;
+        private System.Windows.Forms.Label lblLast;
+        private System.Windows.Forms.TextBox txtLast;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label lblRole;
+        private System.Windows.Forms.ComboBox cbRole;
+        private System.Windows.Forms.Label lblBranch;
+        private System.Windows.Forms.ComboBox cbBranch;
+        private System.Windows.Forms.Label lblPwd;
+        private System.Windows.Forms.TextBox txtPwd;
+        private System.Windows.Forms.Label lblPwd2;
+        private System.Windows.Forms.TextBox txtPwd2;
+        private System.Windows.Forms.FlowLayoutPanel pnlButtons;
+        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnCancel;
+
+        #endregion
+    }
+}

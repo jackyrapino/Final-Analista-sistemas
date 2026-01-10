@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
+
+namespace WHFront.Suppliers
+{
+    public partial class Suppliers : Form
+    {
+        private const int EM_SETCUEBANNER = 0x1501;
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, string lParam);
+
+        public Suppliers()
+        {
+            InitializeComponent();
+            // set placeholder (cue banner) for .NET Framework TextBox
+            try
+            {
+                if (txtSearch != null && txtSearch.IsHandleCreated)
+                {
+                    SendMessage(txtSearch.Handle, EM_SETCUEBANNER, (IntPtr)1, "Search...");
+                }
+                else if (txtSearch != null)
+                {
+                    txtSearch.HandleCreated += (_, __) => SendMessage(txtSearch.Handle, EM_SETCUEBANNER, (IntPtr)1, "Search...");
+                }
+            }
+            catch
+            {
+                // ignore on platforms that don't support it
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

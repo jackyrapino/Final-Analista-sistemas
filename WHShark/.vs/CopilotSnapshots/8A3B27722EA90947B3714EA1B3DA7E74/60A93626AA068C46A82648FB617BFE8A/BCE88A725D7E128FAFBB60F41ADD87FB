@@ -1,0 +1,47 @@
+﻿using BLL.Interfaces;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Microsoft.Extensions.DependencyInjection;
+using Services.Services.Security;
+using System.Runtime.InteropServices;
+
+namespace WHFront.Users
+{
+    public partial class Users : Form
+    {
+        private const int EM_SETCUEBANNER = 0x1501;
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, string lParam);
+
+        public Users()
+        {
+            InitializeComponent();
+
+            try
+            {
+                if (txtSearch != null && txtSearch.IsHandleCreated)
+                {
+                    SendMessage(txtSearch.Handle, EM_SETCUEBANNER, (IntPtr)1, "Search by username, email, role, branch...");
+                }
+                else if (txtSearch != null)
+                {
+                    txtSearch.HandleCreated += (_, __) => SendMessage(txtSearch.Handle, EM_SETCUEBANNER, (IntPtr)1, "Search by username, email, role, branch...");
+                }
+            }
+            catch
+            {
+                // ignore
+            }
+        }
+
+    }
+}

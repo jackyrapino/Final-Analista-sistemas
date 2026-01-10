@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHUI", "WHUI\WHUI.csproj", "{2AC614AD-B65F-4390-AFD2-3CC7127D72FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHFront", "..\..\..\sistema final\WHShark\WHFront\WHFront.csproj", "{A8498E65-BFBD-8FA2-1A80-0BD18E1F6E8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2AC614AD-B65F-4390-AFD2-3CC7127D72FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AC614AD-B65F-4390-AFD2-3CC7127D72FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AC614AD-B65F-4390-AFD2-3CC7127D72FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8498E65-BFBD-8FA2-1A80-0BD18E1F6E8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8498E65-BFBD-8FA2-1A80-0BD18E1F6E8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8498E65-BFBD-8FA2-1A80-0BD18E1F6E8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8498E65-BFBD-8FA2-1A80-0BD18E1F6E8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

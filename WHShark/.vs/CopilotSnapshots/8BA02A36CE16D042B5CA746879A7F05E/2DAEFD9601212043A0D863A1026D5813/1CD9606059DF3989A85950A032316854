@@ -1,0 +1,24 @@
+﻿using BLL.Interfaces;
+using DAL.Entities;
+using DomainModel;
+using NLog;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace WHFront.Stock
+{
+    public partial class Stock : Form
+    {
+        public Stock()
+        {
+            InitializeComponent();
+
+        }
+
+    }
+}

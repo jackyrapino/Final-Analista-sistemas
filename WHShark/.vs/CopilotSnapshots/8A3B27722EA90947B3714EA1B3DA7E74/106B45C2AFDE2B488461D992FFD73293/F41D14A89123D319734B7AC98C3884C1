@@ -1,0 +1,197 @@
+﻿using System;
+using System.Windows.Forms;
+using System.Drawing;
+
+namespace WHFront.Suppliers
+{
+    partial class Suppliers
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+        private DataGridView dgv;
+        private TextBox txtSearch;
+        private Button btnClear;
+        private Button btnRefresh;
+        private Button btnAdd;
+        private Button btnEdit;
+        private Button btnDelete;
+        private Label lblStatus;
+        private TableLayoutPanel tlTop;
+        private FlowLayoutPanel buttonsPanel;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            dgv = new DataGridView();
+            txtSearch = new TextBox();
+            btnClear = new Button();
+            btnRefresh = new Button();
+            btnAdd = new Button();
+            btnEdit = new Button();
+            btnDelete = new Button();
+            lblStatus = new Label();
+            tlTop = new TableLayoutPanel();
+            buttonsPanel = new FlowLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
+            tlTop.SuspendLayout();
+            buttonsPanel.SuspendLayout();
+            SuspendLayout();
+            // 
+            // dgv
+            // 
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.ColumnHeadersHeight = 29;
+            dgv.Dock = DockStyle.Fill;
+            dgv.Location = new Point(0, 54);
+            dgv.MultiSelect = false;
+            dgv.Name = "dgv";
+            dgv.ReadOnly = true;
+            dgv.RowHeadersWidth = 51;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.Size = new Size(800, 372);
+            dgv.TabIndex = 0;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Dock = DockStyle.Fill;
+            txtSearch.Location = new Point(8, 12);
+            txtSearch.Margin = new Padding(0, 4, 8, 4);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Placeholder = "Search...";
+            txtSearch.Size = new Size(371, 27);
+            txtSearch.TabIndex = 0;
+            // 
+            // btnClear
+            // 
+            btnClear.AutoSize = true;
+            btnClear.Location = new Point(330, 4);
+            btnClear.Margin = new Padding(6, 4, 0, 4);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(75, 30);
+            btnClear.TabIndex = 0;
+            btnClear.Text = "Clear";
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.AutoSize = true;
+            btnRefresh.Location = new Point(249, 4);
+            btnRefresh.Margin = new Padding(6, 4, 0, 4);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(75, 30);
+            btnRefresh.TabIndex = 1;
+            btnRefresh.Text = "Refresh";
+            // 
+            // btnAdd
+            // 
+            btnAdd.AutoSize = true;
+            btnAdd.Location = new Point(168, 4);
+            btnAdd.Margin = new Padding(6, 4, 0, 4);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(75, 30);
+            btnAdd.TabIndex = 2;
+            btnAdd.Text = "Add";
+            // 
+            // btnEdit
+            // 
+            btnEdit.AutoSize = true;
+            btnEdit.Location = new Point(87, 4);
+            btnEdit.Margin = new Padding(6, 4, 0, 4);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(75, 30);
+            btnEdit.TabIndex = 3;
+            btnEdit.Text = "Edit";
+            // 
+            // btnDelete
+            // 
+            btnDelete.AutoSize = true;
+            btnDelete.Location = new Point(6, 4);
+            btnDelete.Margin = new Padding(6, 4, 0, 4);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(75, 30);
+            btnDelete.TabIndex = 4;
+            btnDelete.Text = "Delete";
+            // 
+            // lblStatus
+            // 
+            lblStatus.Dock = DockStyle.Bottom;
+            lblStatus.Location = new Point(0, 426);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Padding = new Padding(8, 4, 0, 0);
+            lblStatus.Size = new Size(800, 24);
+            lblStatus.TabIndex = 1;
+            // 
+            // tlTop
+            // 
+            tlTop.ColumnCount = 2;
+            tlTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlTop.ColumnStyles.Add(new ColumnStyle());
+            tlTop.Controls.Add(txtSearch, 0, 0);
+            tlTop.Controls.Add(buttonsPanel, 1, 0);
+            tlTop.Dock = DockStyle.Top;
+            tlTop.Location = new Point(0, 0);
+            tlTop.Name = "tlTop";
+            tlTop.Padding = new Padding(8);
+            tlTop.RowCount = 1;
+            tlTop.RowStyles.Add(new RowStyle(SizeType.Absolute, 24F));
+            tlTop.Size = new Size(800, 54);
+            tlTop.TabIndex = 2;
+            // 
+            // buttonsPanel
+            // 
+            buttonsPanel.AutoSize = true;
+            buttonsPanel.Controls.Add(btnClear);
+            buttonsPanel.Controls.Add(btnRefresh);
+            buttonsPanel.Controls.Add(btnAdd);
+            buttonsPanel.Controls.Add(btnEdit);
+            buttonsPanel.Controls.Add(btnDelete);
+            buttonsPanel.Dock = DockStyle.Fill;
+            buttonsPanel.FlowDirection = FlowDirection.RightToLeft;
+            buttonsPanel.Location = new Point(387, 8);
+            buttonsPanel.Margin = new Padding(0);
+            buttonsPanel.Name = "buttonsPanel";
+            buttonsPanel.Size = new Size(405, 38);
+            buttonsPanel.TabIndex = 1;
+            buttonsPanel.WrapContents = false;
+            // 
+            // Suppliers
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(dgv);
+            Controls.Add(lblStatus);
+            Controls.Add(tlTop);
+            Name = "Suppliers";
+            Text = "Suppliers";
+            ((System.ComponentModel.ISupportInitialize)dgv).EndInit();
+            tlTop.ResumeLayout(false);
+            tlTop.PerformLayout();
+            buttonsPanel.ResumeLayout(false);
+            buttonsPanel.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+    }
+}
