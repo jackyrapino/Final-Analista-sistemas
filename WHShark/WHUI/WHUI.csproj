@@ -76,7 +76,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\ForceChangePass.cs" />
+    <Compile Include="Login\ForceChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\ForceChangePass.Designer.cs">
+      <DependentUpon>ForceChangePass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\ForgetPass.cs">
       <SubType>Form</SubType>
     </Compile>
