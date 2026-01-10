@@ -1,0 +1,28 @@
+﻿using BLL.Interfaces;
+using BLL.Services;
+using DomainModel;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Services.Services.Security;
+
+namespace WHFront.Purchases
+{
+    public partial class Purchases : Form
+    {
+
+        public Purchases()
+        {
+           InitializeComponent();
+
+        }
+
+  
+    }
+}

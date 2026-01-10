@@ -1,0 +1,72 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WHFront.Branches
+{
+    public partial class BranchEdit : Form
+    {
+        private readonly TextBox txtName = new() { Width = 360 };
+        private readonly TextBox txtAddress = new() { Width = 360 };
+        private readonly CheckBox chkIsWeb = new();
+        private readonly Button btnOK = new() { Text = "OK", DialogResult = DialogResult.OK };
+        private readonly Button btnCancel = new() { Text = "Cancel", DialogResult = DialogResult.Cancel };
+
+        public string? Name => txtName.Text.Trim();
+        public string? Address => string.IsNullOrWhiteSpace(txtAddress.Text) ? null : txtAddress.Text.Trim();
+        public bool IsWeb => chkIsWeb.Checked;
+
+        public BranchEdit(string? name = null, string? address = null, bool isWeb = false)
+        {
+            Text = string.IsNullOrWhiteSpace(name) ? "Add Branch" : "Edit Branch";
+            Width = 420;
+            Height = 240;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            StartPosition = FormStartPosition.CenterParent;
+            MaximizeBox = false;
+            MinimizeBox = false;
+
+            var lblName = new Label { Text = "Name", AutoSize = true };
+            var lblAddress = new Label { Text = "Address", AutoSize = true };
+            var lblIsWeb = new Label { Text = "Is Web", AutoSize = true };
+
+            var pnl = new TableLayoutPanel { Dock = DockStyle.Fill, Padding = new Padding(8), ColumnCount = 2, RowCount = 4 };
+            pnl.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+            pnl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+            pnl.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            pnl.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            pnl.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            pnl.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+            pnl.Controls.Add(lblName, 0, 0);
+            pnl.Controls.Add(txtName, 1, 0);
+            pnl.Controls.Add(lblAddress, 0, 1);
+            pnl.Controls.Add(txtAddress, 1, 1);
+            pnl.Controls.Add(lblIsWeb, 0, 2);
+            pnl.Controls.Add(chkIsWeb, 1, 2);
+
+            var pnlButtons = new FlowLayoutPanel { FlowDirection = FlowDirection.RightToLeft, Dock = DockStyle.Fill };
+            btnOK.Click += (_, __) => { if (string.IsNullOrWhiteSpace(Name)) { MessageBox.Show("Name is required.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning); DialogResult = DialogResult.None; } };
+            pnlButtons.Controls.Add(btnOK);
+            pnlButtons.Controls.Add(btnCancel);
+            pnl.Controls.Add(pnlButtons, 1, 3);
+
+            Controls.Add(pnl);
+
+            if (!string.IsNullOrWhiteSpace(name)) txtName.Text = name;
+            if (!string.IsNullOrWhiteSpace(address)) txtAddress.Text = address;
+            chkIsWeb.Checked = isWeb;
+        }
+    
+        private void BranchEdit_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

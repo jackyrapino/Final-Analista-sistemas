@@ -1,0 +1,61 @@
+﻿using DomainModel;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WHFront.Customers
+{
+    public partial class CustomersEdit : Form
+    {
+        private readonly bool _isEdit;
+
+        public Guid CustomerId { get; private set; }
+        public string FirstName => txtFirst.Text.Trim();
+        public string LastName => txtLast.Text.Trim();
+        public string? Email => string.IsNullOrWhiteSpace(txtEmail.Text) ? null : txtEmail.Text.Trim();
+        public string? Phone => string.IsNullOrWhiteSpace(txtPhone.Text) ? null : txtPhone.Text.Trim();
+        public string? Address => string.IsNullOrWhiteSpace(txtAddress.Text) ? null : txtAddress.Text.Trim();
+
+        public CustomersEdit()
+        {
+            InitializeComponent();
+            _isEdit = false;
+            btnOK.Click += btnOK_Click;
+        }
+
+        public CustomersEdit(Customer c) : this()
+        {
+            if (c is null) return;
+            _isEdit = true;
+            CustomerId = c.CustomerId;
+            txtFirst.Text = c.FirstName;
+            txtLast.Text = c.LastName;
+            txtEmail.Text = c.Email ?? "";
+            txtPhone.Text = c.Phone ?? "";
+            txtAddress.Text = c.Address ?? "";
+        }
+
+        private void btnOK_Click(object? sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(FirstName) || string.IsNullOrWhiteSpace(LastName))
+            {
+                MessageBox.Show("First name and Last name are required.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private void CustomersEdit_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

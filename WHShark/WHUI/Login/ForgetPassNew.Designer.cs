@@ -1,0 +1,152 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WHUI.Login
+{
+    partial class ForgetPassNew
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            txtpass = new TextBox();
+            txtrepeatPass = new TextBox();
+            btnCreateNewPassword = new Button();
+            tlpMain = new TableLayoutPanel();
+            tlpMain.SuspendLayout();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Location = new Point(330, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(140, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Set a new password";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Left;
+            label2.AutoSize = true;
+            label2.Location = new Point(10, 65);
+            label2.Margin = new Padding(10, 0, 3, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(70, 20);
+            label2.TabIndex = 1;
+            label2.Text = "Password";
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Left;
+            label3.AutoSize = true;
+            label3.Location = new Point(10, 135);
+            label3.Margin = new Padding(10, 0, 3, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(121, 20);
+            label3.TabIndex = 2;
+            label3.Text = "Repeat Password";
+            // 
+            // txtpass
+            // 
+            txtpass.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtpass.Location = new Point(10, 96);
+            txtpass.Margin = new Padding(10, 3, 10, 3);
+            txtpass.Name = "txtpass";
+            txtpass.Size = new Size(780, 27);
+            txtpass.TabIndex = 3;
+            // 
+            // txtrepeatPass
+            // 
+            txtrepeatPass.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtrepeatPass.Location = new Point(10, 166);
+            txtrepeatPass.Margin = new Padding(10, 3, 10, 3);
+            txtrepeatPass.Name = "txtrepeatPass";
+            txtrepeatPass.Size = new Size(780, 27);
+            txtrepeatPass.TabIndex = 4;
+            // 
+            // btnCreateNewPassword
+            // 
+            btnCreateNewPassword.Anchor = AnchorStyles.None;
+            btnCreateNewPassword.Location = new Point(312, 208);
+            btnCreateNewPassword.Name = "btnCreateNewPassword";
+            btnCreateNewPassword.Size = new Size(176, 73);
+            btnCreateNewPassword.TabIndex = 5;
+            btnCreateNewPassword.Text = "Create a new password";
+            btnCreateNewPassword.UseVisualStyleBackColor = true;
+            // 
+            // tlpMain
+            // 
+            tlpMain.ColumnCount = 1;
+            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpMain.Controls.Add(label1, 0, 0);
+            tlpMain.Controls.Add(label2, 0, 1);
+            tlpMain.Controls.Add(txtpass, 0, 2);
+            tlpMain.Controls.Add(label3, 0, 3);
+            tlpMain.Controls.Add(txtrepeatPass, 0, 4);
+            tlpMain.Controls.Add(btnCreateNewPassword, 0, 5);
+            tlpMain.Dock = DockStyle.Fill;
+            tlpMain.Location = new Point(0, 0);
+            tlpMain.Name = "tlpMain";
+            tlpMain.RowCount = 7;
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 90F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpMain.Size = new Size(800, 450);
+            tlpMain.TabIndex = 0;
+            // 
+            // ForgetPassNew
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(tlpMain);
+            Name = "ForgetPassNew";
+            Text = "ForgetPassNew";
+            tlpMain.ResumeLayout(false);
+            tlpMain.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private TableLayoutPanel tlpMain;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private TextBox txtpass;
+        private TextBox txtrepeatPass;
+        private Button btnCreateNewPassword;
+    }
+}

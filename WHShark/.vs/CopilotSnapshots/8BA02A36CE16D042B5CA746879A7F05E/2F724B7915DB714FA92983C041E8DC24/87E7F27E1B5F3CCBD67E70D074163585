@@ -1,0 +1,238 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WHUI.Products
+{
+    partial class Products
+    {
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+                components.Dispose();
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Products));
+            pnlTop = new Panel();
+            btnDelete = new Button();
+            btnEdit = new Button();
+            btnAdd = new Button();
+            btnAddBrand = new Button();
+            btnAddCategory = new Button();
+            btnClear = new Button();
+            btnRefresh = new Button();
+            txtSearch = new TextBox();
+            dgv = new DataGridView();
+            colProductId = new DataGridViewTextBoxColumn();
+            colSKU = new DataGridViewTextBoxColumn();
+            colBarcode = new DataGridViewTextBoxColumn();
+            colName = new DataGridViewTextBoxColumn();
+            colDescription = new DataGridViewTextBoxColumn();
+            colListPrice = new DataGridViewTextBoxColumn();
+            colCostPrice = new DataGridViewTextBoxColumn();
+            colAlertStock = new DataGridViewTextBoxColumn();
+            colBrandId = new DataGridViewTextBoxColumn();
+            colCategoryId = new DataGridViewTextBoxColumn();
+            lblStatus = new Label();
+            pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
+            SuspendLayout();
+            // 
+            // pnlTop
+            // 
+            resources.ApplyResources(pnlTop, "pnlTop");
+            pnlTop.Controls.Add(btnDelete);
+            pnlTop.Controls.Add(btnEdit);
+            pnlTop.Controls.Add(btnAdd);
+            pnlTop.Controls.Add(btnAddBrand);
+            pnlTop.Controls.Add(btnAddCategory);
+            pnlTop.Controls.Add(btnClear);
+            pnlTop.Controls.Add(btnRefresh);
+            pnlTop.Controls.Add(txtSearch);
+            pnlTop.Name = "pnlTop";
+            // 
+            // btnDelete
+            // 
+            resources.ApplyResources(btnDelete, "btnDelete");
+            btnDelete.Name = "btnDelete";
+            btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            resources.ApplyResources(btnEdit, "btnEdit");
+            btnEdit.Name = "btnEdit";
+            btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            resources.ApplyResources(btnAdd, "btnAdd");
+            btnAdd.Name = "btnAdd";
+            btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnAddBrand
+            // 
+            resources.ApplyResources(btnAddBrand, "btnAddBrand");
+            btnAddBrand.Name = "btnAddBrand";
+            btnAddBrand.UseVisualStyleBackColor = true;
+            // 
+            // btnAddCategory
+            // 
+            resources.ApplyResources(btnAddCategory, "btnAddCategory");
+            btnAddCategory.Name = "btnAddCategory";
+            btnAddCategory.UseVisualStyleBackColor = true;
+            // 
+            // btnClear
+            // 
+            resources.ApplyResources(btnClear, "btnClear");
+            btnClear.Name = "btnClear";
+            btnClear.UseVisualStyleBackColor = true;
+            // 
+            // btnRefresh
+            // 
+            resources.ApplyResources(btnRefresh, "btnRefresh");
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            resources.ApplyResources(txtSearch, "txtSearch");
+            txtSearch.Name = "txtSearch";
+            // 
+            // dgv
+            // 
+            resources.ApplyResources(dgv, "dgv");
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.Columns.AddRange(new DataGridViewColumn[] { colProductId, colSKU, colBarcode, colName, colDescription, colListPrice, colCostPrice, colAlertStock, colBrandId, colCategoryId });
+            dgv.MultiSelect = false;
+            dgv.Name = "dgv";
+            dgv.ReadOnly = true;
+            dgv.RowHeadersVisible = false;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            // 
+            // colProductId
+            // 
+            colProductId.DataPropertyName = "ProductId";
+            resources.ApplyResources(colProductId, "colProductId");
+            colProductId.Name = "colProductId";
+            colProductId.ReadOnly = true;
+            // 
+            // colSKU
+            // 
+            colSKU.DataPropertyName = "SKU";
+            resources.ApplyResources(colSKU, "colSKU");
+            colSKU.Name = "colSKU";
+            colSKU.ReadOnly = true;
+            // 
+            // colBarcode
+            // 
+            colBarcode.DataPropertyName = "Barcode";
+            resources.ApplyResources(colBarcode, "colBarcode");
+            colBarcode.Name = "colBarcode";
+            colBarcode.ReadOnly = true;
+            // 
+            // colName
+            // 
+            colName.DataPropertyName = "Name";
+            resources.ApplyResources(colName, "colName");
+            colName.Name = "colName";
+            colName.ReadOnly = true;
+            // 
+            // colDescription
+            // 
+            colDescription.DataPropertyName = "Description";
+            resources.ApplyResources(colDescription, "colDescription");
+            colDescription.Name = "colDescription";
+            colDescription.ReadOnly = true;
+            // 
+            // colListPrice
+            // 
+            colListPrice.DataPropertyName = "ListPrice";
+            resources.ApplyResources(colListPrice, "colListPrice");
+            colListPrice.Name = "colListPrice";
+            colListPrice.ReadOnly = true;
+            // 
+            // colCostPrice
+            // 
+            colCostPrice.DataPropertyName = "CostPrice";
+            resources.ApplyResources(colCostPrice, "colCostPrice");
+            colCostPrice.Name = "colCostPrice";
+            colCostPrice.ReadOnly = true;
+            // 
+            // colAlertStock
+            // 
+            colAlertStock.DataPropertyName = "AlertStock";
+            resources.ApplyResources(colAlertStock, "colAlertStock");
+            colAlertStock.Name = "colAlertStock";
+            colAlertStock.ReadOnly = true;
+            // 
+            // colBrandId
+            // 
+            colBrandId.DataPropertyName = "BrandId";
+            resources.ApplyResources(colBrandId, "colBrandId");
+            colBrandId.Name = "colBrandId";
+            colBrandId.ReadOnly = true;
+            // 
+            // colCategoryId
+            // 
+            colCategoryId.DataPropertyName = "CategoryId";
+            resources.ApplyResources(colCategoryId, "colCategoryId");
+            colCategoryId.Name = "colCategoryId";
+            colCategoryId.ReadOnly = true;
+            // 
+            // lblStatus
+            // 
+            resources.ApplyResources(lblStatus, "lblStatus");
+            lblStatus.Name = "lblStatus";
+            // 
+            // Products
+            // 
+            resources.ApplyResources(this, "$this");
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(dgv);
+            Controls.Add(pnlTop);
+            Controls.Add(lblStatus);
+            Name = "Products";
+            pnlTop.ResumeLayout(false);
+            pnlTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel pnlTop;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSKU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBarcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colListPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCostPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAlertStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBrandId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoryId;
+        private System.Windows.Forms.Button btnAddBrand;
+        private System.Windows.Forms.Button btnAddCategory;
+
+    }
+}

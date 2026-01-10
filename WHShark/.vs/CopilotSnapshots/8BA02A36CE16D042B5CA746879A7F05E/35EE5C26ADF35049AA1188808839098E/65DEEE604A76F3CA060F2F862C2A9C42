@@ -1,0 +1,196 @@
+﻿using BLL.Interfaces;
+using Microsoft.Extensions.Logging;
+using Services.Services.Security;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WHFront.Branches
+{
+    public partial class Branches : Form
+    {
+        private readonly IBranchesService _branchesService;
+        private readonly ICurrentUserContext _userCtx;
+        private readonly ILogger<Branches> _logger;
+
+        private readonly BindingList<BranchListItem> _items = new();
+        private readonly BindingSource _bs = new();
+        private readonly DataGridView dgv = new();
+        private readonly Button btnAdd = new();
+        private readonly Button btnEdit = new();
+        private readonly Button btnDelete = new();
+        private readonly Label lblBottom = new();
+
+        private sealed record BranchListItem(Guid BranchId, string Name, string Address, bool IsWeb, DateTime CreatedAt)
+        {
+            public Guid BranchId { get; } = BranchId;
+            public string Name { get; } = Name;
+            public string Address { get; } = Address;
+            public bool IsWeb { get; } = IsWeb;
+            public DateTime CreatedAt { get; } = CreatedAt;
+        }
+
+        public Branches(IBranchesService branchesService, ICurrentUserContext userCtx, ILogger<Branches> logger)
+        {
+            _branchesService = branchesService ?? throw new ArgumentNullException(nameof(branchesService));
+            _userCtx = userCtx ?? throw new ArgumentNullException(nameof(userCtx));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
+            Text = "Branches";
+            Width = 800;
+            Height = 600;
+
+            InitializeTable();
+            BuildLayout();
+
+            Load += async (_, __) => await LoadBranchesAsync();
+        }
+
+        private void InitializeTable()
+        {
+            dgv.Dock = DockStyle.Fill;
+            dgv.ReadOnly = true;
+            dgv.AllowUserToAddRows = false;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.AutoGenerateColumns = true;
+
+            _bs.DataSource = _items;
+            dgv.DataSource = _bs;
+        }
+
+        private void BuildLayout()
+        {
+            var pnlTop = new FlowLayoutPanel { Dock = DockStyle.Top, Height = 40, Padding = new Padding(8), FlowDirection = FlowDirection.LeftToRight };
+            btnAdd.Text = "Add";
+            btnEdit.Text = "Edit";
+            btnDelete.Text = "Delete";
+            btnAdd.Click += async (_, __) => await AddBranchAsync();
+            btnEdit.Click += async (_, __) => await EditSelectedAsync();
+            btnDelete.Click += async (_, __) => await DeleteSelectedAsync();
+
+            pnlTop.Controls.Add(btnAdd);
+            pnlTop.Controls.Add(btnEdit);
+            pnlTop.Controls.Add(btnDelete);
+
+            lblBottom.Dock = DockStyle.Bottom;
+            lblBottom.Height = 24;
+            lblBottom.Padding = new Padding(8);
+
+            Controls.Add(dgv);
+            Controls.Add(pnlTop);
+            Controls.Add(lblBottom);
+        }
+
+        private void Branches_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private async Task LoadBranchesAsync()
+        {
+            try
+            {
+                SetBusy(true, "Loading branches...");
+                _items.Clear();
+
+                var branches = await _branchesService.GetAllAsync();
+                if (branches is null || branches.Count == 0)
+                {
+                    _logger?.LogInformation("LoadBranchesAsync: no branches returned.");
+                    lblBottom.Text = "0 branches";
+                    return;
+                }
+
+                foreach (var b in branches)
+                    _items.Add(new BranchListItem(b.BranchId, b.Name ?? string.Empty, b.Address ?? string.Empty, b.IsWeb, b.CreatedAt));
+
+                lblBottom.Text = $"{_items.Count} branch(es)";
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogError(ex, "LoadBranchesAsync failed.");
+                MessageBox.Show("Failed to load branches.", "Branches", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                SetBusy(false);
+            }
+        }
+
+        private void SetBusy(bool busy, string? msg = null)
+        {
+            lblBottom.Text = busy ? (msg ?? "Working...") : lblBottom.Text;
+            btnAdd.Enabled = btnEdit.Enabled = btnDelete.Enabled = !busy;
+            dgv.Enabled = !busy;
+        }
+
+        private async Task AddBranchAsync()
+        {
+            using var dlg = new BranchEdit();
+            if (dlg.ShowDialog(this) == DialogResult.OK)
+            {
+                try
+                {
+                    await _branchesService.CreateAsync(dlg.Name!, dlg.Address, dlg.IsWeb);
+                    await LoadBranchesAsync();
+                }
+                catch (Exception ex)
+                {
+                    _logger?.LogError(ex, "AddBranchAsync failed.");
+                    MessageBox.Show("Failed to create branch.", "Branches", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private async Task EditSelectedAsync()
+        {
+            if (dgv.CurrentRow?.DataBoundItem is BranchListItem item)
+            {
+                var id = item.BranchId;
+                try
+                {
+                    var branch = await _branchesService.GetByIdAsync(id);
+                    if (branch is null) { MessageBox.Show("Branch not found.", "Branches", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+
+                    using var dlg = new BranchEdit(branch.Name, branch.Address, branch.IsWeb);
+                    if (dlg.ShowDialog(this) == DialogResult.OK)
+                    {
+                        await _branchesService.UpdateAsync(id, dlg.Name!, dlg.Address, dlg.IsWeb);
+                        await LoadBranchesAsync();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _logger?.LogError(ex, "EditSelectedAsync failed.");
+                    MessageBox.Show("Failed to edit branch.", "Branches", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private async Task DeleteSelectedAsync()
+        {
+            if (dgv.CurrentRow?.DataBoundItem is BranchListItem item)
+            {
+                var id = item.BranchId;
+                var name = item.Name;
+                if (MessageBox.Show($"Delete branch '{name}'?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
+
+                try
+                {
+                    await _branchesService.DeleteAsync(id);
+                    await LoadBranchesAsync();
+                }
+                catch (Exception ex)
+                {
+                    _logger?.LogError(ex, "DeleteSelectedAsync failed.");
+                    MessageBox.Show("Failed to delete branch.", "Branches", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+    }
+}

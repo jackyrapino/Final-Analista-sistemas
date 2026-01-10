@@ -1,0 +1,105 @@
+﻿using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WHFront.Login
+{
+    partial class ForceChangePass
+    {
+        private IContainer components = null;
+        private TextBox txtNewPassword;
+        private TextBox txtRepeatPassword;
+        private Button btnSet;
+        private Label lblNew;
+        private Label lblRepeat;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            txtNewPassword = new TextBox();
+            txtRepeatPassword = new TextBox();
+            btnSet = new Button();
+            lblNew = new Label();
+            lblRepeat = new Label();
+            SuspendLayout();
+            // 
+            // txtNewPassword
+            // 
+            txtNewPassword.Location = new Point(149, 16);
+            txtNewPassword.Margin = new Padding(3, 4, 3, 4);
+            txtNewPassword.Name = "txtNewPassword";
+            txtNewPassword.Size = new Size(228, 27);
+            txtNewPassword.TabIndex = 1;
+            txtNewPassword.UseSystemPasswordChar = true;
+            // 
+            // txtRepeatPassword
+            // 
+            txtRepeatPassword.Location = new Point(149, 61);
+            txtRepeatPassword.Margin = new Padding(3, 4, 3, 4);
+            txtRepeatPassword.Name = "txtRepeatPassword";
+            txtRepeatPassword.Size = new Size(228, 27);
+            txtRepeatPassword.TabIndex = 3;
+            txtRepeatPassword.UseSystemPasswordChar = true;
+            // 
+            // btnSet
+            // 
+            btnSet.Location = new Point(291, 113);
+            btnSet.Margin = new Padding(3, 4, 3, 4);
+            btnSet.Name = "btnSet";
+            btnSet.Size = new Size(86, 33);
+            btnSet.TabIndex = 4;
+            btnSet.Text = "Set";
+            btnSet.UseVisualStyleBackColor = true;
+            // 
+            // lblNew
+            // 
+            lblNew.AutoSize = true;
+            lblNew.Location = new Point(14, 20);
+            lblNew.Name = "lblNew";
+            lblNew.Size = new Size(109, 20);
+            lblNew.TabIndex = 0;
+            lblNew.Text = "New password:";
+            // 
+            // lblRepeat
+            // 
+            lblRepeat.AutoSize = true;
+            lblRepeat.Location = new Point(14, 67);
+            lblRepeat.Name = "lblRepeat";
+            lblRepeat.Size = new Size(126, 20);
+            lblRepeat.TabIndex = 2;
+            lblRepeat.Text = "Repeat password:";
+            // 
+            // ForceChangePass
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(400, 167);
+            Controls.Add(lblNew);
+            Controls.Add(txtNewPassword);
+            Controls.Add(lblRepeat);
+            Controls.Add(txtRepeatPassword);
+            Controls.Add(btnSet);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "ForceChangePass";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Change password";
+            ResumeLayout(false);
+            PerformLayout();
+        }
+    }
+}

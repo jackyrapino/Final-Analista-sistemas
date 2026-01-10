@@ -1,0 +1,272 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WHUI.Purchases
+{
+    partial class Purchases
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            pnlTop = new Panel();
+            lblBranch = new Label();
+            cbBranch = new ComboBox();
+            btnDelete = new Button();
+            btnEdit = new Button();
+            btnAdd = new Button();
+            btnClear = new Button();
+            btnRefresh = new Button();
+            txtSearch = new TextBox();
+            dgv = new DataGridView();
+            colPurchaseId = new DataGridViewTextBoxColumn();
+            colSupplierId = new DataGridViewTextBoxColumn();
+            colBranchId = new DataGridViewTextBoxColumn();
+            colUserId = new DataGridViewTextBoxColumn();
+            colPurchaseDate = new DataGridViewTextBoxColumn();
+            colTotalAmount = new DataGridViewTextBoxColumn();
+            colStatus = new DataGridViewTextBoxColumn();
+            lblStatus = new Label();
+            pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
+            SuspendLayout();
+            // 
+            // pnlTop
+            // 
+            pnlTop.Controls.Add(lblBranch);
+            pnlTop.Controls.Add(cbBranch);
+            pnlTop.Controls.Add(btnDelete);
+            pnlTop.Controls.Add(btnEdit);
+            pnlTop.Controls.Add(btnAdd);
+            pnlTop.Controls.Add(btnClear);
+            pnlTop.Controls.Add(btnRefresh);
+            pnlTop.Controls.Add(txtSearch);
+            pnlTop.Dock = DockStyle.Top;
+            pnlTop.Location = new Point(0, 0);
+            pnlTop.Name = "pnlTop";
+            pnlTop.Padding = new Padding(8);
+            pnlTop.Size = new Size(1200, 60);
+            pnlTop.TabIndex = 0;
+            // 
+            // lblBranch
+            // 
+            lblBranch.AutoSize = true;
+            lblBranch.Location = new Point(12, 18);
+            lblBranch.Name = "lblBranch";
+            lblBranch.Size = new Size(57, 20);
+            lblBranch.TabIndex = 0;
+            lblBranch.Text = "Branch:";
+            // 
+            // cbBranch
+            // 
+            cbBranch.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbBranch.Location = new Point(76, 14);
+            cbBranch.Name = "cbBranch";
+            cbBranch.Size = new Size(180, 28);
+            cbBranch.TabIndex = 1;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(462, 14);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(90, 30);
+            btnDelete.TabIndex = 5;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            btnEdit.Location = new Point(366, 14);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(90, 30);
+            btnEdit.TabIndex = 4;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(270, 14);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(90, 30);
+            btnAdd.TabIndex = 3;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnClear
+            // 
+            btnClear.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnClear.Location = new Point(1042, 14);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(70, 30);
+            btnClear.TabIndex = 2;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            // 
+            // btnRefresh
+            // 
+            btnRefresh.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnRefresh.Location = new Point(946, 14);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(90, 30);
+            btnRefresh.TabIndex = 1;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtSearch.Location = new Point(520, 16);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(420, 27);
+            txtSearch.TabIndex = 0;
+            // 
+            // dgv
+            // 
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.ColumnHeadersHeight = 29;
+            dgv.Columns.AddRange(new DataGridViewColumn[] { colPurchaseId, colSupplierId, colBranchId, colUserId, colPurchaseDate, colTotalAmount, colStatus });
+            dgv.Dock = DockStyle.Fill;
+            dgv.Location = new Point(0, 60);
+            dgv.MultiSelect = false;
+            dgv.Name = "dgv";
+            dgv.ReadOnly = true;
+            dgv.RowHeadersVisible = false;
+            dgv.RowHeadersWidth = 51;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.Size = new Size(1200, 620);
+            dgv.TabIndex = 1;
+            // 
+            // colPurchaseId
+            // 
+            colPurchaseId.DataPropertyName = "PurchaseId";
+            colPurchaseId.HeaderText = "PurchaseId";
+            colPurchaseId.MinimumWidth = 6;
+            colPurchaseId.Name = "colPurchaseId";
+            colPurchaseId.ReadOnly = true;
+            colPurchaseId.Visible = false;
+            // 
+            // colSupplierId
+            // 
+            colSupplierId.DataPropertyName = "SupplierId";
+            colSupplierId.HeaderText = "SupplierId";
+            colSupplierId.MinimumWidth = 6;
+            colSupplierId.Name = "colSupplierId";
+            colSupplierId.ReadOnly = true;
+            colSupplierId.Visible = false;
+            // 
+            // colBranchId
+            // 
+            colBranchId.DataPropertyName = "BranchId";
+            colBranchId.HeaderText = "BranchId";
+            colBranchId.MinimumWidth = 6;
+            colBranchId.Name = "colBranchId";
+            colBranchId.ReadOnly = true;
+            colBranchId.Visible = false;
+            // 
+            // colUserId
+            // 
+            colUserId.DataPropertyName = "UserId";
+            colUserId.HeaderText = "UserId";
+            colUserId.MinimumWidth = 6;
+            colUserId.Name = "colUserId";
+            colUserId.ReadOnly = true;
+            colUserId.Visible = false;
+            // 
+            // colPurchaseDate
+            // 
+            colPurchaseDate.DataPropertyName = "PurchaseDate";
+            colPurchaseDate.HeaderText = "Date";
+            colPurchaseDate.MinimumWidth = 6;
+            colPurchaseDate.Name = "colPurchaseDate";
+            colPurchaseDate.ReadOnly = true;
+            // 
+            // colTotalAmount
+            // 
+            colTotalAmount.DataPropertyName = "TotalAmount";
+            colTotalAmount.HeaderText = "Total";
+            colTotalAmount.MinimumWidth = 6;
+            colTotalAmount.Name = "colTotalAmount";
+            colTotalAmount.ReadOnly = true;
+            // 
+            // colStatus
+            // 
+            colStatus.DataPropertyName = "Status";
+            colStatus.HeaderText = "Status";
+            colStatus.MinimumWidth = 6;
+            colStatus.Name = "colStatus";
+            colStatus.ReadOnly = true;
+            // 
+            // lblStatus
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.Dock = DockStyle.Bottom;
+            lblStatus.Location = new Point(0, 680);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Padding = new Padding(8);
+            lblStatus.Size = new Size(16, 36);
+            lblStatus.TabIndex = 2;
+            // 
+            // Purchases
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1200, 716);
+            Controls.Add(dgv);
+            Controls.Add(pnlTop);
+            Controls.Add(lblStatus);
+            Name = "Purchases";
+            Text = "Purchases";
+            pnlTop.ResumeLayout(false);
+            pnlTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel pnlTop;
+        private System.Windows.Forms.Label lblBranch;
+        private System.Windows.Forms.ComboBox cbBranch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSupplierId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBranchId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUserId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+    }
+}

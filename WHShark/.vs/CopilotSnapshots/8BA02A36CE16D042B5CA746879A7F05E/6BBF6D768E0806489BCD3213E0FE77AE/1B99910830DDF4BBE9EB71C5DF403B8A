@@ -1,0 +1,14 @@
+﻿using System;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WHUI.Login
+{
+    public partial class ResetPass : Form
+    {
+        public ResetPass()
+        {
+            InitializeComponent();
+        }
+    }
+}

@@ -1,0 +1,31 @@
+﻿using BLL.Interfaces;
+using ClosedXML.Excel;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Dynamic;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WHFront.Reports
+{
+    public partial class Reports : Form
+    {
+        public Reports()
+        {
+            InitializeComponent();
+
+        }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+}

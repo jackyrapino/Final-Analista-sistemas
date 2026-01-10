@@ -1,0 +1,77 @@
+﻿using Services.Services.Security;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WHFront.Login
+{
+    public partial class ForgetPassCode : Form
+    {
+        private readonly string _username;
+        public string VerifiedCode { get; private set; } = string.Empty;
+
+        public ForgetPassCode(string username)
+        {
+            InitializeComponent();
+            _username = username ?? throw new ArgumentNullException(nameof(username));
+
+            btnSendCode.Click += async (_, __) => await BtnVerify_Click();
+        }
+
+        private void ForgetPassCode_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                this.AcceptButton = btnSendCode;
+                textBox1.Focus();
+            }
+            catch
+            {
+                // Defensive: designer/runtime differences — swallow exceptions to avoid crash.
+            }
+        }
+
+        private async Task BtnVerify_Click()
+        {
+            var code = (textBox1.Text ?? string.Empty).Trim();
+            if (string.IsNullOrWhiteSpace(code))
+            {
+                MessageBox.Show("Please enter the verification code.", "Verify code", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox1.Focus();
+                return;
+            }
+
+            try
+            {
+                using var scope = AppServices.CreateScope();
+                var svc = scope.ServiceProvider.GetService<IPasswordRecoveryService>();
+                if (svc is null)
+                {
+                    MessageBox.Show("Password recovery is not available.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var ok = await svc.VerifyCodeAsync(_username, code);
+                if (!ok)
+                {
+                    MessageBox.Show("Invalid or expired code.", "Verify code", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                VerifiedCode = code;
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Verification failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSendCode_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

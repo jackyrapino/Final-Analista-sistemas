@@ -1,0 +1,16 @@
+﻿using BLL.Interfaces;
+using Services.Services.Security;
+using BLL.Services;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace WHFront.Login
+{
+    public partial class LogIn : Form
+    {
+       
+    }
+}

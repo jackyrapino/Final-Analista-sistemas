@@ -1,0 +1,13 @@
+﻿using Microsoft.Extensions.DependencyInjection;
+using Services.Services.Security;
+using System;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WHFront.Login
+{
+    public partial class ForceChangePass : Form
+    {
+      
+    }
+}

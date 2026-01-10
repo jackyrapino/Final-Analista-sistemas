@@ -1,0 +1,242 @@
+﻿using BLL.Interfaces;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WHUI.Customers
+{
+    public partial class Customers : Form
+    {
+        private readonly ICustomersService _customersService;
+        private readonly ILogger<Customers> _logger;
+
+        private readonly BindingList<CustomerListItem> _items = new();
+        private readonly BindingSource _bs = new();
+
+        private sealed record CustomerListItem(Guid CustomerId, string FirstName, string LastName, string Email, string Phone, string Address, DateTime CreatedAt)
+        {
+            public Guid CustomerId { get; } = CustomerId;
+            public string FirstName { get; } = FirstName;
+            public string LastName { get; } = LastName;
+            public string Email { get; } = Email;
+            public string Phone { get; } = Phone;
+            public string Address { get; } = Address;
+            public DateTime CreatedAt { get; } = CreatedAt;
+        }
+
+        public Customers(ICustomersService customersService, ILogger<Customers> logger)
+        {
+            InitializeComponent();
+            _customersService = customersService ?? throw new ArgumentNullException(nameof(customersService));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
+            _bs.DataSource = _items;
+            dgv.AutoGenerateColumns = false; // ensure designer columns DataPropertyName match properties of CustomerListItem
+            dgv.DataSource = _bs;
+
+            txtSearch.TextChanged += (_, __) => ApplyFilter();
+            btnClear.Click += (_, __) => { txtSearch.Text = ""; ApplyFilter(); };
+            btnRefresh.Click += async (_, __) => await LoadDataAsync();
+
+            btnAdd.Click += async (_, __) => await AddCustomerAsync();
+            btnEdit.Click += async (_, __) => await EditSelectedAsync();
+            btnDelete.Click += async (_, __) => await DeleteSelectedAsync();
+            
+            // permissions: CUSTOMERS.* patents
+            try
+            {
+                using var scope = AppServices.CreateScope();
+                var ctx = scope.ServiceProvider.GetService<Services.Services.Security.ICurrentUserContext>();
+                if (ctx is not null)
+                {
+                    btnAdd.Enabled = ctx.HasPatent("CUSTOMERS.CREATE");
+                    btnEdit.Enabled = ctx.HasPatent("CUSTOMERS.EDIT");
+                    btnDelete.Enabled = ctx.HasPatent("CUSTOMERS.DELETE");
+                }
+                else
+                {
+                    btnAdd.Enabled = btnEdit.Enabled = btnDelete.Enabled = false;
+                }
+            }
+            catch
+            {
+                // ignore
+            }
+            this.Load += async (_, __) => await LoadDataAsync();
+        }
+
+        public Customers()
+        {
+            InitializeComponent();
+        }
+
+        private async void Customers_Load(object? sender, EventArgs e)
+        {
+            await LoadDataAsync();
+        }
+
+        private async Task LoadDataAsync()
+        {
+            try
+            {
+                SetBusy(true, "Loading customers...");
+                _logger.LogInformation("Customers: loading data from database.");
+                _items.Clear();
+
+                var customers = await _customersService.GetAllAsync();
+                foreach (var c in customers)
+                {
+                    _items.Add(new CustomerListItem(c.CustomerId, c.FirstName, c.LastName, c.Email ?? string.Empty, c.Phone ?? string.Empty, c.Address ?? string.Empty, c.CreatedAt));
+                }
+
+                ApplyFilter();
+                _logger.LogInformation("Customers: loaded {Count} customers.", customers.Count);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Customers: failed to load data.");
+                MessageBox.Show("Failed to load customers.", "Customers", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                SetBusy(false);
+            }
+        }
+
+        private void ApplyFilter()
+        {
+            var q = (txtSearch.Text ?? string.Empty).Trim();
+            if (string.IsNullOrEmpty(q))
+            {
+                _bs.DataSource = _items;
+                lblStatus.Text = $"{_items.Count} customer(s)";
+                return;
+            }
+
+            var term = q.ToLowerInvariant();
+            var filtered = _items.Where(i =>
+                (i.FirstName ?? string.Empty).ToLowerInvariant().Contains(term) ||
+                (i.LastName ?? string.Empty).ToLowerInvariant().Contains(term) ||
+                (i.Email ?? string.Empty).ToLowerInvariant().Contains(term) ||
+                (i.Phone ?? string.Empty).ToLowerInvariant().Contains(term) ||
+                (i.Address ?? string.Empty).ToLowerInvariant().Contains(term)
+            ).ToList();
+
+            _bs.DataSource = new BindingList<CustomerListItem>(filtered);
+            lblStatus.Text = $"{filtered.Count} result(s)";
+        }
+
+        private async Task AddCustomerAsync()
+        {
+            try
+            {
+                using var dlg = new CustomersEdit();
+                if (dlg.ShowDialog(this) != DialogResult.OK) return;
+
+                var newCustomer = new DomainModel.Customer
+                {
+                    CustomerId = Guid.Empty,
+                    FirstName = dlg.FirstName,
+                    LastName = dlg.LastName,
+                    Email = dlg.Email,
+                    Phone = dlg.Phone,
+                    Address = dlg.Address,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                var id = await _customersService.CreateAsync(newCustomer);
+                _logger.LogInformation("Customers: created customer {CustomerId}", id);
+                await LoadDataAsync();
+                MessageBox.Show("Customer created.", "Customers", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Customers: failed to create customer.");
+                MessageBox.Show("Failed to create customer.", "Customers", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task EditSelectedAsync()
+        {
+            try
+            {
+                if (dgv.CurrentRow is null) return;
+                if (dgv.CurrentRow.DataBoundItem is not CustomerListItem item) return;
+
+                var customerId = item.CustomerId;
+                var customer = await _customersService.GetByIdAsync(customerId);
+                if (customer is null)
+                {
+                    MessageBox.Show("Customer not found.", "Customers", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                using var dlg = new CustomersEdit(customer);
+                if (dlg.ShowDialog(this) != DialogResult.OK) return;
+
+                var updated = new DomainModel.Customer
+                {
+                    CustomerId = customerId,
+                    FirstName = dlg.FirstName,
+                    LastName = dlg.LastName,
+                    Email = dlg.Email,
+                    Phone = dlg.Phone,
+                    Address = dlg.Address,
+                    CreatedAt = customer.CreatedAt
+                };
+
+                await _customersService.UpdateAsync(updated);
+                _logger.LogInformation("Customers: updated customer {CustomerId}", customerId);
+                await LoadDataAsync();
+                MessageBox.Show("Customer updated.", "Customers", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Customers: failed to update customer.");
+                MessageBox.Show("Failed to update customer.", "Customers", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task DeleteSelectedAsync()
+        {
+            try
+            {
+                if (dgv.CurrentRow is null) return;
+                if (dgv.CurrentRow.DataBoundItem is not CustomerListItem item) return;
+
+                var customerId = item.CustomerId;
+                var name = $"{item.FirstName} {item.LastName}";
+
+                if (MessageBox.Show($"Delete '{name}'?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+                    return;
+
+                await _customersService.DeleteAsync(customerId);
+                _logger.LogInformation("Customers: deleted customer {CustomerId}", customerId);
+                await LoadDataAsync();
+                MessageBox.Show("Customer deleted.", "Customers", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (InvalidOperationException ex)
+            {
+                _logger.LogWarning(ex, "Customers: delete prevented.");
+                MessageBox.Show(ex.Message, "Cannot delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Customers: failed to delete customer.");
+                MessageBox.Show("Failed to delete customer.", "Customers", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SetBusy(bool busy, string? msg = null)
+        {
+            lblStatus.Text = busy ? msg ?? "Loading..." : "";
+            btnAdd.Enabled = btnEdit.Enabled = btnDelete.Enabled = !busy;
+            btnRefresh.Enabled = btnClear.Enabled = !busy;
+        }
+    }
+}

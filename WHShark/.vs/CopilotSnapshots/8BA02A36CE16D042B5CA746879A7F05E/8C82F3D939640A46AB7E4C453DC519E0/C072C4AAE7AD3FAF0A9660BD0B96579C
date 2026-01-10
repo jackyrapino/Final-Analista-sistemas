@@ -1,0 +1,267 @@
+﻿namespace WHFront.Login
+{
+    partial class ResetPass
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            tlpMain = new TableLayoutPanel();
+            labelTitle = new Label();
+            labelInfo = new Label();
+            lblUsername = new Label();
+            txtUsername = new TextBox();
+            lblCurrent = new Label();
+            txtCurrentPassword = new TextBox();
+            lblNew = new Label();
+            txtNewPassword = new TextBox();
+            lblRepeat = new Label();
+            txtRepeatPassword = new TextBox();
+            buttonsPanel = new FlowLayoutPanel();
+            button1 = new Button();
+            btnCancel = new Button();
+            tlpMain.SuspendLayout();
+            buttonsPanel.SuspendLayout();
+            SuspendLayout();
+            // 
+            // tlpMain
+            // 
+            tlpMain.ColumnCount = 2;
+            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 160F));
+            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpMain.Controls.Add(labelTitle, 0, 0);
+            tlpMain.Controls.Add(labelInfo, 0, 1);
+            tlpMain.Controls.Add(lblUsername, 0, 2);
+            tlpMain.Controls.Add(txtUsername, 1, 2);
+            tlpMain.Controls.Add(lblCurrent, 0, 3);
+            tlpMain.Controls.Add(txtCurrentPassword, 1, 3);
+            tlpMain.Controls.Add(lblNew, 0, 4);
+            tlpMain.Controls.Add(txtNewPassword, 1, 4);
+            tlpMain.Controls.Add(lblRepeat, 0, 5);
+            tlpMain.Controls.Add(txtRepeatPassword, 1, 5);
+            tlpMain.Controls.Add(buttonsPanel, 0, 6);
+            tlpMain.Dock = DockStyle.Fill;
+            tlpMain.Location = new Point(0, 0);
+            tlpMain.Margin = new Padding(10);
+            tlpMain.Name = "tlpMain";
+            tlpMain.Padding = new Padding(12);
+            tlpMain.RowCount = 8;
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 64F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 24F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpMain.Size = new Size(800, 450);
+            tlpMain.TabIndex = 0;
+            // 
+            // labelTitle
+            // 
+            labelTitle.AutoSize = true;
+            tlpMain.SetColumnSpan(labelTitle, 2);
+            labelTitle.Dock = DockStyle.Fill;
+            labelTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            labelTitle.Location = new Point(12, 12);
+            labelTitle.Margin = new Padding(0);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(776, 64);
+            labelTitle.TabIndex = 0;
+            labelTitle.Text = "Change password";
+            labelTitle.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // labelInfo
+            // 
+            labelInfo.AutoSize = true;
+            tlpMain.SetColumnSpan(labelInfo, 2);
+            labelInfo.Dock = DockStyle.Fill;
+            labelInfo.ForeColor = SystemColors.GrayText;
+            labelInfo.Location = new Point(12, 76);
+            labelInfo.Margin = new Padding(0, 0, 0, 6);
+            labelInfo.Name = "labelInfo";
+            labelInfo.Size = new Size(776, 18);
+            labelInfo.TabIndex = 1;
+            labelInfo.Text = "Provide your username, current password and a new password.";
+            labelInfo.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // lblUsername
+            // 
+            lblUsername.Anchor = AnchorStyles.Left;
+            lblUsername.AutoSize = true;
+            lblUsername.Location = new Point(12, 110);
+            lblUsername.Margin = new Padding(0, 0, 6, 0);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(78, 20);
+            lblUsername.TabIndex = 2;
+            lblUsername.Text = "Username:";
+            // 
+            // txtUsername
+            // 
+            txtUsername.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtUsername.Location = new Point(178, 106);
+            txtUsername.Margin = new Padding(6, 3, 12, 3);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(598, 27);
+            txtUsername.TabIndex = 3;
+            // 
+            // lblCurrent
+            // 
+            lblCurrent.Anchor = AnchorStyles.Left;
+            lblCurrent.AutoSize = true;
+            lblCurrent.Location = new Point(12, 150);
+            lblCurrent.Margin = new Padding(0, 0, 6, 0);
+            lblCurrent.Name = "lblCurrent";
+            lblCurrent.Size = new Size(127, 20);
+            lblCurrent.TabIndex = 4;
+            lblCurrent.Text = "Current password:";
+            // 
+            // txtCurrentPassword
+            // 
+            txtCurrentPassword.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtCurrentPassword.Location = new Point(178, 146);
+            txtCurrentPassword.Margin = new Padding(6, 3, 12, 3);
+            txtCurrentPassword.Name = "txtCurrentPassword";
+            txtCurrentPassword.Size = new Size(598, 27);
+            txtCurrentPassword.TabIndex = 5;
+            txtCurrentPassword.UseSystemPasswordChar = true;
+            // 
+            // lblNew
+            // 
+            lblNew.Anchor = AnchorStyles.Left;
+            lblNew.AutoSize = true;
+            lblNew.Location = new Point(12, 190);
+            lblNew.Margin = new Padding(0, 0, 6, 0);
+            lblNew.Name = "lblNew";
+            lblNew.Size = new Size(109, 20);
+            lblNew.TabIndex = 6;
+            lblNew.Text = "New password:";
+            // 
+            // txtNewPassword
+            // 
+            txtNewPassword.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtNewPassword.Location = new Point(178, 186);
+            txtNewPassword.Margin = new Padding(6, 3, 12, 3);
+            txtNewPassword.Name = "txtNewPassword";
+            txtNewPassword.Size = new Size(598, 27);
+            txtNewPassword.TabIndex = 7;
+            txtNewPassword.UseSystemPasswordChar = true;
+            // 
+            // lblRepeat
+            // 
+            lblRepeat.Anchor = AnchorStyles.Left;
+            lblRepeat.AutoSize = true;
+            lblRepeat.Location = new Point(12, 230);
+            lblRepeat.Margin = new Padding(0, 0, 6, 0);
+            lblRepeat.Name = "lblRepeat";
+            lblRepeat.Size = new Size(126, 20);
+            lblRepeat.TabIndex = 8;
+            lblRepeat.Text = "Repeat password:";
+            // 
+            // txtRepeatPassword
+            // 
+            txtRepeatPassword.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtRepeatPassword.Location = new Point(178, 226);
+            txtRepeatPassword.Margin = new Padding(6, 3, 12, 3);
+            txtRepeatPassword.Name = "txtRepeatPassword";
+            txtRepeatPassword.Size = new Size(598, 27);
+            txtRepeatPassword.TabIndex = 9;
+            txtRepeatPassword.UseSystemPasswordChar = true;
+            // 
+            // buttonsPanel
+            // 
+            buttonsPanel.Anchor = AnchorStyles.None;
+            buttonsPanel.AutoSize = true;
+            buttonsPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tlpMain.SetColumnSpan(buttonsPanel, 2);
+            buttonsPanel.Controls.Add(button1);
+            buttonsPanel.Controls.Add(btnCancel);
+            buttonsPanel.FlowDirection = FlowDirection.RightToLeft;
+            buttonsPanel.Location = new Point(279, 266);
+            buttonsPanel.Margin = new Padding(6, 6, 12, 6);
+            buttonsPanel.Name = "buttonsPanel";
+            buttonsPanel.Size = new Size(236, 48);
+            buttonsPanel.TabIndex = 10;
+            // 
+            // button1
+            // 
+            button1.AutoSize = true;
+            button1.Location = new Point(124, 6);
+            button1.Margin = new Padding(6);
+            button1.Name = "button1";
+            button1.Size = new Size(106, 36);
+            button1.TabIndex = 11;
+            button1.Text = "Change";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            btnCancel.AutoSize = true;
+            btnCancel.DialogResult = DialogResult.Cancel;
+            btnCancel.Location = new Point(6, 6);
+            btnCancel.Margin = new Padding(6);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(106, 36);
+            btnCancel.TabIndex = 12;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // ResetPass
+            // 
+            AcceptButton = button1;
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnCancel;
+            ClientSize = new Size(800, 450);
+            Controls.Add(tlpMain);
+            MinimumSize = new Size(560, 380);
+            Name = "ResetPass";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Change password";
+            tlpMain.ResumeLayout(false);
+            tlpMain.PerformLayout();
+            buttonsPanel.ResumeLayout(false);
+            buttonsPanel.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TableLayoutPanel tlpMain;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Label labelInfo;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label lblCurrent;
+        private System.Windows.Forms.TextBox txtCurrentPassword;
+        private System.Windows.Forms.Label lblNew;
+        private System.Windows.Forms.TextBox txtNewPassword;
+        private System.Windows.Forms.Label lblRepeat;
+        private System.Windows.Forms.TextBox txtRepeatPassword;
+        private System.Windows.Forms.FlowLayoutPanel buttonsPanel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancel;
+    }
+}

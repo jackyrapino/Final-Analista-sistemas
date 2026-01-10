@@ -1,0 +1,212 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WHUI.Login
+{
+    partial class LogIn
+    {
+        private System.ComponentModel.IContainer components = null;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
+            tlpMain = new TableLayoutPanel();
+            pictureBox1 = new PictureBox();
+            tlpContent = new TableLayoutPanel();
+            label1 = new Label();
+            labelUser = new Label();
+            txtUser = new TextBox();
+            labelPassword = new Label();
+            txtPass = new TextBox();
+            btnLogin = new Button();
+            linkforget = new LinkLabel();
+            LinkpassChange = new LinkLabel();
+            tlpMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            tlpContent.SuspendLayout();
+            SuspendLayout();
+            // 
+            // tlpMain
+            // 
+            tlpMain.ColumnCount = 2;
+            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 300F));
+            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpMain.Controls.Add(pictureBox1, 0, 0);
+            tlpMain.Controls.Add(tlpContent, 1, 0);
+            tlpMain.Dock = DockStyle.Fill;
+            tlpMain.Location = new Point(0, 0);
+            tlpMain.Name = "tlpMain";
+            tlpMain.RowCount = 1;
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpMain.Size = new Size(800, 450);
+            tlpMain.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(294, 444);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // tlpContent
+            // 
+            tlpContent.ColumnCount = 1;
+            tlpContent.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpContent.Controls.Add(label1, 0, 0);
+            tlpContent.Controls.Add(labelUser, 0, 1);
+            tlpContent.Controls.Add(txtUser, 0, 2);
+            tlpContent.Controls.Add(labelPassword, 0, 3);
+            tlpContent.Controls.Add(txtPass, 0, 4);
+            tlpContent.Controls.Add(btnLogin, 0, 5);
+            tlpContent.Controls.Add(linkforget, 0, 7);
+            tlpContent.Controls.Add(LinkpassChange, 0, 8);
+            tlpContent.Dock = DockStyle.Fill;
+            tlpContent.Location = new Point(303, 3);
+            tlpContent.Name = "tlpContent";
+            tlpContent.RowCount = 10;
+            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
+            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpContent.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpContent.Size = new Size(494, 444);
+            tlpContent.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(10, 14);
+            label1.Margin = new Padding(10, 0, 3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(108, 31);
+            label1.TabIndex = 0;
+            label1.Text = "Welcome";
+            // 
+            // labelUser
+            // 
+            labelUser.Anchor = AnchorStyles.Left;
+            labelUser.AutoSize = true;
+            labelUser.Location = new Point(10, 65);
+            labelUser.Margin = new Padding(10, 0, 3, 0);
+            labelUser.Name = "labelUser";
+            labelUser.Size = new Size(75, 20);
+            labelUser.TabIndex = 1;
+            labelUser.Text = "Username";
+            // 
+            // txtUser
+            // 
+            txtUser.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtUser.Location = new Point(10, 96);
+            txtUser.Margin = new Padding(10, 3, 10, 3);
+            txtUser.Name = "txtUser";
+            txtUser.Size = new Size(474, 27);
+            txtUser.TabIndex = 2;
+            // 
+            // labelPassword
+            // 
+            labelPassword.Anchor = AnchorStyles.Left;
+            labelPassword.AutoSize = true;
+            labelPassword.Location = new Point(10, 135);
+            labelPassword.Margin = new Padding(10, 0, 3, 0);
+            labelPassword.Name = "labelPassword";
+            labelPassword.Size = new Size(70, 20);
+            labelPassword.TabIndex = 3;
+            labelPassword.Text = "Password";
+            // 
+            // txtPass
+            // 
+            txtPass.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtPass.Location = new Point(10, 166);
+            txtPass.Margin = new Padding(10, 3, 10, 3);
+            txtPass.Name = "txtPass";
+            txtPass.Size = new Size(474, 27);
+            txtPass.TabIndex = 4;
+            // 
+            // btnLogin
+            // 
+            btnLogin.Anchor = AnchorStyles.Left;
+            btnLogin.Location = new Point(10, 207);
+            btnLogin.Margin = new Padding(10, 3, 3, 3);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(120, 30);
+            btnLogin.TabIndex = 5;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = true;
+            // 
+            // linkforget
+            // 
+            linkforget.Anchor = AnchorStyles.Left;
+            linkforget.AutoSize = true;
+            linkforget.Location = new Point(10, 295);
+            linkforget.Margin = new Padding(10, 3, 3, 3);
+            linkforget.Name = "linkforget";
+            linkforget.Size = new Size(149, 20);
+            linkforget.TabIndex = 7;
+            linkforget.TabStop = true;
+            linkforget.Text = "I forget my password";
+            // 
+            // LinkpassChange
+            // 
+            LinkpassChange.Anchor = AnchorStyles.Left;
+            LinkpassChange.AutoSize = true;
+            LinkpassChange.Location = new Point(10, 325);
+            LinkpassChange.Margin = new Padding(10, 3, 3, 3);
+            LinkpassChange.Name = "LinkpassChange";
+            LinkpassChange.Size = new Size(192, 20);
+            LinkpassChange.TabIndex = 8;
+            LinkpassChange.TabStop = true;
+            LinkpassChange.Text = "I want change my password";
+            // 
+            // LogIn
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(tlpMain);
+            Name = "LogIn";
+            Text = "LogIn";
+            tlpMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            tlpContent.ResumeLayout(false);
+            tlpContent.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private TableLayoutPanel tlpMain;
+        private PictureBox pictureBox1;
+        private TableLayoutPanel tlpContent;
+        private Label label1;
+        private Label labelUser;
+        private TextBox txtUser;
+        private Label labelPassword;
+        private TextBox txtPass;
+        private Button btnLogin;
+        private LinkLabel linkforget;
+        private LinkLabel LinkpassChange;
+    }
+}

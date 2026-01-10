@@ -1,0 +1,408 @@
+﻿namespace WHFront.Purchases
+{
+    partial class PurchasesEdit
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && components is not null) components.Dispose();
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            tlpMain = new TableLayoutPanel();
+            lblSupplier = new Label();
+            cmbSupplier = new ComboBox();
+            lblBranch = new Label();
+            cmbBranch = new ComboBox();
+            lblUser = new Label();
+            cmbUser = new ComboBox();
+            lblDate = new Label();
+            dtpPurchaseDate = new DateTimePicker();
+            lblStatus = new Label();
+            cmbStatus = new ComboBox();
+            lblTotal = new Label();
+            numTotal = new NumericUpDown();
+            grpItems = new GroupBox();
+            dgvItems = new DataGridView();
+            colProductId = new DataGridViewTextBoxColumn();
+            colSKU = new DataGridViewTextBoxColumn();
+            colName = new DataGridViewTextBoxColumn();
+            colQuantity = new DataGridViewTextBoxColumn();
+            colUnitCost = new DataGridViewTextBoxColumn();
+            colTotalCost = new DataGridViewTextBoxColumn();
+            pnlItemsTop = new Panel();
+            btnRemoveItem = new Button();
+            btnAddItem = new Button();
+            txtItemSearch = new TextBox();
+            pnlButtons = new FlowLayoutPanel();
+            btnCancel = new Button();
+            btnOK = new Button();
+            tlpMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numTotal).BeginInit();
+            grpItems.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvItems).BeginInit();
+            pnlItemsTop.SuspendLayout();
+            pnlButtons.SuspendLayout();
+            SuspendLayout();
+            // 
+            // tlpMain
+            // 
+            tlpMain.ColumnCount = 2;
+            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140F));
+            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpMain.Controls.Add(lblSupplier, 0, 0);
+            tlpMain.Controls.Add(cmbSupplier, 1, 0);
+            tlpMain.Controls.Add(lblBranch, 0, 1);
+            tlpMain.Controls.Add(cmbBranch, 1, 1);
+            tlpMain.Controls.Add(lblUser, 0, 2);
+            tlpMain.Controls.Add(cmbUser, 1, 2);
+            tlpMain.Controls.Add(lblDate, 0, 3);
+            tlpMain.Controls.Add(dtpPurchaseDate, 1, 3);
+            tlpMain.Controls.Add(lblStatus, 0, 4);
+            tlpMain.Controls.Add(cmbStatus, 1, 4);
+            tlpMain.Controls.Add(lblTotal, 0, 5);
+            tlpMain.Controls.Add(numTotal, 1, 5);
+            tlpMain.Controls.Add(grpItems, 0, 6);
+            tlpMain.Controls.Add(pnlButtons, 0, 7);
+            tlpMain.Dock = DockStyle.Fill;
+            tlpMain.Location = new Point(0, 0);
+            tlpMain.Name = "tlpMain";
+            tlpMain.RowCount = 8;
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 44F));
+            tlpMain.Size = new Size(960, 640);
+            tlpMain.TabIndex = 0;
+            // 
+            // lblSupplier
+            // 
+            lblSupplier.Dock = DockStyle.Fill;
+            lblSupplier.Location = new Point(3, 0);
+            lblSupplier.Name = "lblSupplier";
+            lblSupplier.Size = new Size(134, 34);
+            lblSupplier.TabIndex = 0;
+            lblSupplier.Text = "Supplier";
+            lblSupplier.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // cmbSupplier
+            // 
+            cmbSupplier.Dock = DockStyle.Fill;
+            cmbSupplier.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSupplier.Location = new Point(143, 3);
+            cmbSupplier.Name = "cmbSupplier";
+            cmbSupplier.Size = new Size(814, 28);
+            cmbSupplier.TabIndex = 1;
+            // 
+            // lblBranch
+            // 
+            lblBranch.Dock = DockStyle.Fill;
+            lblBranch.Location = new Point(3, 34);
+            lblBranch.Name = "lblBranch";
+            lblBranch.Size = new Size(134, 34);
+            lblBranch.TabIndex = 2;
+            lblBranch.Text = "Branch";
+            lblBranch.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // cmbBranch
+            // 
+            cmbBranch.Dock = DockStyle.Fill;
+            cmbBranch.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBranch.Location = new Point(143, 37);
+            cmbBranch.Name = "cmbBranch";
+            cmbBranch.Size = new Size(814, 28);
+            cmbBranch.TabIndex = 3;
+            // 
+            // lblUser
+            // 
+            lblUser.Dock = DockStyle.Fill;
+            lblUser.Location = new Point(3, 68);
+            lblUser.Name = "lblUser";
+            lblUser.Size = new Size(134, 34);
+            lblUser.TabIndex = 4;
+            lblUser.Text = "User";
+            lblUser.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // cmbUser
+            // 
+            cmbUser.Dock = DockStyle.Fill;
+            cmbUser.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbUser.Location = new Point(143, 71);
+            cmbUser.Name = "cmbUser";
+            cmbUser.Size = new Size(814, 28);
+            cmbUser.TabIndex = 5;
+            // 
+            // lblDate
+            // 
+            lblDate.Dock = DockStyle.Fill;
+            lblDate.Location = new Point(3, 102);
+            lblDate.Name = "lblDate";
+            lblDate.Size = new Size(134, 34);
+            lblDate.TabIndex = 6;
+            lblDate.Text = "Date";
+            lblDate.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // dtpPurchaseDate
+            // 
+            dtpPurchaseDate.Dock = DockStyle.Left;
+            dtpPurchaseDate.Location = new Point(143, 105);
+            dtpPurchaseDate.Name = "dtpPurchaseDate";
+            dtpPurchaseDate.Size = new Size(220, 27);
+            dtpPurchaseDate.TabIndex = 7;
+            // 
+            // lblStatus
+            // 
+            lblStatus.Dock = DockStyle.Fill;
+            lblStatus.Location = new Point(3, 136);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(134, 34);
+            lblStatus.TabIndex = 8;
+            lblStatus.Text = "Status";
+            lblStatus.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // cmbStatus
+            // 
+            cmbStatus.Dock = DockStyle.Left;
+            cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbStatus.Location = new Point(143, 139);
+            cmbStatus.Name = "cmbStatus";
+            cmbStatus.Size = new Size(220, 28);
+            cmbStatus.TabIndex = 9;
+            // 
+            // lblTotal
+            // 
+            lblTotal.Dock = DockStyle.Fill;
+            lblTotal.Location = new Point(3, 170);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(134, 34);
+            lblTotal.TabIndex = 10;
+            lblTotal.Text = "Total";
+            lblTotal.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // numTotal
+            // 
+            numTotal.DecimalPlaces = 2;
+            numTotal.Dock = DockStyle.Left;
+            numTotal.Location = new Point(143, 173);
+            numTotal.Maximum = new decimal(new int[] { 1000000000, 0, 0, 0 });
+            numTotal.Name = "numTotal";
+            numTotal.Size = new Size(160, 27);
+            numTotal.TabIndex = 11;
+            // 
+            // grpItems
+            // 
+            tlpMain.SetColumnSpan(grpItems, 2);
+            grpItems.Controls.Add(dgvItems);
+            grpItems.Controls.Add(pnlItemsTop);
+            grpItems.Dock = DockStyle.Fill;
+            grpItems.Location = new Point(3, 207);
+            grpItems.Name = "grpItems";
+            grpItems.Padding = new Padding(8);
+            grpItems.Size = new Size(954, 386);
+            grpItems.TabIndex = 12;
+            grpItems.TabStop = false;
+            grpItems.Text = "Items";
+            // 
+            // dgvItems
+            // 
+            dgvItems.AllowUserToAddRows = false;
+            dgvItems.AllowUserToDeleteRows = false;
+            dgvItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvItems.ColumnHeadersHeight = 29;
+            dgvItems.Columns.AddRange(new DataGridViewColumn[] { colProductId, colSKU, colName, colQuantity, colUnitCost, colTotalCost });
+            dgvItems.Dock = DockStyle.Fill;
+            dgvItems.Location = new Point(8, 72);
+            dgvItems.MultiSelect = false;
+            dgvItems.Name = "dgvItems";
+            dgvItems.ReadOnly = true;
+            dgvItems.RowHeadersVisible = false;
+            dgvItems.RowHeadersWidth = 51;
+            dgvItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvItems.Size = new Size(938, 306);
+            dgvItems.TabIndex = 1;
+            // 
+            // colProductId
+            // 
+            colProductId.DataPropertyName = "ProductId";
+            colProductId.HeaderText = "ProductId";
+            colProductId.MinimumWidth = 6;
+            colProductId.Name = "colProductId";
+            colProductId.ReadOnly = true;
+            colProductId.Visible = false;
+            // 
+            // colSKU
+            // 
+            colSKU.DataPropertyName = "SKU";
+            colSKU.HeaderText = "SKU";
+            colSKU.MinimumWidth = 6;
+            colSKU.Name = "colSKU";
+            colSKU.ReadOnly = true;
+            // 
+            // colName
+            // 
+            colName.DataPropertyName = "Name";
+            colName.HeaderText = "Product";
+            colName.MinimumWidth = 6;
+            colName.Name = "colName";
+            colName.ReadOnly = true;
+            // 
+            // colQuantity
+            // 
+            colQuantity.DataPropertyName = "Quantity";
+            colQuantity.HeaderText = "Qty";
+            colQuantity.MinimumWidth = 6;
+            colQuantity.Name = "colQuantity";
+            colQuantity.ReadOnly = true;
+            // 
+            // colUnitCost
+            // 
+            colUnitCost.DataPropertyName = "UnitCost";
+            colUnitCost.HeaderText = "Unit Cost";
+            colUnitCost.MinimumWidth = 6;
+            colUnitCost.Name = "colUnitCost";
+            colUnitCost.ReadOnly = true;
+            // 
+            // colTotalCost
+            // 
+            colTotalCost.DataPropertyName = "TotalCost";
+            colTotalCost.HeaderText = "Total";
+            colTotalCost.MinimumWidth = 6;
+            colTotalCost.Name = "colTotalCost";
+            colTotalCost.ReadOnly = true;
+            // 
+            // pnlItemsTop
+            // 
+            pnlItemsTop.Controls.Add(btnRemoveItem);
+            pnlItemsTop.Controls.Add(btnAddItem);
+            pnlItemsTop.Controls.Add(txtItemSearch);
+            pnlItemsTop.Dock = DockStyle.Top;
+            pnlItemsTop.Location = new Point(8, 28);
+            pnlItemsTop.Name = "pnlItemsTop";
+            pnlItemsTop.Padding = new Padding(8);
+            pnlItemsTop.Size = new Size(938, 44);
+            pnlItemsTop.TabIndex = 2;
+            // 
+            // btnRemoveItem
+            // 
+            btnRemoveItem.Location = new Point(116, 8);
+            btnRemoveItem.Name = "btnRemoveItem";
+            btnRemoveItem.Size = new Size(120, 23);
+            btnRemoveItem.TabIndex = 0;
+            btnRemoveItem.Text = "Remove Item";
+            // 
+            // btnAddItem
+            // 
+            btnAddItem.Location = new Point(8, 8);
+            btnAddItem.Name = "btnAddItem";
+            btnAddItem.Size = new Size(100, 23);
+            btnAddItem.TabIndex = 1;
+            btnAddItem.Text = "Add Item";
+            // 
+            // txtItemSearch
+            // 
+            txtItemSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtItemSearch.Location = new Point(1398, 10);
+            txtItemSearch.Name = "txtItemSearch";
+            txtItemSearch.PlaceholderText = "Search product...";
+            txtItemSearch.Size = new Size(280, 27);
+            txtItemSearch.TabIndex = 2;
+            // 
+            // pnlButtons
+            // 
+            tlpMain.SetColumnSpan(pnlButtons, 2);
+            pnlButtons.Controls.Add(btnCancel);
+            pnlButtons.Controls.Add(btnOK);
+            pnlButtons.Dock = DockStyle.Fill;
+            pnlButtons.FlowDirection = FlowDirection.RightToLeft;
+            pnlButtons.Location = new Point(3, 599);
+            pnlButtons.Name = "pnlButtons";
+            pnlButtons.Size = new Size(954, 38);
+            pnlButtons.TabIndex = 13;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(851, 3);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(100, 23);
+            btnCancel.TabIndex = 0;
+            btnCancel.Text = "Cancel";
+            // 
+            // btnOK
+            // 
+            btnOK.Location = new Point(745, 3);
+            btnOK.Name = "btnOK";
+            btnOK.Size = new Size(100, 23);
+            btnOK.TabIndex = 1;
+            btnOK.Text = "OK";
+            // 
+            // PurchasesEdit
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(960, 640);
+            Controls.Add(tlpMain);
+            Name = "PurchasesEdit";
+            Text = "Purchase";
+            tlpMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)numTotal).EndInit();
+            grpItems.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvItems).EndInit();
+            pnlItemsTop.ResumeLayout(false);
+            pnlItemsTop.PerformLayout();
+            pnlButtons.ResumeLayout(false);
+            ResumeLayout(false);
+        }
+
+        private System.Windows.Forms.TableLayoutPanel tlpMain;
+        private System.Windows.Forms.Label lblSupplier;
+        private System.Windows.Forms.ComboBox cmbSupplier;
+        private System.Windows.Forms.Label lblBranch;
+        private System.Windows.Forms.ComboBox cmbBranch;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.ComboBox cmbUser;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.DateTimePicker dtpPurchaseDate;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.NumericUpDown numTotal;
+        private System.Windows.Forms.GroupBox grpItems;
+        private System.Windows.Forms.DataGridView dgvItems;
+        private System.Windows.Forms.Panel pnlItemsTop;
+        private System.Windows.Forms.TextBox txtItemSearch;
+        private System.Windows.Forms.Button btnAddItem;
+        private System.Windows.Forms.Button btnRemoveItem;
+        private System.Windows.Forms.FlowLayoutPanel pnlButtons;
+        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProductId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSKU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUnitCost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTotalCost;
+
+    }
+
+    #endregion
+}

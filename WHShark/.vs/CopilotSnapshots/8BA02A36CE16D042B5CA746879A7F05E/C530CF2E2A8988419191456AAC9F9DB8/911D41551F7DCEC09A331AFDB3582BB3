@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
+using WHFront.Sales;
+using BLL.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
+using DomainModel;
+using System.ComponentModel;
+
+namespace WHFront.Purchases
+{
+    public partial class PurchasesEdit : Form
+    {
+        public PurchasesEdit()
+        {
+            InitializeComponent();
+
+        }
+    }
+}

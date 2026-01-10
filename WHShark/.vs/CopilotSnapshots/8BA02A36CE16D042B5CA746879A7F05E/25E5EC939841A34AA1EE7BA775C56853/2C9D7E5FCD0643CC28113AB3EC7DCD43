@@ -1,0 +1,251 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WHUI.Reports
+{
+    partial class Reports
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            pnlTop = new Panel();
+            lblArea = new Label();
+            cboArea = new ComboBox();
+            lblBranch = new Label();
+            cboBranch = new ComboBox();
+            grpRange = new GroupBox();
+            rbDay = new RadioButton();
+            rbMonth = new RadioButton();
+            rbYear = new RadioButton();
+            rbCustom = new RadioButton();
+            dtFrom = new DateTimePicker();
+            dtTo = new DateTimePicker();
+            btnGenerate = new Button();
+            btnExport = new Button();
+            dgv = new DataGridView();
+            lblStatus = new Label();
+            pnlTop.SuspendLayout();
+            grpRange.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
+            SuspendLayout();
+            // 
+            // pnlTop
+            // 
+            pnlTop.Controls.Add(lblArea);
+            pnlTop.Controls.Add(cboArea);
+            pnlTop.Controls.Add(lblBranch);
+            pnlTop.Controls.Add(cboBranch);
+            pnlTop.Controls.Add(grpRange);
+            pnlTop.Controls.Add(btnGenerate);
+            pnlTop.Controls.Add(btnExport);
+            pnlTop.Dock = DockStyle.Top;
+            pnlTop.Location = new Point(0, 0);
+            pnlTop.Name = "pnlTop";
+            pnlTop.Padding = new Padding(8);
+            pnlTop.Size = new Size(1100, 112);
+            pnlTop.TabIndex = 1;
+            // 
+            // lblArea
+            // 
+            lblArea.AutoSize = true;
+            lblArea.Location = new Point(12, 12);
+            lblArea.Name = "lblArea";
+            lblArea.Size = new Size(40, 20);
+            lblArea.TabIndex = 0;
+            lblArea.Text = "Area";
+            // 
+            // cboArea
+            // 
+            cboArea.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboArea.Location = new Point(60, 8);
+            cboArea.Name = "cboArea";
+            cboArea.Size = new Size(160, 28);
+            cboArea.TabIndex = 1;
+            // 
+            // lblBranch
+            // 
+            lblBranch.AutoSize = true;
+            lblBranch.Location = new Point(240, 12);
+            lblBranch.Name = "lblBranch";
+            lblBranch.Size = new Size(54, 20);
+            lblBranch.TabIndex = 2;
+            lblBranch.Text = "Branch";
+            // 
+            // cboBranch
+            // 
+            cboBranch.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboBranch.Location = new Point(300, 8);
+            cboBranch.Name = "cboBranch";
+            cboBranch.Size = new Size(180, 28);
+            cboBranch.TabIndex = 3;
+            // 
+            // grpRange
+            // 
+            grpRange.Controls.Add(rbDay);
+            grpRange.Controls.Add(rbMonth);
+            grpRange.Controls.Add(rbYear);
+            grpRange.Controls.Add(rbCustom);
+            grpRange.Controls.Add(dtFrom);
+            grpRange.Controls.Add(dtTo);
+            grpRange.Location = new Point(12, 48);
+            grpRange.Name = "grpRange";
+            grpRange.Size = new Size(860, 56);
+            grpRange.TabIndex = 6;
+            grpRange.TabStop = false;
+            grpRange.Text = "Range";
+            // 
+            // rbDay
+            // 
+            rbDay.AutoSize = true;
+            rbDay.Location = new Point(12, 24);
+            rbDay.Name = "rbDay";
+            rbDay.Size = new Size(84, 24);
+            rbDay.TabIndex = 0;
+            rbDay.Text = "Last day";
+            // 
+            // rbMonth
+            // 
+            rbMonth.AutoSize = true;
+            rbMonth.Location = new Point(110, 24);
+            rbMonth.Name = "rbMonth";
+            rbMonth.Size = new Size(103, 24);
+            rbMonth.TabIndex = 1;
+            rbMonth.Text = "Last month";
+            // 
+            // rbYear
+            // 
+            rbYear.AutoSize = true;
+            rbYear.Location = new Point(220, 24);
+            rbYear.Name = "rbYear";
+            rbYear.Size = new Size(88, 24);
+            rbYear.TabIndex = 2;
+            rbYear.Text = "Last year";
+            // 
+            // rbCustom
+            // 
+            rbCustom.AutoSize = true;
+            rbCustom.Location = new Point(320, 24);
+            rbCustom.Name = "rbCustom";
+            rbCustom.Size = new Size(80, 24);
+            rbCustom.TabIndex = 3;
+            rbCustom.Text = "Custom";
+            // 
+            // dtFrom
+            // 
+            dtFrom.Location = new Point(420, 20);
+            dtFrom.Name = "dtFrom";
+            dtFrom.Size = new Size(200, 27);
+            dtFrom.TabIndex = 4;
+            // 
+            // dtTo
+            // 
+            dtTo.Location = new Point(630, 20);
+            dtTo.Name = "dtTo";
+            dtTo.Size = new Size(200, 27);
+            dtTo.TabIndex = 5;
+            dtTo.Visible = false;
+            // 
+            // btnGenerate
+            // 
+            btnGenerate.Location = new Point(930, 24);
+            btnGenerate.Name = "btnGenerate";
+            btnGenerate.Size = new Size(96, 30);
+            btnGenerate.TabIndex = 7;
+            btnGenerate.Text = "Generate";
+            btnGenerate.Click += btnGenerate_Click;
+            // 
+            // btnExport
+            // 
+            btnExport.Location = new Point(1030, 24);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(100, 30);
+            btnExport.TabIndex = 8;
+            btnExport.Text = "Export XLSX";
+            // 
+            // dgv
+            // 
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.ColumnHeadersHeight = 29;
+            dgv.Dock = DockStyle.Fill;
+            dgv.Location = new Point(0, 112);
+            dgv.Name = "dgv";
+            dgv.ReadOnly = true;
+            dgv.RowHeadersVisible = false;
+            dgv.RowHeadersWidth = 51;
+            dgv.Size = new Size(1100, 568);
+            dgv.TabIndex = 0;
+            // 
+            // lblStatus
+            // 
+            lblStatus.Dock = DockStyle.Bottom;
+            lblStatus.Location = new Point(0, 680);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Padding = new Padding(8, 4, 8, 4);
+            lblStatus.Size = new Size(1100, 28);
+            lblStatus.TabIndex = 2;
+            // 
+            // Reports
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1100, 708);
+            Controls.Add(dgv);
+            Controls.Add(pnlTop);
+            Controls.Add(lblStatus);
+            Name = "Reports";
+            Text = "Reports";
+            pnlTop.ResumeLayout(false);
+            pnlTop.PerformLayout();
+            grpRange.ResumeLayout(false);
+            grpRange.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv).EndInit();
+            ResumeLayout(false);
+        }
+
+        private System.Windows.Forms.Panel pnlTop;
+        private System.Windows.Forms.Label lblArea;
+        private System.Windows.Forms.ComboBox cboArea;
+        private System.Windows.Forms.Label lblBranch;
+        private System.Windows.Forms.ComboBox cboBranch;
+        private System.Windows.Forms.GroupBox grpRange;
+        private System.Windows.Forms.RadioButton rbDay;
+        private System.Windows.Forms.RadioButton rbMonth;
+        private System.Windows.Forms.RadioButton rbYear;
+        private System.Windows.Forms.RadioButton rbCustom;
+        private System.Windows.Forms.DateTimePicker dtFrom;
+        private System.Windows.Forms.DateTimePicker dtTo;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Label lblStatus;
+
+
+        #endregion
+    }
+}

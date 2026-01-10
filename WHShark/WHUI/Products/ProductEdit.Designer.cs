@@ -1,0 +1,324 @@
+﻿using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WHUI.Products
+{
+    partial class ProductEdit
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+                components.Dispose();
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductEdit));
+            lblSKU = new Label();
+            txtSKU = new TextBox();
+            lblBarcode = new Label();
+            txtBarcode = new TextBox();
+            lblName = new Label();
+            txtName = new TextBox();
+            lblDescription = new Label();
+            txtDescription = new TextBox();
+            lblBrand = new Label();
+            cbBrand = new ComboBox();
+            lblCategory = new Label();
+            cbCategory = new ComboBox();
+            lblBranch = new Label();
+            cbBranch = new ComboBox();
+            lblVolume = new Label();
+            nudVolume = new NumericUpDown();
+            lblVolumeUnit = new Label();
+            txtVolumeUnit = new TextBox();
+            lblWeight = new Label();
+            nudWeight = new NumericUpDown();
+            lblWeightUnit = new Label();
+            txtWeightUnit = new TextBox();
+            lblCostPrice = new Label();
+            nudCostPrice = new NumericUpDown();
+            lblListPrice = new Label();
+            nudListPrice = new NumericUpDown();
+            lblAlertStock = new Label();
+            nudAlertStock = new NumericUpDown();
+            btnOK = new Button();
+            btnCancel = new Button();
+            ((System.ComponentModel.ISupportInitialize)nudVolume).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudWeight).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudCostPrice).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudListPrice).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudAlertStock).BeginInit();
+            SuspendLayout();
+            // 
+            // lblSKU
+            // 
+            resources.ApplyResources(lblSKU, "lblSKU");
+            lblSKU.Name = "lblSKU";
+            // 
+            // txtSKU
+            // 
+            resources.ApplyResources(txtSKU, "txtSKU");
+            txtSKU.Name = "txtSKU";
+            // 
+            // lblBarcode
+            // 
+            resources.ApplyResources(lblBarcode, "lblBarcode");
+            lblBarcode.Name = "lblBarcode";
+            // 
+            // txtBarcode
+            // 
+            resources.ApplyResources(txtBarcode, "txtBarcode");
+            txtBarcode.Name = "txtBarcode";
+            // 
+            // lblName
+            // 
+            resources.ApplyResources(lblName, "lblName");
+            lblName.Name = "lblName";
+            // 
+            // txtName
+            // 
+            resources.ApplyResources(txtName, "txtName");
+            txtName.Name = "txtName";
+            // 
+            // lblDescription
+            // 
+            resources.ApplyResources(lblDescription, "lblDescription");
+            lblDescription.Name = "lblDescription";
+            // 
+            // txtDescription
+            // 
+            resources.ApplyResources(txtDescription, "txtDescription");
+            txtDescription.Name = "txtDescription";
+            // 
+            // lblBrand
+            // 
+            resources.ApplyResources(lblBrand, "lblBrand");
+            lblBrand.Name = "lblBrand";
+            // 
+            // cbBrand
+            // 
+            cbBrand.DropDownStyle = ComboBoxStyle.DropDownList;
+            resources.ApplyResources(cbBrand, "cbBrand");
+            cbBrand.Name = "cbBrand";
+            // 
+            // lblCategory
+            // 
+            resources.ApplyResources(lblCategory, "lblCategory");
+            lblCategory.Name = "lblCategory";
+            // 
+            // cbCategory
+            // 
+            cbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            resources.ApplyResources(cbCategory, "cbCategory");
+            cbCategory.Name = "cbCategory";
+            // 
+            // lblBranch
+            // 
+            resources.ApplyResources(lblBranch, "lblBranch");
+            lblBranch.Name = "lblBranch";
+            // 
+            // cbBranch
+            // 
+            cbBranch.DropDownStyle = ComboBoxStyle.DropDownList;
+            resources.ApplyResources(cbBranch, "cbBranch");
+            cbBranch.Name = "cbBranch";
+            // 
+            // lblVolume
+            // 
+            resources.ApplyResources(lblVolume, "lblVolume");
+            lblVolume.Name = "lblVolume";
+            // 
+            // nudVolume
+            // 
+            nudVolume.DecimalPlaces = 2;
+            resources.ApplyResources(nudVolume, "nudVolume");
+            nudVolume.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            nudVolume.Name = "nudVolume";
+            // 
+            // lblVolumeUnit
+            // 
+            resources.ApplyResources(lblVolumeUnit, "lblVolumeUnit");
+            lblVolumeUnit.Name = "lblVolumeUnit";
+            // 
+            // txtVolumeUnit
+            // 
+            resources.ApplyResources(txtVolumeUnit, "txtVolumeUnit");
+            txtVolumeUnit.Name = "txtVolumeUnit";
+            // 
+            // lblWeight
+            // 
+            resources.ApplyResources(lblWeight, "lblWeight");
+            lblWeight.Name = "lblWeight";
+            // 
+            // nudWeight
+            // 
+            nudWeight.DecimalPlaces = 2;
+            resources.ApplyResources(nudWeight, "nudWeight");
+            nudWeight.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            nudWeight.Name = "nudWeight";
+            // 
+            // lblWeightUnit
+            // 
+            resources.ApplyResources(lblWeightUnit, "lblWeightUnit");
+            lblWeightUnit.Name = "lblWeightUnit";
+            // 
+            // txtWeightUnit
+            // 
+            resources.ApplyResources(txtWeightUnit, "txtWeightUnit");
+            txtWeightUnit.Name = "txtWeightUnit";
+            // 
+            // lblCostPrice
+            // 
+            resources.ApplyResources(lblCostPrice, "lblCostPrice");
+            lblCostPrice.Name = "lblCostPrice";
+            // 
+            // nudCostPrice
+            // 
+            nudCostPrice.DecimalPlaces = 2;
+            resources.ApplyResources(nudCostPrice, "nudCostPrice");
+            nudCostPrice.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
+            nudCostPrice.Name = "nudCostPrice";
+            // 
+            // lblListPrice
+            // 
+            resources.ApplyResources(lblListPrice, "lblListPrice");
+            lblListPrice.Name = "lblListPrice";
+            // 
+            // nudListPrice
+            // 
+            nudListPrice.DecimalPlaces = 2;
+            resources.ApplyResources(nudListPrice, "nudListPrice");
+            nudListPrice.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
+            nudListPrice.Name = "nudListPrice";
+            // 
+            // lblAlertStock
+            // 
+            resources.ApplyResources(lblAlertStock, "lblAlertStock");
+            lblAlertStock.Name = "lblAlertStock";
+            // 
+            // nudAlertStock
+            // 
+            resources.ApplyResources(nudAlertStock, "nudAlertStock");
+            nudAlertStock.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            nudAlertStock.Name = "nudAlertStock";
+            // 
+            // btnOK
+            // 
+            resources.ApplyResources(btnOK, "btnOK");
+            btnOK.Name = "btnOK";
+            btnOK.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            btnCancel.DialogResult = DialogResult.Cancel;
+            resources.ApplyResources(btnCancel, "btnCancel");
+            btnCancel.Name = "btnCancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // ProductEdit
+            // 
+            AcceptButton = btnOK;
+            CancelButton = btnCancel;
+            resources.ApplyResources(this, "$this");
+            Controls.Add(lblSKU);
+            Controls.Add(txtSKU);
+            Controls.Add(lblBarcode);
+            Controls.Add(txtBarcode);
+            Controls.Add(lblName);
+            Controls.Add(txtName);
+            Controls.Add(lblDescription);
+            Controls.Add(txtDescription);
+            Controls.Add(lblBrand);
+            Controls.Add(cbBrand);
+            Controls.Add(lblCategory);
+            Controls.Add(cbCategory);
+            Controls.Add(lblBranch);
+            Controls.Add(cbBranch);
+            Controls.Add(lblVolume);
+            Controls.Add(nudVolume);
+            Controls.Add(lblVolumeUnit);
+            Controls.Add(txtVolumeUnit);
+            Controls.Add(lblWeight);
+            Controls.Add(nudWeight);
+            Controls.Add(lblWeightUnit);
+            Controls.Add(txtWeightUnit);
+            Controls.Add(lblCostPrice);
+            Controls.Add(nudCostPrice);
+            Controls.Add(lblListPrice);
+            Controls.Add(nudListPrice);
+            Controls.Add(lblAlertStock);
+            Controls.Add(nudAlertStock);
+            Controls.Add(btnOK);
+            Controls.Add(btnCancel);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "ProductEdit";
+            ((System.ComponentModel.ISupportInitialize)nudVolume).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudWeight).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudCostPrice).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudListPrice).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudAlertStock).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private System.ComponentModel.IContainer components = null;
+
+        private System.Windows.Forms.Label lblSKU;
+        private System.Windows.Forms.TextBox txtSKU;
+        private System.Windows.Forms.Label lblBarcode;
+        private System.Windows.Forms.TextBox txtBarcode;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.TextBox txtDescription;
+
+        private System.Windows.Forms.Label lblBrand;
+        private System.Windows.Forms.ComboBox cbBrand;
+        private System.Windows.Forms.Label lblCategory;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.Label lblBranch;
+        private System.Windows.Forms.ComboBox cbBranch;
+
+        private System.Windows.Forms.Label lblVolume;
+        private System.Windows.Forms.NumericUpDown nudVolume;
+        private System.Windows.Forms.Label lblVolumeUnit;
+        private System.Windows.Forms.TextBox txtVolumeUnit;
+
+        private System.Windows.Forms.Label lblWeight;
+        private System.Windows.Forms.NumericUpDown nudWeight;
+        private System.Windows.Forms.Label lblWeightUnit;
+        private System.Windows.Forms.TextBox txtWeightUnit;
+
+        private System.Windows.Forms.Label lblCostPrice;
+        private System.Windows.Forms.NumericUpDown nudCostPrice;
+        private System.Windows.Forms.Label lblListPrice;
+        private System.Windows.Forms.NumericUpDown nudListPrice;
+        private System.Windows.Forms.Label lblAlertStock;
+        private System.Windows.Forms.NumericUpDown nudAlertStock;
+
+        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnCancel;
+    }
+}
