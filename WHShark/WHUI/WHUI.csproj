@@ -70,12 +70,6 @@
     <Compile Include="Customers\CustomersEdit.Designer.cs">
       <DependentUpon>CustomersEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login\ForceChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,9 +234,6 @@
     <EmbeddedResource Include="Customers\CustomersEdit.resx">
       <DependentUpon>CustomersEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login\ForgetPass.resx">
       <DependentUpon>ForgetPass.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,14 +255,9 @@
     <EmbeddedResource Include="Menu\Menu.en.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu\Menu.es.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\Menu.pt.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Menu\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu\Welcome.es.resx">
       <DependentUpon>Welcome.cs</DependentUpon>

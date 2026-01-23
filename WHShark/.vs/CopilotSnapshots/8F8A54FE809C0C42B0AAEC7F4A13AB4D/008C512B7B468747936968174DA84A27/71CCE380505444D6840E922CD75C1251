@@ -1,0 +1,18 @@
+﻿using System;
+using System.Windows.Forms;
+
+namespace WHUI.Login
+{
+    public partial class LogIn : Form
+    {
+        public LogIn()
+        {
+            InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

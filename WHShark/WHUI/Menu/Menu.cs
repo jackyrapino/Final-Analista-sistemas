@@ -10,5 +10,45 @@ namespace WHUI.Menu
         {
             InitializeComponent();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            using (var login = new WHUI.Login.LogIn())
+            {
+                var result = login.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    // Login successful for another user: show the menu again (could refresh user data here)
+                    this.Show();
+                }
+                else
+                {
+                    // Login canceled or failed: close the menu to exit application
+                    this.Close();
+                }
+            }
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tlpButtons_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBackup_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

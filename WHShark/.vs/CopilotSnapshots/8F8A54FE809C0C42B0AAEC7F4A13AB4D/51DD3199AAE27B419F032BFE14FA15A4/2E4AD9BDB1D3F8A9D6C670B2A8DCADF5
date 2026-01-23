@@ -1,0 +1,103 @@
+﻿using Services.DAL.Factories;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Diagnostics.Tracing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Services.BLL
+{
+    internal static class LoggerBLL
+    {
+
+        public static void WriteLog(string message, EventLevel level, string user)
+        {
+            // Política 1: Filtrar por severidad mínima configurada (LoggerSeverity en appSettings)
+            // Si no está configurado se registra todo (Verbose)
+            string minLevelStr = ConfigurationManager.AppSettings["LoggerSeverity"];
+            EventLevel minLevel;
+            if (!Enum.TryParse(minLevelStr, true, out minLevel))
+                minLevel = EventLevel.Verbose;
+
+            // En EventLevel los valores menores son más severos (Critical=1, Error=2, Warning=3, Informational=4, Verbose=5)
+            // Queremos registrar si el level del mensaje es igual o más severo que el configurado.
+            if ((int)level <= (int)minLevel)
+            {
+                // Asegurarnos de que el directorio de logs exista
+                string pathLog = ConfigurationManager.AppSettings["PathLog"] ?? string.Empty;
+                string pathFile = ConfigurationManager.AppSettings["LogFileName"] ?? "log.txt";
+
+                try
+                {
+                    if (!string.IsNullOrEmpty(pathLog) && !Directory.Exists(pathLog))
+                        Directory.CreateDirectory(pathLog);
+                }
+                catch
+                {
+                    // No hacemos fallar la aplicación por problemas al crear la carpeta de logs
+                }
+
+                // Escribir el log usando el repositorio
+                ServiceFactory.LoggerRepository.WriteLog(message, level, user);
+
+                // Política 2: Rotación por tamaño (MaxLogSizeKb en appSettings)
+                long maxSizeKb;
+                string maxSizeStr = ConfigurationManager.AppSettings["MaxLogSizeKb"];
+                try
+                {
+                    if (long.TryParse(maxSizeStr, out maxSizeKb) && maxSizeKb > 0)
+                    {
+                        string currentFile = Path.Combine(pathLog, DateTime.Now.ToString("yyyyMMdd") + pathFile);
+                        var fi = new FileInfo(currentFile);
+                        if (fi.Exists && fi.Length > (maxSizeKb * 1024))
+                        {
+                            string archiveName = Path.Combine(pathLog, DateTime.Now.ToString("yyyyMMdd_HHmmss") + "_" + pathFile);
+                            try
+                            {
+                                File.Move(currentFile, archiveName);
+                            }
+                            catch
+                            {
+                                // Si no se puede mover, se ignora para no afectar flujo de la app
+                            }
+                        }
+                    }
+                }
+                catch
+                {
+                    // Ignorar errores de rotación
+                }
+
+                // Política 3: Retención (LogRetentionDays en appSettings)
+                int retentionDays;
+                string retentionStr = ConfigurationManager.AppSettings["LogRetentionDays"];
+                try
+                {
+                    if (int.TryParse(retentionStr, out retentionDays) && retentionDays > 0 && !string.IsNullOrEmpty(pathLog))
+                    {
+                        foreach (var file in Directory.GetFiles(pathLog, "*" + pathFile))
+                        {
+                            try
+                            {
+                                var fInfo = new FileInfo(file);
+                                if (fInfo.LastWriteTime < DateTime.Now.AddDays(-retentionDays))
+                                    File.Delete(file);
+                            }
+                            catch
+                            {
+                                // Ignorar problemas al eliminar archivos individuales
+                            }
+                        }
+                    }
+                }
+                catch
+                {
+                    // Ignorar errores de limpieza
+                }
+            }
+        }
+    }
+}

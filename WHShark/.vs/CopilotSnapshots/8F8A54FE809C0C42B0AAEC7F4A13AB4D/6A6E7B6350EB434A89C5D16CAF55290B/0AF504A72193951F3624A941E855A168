@@ -1,0 +1,234 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WHUI.Menu
+{
+    partial class Menu
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            this.panelSidebar = new System.Windows.Forms.Panel();
+            this.panelMiddle = new System.Windows.Forms.Panel();
+            this.tlpButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.btnProducts = new System.Windows.Forms.Button();
+            this.btnCustomers = new System.Windows.Forms.Button();
+            this.btnBranches = new System.Windows.Forms.Button();
+            this.btnSuppliers = new System.Windows.Forms.Button();
+            this.btnStockMovements = new System.Windows.Forms.Button();
+            this.btnStock = new System.Windows.Forms.Button();
+            this.btnSales = new System.Windows.Forms.Button();
+            this.btnReports = new System.Windows.Forms.Button();
+            this.btnPurchases = new System.Windows.Forms.Button();
+            this.btnUsers = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.panelBottom = new System.Windows.Forms.Panel();
+            this.btnRestore = new System.Windows.Forms.Button();
+            this.btnBackup = new System.Windows.Forms.Button();
+            this.cbLanguage = new System.Windows.Forms.ComboBox();
+            this.panelContent = new System.Windows.Forms.Panel();
+            this.panelSidebar.SuspendLayout();
+            this.panelMiddle.SuspendLayout();
+            this.tlpButtons.SuspendLayout();
+            this.panelBottom.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panelSidebar
+            // 
+            resources.ApplyResources(this.panelSidebar, "panelSidebar");
+            this.panelSidebar.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panelSidebar.Controls.Add(this.panelMiddle);
+            this.panelSidebar.Controls.Add(this.panelBottom);
+            this.panelSidebar.Controls.Add(this.cbLanguage);
+            this.panelSidebar.Name = "panelSidebar";
+            // 
+            // panelMiddle
+            // 
+            resources.ApplyResources(this.panelMiddle, "panelMiddle");
+            this.panelMiddle.Controls.Add(this.tlpButtons);
+            this.panelMiddle.Name = "panelMiddle";
+            // 
+            // tlpButtons
+            // 
+            resources.ApplyResources(this.tlpButtons, "tlpButtons");
+            this.tlpButtons.Controls.Add(this.btnProducts, 0, 0);
+            this.tlpButtons.Controls.Add(this.btnCustomers, 0, 1);
+            this.tlpButtons.Controls.Add(this.btnBranches, 0, 2);
+            this.tlpButtons.Controls.Add(this.btnSuppliers, 0, 3);
+            this.tlpButtons.Controls.Add(this.btnStockMovements, 0, 4);
+            this.tlpButtons.Controls.Add(this.btnStock, 0, 5);
+            this.tlpButtons.Controls.Add(this.btnSales, 0, 6);
+            this.tlpButtons.Controls.Add(this.btnReports, 0, 7);
+            this.tlpButtons.Controls.Add(this.btnPurchases, 0, 8);
+            this.tlpButtons.Controls.Add(this.btnUsers, 0, 9);
+            this.tlpButtons.Controls.Add(this.btnLogout, 0, 10);
+            this.tlpButtons.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tlpButtons.Name = "tlpButtons";
+            this.tlpButtons.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpButtons_Paint);
+            // 
+            // btnProducts
+            // 
+            resources.ApplyResources(this.btnProducts, "btnProducts");
+            this.btnProducts.Name = "btnProducts";
+            this.btnProducts.UseVisualStyleBackColor = true;
+            // 
+            // btnCustomers
+            // 
+            resources.ApplyResources(this.btnCustomers, "btnCustomers");
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.UseVisualStyleBackColor = true;
+            // 
+            // btnBranches
+            // 
+            resources.ApplyResources(this.btnBranches, "btnBranches");
+            this.btnBranches.Name = "btnBranches";
+            this.btnBranches.UseVisualStyleBackColor = true;
+            // 
+            // btnSuppliers
+            // 
+            resources.ApplyResources(this.btnSuppliers, "btnSuppliers");
+            this.btnSuppliers.Name = "btnSuppliers";
+            this.btnSuppliers.UseVisualStyleBackColor = true;
+            // 
+            // btnStockMovements
+            // 
+            resources.ApplyResources(this.btnStockMovements, "btnStockMovements");
+            this.btnStockMovements.Name = "btnStockMovements";
+            this.btnStockMovements.UseVisualStyleBackColor = true;
+            // 
+            // btnStock
+            // 
+            resources.ApplyResources(this.btnStock, "btnStock");
+            this.btnStock.Name = "btnStock";
+            this.btnStock.UseVisualStyleBackColor = true;
+            // 
+            // btnSales
+            // 
+            resources.ApplyResources(this.btnSales, "btnSales");
+            this.btnSales.Name = "btnSales";
+            this.btnSales.UseVisualStyleBackColor = true;
+            // 
+            // btnReports
+            // 
+            resources.ApplyResources(this.btnReports, "btnReports");
+            this.btnReports.Name = "btnReports";
+            this.btnReports.UseVisualStyleBackColor = true;
+            // 
+            // btnPurchases
+            // 
+            resources.ApplyResources(this.btnPurchases, "btnPurchases");
+            this.btnPurchases.Name = "btnPurchases";
+            this.btnPurchases.UseVisualStyleBackColor = true;
+            // 
+            // btnUsers
+            // 
+            resources.ApplyResources(this.btnUsers, "btnUsers");
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.UseVisualStyleBackColor = true;
+            // 
+            // btnLogout
+            // 
+            resources.ApplyResources(this.btnLogout, "btnLogout");
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // panelBottom
+            // 
+            resources.ApplyResources(this.panelBottom, "panelBottom");
+            this.panelBottom.Controls.Add(this.btnRestore);
+            this.panelBottom.Controls.Add(this.btnBackup);
+            this.panelBottom.Name = "panelBottom";
+            // 
+            // btnRestore
+            // 
+            resources.ApplyResources(this.btnRestore, "btnRestore");
+            this.btnRestore.Name = "btnRestore";
+            // 
+            // btnBackup
+            // 
+            resources.ApplyResources(this.btnBackup, "btnBackup");
+            this.btnBackup.Name = "btnBackup";
+            // 
+            // cbLanguage
+            // 
+            resources.ApplyResources(this.cbLanguage, "cbLanguage");
+            this.cbLanguage.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLanguage.DropDownWidth = 220;
+            this.cbLanguage.FormattingEnabled = true;
+            this.cbLanguage.Items.AddRange(new object[] {
+            resources.GetString("cbLanguage.Items"),
+            resources.GetString("cbLanguage.Items1"),
+            resources.GetString("cbLanguage.Items2")});
+            this.cbLanguage.Name = "cbLanguage";
+            // 
+            // panelContent
+            // 
+            resources.ApplyResources(this.panelContent, "panelContent");
+            this.panelContent.Name = "panelContent";
+            // 
+            // Menu
+            // 
+            resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panelContent);
+            this.Controls.Add(this.panelSidebar);
+            this.Name = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
+            this.panelSidebar.ResumeLayout(false);
+            this.panelMiddle.ResumeLayout(false);
+            this.tlpButtons.ResumeLayout(false);
+            this.panelBottom.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panelSidebar;
+        private System.Windows.Forms.Panel panelMiddle;
+        private System.Windows.Forms.Panel panelBottom;
+        private System.Windows.Forms.TableLayoutPanel tlpButtons;
+        private System.Windows.Forms.Button btnPurchases;
+        private System.Windows.Forms.Button btnReports;
+        private System.Windows.Forms.Button btnSales;
+        private System.Windows.Forms.Button btnStock;
+        private System.Windows.Forms.Button btnCustomers;
+        private System.Windows.Forms.Button btnSuppliers;
+        private System.Windows.Forms.Button btnProducts;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnBranches;
+        private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Button btnStockMovements;
+        private System.Windows.Forms.Button btnUsers;
+        private ComboBox cbLanguage;
+        private System.Windows.Forms.Button btnBackup;
+        private System.Windows.Forms.Button btnRestore;
+    }
+}

@@ -1,0 +1,358 @@
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace WHUI.Menu
+{
+    partial class Menu
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.panelSidebar = new System.Windows.Forms.Panel();
+            this.panelMiddle = new System.Windows.Forms.Panel();
+            this.tlpButtons = new System.Windows.Forms.TableLayoutPanel();
+            this.btnProducts = new System.Windows.Forms.Button();
+            this.btnCustomers = new System.Windows.Forms.Button();
+            this.btnBranches = new System.Windows.Forms.Button();
+            this.btnSuppliers = new System.Windows.Forms.Button();
+            this.btnStockMovements = new System.Windows.Forms.Button();
+            this.btnStock = new System.Windows.Forms.Button();
+            this.btnSales = new System.Windows.Forms.Button();
+            this.btnReports = new System.Windows.Forms.Button();
+            this.btnPurchases = new System.Windows.Forms.Button();
+            this.btnUsers = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.cbLanguage = new System.Windows.Forms.ComboBox();
+            this.panelBottom = new System.Windows.Forms.Panel();
+            this.btnRestore = new System.Windows.Forms.Button();
+            this.btnBackup = new System.Windows.Forms.Button();
+            this.panelContent = new System.Windows.Forms.Panel();
+            this.panelSidebar.SuspendLayout();
+            this.panelMiddle.SuspendLayout();
+            this.tlpButtons.SuspendLayout();
+            this.panelBottom.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panelSidebar
+            // 
+            this.panelSidebar.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panelSidebar.Controls.Add(this.panelMiddle);
+            this.panelSidebar.Controls.Add(this.panelBottom);
+            this.panelSidebar.Controls.Add(this.cbLanguage);
+            this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelSidebar.Location = new System.Drawing.Point(0, 0);
+            this.panelSidebar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelSidebar.Name = "panelSidebar";
+            this.panelSidebar.Size = new System.Drawing.Size(220, 550);
+            this.panelSidebar.TabIndex = 0;
+            // 
+            // panelMiddle
+            // 
+            this.panelMiddle.Controls.Add(this.tlpButtons);
+            this.panelMiddle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMiddle.Location = new System.Drawing.Point(0, 30);
+            this.panelMiddle.Name = "panelMiddle";
+            this.panelMiddle.Size = new System.Drawing.Size(220, 472);
+            this.panelMiddle.TabIndex = 3;
+            // 
+            // tlpButtons
+            // 
+            this.tlpButtons.AutoScroll = true;
+            this.tlpButtons.ColumnCount = 1;
+            this.tlpButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpButtons.Controls.Add(this.btnProducts, 0, 0);
+            this.tlpButtons.Controls.Add(this.btnCustomers, 0, 1);
+            this.tlpButtons.Controls.Add(this.btnBranches, 0, 2);
+            this.tlpButtons.Controls.Add(this.btnSuppliers, 0, 3);
+            this.tlpButtons.Controls.Add(this.btnStockMovements, 0, 4);
+            this.tlpButtons.Controls.Add(this.btnStock, 0, 5);
+            this.tlpButtons.Controls.Add(this.btnSales, 0, 6);
+            this.tlpButtons.Controls.Add(this.btnReports, 0, 7);
+            this.tlpButtons.Controls.Add(this.btnPurchases, 0, 8);
+            this.tlpButtons.Controls.Add(this.btnUsers, 0, 9);
+            this.tlpButtons.Controls.Add(this.btnLogout, 0, 10);
+            this.tlpButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpButtons.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tlpButtons.Location = new System.Drawing.Point(0, 0);
+            this.tlpButtons.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpButtons.Name = "tlpButtons";
+            this.tlpButtons.Padding = new System.Windows.Forms.Padding(8, 40, 8, 88);
+            this.tlpButtons.RowCount = 11;
+            this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpButtons.Size = new System.Drawing.Size(220, 472);
+            this.tlpButtons.TabIndex = 0;
+            // 
+            // btnProducts
+            // 
+            this.btnProducts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnProducts.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnProducts.Location = new System.Drawing.Point(11, 42);
+            this.btnProducts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnProducts.Name = "btnProducts";
+            this.btnProducts.Size = new System.Drawing.Size(198, 36);
+            this.btnProducts.TabIndex = 5;
+            this.btnProducts.Text = "Products";
+            this.btnProducts.UseVisualStyleBackColor = true;
+            // 
+            // btnCustomers
+            // 
+            this.btnCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCustomers.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCustomers.Location = new System.Drawing.Point(11, 82);
+            this.btnCustomers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Size = new System.Drawing.Size(198, 36);
+            this.btnCustomers.TabIndex = 4;
+            this.btnCustomers.Text = "Customers";
+            this.btnCustomers.UseVisualStyleBackColor = true;
+            // 
+            // btnBranches
+            // 
+            this.btnBranches.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBranches.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBranches.Location = new System.Drawing.Point(11, 122);
+            this.btnBranches.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBranches.Name = "btnBranches";
+            this.btnBranches.Size = new System.Drawing.Size(198, 36);
+            this.btnBranches.TabIndex = 7;
+            this.btnBranches.Text = "Branches";
+            this.btnBranches.UseVisualStyleBackColor = true;
+            // 
+            // btnSuppliers
+            // 
+            this.btnSuppliers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSuppliers.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSuppliers.Location = new System.Drawing.Point(11, 162);
+            this.btnSuppliers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSuppliers.Name = "btnSuppliers";
+            this.btnSuppliers.Size = new System.Drawing.Size(198, 36);
+            this.btnSuppliers.TabIndex = 8;
+            this.btnSuppliers.Text = "Suppliers";
+            this.btnSuppliers.UseVisualStyleBackColor = true;
+            // 
+            // btnStockMovements
+            // 
+            this.btnStockMovements.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnStockMovements.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnStockMovements.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnStockMovements.Location = new System.Drawing.Point(11, 202);
+            this.btnStockMovements.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnStockMovements.Name = "btnStockMovements";
+            this.btnStockMovements.Size = new System.Drawing.Size(198, 36);
+            this.btnStockMovements.TabIndex = 6;
+            this.btnStockMovements.Text = "Stock Movements";
+            this.btnStockMovements.UseVisualStyleBackColor = true;
+            // 
+            // btnStock
+            // 
+            this.btnStock.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnStock.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnStock.Location = new System.Drawing.Point(11, 242);
+            this.btnStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnStock.Name = "btnStock";
+            this.btnStock.Size = new System.Drawing.Size(198, 36);
+            this.btnStock.TabIndex = 3;
+            this.btnStock.Text = "Stock";
+            this.btnStock.UseVisualStyleBackColor = true;
+            // 
+            // btnSales
+            // 
+            this.btnSales.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSales.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSales.Location = new System.Drawing.Point(11, 282);
+            this.btnSales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(198, 36);
+            this.btnSales.TabIndex = 2;
+            this.btnSales.Text = "Sales";
+            this.btnSales.UseVisualStyleBackColor = true;
+            // 
+            // btnReports
+            // 
+            this.btnReports.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnReports.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnReports.Location = new System.Drawing.Point(11, 322);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(198, 36);
+            this.btnReports.TabIndex = 1;
+            this.btnReports.Text = "Reports";
+            this.btnReports.UseVisualStyleBackColor = true;
+            // 
+            // btnPurchases
+            // 
+            this.btnPurchases.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPurchases.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnPurchases.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPurchases.Location = new System.Drawing.Point(11, 362);
+            this.btnPurchases.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPurchases.Name = "btnPurchases";
+            this.btnPurchases.Size = new System.Drawing.Size(198, 36);
+            this.btnPurchases.TabIndex = 0;
+            this.btnPurchases.Text = "Purchases";
+            this.btnPurchases.UseVisualStyleBackColor = true;
+            // 
+            // btnUsers
+            // 
+            this.btnUsers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnUsers.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUsers.Location = new System.Drawing.Point(11, 402);
+            this.btnUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(198, 36);
+            this.btnUsers.TabIndex = 100;
+            this.btnUsers.Text = "Users";
+            this.btnUsers.UseVisualStyleBackColor = true;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLogout.Location = new System.Drawing.Point(11, 442);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(198, 36);
+            this.btnLogout.TabIndex = 6;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // cbLanguage
+            // 
+            this.cbLanguage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbLanguage.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLanguage.DropDownWidth = 220;
+            this.cbLanguage.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbLanguage.FormattingEnabled = true;
+            this.cbLanguage.ItemHeight = 24;
+            this.cbLanguage.Items.AddRange(new object[] {
+            "en",
+            "es",
+            "pt"});
+            this.cbLanguage.Location = new System.Drawing.Point(0, 0);
+            this.cbLanguage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbLanguage.Name = "cbLanguage";
+            this.cbLanguage.Size = new System.Drawing.Size(220, 30);
+            this.cbLanguage.TabIndex = 0;
+            // 
+            // panelBottom
+            // 
+            this.panelBottom.Controls.Add(this.btnRestore);
+            this.panelBottom.Controls.Add(this.btnBackup);
+            this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBottom.Location = new System.Drawing.Point(0, 502);
+            this.panelBottom.Name = "panelBottom";
+            this.panelBottom.Size = new System.Drawing.Size(220, 48);
+            this.panelBottom.TabIndex = 4;
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnRestore.Location = new System.Drawing.Point(120, 0);
+            this.btnRestore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(100, 48);
+            this.btnRestore.TabIndex = 102;
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnBackup.Location = new System.Drawing.Point(0, 0);
+            this.btnBackup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(100, 48);
+            this.btnBackup.TabIndex = 101;
+            // 
+            // panelContent
+            // 
+            this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContent.Location = new System.Drawing.Point(220, 0);
+            this.panelContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.Size = new System.Drawing.Size(903, 550);
+            this.panelContent.TabIndex = 1;
+            // 
+            // Menu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1123, 550);
+            this.Controls.Add(this.panelContent);
+            this.Controls.Add(this.panelSidebar);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "Menu";
+            this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
+            this.panelSidebar.ResumeLayout(false);
+            this.panelMiddle.ResumeLayout(false);
+            this.tlpButtons.ResumeLayout(false);
+            this.panelBottom.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panelSidebar;
+        private System.Windows.Forms.Panel panelMiddle;
+        private System.Windows.Forms.Panel panelBottom;
+        private System.Windows.Forms.TableLayoutPanel tlpButtons;
+        private System.Windows.Forms.Button btnPurchases;
+        private System.Windows.Forms.Button btnReports;
+        private System.Windows.Forms.Button btnSales;
+        private System.Windows.Forms.Button btnStock;
+        private System.Windows.Forms.Button btnCustomers;
+        private System.Windows.Forms.Button btnSuppliers;
+        private System.Windows.Forms.Button btnProducts;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnBranches;
+        private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Button btnStockMovements;
+        private System.Windows.Forms.Button btnUsers;
+        private ComboBox cbLanguage;
+        private System.Windows.Forms.Button btnBackup;
+        private System.Windows.Forms.Button btnRestore;
+    }
+}

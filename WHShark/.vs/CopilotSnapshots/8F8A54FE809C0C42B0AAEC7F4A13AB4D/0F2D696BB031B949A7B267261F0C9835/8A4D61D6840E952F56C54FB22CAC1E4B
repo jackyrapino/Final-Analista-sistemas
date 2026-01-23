@@ -1,0 +1,27 @@
+﻿using System;
+using System.Windows.Forms;
+
+namespace WHUI.Login
+{
+    public partial class LogIn : Form
+    {
+        public LogIn()
+        {
+            InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            // Aquí iría la validación de credenciales. Por ahora asumimos éxito.
+            this.Hide();
+
+            using (var menu = new WHUI.Menu.Menu())
+            {
+                menu.ShowDialog();
+            }
+
+            // Al cerrar el menú, cerramos el formulario de login para terminar la aplicación
+            this.Close();
+        }
+    }
+}}

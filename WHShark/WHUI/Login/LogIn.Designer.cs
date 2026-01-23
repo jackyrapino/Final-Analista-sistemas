@@ -22,177 +22,183 @@ namespace WHUI.Login
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
-            tlpMain = new TableLayoutPanel();
-            pictureBox1 = new PictureBox();
-            tlpContent = new TableLayoutPanel();
-            label1 = new Label();
-            labelUser = new Label();
-            txtUser = new TextBox();
-            labelPassword = new Label();
-            txtPass = new TextBox();
-            btnLogin = new Button();
-            linkforget = new LinkLabel();
-            LinkpassChange = new LinkLabel();
-            tlpMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            tlpContent.SuspendLayout();
-            SuspendLayout();
+            this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tlpContent = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.linkforget = new System.Windows.Forms.LinkLabel();
+            this.LinkpassChange = new System.Windows.Forms.LinkLabel();
+            this.tlpMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tlpContent.SuspendLayout();
+            this.SuspendLayout();
             // 
             // tlpMain
             // 
-            tlpMain.ColumnCount = 2;
-            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 300F));
-            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpMain.Controls.Add(pictureBox1, 0, 0);
-            tlpMain.Controls.Add(tlpContent, 1, 0);
-            tlpMain.Dock = DockStyle.Fill;
-            tlpMain.Location = new Point(0, 0);
-            tlpMain.Name = "tlpMain";
-            tlpMain.RowCount = 1;
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpMain.Size = new Size(800, 450);
-            tlpMain.TabIndex = 0;
+            this.tlpMain.ColumnCount = 2;
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.Controls.Add(this.pictureBox1, 0, 0);
+            this.tlpMain.Controls.Add(this.tlpContent, 1, 0);
+            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMain.Location = new System.Drawing.Point(0, 0);
+            this.tlpMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpMain.Name = "tlpMain";
+            this.tlpMain.RowCount = 1;
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.Size = new System.Drawing.Size(800, 401);
+            this.tlpMain.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(294, 444);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(294, 397);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // tlpContent
             // 
-            tlpContent.ColumnCount = 1;
-            tlpContent.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpContent.Controls.Add(label1, 0, 0);
-            tlpContent.Controls.Add(labelUser, 0, 1);
-            tlpContent.Controls.Add(txtUser, 0, 2);
-            tlpContent.Controls.Add(labelPassword, 0, 3);
-            tlpContent.Controls.Add(txtPass, 0, 4);
-            tlpContent.Controls.Add(btnLogin, 0, 5);
-            tlpContent.Controls.Add(linkforget, 0, 7);
-            tlpContent.Controls.Add(LinkpassChange, 0, 8);
-            tlpContent.Dock = DockStyle.Fill;
-            tlpContent.Location = new Point(303, 3);
-            tlpContent.Name = "tlpContent";
-            tlpContent.RowCount = 10;
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpContent.Size = new Size(494, 444);
-            tlpContent.TabIndex = 1;
+            this.tlpContent.ColumnCount = 1;
+            this.tlpContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpContent.Controls.Add(this.label1, 0, 0);
+            this.tlpContent.Controls.Add(this.labelUser, 0, 1);
+            this.tlpContent.Controls.Add(this.txtUser, 0, 2);
+            this.tlpContent.Controls.Add(this.labelPassword, 0, 3);
+            this.tlpContent.Controls.Add(this.txtPass, 0, 4);
+            this.tlpContent.Controls.Add(this.btnLogin, 0, 5);
+            this.tlpContent.Controls.Add(this.linkforget, 0, 7);
+            this.tlpContent.Controls.Add(this.LinkpassChange, 0, 8);
+            this.tlpContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpContent.Location = new System.Drawing.Point(303, 2);
+            this.tlpContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpContent.Name = "tlpContent";
+            this.tlpContent.RowCount = 10;
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpContent.Size = new System.Drawing.Size(494, 397);
+            this.tlpContent.TabIndex = 1;
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Left;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(10, 14);
-            label1.Margin = new Padding(10, 0, 3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(108, 31);
-            label1.TabIndex = 0;
-            label1.Text = "Welcome";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Welcome";
             // 
             // labelUser
             // 
-            labelUser.Anchor = AnchorStyles.Left;
-            labelUser.AutoSize = true;
-            labelUser.Location = new Point(10, 65);
-            labelUser.Margin = new Padding(10, 0, 3, 0);
-            labelUser.Name = "labelUser";
-            labelUser.Size = new Size(75, 20);
-            labelUser.TabIndex = 1;
-            labelUser.Text = "Username";
+            this.labelUser.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelUser.AutoSize = true;
+            this.labelUser.Location = new System.Drawing.Point(10, 52);
+            this.labelUser.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(70, 16);
+            this.labelUser.TabIndex = 1;
+            this.labelUser.Text = "Username";
             // 
             // txtUser
             // 
-            txtUser.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtUser.Location = new Point(10, 96);
-            txtUser.Margin = new Padding(10, 3, 10, 3);
-            txtUser.Name = "txtUser";
-            txtUser.Size = new Size(474, 27);
-            txtUser.TabIndex = 2;
+            this.txtUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUser.Location = new System.Drawing.Point(10, 77);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(10, 2, 10, 2);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(474, 22);
+            this.txtUser.TabIndex = 2;
             // 
             // labelPassword
             // 
-            labelPassword.Anchor = AnchorStyles.Left;
-            labelPassword.AutoSize = true;
-            labelPassword.Location = new Point(10, 135);
-            labelPassword.Margin = new Padding(10, 0, 3, 0);
-            labelPassword.Name = "labelPassword";
-            labelPassword.Size = new Size(70, 20);
-            labelPassword.TabIndex = 3;
-            labelPassword.Text = "Password";
+            this.labelPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Location = new System.Drawing.Point(10, 108);
+            this.labelPassword.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(67, 16);
+            this.labelPassword.TabIndex = 3;
+            this.labelPassword.Text = "Password";
             // 
             // txtPass
             // 
-            txtPass.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtPass.Location = new Point(10, 166);
-            txtPass.Margin = new Padding(10, 3, 10, 3);
-            txtPass.Name = "txtPass";
-            txtPass.Size = new Size(474, 27);
-            txtPass.TabIndex = 4;
+            this.txtPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPass.Location = new System.Drawing.Point(10, 133);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(10, 2, 10, 2);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(474, 22);
+            this.txtPass.TabIndex = 4;
             // 
             // btnLogin
             // 
-            btnLogin.Anchor = AnchorStyles.Left;
-            btnLogin.Location = new Point(10, 207);
-            btnLogin.Margin = new Padding(10, 3, 3, 3);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(120, 30);
-            btnLogin.TabIndex = 5;
-            btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnLogin.Location = new System.Drawing.Point(10, 165);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(10, 2, 3, 2);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(120, 39);
+            this.btnLogin.TabIndex = 5;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // linkforget
             // 
-            linkforget.Anchor = AnchorStyles.Left;
-            linkforget.AutoSize = true;
-            linkforget.Location = new Point(10, 295);
-            linkforget.Margin = new Padding(10, 3, 3, 3);
-            linkforget.Name = "linkforget";
-            linkforget.Size = new Size(149, 20);
-            linkforget.TabIndex = 7;
-            linkforget.TabStop = true;
-            linkforget.Text = "I forget my password";
+            this.linkforget.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.linkforget.AutoSize = true;
+            this.linkforget.Location = new System.Drawing.Point(10, 236);
+            this.linkforget.Margin = new System.Windows.Forms.Padding(10, 2, 3, 2);
+            this.linkforget.Name = "linkforget";
+            this.linkforget.Size = new System.Drawing.Size(130, 16);
+            this.linkforget.TabIndex = 7;
+            this.linkforget.TabStop = true;
+            this.linkforget.Text = "I forget my password";
             // 
             // LinkpassChange
             // 
-            LinkpassChange.Anchor = AnchorStyles.Left;
-            LinkpassChange.AutoSize = true;
-            LinkpassChange.Location = new Point(10, 325);
-            LinkpassChange.Margin = new Padding(10, 3, 3, 3);
-            LinkpassChange.Name = "LinkpassChange";
-            LinkpassChange.Size = new Size(192, 20);
-            LinkpassChange.TabIndex = 8;
-            LinkpassChange.TabStop = true;
-            LinkpassChange.Text = "I want change my password";
+            this.LinkpassChange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LinkpassChange.AutoSize = true;
+            this.LinkpassChange.Location = new System.Drawing.Point(10, 260);
+            this.LinkpassChange.Margin = new System.Windows.Forms.Padding(10, 2, 3, 2);
+            this.LinkpassChange.Name = "LinkpassChange";
+            this.LinkpassChange.Size = new System.Drawing.Size(171, 16);
+            this.LinkpassChange.TabIndex = 8;
+            this.LinkpassChange.TabStop = true;
+            this.LinkpassChange.Text = "I want change my password";
             // 
             // LogIn
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(tlpMain);
-            Name = "LogIn";
-            Text = "LogIn";
-            tlpMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            tlpContent.ResumeLayout(false);
-            tlpContent.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 401);
+            this.Controls.Add(this.tlpMain);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "LogIn";
+            this.Text = "LogIn";
+            this.tlpMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tlpContent.ResumeLayout(false);
+            this.tlpContent.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
