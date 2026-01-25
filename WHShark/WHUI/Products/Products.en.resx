@@ -126,7 +126,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 24</value>
+    <value>90, 27</value>
   </data>
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
     <value>108, 10</value>
@@ -147,25 +147,25 @@
     <value>90, 24</value>
   </data>
   <data name="btnAddBrand.Location" type="System.Drawing.Point, System.Drawing">
-    <value>333, 10</value>
+    <value>333, 11</value>
   </data>
   <data name="btnAddBrand.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="btnAddBrand.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 22</value>
+    <value>115, 26</value>
   </data>
   <data name="btnAddCategory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>479, 10</value>
+    <value>454, 10</value>
   </data>
   <data name="btnAddCategory.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="btnAddCategory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 23</value>
+    <value>126, 27</value>
   </data>
   <data name="btnClear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1151, 10</value>
+    <value>1033, 8</value>
   </data>
   <data name="btnClear.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -174,7 +174,7 @@
     <value>70, 24</value>
   </data>
   <data name="btnRefresh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1055, 10</value>
+    <value>897, 8</value>
   </data>
   <data name="btnRefresh.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -183,13 +183,13 @@
     <value>90, 24</value>
   </data>
   <data name="txtSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>669, 11</value>
+    <value>646, 11</value>
   </data>
   <data name="txtSearch.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="txtSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>380, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="pnlTop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -198,7 +198,7 @@
     <value>8, 6, 8, 6</value>
   </data>
   <data name="pnlTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1349, 45</value>
+    <value>1243, 45</value>
   </data>
   <data name="dgv.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 45</value>
@@ -207,7 +207,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="dgv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1349, 504</value>
+    <value>1243, 504</value>
   </data>
   <data name="lblStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 549</value>
@@ -222,6 +222,6 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1349, 577</value>
+    <value>1243, 577</value>
   </data>
 </root>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace WHFront.Branches
+namespace WHUI.Branches
 {
     public partial class Branches : Form
     {

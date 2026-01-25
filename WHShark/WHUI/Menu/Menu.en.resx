@@ -388,12 +388,12 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="panelContent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>903, 569</value>
+    <value>1222, 569</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1123, 569</value>
+    <value>1442, 569</value>
   </data>
 </root>

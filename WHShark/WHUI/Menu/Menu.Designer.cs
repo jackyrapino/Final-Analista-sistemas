@@ -96,60 +96,70 @@ namespace WHUI.Menu
             resources.ApplyResources(this.btnProducts, "btnProducts");
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.UseVisualStyleBackColor = true;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // btnCustomers
             // 
             resources.ApplyResources(this.btnCustomers, "btnCustomers");
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.UseVisualStyleBackColor = true;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnBranches
             // 
             resources.ApplyResources(this.btnBranches, "btnBranches");
             this.btnBranches.Name = "btnBranches";
             this.btnBranches.UseVisualStyleBackColor = true;
+            this.btnBranches.Click += new System.EventHandler(this.btnBranches_Click);
             // 
             // btnSuppliers
             // 
             resources.ApplyResources(this.btnSuppliers, "btnSuppliers");
             this.btnSuppliers.Name = "btnSuppliers";
             this.btnSuppliers.UseVisualStyleBackColor = true;
+            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
             // 
             // btnStockMovements
             // 
             resources.ApplyResources(this.btnStockMovements, "btnStockMovements");
             this.btnStockMovements.Name = "btnStockMovements";
             this.btnStockMovements.UseVisualStyleBackColor = true;
+            this.btnStockMovements.Click += new System.EventHandler(this.btnStockMovements_Click);
             // 
             // btnStock
             // 
             resources.ApplyResources(this.btnStock, "btnStock");
             this.btnStock.Name = "btnStock";
             this.btnStock.UseVisualStyleBackColor = true;
+            this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
             // btnSales
             // 
             resources.ApplyResources(this.btnSales, "btnSales");
             this.btnSales.Name = "btnSales";
             this.btnSales.UseVisualStyleBackColor = true;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // btnReports
             // 
             resources.ApplyResources(this.btnReports, "btnReports");
             this.btnReports.Name = "btnReports";
             this.btnReports.UseVisualStyleBackColor = true;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // btnPurchases
             // 
             resources.ApplyResources(this.btnPurchases, "btnPurchases");
             this.btnPurchases.Name = "btnPurchases";
             this.btnPurchases.UseVisualStyleBackColor = true;
+            this.btnPurchases.Click += new System.EventHandler(this.btnPurchases_Click);
             // 
             // btnUsers
             // 
             resources.ApplyResources(this.btnUsers, "btnUsers");
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.UseVisualStyleBackColor = true;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // btnLogout
             // 

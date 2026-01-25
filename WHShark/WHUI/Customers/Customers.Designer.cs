@@ -30,196 +30,213 @@ namespace WHUI.Customers
         /// </summary>
         private void InitializeComponent()
         {
-            pnlTop = new Panel();
-            btnDelete = new Button();
-            btnEdit = new Button();
-            btnAdd = new Button();
-            btnClear = new Button();
-            btnRefresh = new Button();
-            txtSearch = new TextBox();
-            dgv = new DataGridView();
-            colCustomerId = new DataGridViewTextBoxColumn();
-            colFirstName = new DataGridViewTextBoxColumn();
-            colLastName = new DataGridViewTextBoxColumn();
-            colEmail = new DataGridViewTextBoxColumn();
-            colPhone = new DataGridViewTextBoxColumn();
-            colAddress = new DataGridViewTextBoxColumn();
-            colCreatedAt = new DataGridViewTextBoxColumn();
-            lblStatus = new Label();
-            pnlTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
-            SuspendLayout();
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.dgv = new System.Windows.Forms.DataGridView();
+            this.colCustomerId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.SuspendLayout();
             // 
             // pnlTop
             // 
-            pnlTop.Controls.Add(btnDelete);
-            pnlTop.Controls.Add(btnEdit);
-            pnlTop.Controls.Add(btnAdd);
-            pnlTop.Controls.Add(btnClear);
-            pnlTop.Controls.Add(btnRefresh);
-            pnlTop.Controls.Add(txtSearch);
-            pnlTop.Dock = DockStyle.Top;
-            pnlTop.Location = new Point(0, 0);
-            pnlTop.Name = "pnlTop";
-            pnlTop.Padding = new Padding(8);
-            pnlTop.Size = new Size(1000, 56);
-            pnlTop.TabIndex = 0;
+            this.pnlTop.Controls.Add(this.btnDelete);
+            this.pnlTop.Controls.Add(this.btnEdit);
+            this.pnlTop.Controls.Add(this.btnAdd);
+            this.pnlTop.Controls.Add(this.btnClear);
+            this.pnlTop.Controls.Add(this.btnRefresh);
+            this.pnlTop.Controls.Add(this.txtSearch);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.pnlTop.Size = new System.Drawing.Size(1141, 45);
+            this.pnlTop.TabIndex = 0;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(204, 12);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(90, 30);
-            btnDelete.TabIndex = 5;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(204, 10);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(90, 24);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(108, 12);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(90, 30);
-            btnEdit.TabIndex = 4;
-            btnEdit.Text = "Edit";
-            btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Location = new System.Drawing.Point(108, 10);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(90, 24);
+            this.btnEdit.TabIndex = 4;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(12, 12);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(90, 30);
-            btnAdd.TabIndex = 3;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(12, 10);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(90, 24);
+            this.btnAdd.TabIndex = 3;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // btnClear
             // 
-            btnClear.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnClear.Location = new Point(882, 12);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(70, 30);
-            btnClear.TabIndex = 2;
-            btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.Location = new System.Drawing.Point(1023, 10);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(70, 24);
+            this.btnClear.TabIndex = 2;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
             // btnRefresh
             // 
-            btnRefresh.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnRefresh.Location = new Point(786, 12);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(90, 30);
-            btnRefresh.TabIndex = 1;
-            btnRefresh.Text = "Refresh";
-            btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.Location = new System.Drawing.Point(927, 10);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(90, 24);
+            this.btnRefresh.TabIndex = 1;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
-            txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtSearch.Location = new Point(420, 14);
-            txtSearch.Name = "txtSearch";
-            // PlaceholderText not available in .NET Framework 4.7.2; keep Text empty
-            txtSearch.Size = new Size(360, 27);
-            txtSearch.TabIndex = 0;
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Location = new System.Drawing.Point(561, 11);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(360, 22);
+            this.txtSearch.TabIndex = 0;
             // 
             // dgv
             // 
-            dgv.AllowUserToAddRows = false;
-            dgv.AllowUserToDeleteRows = false;
-            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgv.ColumnHeadersHeight = 29;
-            dgv.Columns.AddRange(new DataGridViewColumn[] { colCustomerId, colFirstName, colLastName, colEmail, colPhone, colAddress, colCreatedAt });
-            dgv.Dock = DockStyle.Fill;
-            dgv.Location = new Point(0, 56);
-            dgv.MultiSelect = false;
-            dgv.Name = "dgv";
-            dgv.ReadOnly = true;
-            dgv.RowHeadersVisible = false;
-            dgv.RowHeadersWidth = 51;
-            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv.Size = new Size(1000, 524);
-            dgv.TabIndex = 1;
+            this.dgv.AllowUserToAddRows = false;
+            this.dgv.AllowUserToDeleteRows = false;
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.ColumnHeadersHeight = 29;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCustomerId,
+            this.colFirstName,
+            this.colLastName,
+            this.colEmail,
+            this.colPhone,
+            this.colAddress,
+            this.colCreatedAt});
+            this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv.Location = new System.Drawing.Point(0, 45);
+            this.dgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgv.MultiSelect = false;
+            this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
+            this.dgv.RowHeadersVisible = false;
+            this.dgv.RowHeadersWidth = 51;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv.Size = new System.Drawing.Size(1141, 429);
+            this.dgv.TabIndex = 1;
             // 
             // colCustomerId
             // 
-            colCustomerId.DataPropertyName = "CustomerId";
-            colCustomerId.HeaderText = "CustomerId";
-            colCustomerId.MinimumWidth = 6;
-            colCustomerId.Name = "colCustomerId";
-            colCustomerId.ReadOnly = true;
-            colCustomerId.Visible = false;
+            this.colCustomerId.DataPropertyName = "CustomerId";
+            this.colCustomerId.HeaderText = "CustomerId";
+            this.colCustomerId.MinimumWidth = 6;
+            this.colCustomerId.Name = "colCustomerId";
+            this.colCustomerId.ReadOnly = true;
+            this.colCustomerId.Visible = false;
             // 
             // colFirstName
             // 
-            colFirstName.DataPropertyName = "FirstName";
-            colFirstName.HeaderText = "First Name";
-            colFirstName.MinimumWidth = 6;
-            colFirstName.Name = "colFirstName";
-            colFirstName.ReadOnly = true;
+            this.colFirstName.DataPropertyName = "FirstName";
+            this.colFirstName.HeaderText = "First Name";
+            this.colFirstName.MinimumWidth = 6;
+            this.colFirstName.Name = "colFirstName";
+            this.colFirstName.ReadOnly = true;
             // 
             // colLastName
             // 
-            colLastName.DataPropertyName = "LastName";
-            colLastName.HeaderText = "Last Name";
-            colLastName.MinimumWidth = 6;
-            colLastName.Name = "colLastName";
-            colLastName.ReadOnly = true;
+            this.colLastName.DataPropertyName = "LastName";
+            this.colLastName.HeaderText = "Last Name";
+            this.colLastName.MinimumWidth = 6;
+            this.colLastName.Name = "colLastName";
+            this.colLastName.ReadOnly = true;
             // 
             // colEmail
             // 
-            colEmail.DataPropertyName = "Email";
-            colEmail.HeaderText = "Email";
-            colEmail.MinimumWidth = 6;
-            colEmail.Name = "colEmail";
-            colEmail.ReadOnly = true;
+            this.colEmail.DataPropertyName = "Email";
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.MinimumWidth = 6;
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
             // 
             // colPhone
             // 
-            colPhone.DataPropertyName = "Phone";
-            colPhone.HeaderText = "Phone";
-            colPhone.MinimumWidth = 6;
-            colPhone.Name = "colPhone";
-            colPhone.ReadOnly = true;
+            this.colPhone.DataPropertyName = "Phone";
+            this.colPhone.HeaderText = "Phone";
+            this.colPhone.MinimumWidth = 6;
+            this.colPhone.Name = "colPhone";
+            this.colPhone.ReadOnly = true;
             // 
             // colAddress
             // 
-            colAddress.DataPropertyName = "Address";
-            colAddress.HeaderText = "Address";
-            colAddress.MinimumWidth = 6;
-            colAddress.Name = "colAddress";
-            colAddress.ReadOnly = true;
+            this.colAddress.DataPropertyName = "Address";
+            this.colAddress.HeaderText = "Address";
+            this.colAddress.MinimumWidth = 6;
+            this.colAddress.Name = "colAddress";
+            this.colAddress.ReadOnly = true;
             // 
             // colCreatedAt
             // 
-            colCreatedAt.DataPropertyName = "CreatedAt";
-            colCreatedAt.HeaderText = "Created At";
-            colCreatedAt.MinimumWidth = 6;
-            colCreatedAt.Name = "colCreatedAt";
-            colCreatedAt.ReadOnly = true;
+            this.colCreatedAt.DataPropertyName = "CreatedAt";
+            this.colCreatedAt.HeaderText = "Created At";
+            this.colCreatedAt.MinimumWidth = 6;
+            this.colCreatedAt.Name = "colCreatedAt";
+            this.colCreatedAt.ReadOnly = true;
             // 
             // lblStatus
             // 
-            lblStatus.AutoSize = true;
-            lblStatus.Dock = DockStyle.Bottom;
-            lblStatus.Location = new Point(0, 580);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Padding = new Padding(8);
-            lblStatus.Size = new Size(16, 36);
-            lblStatus.TabIndex = 2;
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblStatus.Location = new System.Drawing.Point(0, 474);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.lblStatus.Size = new System.Drawing.Size(16, 28);
+            this.lblStatus.TabIndex = 2;
             // 
             // Customers
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 616);
-            Controls.Add(dgv);
-            Controls.Add(pnlTop);
-            Controls.Add(lblStatus);
-            Name = "Customers";
-            Text = "Customers";
-            pnlTop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgv).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1141, 502);
+            this.Controls.Add(this.dgv);
+            this.Controls.Add(this.pnlTop);
+            this.Controls.Add(this.lblStatus);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "Customers";
+            this.Text = "Customers";
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Panel pnlTop;

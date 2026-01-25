@@ -13,5 +13,6 @@ namespace WHUI.Branches
         private void BranchEdit_Load(object sender, EventArgs e)
         {
         }
+
     }
 }
