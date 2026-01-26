@@ -13,12 +13,5 @@ namespace Services.DAL.Factories
 
         public static LoggerRepository LoggerRepository { get; private set; }
 
-        static ServiceFactory()
-        {
-            // Inicializar las instancias de los repositorios
-            LanguageRepository = LanguageRepository.Current;
-            LoggerRepository = LoggerRepository.Current;
-        }
-
     }
 }

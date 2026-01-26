@@ -15,9 +15,9 @@ namespace Services.DAL.Factories
 
         static ServiceFactory()
         {
-            // Inicializar las instancias de los repositorios
-            LanguageRepository = LanguageRepository.Current;
-            LoggerRepository = LoggerRepository.Current;
+            // Inicializar las instancias de los repositorios usando sus singletons
+            LanguageRepository = Services.DAL.Implementations.LanguageRepository.Current;
+            LoggerRepository = Services.DAL.Implementations.LoggerRepository.Current;
         }
 
     }

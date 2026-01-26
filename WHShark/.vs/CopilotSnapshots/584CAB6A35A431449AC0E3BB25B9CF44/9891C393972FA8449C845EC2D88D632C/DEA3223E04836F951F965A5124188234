@@ -1,4 +1,6 @@
 ﻿using Services.DAL.Implementations;
+using LRepo = Services.DAL.Implementations.LanguageRepository;
+using LogRepo = Services.DAL.Implementations.LoggerRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +17,9 @@ namespace Services.DAL.Factories
 
         static ServiceFactory()
         {
-            // Inicializar las instancias de los repositorios
-            LanguageRepository = LanguageRepository.Current;
-            LoggerRepository = LoggerRepository.Current;
+            // Inicializar las instancias de los repositorios usando sus singletons
+            LanguageRepository = LRepo.Current;
+            LoggerRepository = LogRepo.Current;
         }
 
     }
