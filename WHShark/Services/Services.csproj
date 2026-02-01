@@ -61,7 +61,6 @@
     <Compile Include="DAL\Implementations\UserRepository.cs" />
     <Compile Include="DAL\Tools\SqlHelper.cs" />
     <Compile Include="DomainModel\Exceptions\WorldNotFoundException.cs" />
-    <Compile Include="DomainModel\Log.cs" />
     <Compile Include="DomainModel\Security\Composite\Component.cs" />
     <Compile Include="DomainModel\Security\Composite\Family.cs" />
     <Compile Include="DomainModel\Security\Composite\Patent.cs" />

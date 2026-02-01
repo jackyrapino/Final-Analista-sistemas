@@ -7,36 +7,35 @@ namespace Services.Services
 {
     public static class LoggerService
     {
-        public static void WriteLog(string message, EventLevel level, string user)
+        // Explicit methods per severity for clarity
+        public static void WriteInfo(string message, string user = "")
         {
-            var severity = MapEventLevelToSeverity(level);
-            LoggerBLL.Write(severity, message, user);
+            LoggerBLL.Write(Severity.Info, message, user);
         }
 
-        public static void Log(Severity severity, string message)
+        public static void WriteWarning(string message, string user = "")
         {
-            LoggerBLL.Write(severity, message);
+            LoggerBLL.Write(Severity.Warning, message, user);
         }
 
-        public static void LogInfo(string message) => Log(Severity.Info, message);
-        public static void LogWarning(string message) => Log(Severity.Warning, message);
-        public static void LogError(string message) => Log(Severity.Error, message);
-
-        private static global::Services.DomainModel.Severity MapEventLevelToSeverity(EventLevel level)
+        public static void WriteError(string message, string user = "")
         {
-            switch (level)
-            {
-                case EventLevel.Critical:
-                    return global::Services.DomainModel.Severity.FatalError;
-                case EventLevel.Error:
-                    return global::Services.DomainModel.Severity.Error;
-                case EventLevel.Warning:
-                    return global::Services.DomainModel.Severity.Warning;
-                case EventLevel.Informational:
-                case EventLevel.Verbose:
-                default:
-                    return global::Services.DomainModel.Severity.Info;
-            }
+            LoggerBLL.Write(Severity.Error, message, user);
         }
+
+        public static void WriteCriticalError(string message, string user = "")
+        {
+            LoggerBLL.Write(Severity.CriticalError, message, user);
+        }
+
+        public static void WriteFatalError(string message, string user = "")
+        {
+            LoggerBLL.Write(Severity.FatalError, message, user);
+        }
+
+        // Legacy aliases kept for convenience
+        public static void LogInfo(string message) => WriteInfo(message);
+        public static void LogWarning(string message) => WriteWarning(message);
+        public static void LogError(string message) => WriteError(message);
     }
 }

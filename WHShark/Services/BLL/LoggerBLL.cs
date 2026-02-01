@@ -2,7 +2,6 @@
 using SDM = Services.DomainModel;
 using System;
 using System.Configuration;
-using System.Diagnostics.Tracing;
 
 namespace Services.BLL
 {
@@ -33,18 +32,12 @@ namespace Services.BLL
                 if (severity < _minSeverity)
                     return; // filtered out by policy
 
-                // Map domain Severity to EventLevel used by repository
-                EventLevel evt = severity == SDM.Severity.FatalError || severity == SDM.Severity.CriticalError
-                    ? EventLevel.Critical
-                    : (severity == SDM.Severity.Error ? EventLevel.Error
-                        : (severity == SDM.Severity.Warning ? EventLevel.Warning : EventLevel.Informational));
-
                 // Write to repository (single canonical implementation)
                 try
                 {
                     if (ServiceFactory.LoggerRepository != null)
                     {
-                        ServiceFactory.LoggerRepository.WriteLog(message, evt, user);
+                        ServiceFactory.LoggerRepository.WriteLog(severity, message, user);
                     }
                 }
                 catch

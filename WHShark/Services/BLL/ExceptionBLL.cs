@@ -6,6 +6,7 @@ using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SDM = Services.DomainModel;
 
 namespace Services.BLL
 {
@@ -24,23 +25,24 @@ namespace Services.BLL
             if (assemblyName == dalAssembly)
             {
                 //Aplicamos la política de exception de la DAL
-                DALPolicy(ex);
+                DALPolicy(ex, sender);
             }
             else if (assemblyName == bllAssembly)
             {
-                BLLPolicy(ex);
+                BLLPolicy(ex, sender);
             }
         }
 
-        private static void DALPolicy(Exception ex)
+        private static void DALPolicy(Exception ex, object sender)
         {
-            //1) Registrar
-            LoggerService.WriteLog($"Message; {ex.Message}, StackTrace: {ex.StackTrace}", EventLevel.Error, String.Empty);
+            //1) Registrar - incluir tipo que generó la excepción como usuario
+            string user = sender?.GetType().Name ?? string.Empty;
+            LoggerService.Write(SDM.Severity.Error, $"Message; {ex.Message}, StackTrace: {ex.StackTrace}", user);
             //2) Propagar
-            throw new Exception(String.Empty, ex);
+            throw new Exception(string.Empty, ex);
         }
 
-        private static void BLLPolicy(Exception ex)
+        private static void BLLPolicy(Exception ex, object sender)
         {
             //Tengo que saber si la exception viene de BLL puramente o de DAL
             if (ex.InnerException != null)
@@ -51,7 +53,8 @@ namespace Services.BLL
             else
             {
                 //Es una exception propia de BLL
-                LoggerService.WriteLog($"Message; {ex.Message}, StackTrace: {ex.StackTrace}", EventLevel.Error, String.Empty);
+                string user = sender?.GetType().Name ?? string.Empty;
+                LoggerService.Write(SDM.Severity.Error, $"Message; {ex.Message}, StackTrace: {ex.StackTrace}", user);
                 //2) Propagar
                 throw ex;
             }

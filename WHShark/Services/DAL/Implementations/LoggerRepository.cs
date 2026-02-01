@@ -31,19 +31,24 @@ namespace Services.DAL.Implementations
         private string pathLog = ConfigurationManager.AppSettings["PathLog"];
 
         private string pathFile = ConfigurationManager.AppSettings["LogFileName"];
-        public void WriteLog(string message, EventLevel level, string user)
+
+        // New signature: use domain Severity and user string
+        public void WriteLog(global::Services.DomainModel.Severity severity, string message, string user)
         {
             string fileName = pathLog + DateTime.Now.ToString("yyyyMMdd") + pathFile;
 
-            //Aplicar sus políticas...
-            //1 opción: En función de la severity que configuren en su app.config
-            //Registro desde ese nivel hacia arriba...
-            //2 política de limpieza: Definir cada cuánto tiempo/tamaño? limpio mis logs...
-
-            using (StreamWriter streamWriter = new StreamWriter(fileName, true))
+            try
             {
-                string fromattedMessage = $"{DateTime.Now.ToString("yyyyMMdd hh:mm:ss tt")} [LEVEL {level.ToString()}] User: {user}, Mensaje: {message}";
-                streamWriter.WriteLine(fromattedMessage);
+                using (StreamWriter streamWriter = new StreamWriter(fileName, true, System.Text.Encoding.UTF8))
+                {
+                    string ts = DateTime.UtcNow.ToString("o"); // ISO 8601
+                    string line = $"{ts} [{severity}] User:{user} {message}";
+                    streamWriter.WriteLine(line);
+                }
+            }
+            catch
+            {
+                // swallow IO exceptions
             }
         }
     }
