@@ -37,7 +37,7 @@ namespace Services.BLL
         {
             //1) Registrar - incluir tipo que generó la excepción como usuario
             string user = sender?.GetType().Name ?? string.Empty;
-            LoggerService.Write(SDM.Severity.Error, $"Message; {ex.Message}, StackTrace: {ex.StackTrace}", user);
+            LoggerService.WriteError(string.Format("Message; {0}, StackTrace: {1}", ex.Message, ex.StackTrace), user);
             //2) Propagar
             throw new Exception(string.Empty, ex);
         }
@@ -54,7 +54,7 @@ namespace Services.BLL
             {
                 //Es una exception propia de BLL
                 string user = sender?.GetType().Name ?? string.Empty;
-                LoggerService.Write(SDM.Severity.Error, $"Message; {ex.Message}, StackTrace: {ex.StackTrace}", user);
+                LoggerService.WriteError(string.Format("Message; {0}, StackTrace: {1}", ex.Message, ex.StackTrace), user);
                 //2) Propagar
                 throw ex;
             }

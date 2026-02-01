@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.Tracing;
-using Services.DomainModel;
 using Services.BLL;
+using Services.DomainModel;
 
 namespace Services.Services
 {
@@ -32,10 +32,5 @@ namespace Services.Services
         {
             LoggerBLL.Write(Severity.FatalError, message, user);
         }
-
-        // Legacy aliases kept for convenience
-        public static void LogInfo(string message) => WriteInfo(message);
-        public static void LogWarning(string message) => WriteWarning(message);
-        public static void LogError(string message) => WriteError(message);
     }
 }
