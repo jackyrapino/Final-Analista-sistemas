@@ -1,32 +1,61 @@
 ﻿using Services.DAL.Factories;
+using SDM = Services.DomainModel;
 using System;
-using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics.Tracing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services.BLL
 {
     internal static class LoggerBLL
     {
+        private static SDM.Severity _minSeverity = SDM.Severity.Info;
 
-        public static void WriteLog(string message, EventLevel level, string user)
+        static LoggerBLL()
         {
-            ServiceFactory.LoggerRepository.WriteLog(message, level, user);
+            try
+            {
+                var cfg = ConfigurationManager.AppSettings["MinLogSeverity"] ?? "Info";
+                SDM.Severity s;
+                if (Enum.TryParse(cfg, true, out s))
+                    _minSeverity = s;
+            }
+            catch
+            {
+                _minSeverity = SDM.Severity.Info;
+            }
+        }
 
-            //Definir acá las políticas de escritura..
-            //switch(level)
-            //{
-            //    case EventLevel.Critical:
-            //        //Política de manejo de errores...
+        // Single public method using LoggerRepository as canonical sink
+        public static void Write(SDM.Severity severity, string message, string user = "")
+        {
+            try
+            {
+                if (severity < _minSeverity)
+                    return; // filtered out by policy
 
-            //        break;
+                // Map domain Severity to EventLevel used by repository
+                EventLevel evt = severity == SDM.Severity.FatalError || severity == SDM.Severity.CriticalError
+                    ? EventLevel.Critical
+                    : (severity == SDM.Severity.Error ? EventLevel.Error
+                        : (severity == SDM.Severity.Warning ? EventLevel.Warning : EventLevel.Informational));
 
-            //    case EventLevel.Warning:
-            //        break;
-            //}
-
+                // Write to repository (single canonical implementation)
+                try
+                {
+                    if (ServiceFactory.LoggerRepository != null)
+                    {
+                        ServiceFactory.LoggerRepository.WriteLog(message, evt, user);
+                    }
+                }
+                catch
+                {
+                    // swallow repository failures
+                }
+            }
+            catch
+            {
+                // swallow
+            }
         }
     }
 }

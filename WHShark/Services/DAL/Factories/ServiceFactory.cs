@@ -1,9 +1,11 @@
 ﻿using Services.DAL.Implementations;
+using Services.DAL.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace Services.DAL.Factories
 {
@@ -11,6 +13,7 @@ namespace Services.DAL.Factories
     {
         public static LanguageRepository LanguageRepository { get; private set; }
 
+        // Keep LoggerRepository as the canonical logging repository
         public static LoggerRepository LoggerRepository { get; private set; }
 
         static ServiceFactory()
