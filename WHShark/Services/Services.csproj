@@ -45,6 +45,7 @@
     <Compile Include="BLL\ExceptionBLL.cs" />
     <Compile Include="BLL\LanguageBLL.cs" />
     <Compile Include="BLL\LoggerBLL.cs" />
+    <Compile Include="BLL\LoginService.cs" />
     <Compile Include="DAL\Contracts\IAdapter.cs" />
     <Compile Include="DAL\Contracts\IGenericRepository.cs" />
     <Compile Include="DAL\Contracts\IJoinRepository.cs" />
@@ -77,9 +78,16 @@
     <Compile Include="Services\LanguageManager.cs" />
     <Compile Include="Services\LoggerService.cs" />
     <Compile Include="Services\LoginService.cs" />
+    <Compile Include="Services\Session.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\DataBase\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{567f972c-ffab-4f26-b8fa-42ee2e4f0f4c}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

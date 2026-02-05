@@ -7,6 +7,14 @@ using System.Threading.Tasks;
 
 namespace Services.DomainModel.Security
 {
+    public enum UserState
+    {
+        ForceChange = 0,
+        Active = 1,
+        Inactive = 2,
+        Blocked = 3
+    }
+
     internal class Usuario
     {
         public string Name { get; set; }

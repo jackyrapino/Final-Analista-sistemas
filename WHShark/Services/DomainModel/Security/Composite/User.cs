@@ -11,7 +11,15 @@ namespace Services.DomainModel.Security.Composite
     {
         public string Name { get; set; }
 
+        // Stored password is expected to be the hashed value
         public string Password { get; set; }
+
+        // Authentication/management fields
+        public int FailedAttempts { get; set; }
+        public global::Services.DomainModel.Security.UserState State { get; set; }
+
+        public string PasswordResetToken { get; set; }
+        public DateTime? PasswordResetTokenExpires { get; set; }
 
         public string HashDH
         {
@@ -34,6 +42,8 @@ namespace Services.DomainModel.Security.Composite
         public User()
         {
             Permisos = new List<Component>();
+            FailedAttempts = 0;
+            State = global::Services.DomainModel.Security.UserState.Active;
         }
 
         /// <summary>
@@ -62,20 +72,6 @@ namespace Services.DomainModel.Security.Composite
 
                     if (!patents.Exists(o => o.FormName == patente1.FormName))
                         patents.Add(patente1);
-
-                    //bool existe = false;
-
-                    //foreach (var item2 in patentes)
-                    //{
-                    //    if(item2.FormName == patente1.FormName)
-                    //    {
-                    //        existe = true;
-                    //        break;
-                    //    }
-                    //}
-
-                    //if(!existe)
-                    //    patentes.Add(patente1);
                 }
                 else
                 {

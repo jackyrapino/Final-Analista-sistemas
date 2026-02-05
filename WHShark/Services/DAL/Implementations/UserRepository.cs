@@ -52,6 +52,24 @@ namespace Services.DAL.Implementations
 
         }
 
+        // New stubs used by authentication logic
+        public User GetByLoginName(string loginName)
+        {
+            // Implement data access (e.g. query by loginName)
+            throw new NotImplementedException();
+        }
+
+        public User GetByPasswordResetToken(string token)
+        {
+            // Implement data access (e.g. find user by reset token and check expiration)
+            throw new NotImplementedException();
+        }
+
+        public void SavePasswordResetToken(Guid userId, string token, DateTime expiration)
+        {
+            // Persist token and expiration for the user
+            throw new NotImplementedException();
+        }
     }
 
 }

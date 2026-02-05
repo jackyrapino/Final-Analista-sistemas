@@ -11,8 +11,7 @@ namespace Services.BLL
 {
     internal static class ExceptionBLL
     {
-        // Simplified policies: decide source by presence of InnerException
-
+       
         public static void Handle(Exception ex, object sender)
         {
             // Apply policies for exceptions
