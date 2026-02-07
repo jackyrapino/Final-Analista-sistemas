@@ -9,6 +9,7 @@ namespace Services.DomainModel.Security.Composite
 {
     public class User
     {
+        public Guid IdUser { get; set; }
         public string Name { get; set; }
 
         // Stored password is expected to be the hashed value
@@ -20,6 +21,8 @@ namespace Services.DomainModel.Security.Composite
 
         public string PasswordResetToken { get; set; }
         public DateTime? PasswordResetTokenExpires { get; set; }
+
+        public bool IsAdmin { get; set; }
 
         public string HashDH
         {
@@ -44,6 +47,7 @@ namespace Services.DomainModel.Security.Composite
             Permisos = new List<Component>();
             FailedAttempts = 0;
             State = global::Services.DomainModel.Security.UserState.Active;
+            IsAdmin = false;
         }
 
         /// <summary>

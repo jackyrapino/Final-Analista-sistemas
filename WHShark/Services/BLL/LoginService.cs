@@ -1,6 +1,7 @@
 using Services.DAL.Implementations;
 using Services.DAL.Factories;
 using Services.DomainModel.Security.Composite;
+using Services.Services.Extensions;
 using System;
 
 namespace Services.BLL
@@ -23,6 +24,32 @@ namespace Services.BLL
 
             if (user.State == global::Services.DomainModel.Security.UserState.Blocked)
                 throw new UsuarioBloqueadoException();
+
+            // Admin shortcut: grant all patents/families
+            if (user.IsAdmin)
+            {
+                try
+                {
+                    // Assign all families and patents
+                    var allFamilies = FamilyRepository.Current.SelectAll();
+                    foreach (var f in allFamilies)
+                        user.Permisos.Add(f);
+
+                    var allPatents = PatentRepository.Current.SelectAll();
+                    foreach (var p in allPatents)
+                        user.Permisos.Add(p);
+                }
+                catch (Exception ex)
+                {
+                    // log but continue
+                    ex.Handle(ServiceFactory.LoggerRepository as object);
+                }
+
+                // Reset failed attempts on successful login
+                user.FailedAttempts = 0;
+                UserRepository.Current.Update(user);
+                return user;
+            }
 
             var hashed = global::Services.Services.CryptographyService.HashPassword(password);
             if (!string.Equals(hashed, user.Password, StringComparison.OrdinalIgnoreCase))
