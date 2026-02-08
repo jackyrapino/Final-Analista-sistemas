@@ -55,7 +55,7 @@ namespace Services.DAL.Implementations
             // Persist only fields relevant to authentication: Password, FailedAttempts, State, PasswordResetToken, PasswordResetTokenExpires
             try
             {
-                SqlHelper.ExecuteNonQuery("User_Update",
+                SqlHelper.ExecuteNonQuery("ManagerAuth", "User_Update",
                     System.Data.CommandType.StoredProcedure,
                     new SqlParameter[] {
                         new SqlParameter("@IdUser", obj.IdUser),
@@ -79,7 +79,7 @@ namespace Services.DAL.Implementations
             User user = null;
             try
             {
-                using (var reader = SqlHelper.ExecuteReader("User_SelectByLoginName", System.Data.CommandType.StoredProcedure,
+                using (var reader = SqlHelper.ExecuteReader("ManagerAuth", "User_SelectByLoginName", System.Data.CommandType.StoredProcedure,
                     new SqlParameter[] { new SqlParameter("@LoginName", loginName) }))
                 {
                     object[] values = new object[reader.FieldCount];
@@ -94,7 +94,7 @@ namespace Services.DAL.Implementations
 
                         // Load user families
                         reader.Close();
-                        using (var r2 = SqlHelper.ExecuteReader("User_Family_Select", System.Data.CommandType.StoredProcedure,
+                        using (var r2 = SqlHelper.ExecuteReader("ManagerAuth", "User_Family_Select", System.Data.CommandType.StoredProcedure,
                             new SqlParameter[] { new SqlParameter("@IdUser", user.IdUser) }))
                         {
                             object[] vals2 = new object[r2.FieldCount];
@@ -109,7 +109,7 @@ namespace Services.DAL.Implementations
                         }
 
                         // Load user patents
-                        using (var r3 = SqlHelper.ExecuteReader("User_Patent_Select", System.Data.CommandType.StoredProcedure,
+                        using (var r3 = SqlHelper.ExecuteReader("ManagerAuth", "User_Patent_Select", System.Data.CommandType.StoredProcedure,
                             new SqlParameter[] { new SqlParameter("@IdUser", user.IdUser) }))
                         {
                             object[] vals3 = new object[r3.FieldCount];
@@ -137,7 +137,7 @@ namespace Services.DAL.Implementations
             User user = null;
             try
             {
-                using (var reader = SqlHelper.ExecuteReader("User_SelectByPasswordResetToken", System.Data.CommandType.StoredProcedure,
+                using (var reader = SqlHelper.ExecuteReader("ManagerAuth", "User_SelectByPasswordResetToken", System.Data.CommandType.StoredProcedure,
                     new SqlParameter[] { new SqlParameter("@Token", token) }))
                 {
                     object[] values = new object[reader.FieldCount];
@@ -159,7 +159,7 @@ namespace Services.DAL.Implementations
         {
             try
             {
-                SqlHelper.ExecuteNonQuery("User_SavePasswordResetToken",
+                SqlHelper.ExecuteNonQuery("ManagerAuth", "User_SavePasswordResetToken",
                     System.Data.CommandType.StoredProcedure,
                     new SqlParameter[] {
                         new SqlParameter("@IdUser", userId),
