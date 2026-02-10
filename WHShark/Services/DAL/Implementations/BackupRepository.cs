@@ -8,13 +8,16 @@ using Services.DAL.Contracts;
 namespace Services.DAL.Implementations
 {
     /// <summary>
-    /// Implementación SQL Server del repositorio de backup y restore.
+    /// SQL Server implementation of the backup and restore repository.
     /// </summary>
     internal class BackupRepository : IBackupRepository
     {
         private readonly string _cs;
         private readonly string _csMaster;
 
+        /// <summary>
+        /// Initializes the repository and prepares a connection string to master.
+        /// </summary>
         public BackupRepository(string cs)
         {
             if (string.IsNullOrWhiteSpace(cs))
@@ -25,10 +28,13 @@ namespace Services.DAL.Implementations
             _csMaster = b.ConnectionString;
         }
 
+        /// <summary>
+        /// Creates a .bak file for the configured database. Returns the full path to the created file.
+        /// </summary>
         public async Task<string> BackupAsync(string backupFolder, string backupName = null, bool copyOnly = true, CancellationToken ct = default)
         {
             if (string.IsNullOrWhiteSpace(backupFolder))
-                throw new ArgumentException("Carpeta de backup vacía.", nameof(backupFolder));
+                throw new ArgumentException("Backup folder is empty.", nameof(backupFolder));
 
             Directory.CreateDirectory(backupFolder);
 
@@ -50,6 +56,10 @@ namespace Services.DAL.Implementations
             return fullPath;
         }
 
+        /// <summary>
+        /// Attempts to set the restored database back to MULTI_USER. This helper will swallow exceptions
+        /// because failure here should not hide the original restore exception.
+        /// </summary>
         private async Task EnsureMultiUserAsync(string setMulti, CancellationToken ct)
         {
             try
@@ -63,24 +73,28 @@ namespace Services.DAL.Implementations
             }
             catch
             {
-                // No relanzar para no ocultar error original
+                // Intentionally swallow exceptions to not mask original restore errors.
             }
         }
 
+        /// <summary>
+        /// Restores the configured database from the supplied .bak file. Supports optional MOVE behavior
+        /// when dataDir/logDir are provided.
+        /// </summary>
         public async Task RestoreAsync(string backupFileFullPath, bool withReplace = false, string dataDir = null, string logDir = null, CancellationToken ct = default)
         {
             if (string.IsNullOrWhiteSpace(backupFileFullPath))
-                throw new ArgumentException("Ruta .bak vacía.", nameof(backupFileFullPath));
+                throw new ArgumentException("Backup file path is empty.", nameof(backupFileFullPath));
 
             if (!File.Exists(backupFileFullPath))
-                throw new FileNotFoundException("No se encontró el .bak", backupFileFullPath);
+                throw new FileNotFoundException("Backup file not found.", backupFileFullPath);
 
             var dbName = new SqlConnectionStringBuilder(_cs).InitialCatalog;
 
             var setSingle = $"IF DB_ID('{dbName}') IS NOT NULL ALTER DATABASE [{dbName}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;";
             var setMulti = $"ALTER DATABASE [{dbName}] SET MULTI_USER;";
 
-            // SIN MOVE
+            // If no MOVE directories provided, perform a normal RESTORE
             if (string.IsNullOrWhiteSpace(dataDir) || string.IsNullOrWhiteSpace(logDir))
             {
                 var restoreSql = $@"
@@ -107,12 +121,13 @@ namespace Services.DAL.Implementations
                 return;
             }
 
-            // CON MOVE
+            // When MOVE is required, ensure target directories exist
             Directory.CreateDirectory(dataDir);
             Directory.CreateDirectory(logDir);
 
             string logicalData = null, logicalLog = null;
 
+            // Read logical file names from the backup
             using (var cn = new SqlConnection(_csMaster))
             using (var cmd = new SqlCommand("RESTORE FILELISTONLY FROM DISK=@p0;", cn) { CommandTimeout = 0 })
             {
@@ -167,13 +182,16 @@ namespace Services.DAL.Implementations
             }
         }
 
+        /// <summary>
+        /// Verifies the backup file using RESTORE VERIFYONLY.
+        /// </summary>
         public async Task VerifyAsync(string backupFileFullPath, CancellationToken ct = default)
         {
             if (string.IsNullOrWhiteSpace(backupFileFullPath))
-                throw new ArgumentException("Ruta .bak vacía.", nameof(backupFileFullPath));
+                throw new ArgumentException("Backup file path is empty.", nameof(backupFileFullPath));
 
             if (!File.Exists(backupFileFullPath))
-                throw new FileNotFoundException("No se encontró el .bak", backupFileFullPath);
+                throw new FileNotFoundException("Backup file not found.", backupFileFullPath);
 
             using (var cn = new SqlConnection(_csMaster))
             using (var cmd = new SqlCommand("RESTORE VERIFYONLY FROM DISK=@p0;", cn) { CommandTimeout = 0 })
