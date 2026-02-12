@@ -18,5 +18,29 @@ namespace WHUI.Users
             InitializeComponent();
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+           
+            using (var frm = new UsersEdit())
+            {
+                frm.ShowDialog(this);
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            using (var frm = new UsersEdit())
+            {
+                frm.ShowDialog(this);
+            }
+        }
+
+        private void btnManagePermissions_Click(object sender, EventArgs e)
+        {
+            using (var frm = new UserPermissions())
+            {
+                frm.ShowDialog(this);
+            }
+        }
     }
 }

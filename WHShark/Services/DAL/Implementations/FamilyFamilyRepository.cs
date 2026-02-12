@@ -60,9 +60,9 @@ namespace Services.DAL.Implementations
 
             try
             {
-                using (var reader = SqlHelper.ExecuteReader("Family_Family_SelectParticular",
+                using (var reader = SqlHelper.ExecuteReader("ManagerAuth", "Familia_Familia_Select",
                                                         System.Data.CommandType.StoredProcedure,
-                                                        new SqlParameter[] { new SqlParameter("@IdFamily", obj.IdComponent) }))
+                                                        new SqlParameter[] { new SqlParameter("@IdFamilia", obj.IdComponent), new SqlParameter("@IdFamiliaHijo", DBNull.Value) }))
                 {
                     object[] values = new object[reader.FieldCount];
 

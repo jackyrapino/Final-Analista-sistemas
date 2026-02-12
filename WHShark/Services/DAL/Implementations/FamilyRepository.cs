@@ -80,8 +80,8 @@ namespace Services.DAL.Implementations
 
             try
             {
-                using (var reader = SqlHelper.ExecuteReader(SelectOneStatement, System.Data.CommandType.StoredProcedure,
-                                                new SqlParameter[] { new SqlParameter("@IdFamily", id) }))
+                using (var reader = SqlHelper.ExecuteReader("ManagerAuth", "Familia_Select", System.Data.CommandType.StoredProcedure,
+                                                new SqlParameter[] { new SqlParameter("@IdFamilia", id) }))
                 {
                     object[] values = new object[reader.FieldCount];
 

@@ -36,43 +36,38 @@ namespace Services.DAL.Implementations.Adapter
                 if (values == null || values.Length == 0)
                     return user;
 
-                // Typical expected layout (best-effort):
-                // 0 -> Id (Guid), 1 -> Name, 2 -> Password, 3 -> FailedAttempts, 4 -> State (int),
-                // 5 -> PasswordResetToken, 6 -> PasswordResetTokenExpires, 7 -> IsAdmin
+                // 0 -> Id (Guid)
+                // 1 -> Name (display name) -- secondary
+                // 2 -> Username (login name) -- prefer this as Name if present
+                // 3 -> PasswordHash
+                // 4 -> State (int)
+                // 5 -> CreatedAt (DateTime) 
 
-                int idx = 0;
-                if (idx < values.Length && values[idx] != null && Guid.TryParse(values[idx].ToString(), out Guid id))
-                {
+                // Id
+                if (values.Length > 0 && values[0] != null && Guid.TryParse(values[0].ToString(), out Guid id))
                     user.IdUser = id;
+
+                if (values.Length > 2 && values[2] != null && !string.IsNullOrWhiteSpace(values[2].ToString()))
+                {
+                    user.Name = values[2].ToString();
                 }
-                idx++;
+                else if (values.Length > 1 && values[1] != null)
+                {
+                    user.Name = values[1].ToString();
+                }
 
-                if (idx < values.Length && values[idx] != null)
-                    user.Name = values[idx].ToString();
-                idx++;
+                // PasswordHash
+                if (values.Length > 3 && values[3] != null)
+                    user.Password = values[3].ToString();
 
-                if (idx < values.Length && values[idx] != null)
-                    user.Password = values[idx].ToString();
-                idx++;
-
-                if (idx < values.Length && values[idx] != null && int.TryParse(values[idx].ToString(), out int fa))
-                    user.FailedAttempts = fa;
-                idx++;
-
-                if (idx < values.Length && values[idx] != null && int.TryParse(values[idx].ToString(), out int state))
+                // State
+                if (values.Length > 4 && values[4] != null && int.TryParse(values[4].ToString(), out int state))
                     user.State = (global::Services.DomainModel.Security.UserState)state;
-                idx++;
 
-                if (idx < values.Length && values[idx] != null)
-                    user.PasswordResetToken = values[idx].ToString();
-                idx++;
-
-                if (idx < values.Length && values[idx] != null && DateTime.TryParse(values[idx].ToString(), out DateTime expires))
-                    user.PasswordResetTokenExpires = expires;
-                idx++;
-
-                if (idx < values.Length && values[idx] != null && bool.TryParse(values[idx].ToString(), out bool isAdmin))
-                    user.IsAdmin = isAdmin;
+              
+                // Initialize defaults
+                user.FailedAttempts = 0;
+                user.IsAdmin = false;
             }
             catch
             {

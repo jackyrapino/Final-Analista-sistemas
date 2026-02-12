@@ -17,7 +17,7 @@ namespace Services.BLL
             if (string.IsNullOrWhiteSpace(password))
                 throw new ArgumentException("password is required", nameof(password));
 
-            // Get user by login name
+            // Get user by login name (retrieve basic user record including stored password hash)
             var user = UserRepository.Current.GetByLoginName(loginName);
             if (user == null)
                 throw new UsuarioInexistenteException();
@@ -25,35 +25,11 @@ namespace Services.BLL
             if (user.State == global::Services.DomainModel.Security.UserState.Blocked)
                 throw new UsuarioBloqueadoException();
 
-            // Admin shortcut: grant all patents/families
-            if (user.IsAdmin)
-            {
-                try
-                {
-                    // Assign all families and patents
-                    var allFamilies = FamilyRepository.Current.SelectAll();
-                    foreach (var f in allFamilies)
-                        user.Permisos.Add(f);
-
-                    var allPatents = PatentRepository.Current.SelectAll();
-                    foreach (var p in allPatents)
-                        user.Permisos.Add(p);
-                }
-                catch (Exception ex)
-                {
-                    // log but continue
-                    ex.Handle(ServiceFactory.LoggerRepository as object);
-                }
-
-                // Reset failed attempts on successful login
-                user.FailedAttempts = 0;
-                UserRepository.Current.Update(user);
-                return user;
-            }
-
+            // Verify password first before loading any permissions
             var hashed = global::Services.Services.CryptographyService.HashPassword(password);
             if (!string.Equals(hashed, user.Password, StringComparison.OrdinalIgnoreCase))
             {
+                // Incorrect password: increment failed attempts and possibly block
                 user.FailedAttempts++;
                 if (user.FailedAttempts >= MaxFailedAttempts)
                 {
@@ -68,9 +44,31 @@ namespace Services.BLL
                 }
             }
 
-            // Correct password
+            // Correct password: reset failed attempts
             user.FailedAttempts = 0;
-            UserRepository.Current.Update(user);
+
+            try
+            {
+                if (user.IsAdmin)
+                {
+                    var allFamilies = FamilyRepository.Current.SelectAll();
+                    foreach (var f in allFamilies)
+                        user.Permisos.Add(f);
+
+                    var allPatents = PatentRepository.Current.SelectAll();
+                    foreach (var p in allPatents)
+                        user.Permisos.Add(p);
+                }
+                else
+                {
+                    UserRepository.Current.PopulatePermissions(user);
+                }
+            }
+            catch (Exception ex)
+            {
+                // log but continue
+                ex.Handle(ServiceFactory.LoggerRepository as object);
+            }
 
             // If force change required, return user so service/UI can enforce
             if (user.State == global::Services.DomainModel.Security.UserState.ForceChange)

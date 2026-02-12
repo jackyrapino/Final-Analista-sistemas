@@ -56,9 +56,9 @@ namespace Services.DAL.Implementations
 
             try
             {
-                using (var reader = SqlHelper.ExecuteReader("Family_Patent_Select",
+                using (var reader = SqlHelper.ExecuteReader("ManagerAuth", "Familia_Patente_Select",
                                                         System.Data.CommandType.StoredProcedure,
-                                                        new SqlParameter[] { new SqlParameter("@IdFamily", obj.IdComponent) }))
+                                                        new SqlParameter[] { new SqlParameter("@IdFamilia", obj.IdComponent) }))
                 {
                     object[] values = new object[reader.FieldCount];
 

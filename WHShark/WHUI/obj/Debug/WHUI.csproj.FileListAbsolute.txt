@@ -49,9 +49,9 @@ D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sist
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\WHUI\obj\Debug\WHUI.Branches.BranchEdit.resources
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Menu.Menu.en.resources
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WhShark\WHUI\obj\Debug\WHUI.Branches.Branches.resources
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.exe.config
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\Services.dll
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\BLL.dll
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\Services.pdb
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\BLL.pdb
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.csproj.Up2Date
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.exe.config

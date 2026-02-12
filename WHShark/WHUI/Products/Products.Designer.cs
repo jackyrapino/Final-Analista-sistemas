@@ -75,6 +75,7 @@ namespace WHUI.Products
             resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnAddBrand
             // 

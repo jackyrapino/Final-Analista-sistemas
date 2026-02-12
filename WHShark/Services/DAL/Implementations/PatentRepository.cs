@@ -76,7 +76,7 @@ namespace Services.DAL.Implementations
 
             try
             {
-                using (var reader = SqlHelper.ExecuteReader(SelectAllStatement, System.Data.CommandType.StoredProcedure))
+                using (var reader = SqlHelper.ExecuteReader("ManagerAuth", "Patente_SelectAll", System.Data.CommandType.StoredProcedure))
                 {
                     object[] values = new object[reader.FieldCount];
 
@@ -102,7 +102,7 @@ namespace Services.DAL.Implementations
 
             try
             {
-                using (var reader = SqlHelper.ExecuteReader(SelectOneStatement, System.Data.CommandType.StoredProcedure,
+                using (var reader = SqlHelper.ExecuteReader("ManagerAuth", "Patente_Select", System.Data.CommandType.StoredProcedure,
                                                 new SqlParameter[] { new SqlParameter("@IdPatente", id) }))
                 {
                     object[] values = new object[reader.FieldCount];

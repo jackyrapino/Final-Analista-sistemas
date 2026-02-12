@@ -146,17 +146,20 @@
   <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
     <value>btnAdd</value>
   </data>
-  <data name="dgv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1100, 534</value>
+  <data name="txtSearch.PlaceholderText" xml:space="preserve">
+    <value>Search by SKU, Name, Barcode...</value>
   </data>
-  <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;btnAddCategory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dgv.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dgv.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="dgv.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1100, 534</value>
   </data>
   <data name="&gt;&gt;lblStatus.Name" xml:space="preserve">
     <value>lblStatus</value>
@@ -264,17 +267,14 @@
   <data name="colCategoryId.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="txtSearch.PlaceholderText" xml:space="preserve">
-    <value>Search by SKU, Name, Barcode...</value>
+  <data name="colBrandId.MinimumWidth" type="System.Int32, mscorlib">
+    <value>80</value>
   </data>
   <data name="&gt;&gt;btnEdit.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="dgv.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;colCostPrice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;colDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -291,8 +291,11 @@
   <data name="btnEdit.Text" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="colProductId.HeaderText" xml:space="preserve">
-    <value>ProductId</value>
+  <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;colBarcode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -450,13 +453,7 @@
   <data name="&gt;&gt;btnEdit.Name" xml:space="preserve">
     <value>btnEdit</value>
   </data>
-  <data name="colSKU.MinimumWidth" type="System.Int32, mscorlib">
-    <value>70</value>
-  </data>
   <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAddCategory.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="colBarcode.MinimumWidth" type="System.Int32, mscorlib">
@@ -528,8 +525,11 @@
   <data name="btnDelete.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="colBrandId.MinimumWidth" type="System.Int32, mscorlib">
-    <value>80</value>
+  <data name="colProductId.HeaderText" xml:space="preserve">
+    <value>ProductId</value>
+  </data>
+  <data name="&gt;&gt;colCostPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnRefresh.Text" xml:space="preserve">
     <value>Refresh</value>
@@ -543,8 +543,8 @@
   <data name="&gt;&gt;colSKU.Name" xml:space="preserve">
     <value>colSKU</value>
   </data>
-  <data name="&gt;&gt;colBarcode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="colSKU.MinimumWidth" type="System.Int32, mscorlib">
+    <value>70</value>
   </data>
   <data name="lblStatus.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>8, 8, 8, 8</value>

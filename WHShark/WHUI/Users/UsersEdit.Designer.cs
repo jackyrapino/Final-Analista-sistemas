@@ -68,7 +68,7 @@ namespace WHUI.Users
             this.contentPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.contentPanel.Size = new System.Drawing.Size(700, 301);
+            this.contentPanel.Size = new System.Drawing.Size(710, 284);
             this.contentPanel.TabIndex = 0;
             // 
             // tlp
@@ -108,7 +108,7 @@ namespace WHUI.Users
             this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlp.Size = new System.Drawing.Size(684, 256);
+            this.tlp.Size = new System.Drawing.Size(694, 256);
             this.tlp.TabIndex = 0;
             // 
             // lblFirst
@@ -127,7 +127,7 @@ namespace WHUI.Users
             this.txtFirst.Location = new System.Drawing.Point(143, 2);
             this.txtFirst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFirst.Name = "txtFirst";
-            this.txtFirst.Size = new System.Drawing.Size(538, 22);
+            this.txtFirst.Size = new System.Drawing.Size(548, 22);
             this.txtFirst.TabIndex = 1;
             // 
             // lblLast
@@ -146,7 +146,7 @@ namespace WHUI.Users
             this.txtLast.Location = new System.Drawing.Point(143, 32);
             this.txtLast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLast.Name = "txtLast";
-            this.txtLast.Size = new System.Drawing.Size(538, 22);
+            this.txtLast.Size = new System.Drawing.Size(548, 22);
             this.txtLast.TabIndex = 3;
             // 
             // lblEmail
@@ -165,7 +165,7 @@ namespace WHUI.Users
             this.txtEmail.Location = new System.Drawing.Point(143, 62);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(538, 22);
+            this.txtEmail.Size = new System.Drawing.Size(548, 22);
             this.txtEmail.TabIndex = 5;
             // 
             // lblUsername
@@ -184,7 +184,7 @@ namespace WHUI.Users
             this.txtUsername.Location = new System.Drawing.Point(143, 92);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(538, 22);
+            this.txtUsername.Size = new System.Drawing.Size(548, 22);
             this.txtUsername.TabIndex = 7;
             // 
             // lblRole
@@ -243,7 +243,7 @@ namespace WHUI.Users
             this.txtPwd.Location = new System.Drawing.Point(143, 212);
             this.txtPwd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPwd.Name = "txtPwd";
-            this.txtPwd.Size = new System.Drawing.Size(538, 22);
+            this.txtPwd.Size = new System.Drawing.Size(548, 22);
             this.txtPwd.TabIndex = 13;
             this.txtPwd.UseSystemPasswordChar = true;
             // 
@@ -263,7 +263,7 @@ namespace WHUI.Users
             this.txtPwd2.Location = new System.Drawing.Point(143, 242);
             this.txtPwd2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPwd2.Name = "txtPwd2";
-            this.txtPwd2.Size = new System.Drawing.Size(538, 22);
+            this.txtPwd2.Size = new System.Drawing.Size(548, 22);
             this.txtPwd2.TabIndex = 15;
             this.txtPwd2.UseSystemPasswordChar = true;
             // 
@@ -273,28 +273,28 @@ namespace WHUI.Users
             this.pnlButtons.Controls.Add(this.btnOK);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlButtons.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.pnlButtons.Location = new System.Drawing.Point(0, 301);
+            this.pnlButtons.Location = new System.Drawing.Point(0, 284);
             this.pnlButtons.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.pnlButtons.Size = new System.Drawing.Size(700, 35);
+            this.pnlButtons.Size = new System.Drawing.Size(710, 46);
             this.pnlButtons.TabIndex = 1;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(581, 8);
+            this.btnCancel.Location = new System.Drawing.Point(591, 8);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 18);
+            this.btnCancel.Size = new System.Drawing.Size(100, 26);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Cancel";
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(475, 8);
+            this.btnOK.Location = new System.Drawing.Point(485, 8);
             this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(100, 18);
+            this.btnOK.Size = new System.Drawing.Size(100, 26);
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "OK";
             // 
@@ -302,7 +302,7 @@ namespace WHUI.Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 336);
+            this.ClientSize = new System.Drawing.Size(710, 330);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.pnlButtons);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

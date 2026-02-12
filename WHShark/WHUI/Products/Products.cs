@@ -14,5 +14,12 @@ namespace WHUI.Products
             InitializeComponent();
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            using (var frm = new ProductEdit())
+            {
+                frm.ShowDialog(this);
+            }
+        }
     }
 }

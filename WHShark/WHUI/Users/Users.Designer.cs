@@ -34,9 +34,9 @@ namespace WHUI.Users
         {
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnForceClear = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnManagePermissions = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -55,9 +55,9 @@ namespace WHUI.Users
             // pnlTop
             // 
             this.pnlTop.Controls.Add(this.btnDelete);
-            this.pnlTop.Controls.Add(this.btnForceClear);
             this.pnlTop.Controls.Add(this.btnEdit);
             this.pnlTop.Controls.Add(this.btnAdd);
+            this.pnlTop.Controls.Add(this.btnManagePermissions);
             this.pnlTop.Controls.Add(this.btnClear);
             this.pnlTop.Controls.Add(this.btnRefresh);
             this.pnlTop.Controls.Add(this.txtSearch);
@@ -66,7 +66,7 @@ namespace WHUI.Users
             this.pnlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.pnlTop.Size = new System.Drawing.Size(1000, 45);
+            this.pnlTop.Size = new System.Drawing.Size(1124, 45);
             this.pnlTop.TabIndex = 0;
             // 
             // btnDelete
@@ -79,16 +79,6 @@ namespace WHUI.Users
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // btnForceClear
-            // 
-            this.btnForceClear.Location = new System.Drawing.Point(300, 10);
-            this.btnForceClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnForceClear.Name = "btnForceClear";
-            this.btnForceClear.Size = new System.Drawing.Size(140, 24);
-            this.btnForceClear.TabIndex = 6;
-            this.btnForceClear.Text = "Force clear password";
-            this.btnForceClear.UseVisualStyleBackColor = true;
-            // 
             // btnEdit
             // 
             this.btnEdit.Location = new System.Drawing.Point(108, 10);
@@ -98,6 +88,7 @@ namespace WHUI.Users
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -108,11 +99,23 @@ namespace WHUI.Users
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnManagePermissions
+            // 
+            this.btnManagePermissions.Location = new System.Drawing.Point(313, 8);
+            this.btnManagePermissions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnManagePermissions.Name = "btnManagePermissions";
+            this.btnManagePermissions.Size = new System.Drawing.Size(201, 29);
+            this.btnManagePermissions.TabIndex = 6;
+            this.btnManagePermissions.Text = "Manage permissions";
+            this.btnManagePermissions.UseVisualStyleBackColor = true;
+            this.btnManagePermissions.Click += new System.EventHandler(this.btnManagePermissions_Click);
             // 
             // btnClear
             // 
             this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClear.Location = new System.Drawing.Point(882, 10);
+            this.btnClear.Location = new System.Drawing.Point(1006, 10);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(70, 24);
@@ -123,7 +126,7 @@ namespace WHUI.Users
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(786, 10);
+            this.btnRefresh.Location = new System.Drawing.Point(910, 10);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(90, 24);
@@ -134,7 +137,7 @@ namespace WHUI.Users
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Location = new System.Drawing.Point(420, 11);
+            this.txtSearch.Location = new System.Drawing.Point(544, 11);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(360, 22);
@@ -162,7 +165,7 @@ namespace WHUI.Users
             this.dgv.RowHeadersVisible = false;
             this.dgv.RowHeadersWidth = 51;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1000, 420);
+            this.dgv.Size = new System.Drawing.Size(1124, 420);
             this.dgv.TabIndex = 1;
             // 
             // colUserId
@@ -228,7 +231,7 @@ namespace WHUI.Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 493);
+            this.ClientSize = new System.Drawing.Size(1124, 493);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.lblStatus);
@@ -250,7 +253,7 @@ namespace WHUI.Users
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnForceClear;
+        private System.Windows.Forms.Button btnManagePermissions;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUserId;

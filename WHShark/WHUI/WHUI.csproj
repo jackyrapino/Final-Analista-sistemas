@@ -210,6 +210,12 @@
     <Compile Include="Suppliers\SuppliersEdit.Designer.cs">
       <DependentUpon>SuppliersEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\UserPermissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\UserPermissions.Designer.cs">
+      <DependentUpon>UserPermissions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\Users.cs">
       <SubType>Form</SubType>
     </Compile>

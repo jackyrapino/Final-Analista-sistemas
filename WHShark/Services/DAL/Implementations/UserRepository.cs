@@ -88,40 +88,6 @@ namespace Services.DAL.Implementations
                         reader.GetValues(values);
                         user = UserAdapter.Current.Adapt(values);
 
-                        // Populate user's permisos via DAL joins: families and patents associated to user
-                        // First, load top-level Families and Patents by user
-                        // We rely on stored procedures User_Family_Select and User_Patent_Select returning ids
-
-                        // Load user families
-                        reader.Close();
-                        using (var r2 = SqlHelper.ExecuteReader("ManagerAuth", "User_Family_Select", System.Data.CommandType.StoredProcedure,
-                            new SqlParameter[] { new SqlParameter("@IdUser", user.IdUser) }))
-                        {
-                            object[] vals2 = new object[r2.FieldCount];
-                            while (r2.Read())
-                            {
-                                r2.GetValues(vals2);
-                                Guid idFamily = Guid.Parse(vals2[1].ToString());
-                                var fam = FamilyRepository.Current.SelectOne(idFamily);
-                                if (fam != null)
-                                    user.Permisos.Add(fam);
-                            }
-                        }
-
-                        // Load user patents
-                        using (var r3 = SqlHelper.ExecuteReader("ManagerAuth", "User_Patent_Select", System.Data.CommandType.StoredProcedure,
-                            new SqlParameter[] { new SqlParameter("@IdUser", user.IdUser) }))
-                        {
-                            object[] vals3 = new object[r3.FieldCount];
-                            while (r3.Read())
-                            {
-                                r3.GetValues(vals3);
-                                Guid idPatent = Guid.Parse(vals3[1].ToString());
-                                var pat = PatentRepository.Current.SelectOne(idPatent);
-                                if (pat != null)
-                                    user.Permisos.Add(pat);
-                            }
-                        }
                     }
                 }
             }
@@ -130,6 +96,52 @@ namespace Services.DAL.Implementations
                 ex.Handle(this);
             }
             return user;
+        }
+
+        /// <summary>
+        /// Populate the familias and patentes for a previously authenticated user.
+        /// This is separated from GetByLoginName so the BLL can verify credentials first.
+        /// </summary>
+        public void PopulatePermissions(User user)
+        {
+            if (user == null) return;
+
+            try
+            {
+                // Load user families
+                using (var r2 = SqlHelper.ExecuteReader("ManagerAuth", "Usuario_Familia_SelectParticular", System.Data.CommandType.StoredProcedure,
+                    new SqlParameter[] { new SqlParameter("@IdUsuario", user.IdUser) }))
+                {
+                    object[] vals2 = new object[r2.FieldCount];
+                    while (r2.Read())
+                    {
+                        r2.GetValues(vals2);
+                        Guid idFamily = Guid.Parse(vals2[1].ToString());
+                        var fam = FamilyRepository.Current.SelectOne(idFamily);
+                        if (fam != null)
+                            user.Permisos.Add(fam);
+                    }
+                }
+
+                // Load user patents
+                using (var r3 = SqlHelper.ExecuteReader("ManagerAuth", "Usuario_Patente_SelectParticular", System.Data.CommandType.StoredProcedure,
+                    new SqlParameter[] { new SqlParameter("@IdUsuario", user.IdUser) }))
+                {
+                    object[] vals3 = new object[r3.FieldCount];
+                    while (r3.Read())
+                    {
+                        r3.GetValues(vals3);
+                        Guid idPatent = Guid.Parse(vals3[1].ToString());
+                        var pat = PatentRepository.Current.SelectOne(idPatent);
+                        if (pat != null)
+                            user.Permisos.Add(pat);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.Handle(this);
+            }
         }
 
         public User GetByPasswordResetToken(string token)
