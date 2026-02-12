@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Services.Services;
 
 namespace WHUI.Menu
 {
@@ -34,22 +35,26 @@ namespace WHUI.Menu
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Session.CurrentUser = null;
 
+            if (activeForm != null)
+            {
+                try { activeForm.Close(); activeForm.Dispose(); }
+                catch { }
+                activeForm = null;
+            }
+            this.Hide();
             using (var login = new WHUI.Login.LogIn())
             {
-                var result = login.ShowDialog();
-                if (result == DialogResult.OK)
+                if (login.ShowDialog() == DialogResult.OK)
                 {
-                    // Login successful for another user: show the menu again (could refresh user data here)
+                    // Logged in again
                     this.Show();
-                }
-                else
-                {
-                    // Login canceled or failed: close the menu to exit application
-                    this.Close();
+                    return;
                 }
             }
+
+            this.Close();
         }
 
         private void Menu_Load(object sender, EventArgs e)
