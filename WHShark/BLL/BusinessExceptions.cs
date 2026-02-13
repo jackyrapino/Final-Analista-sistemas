@@ -23,4 +23,9 @@ namespace Services.BLL
     {
         public UsuarioBloqueadoException(string message = "Usuario bloqueado") : base(message) { }
     }
+
+    public class UsuarioInactivoException : BusinessException
+    {
+        public UsuarioInactivoException(string message = "Usuario inactivo") : base(message) { }
+    }
 }

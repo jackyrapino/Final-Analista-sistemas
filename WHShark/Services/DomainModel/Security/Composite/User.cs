@@ -11,34 +11,13 @@ namespace Services.DomainModel.Security.Composite
     {
         public Guid IdUser { get; set; }
         public string Name { get; set; }
-
-        // Stored password is expected to be the hashed value
+        public string Username { get; set; }
         public string Password { get; set; }
-
-        // Authentication/management fields
         public int FailedAttempts { get; set; }
         public global::Services.DomainModel.Security.UserState State { get; set; }
 
-        public string PasswordResetToken { get; set; }
-        public DateTime? PasswordResetTokenExpires { get; set; }
-
         public bool IsAdmin { get; set; }
 
-        public string HashDH
-        {
-            get
-            {
-                return CryptographyService.HashPassword(Name + Password);
-            }
-        }
-
-        public string HashPassword
-        {
-            get
-            {
-                return CryptographyService.HashPassword(this.Password);
-            }
-        }
 
         public List<Component> Permisos { get; set; }
 

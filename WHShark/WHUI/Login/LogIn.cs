@@ -42,5 +42,13 @@ namespace WHUI.Login
                 MessageBox.Show(this, "An unexpected error occurred: " + ex.Message, "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void LinkpassChange_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            using (var frm = new ResetPass())
+            {
+                frm.ShowDialog(this);
+            }
+        }
     }
 }

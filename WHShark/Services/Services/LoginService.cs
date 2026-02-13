@@ -1,5 +1,4 @@
-﻿using Services.DomainModel.Security;
-using Services.DomainModel.Security.Composite;
+﻿using Services.DomainModel.Security.Composite;
 using Services.BLL;
 using System;
 using System.Collections.Generic;
@@ -73,8 +72,6 @@ namespace Services.Services
                 repoUser.Password = CryptographyService.HashPassword(newPassword);
                 repoUser.FailedAttempts = 0;
                 repoUser.State = global::Services.DomainModel.Security.UserState.Active;
-                repoUser.PasswordResetToken = null;
-                repoUser.PasswordResetTokenExpires = null;
 
                 DAL.Implementations.UserRepository.Current.Update(repoUser);
 
@@ -86,6 +83,31 @@ namespace Services.Services
             {
                 LoggerService.WriteError("Ocurrió un error al restablecer la contraseña: " + ex.Message);
                 message = "Ocurrió un error al restablecer la contraseña.";
+                return false;
+            }
+        }
+
+        public static bool ChangePassword(string username, string currentPassword, string newPassword, out string message)
+        {
+            message = string.Empty;
+            try
+            {
+                global::Services.BLL.LoginService.ChangePassword(username, currentPassword, newPassword);
+                LoggerService.WriteInfo($"Password changed for user: {username}", username);
+                message = "Password changed successfully.";
+                return true;
+            }
+            catch (global::Services.BLL.BusinessException bex)
+            {
+                LoggerService.WriteWarning(bex.Message);
+                message = bex.Message;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                // Unexpected errors
+                LoggerService.WriteError("Ocurrió un error al cambiar la contraseña: " + ex.Message);
+                message = "An error occurred while changing the password.";
                 return false;
             }
         }

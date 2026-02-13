@@ -47,9 +47,14 @@ namespace Services.DAL.Implementations.Adapter
                 if (values.Length > 0 && values[0] != null && Guid.TryParse(values[0].ToString(), out Guid id))
                     user.IdUser = id;
 
-                if (values.Length > 2 && values[2] != null && !string.IsNullOrWhiteSpace(values[2].ToString()))
+                if (values.Length > 2 && values[2] != null)
                 {
-                    user.Name = values[2].ToString();
+                    user.Username = values[2].ToString();
+                }
+
+                if (values.Length > 1 && values[1] != null && !string.IsNullOrWhiteSpace(values[1].ToString()))
+                {
+                    user.Name = values[1].ToString();
                 }
                 else if (values.Length > 1 && values[1] != null)
                 {

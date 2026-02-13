@@ -52,18 +52,26 @@ namespace Services.DAL.Implementations
 
         public void Update(User obj)
         {
-            // Persist only fields relevant to authentication: Password, FailedAttempts, State, PasswordResetToken, PasswordResetTokenExpires
             try
             {
-                SqlHelper.ExecuteNonQuery("ManagerAuth", "User_Update",
+                var idUsuario = obj.IdUser;
+                var nombre = (object)obj.Name ?? DBNull.Value;
+                var username = (object)obj.Username ?? DBNull.Value;
+                var passwordHash = (object)obj.Password ?? DBNull.Value;
+                var estado = (int)obj.State;
+                var failedAttempts = obj.FailedAttempts;
+                var isAdmin = obj.IsAdmin ? 1 : 0;
+
+                SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Update",
                     System.Data.CommandType.StoredProcedure,
                     new SqlParameter[] {
-                        new SqlParameter("@IdUser", obj.IdUser),
-                        new SqlParameter("@Password", (object)obj.Password ?? DBNull.Value),
-                        new SqlParameter("@FailedAttempts", obj.FailedAttempts),
-                        new SqlParameter("@State", (int)obj.State),
-                        new SqlParameter("@PasswordResetToken", (object)obj.PasswordResetToken ?? DBNull.Value),
-                        new SqlParameter("@PasswordResetTokenExpires", (object)obj.PasswordResetTokenExpires ?? DBNull.Value)
+                        new SqlParameter("@IdUsuario", idUsuario),
+                        new SqlParameter("@Nombre", nombre),
+                        new SqlParameter("@Username", username),
+                        new SqlParameter("@PasswordHash", passwordHash),
+                        new SqlParameter("@Estado", estado),
+                        new SqlParameter("@FailedAttempts", failedAttempts),
+                        new SqlParameter("@IsAdmin", isAdmin)
                     });
             }
             catch (Exception ex)

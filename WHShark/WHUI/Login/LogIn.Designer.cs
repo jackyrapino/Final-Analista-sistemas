@@ -183,6 +183,7 @@ namespace WHUI.Login
             this.LinkpassChange.TabIndex = 8;
             this.LinkpassChange.TabStop = true;
             this.LinkpassChange.Text = "I want change my password";
+            this.LinkpassChange.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkpassChange_LinkClicked);
             // 
             // LogIn
             // 
