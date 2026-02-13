@@ -26,33 +26,34 @@ namespace Services.Services
 
                 if (u == null)
                 {
-                    message = "Credenciales inválidas.";
+                    message = "Invalid credentials.";
                     return false;
                 }
 
                 if (u.State == global::Services.DomainModel.Security.UserState.ForceChange)
                 {
                     user = u;
-                    message = "Debe cambiar la contraseña en el primer ingreso.";
+                    message = "Password change required on first login.";
                     return false;
                 }
 
                 Session.CurrentUser = u;
-                LoggerService.WriteInfo($"Inicio de sesión exitoso: {loginName}", u?.Name ?? string.Empty);
+                LoggerService.WriteInfo($"Login successful: {loginName}", u?.Name ?? string.Empty);
                 user = u;
-                message = "Inicio de sesión exitoso.";
+                message = "Login successful.";
                 return true;
             }
             catch (global::Services.BLL.BusinessException bex)
             {
                 LoggerService.WriteWarning(bex.Message);
-                message = bex.Message;
+                    message = bex.Message; 
+
                 return false;
             }
             catch (Exception ex)
             {
-                LoggerService.WriteError("Ocurrió un error inesperado al intentar iniciar sesión: " + ex.Message);
-                message = "Ocurrió un error inesperado al intentar iniciar sesión.";
+                LoggerService.WriteError("An unexpected error occurred while attempting to login: " + ex.Message);
+                message = "An unexpected error occurred while attempting to login.";
                 return false;
             }
         }
@@ -65,7 +66,7 @@ namespace Services.Services
                 var repoUser = DAL.Implementations.UserRepository.Current.GetByPasswordResetToken(token);
                 if (repoUser == null)
                 {
-                    message = "El código ingresado no es válido o ha expirado.";
+                    message = "The provided code is invalid or has expired.";
                     return false;
                 }
 
@@ -75,14 +76,25 @@ namespace Services.Services
 
                 DAL.Implementations.UserRepository.Current.Update(repoUser);
 
-                LoggerService.WriteInfo("Contraseña restablecida correctamente", repoUser?.Name ?? string.Empty);
-                message = "Contraseña restablecida correctamente.";
+                // Log in English
+                LoggerService.WriteInfo("Password reset successfully", repoUser?.Name ?? string.Empty);
+                message = "Password reset successfully.";
                 return true;
+            }
+            catch (global::Services.BLL.BusinessException bex)
+            {
+                LoggerService.WriteWarning(bex.Message);
+                // Map known business exceptions to English
+                if (bex is global::Services.BLL.UsuarioInexistenteException)
+                    message = "User does not exist.";
+                else
+                    message = bex.Message;
+                return false;
             }
             catch (Exception ex)
             {
-                LoggerService.WriteError("Ocurrió un error al restablecer la contraseña: " + ex.Message);
-                message = "Ocurrió un error al restablecer la contraseña.";
+                LoggerService.WriteError("An error occurred while resetting the password: " + ex.Message);
+                message = "An error occurred while resetting the password.";
                 return false;
             }
         }
@@ -100,13 +112,24 @@ namespace Services.Services
             catch (global::Services.BLL.BusinessException bex)
             {
                 LoggerService.WriteWarning(bex.Message);
-                message = bex.Message;
+
+                if (bex is global::Services.BLL.UsuarioInexistenteException)
+                    message = "User does not exist.";
+                else if (bex is global::Services.BLL.PasswordIncorrectaException)
+                    message = "Incorrect password.";
+                else if (bex is global::Services.BLL.UsuarioBloqueadoException)
+                    message = "User is blocked.";
+                else if (bex is global::Services.BLL.UsuarioInactivoException)
+                    message = "User is inactive.";
+                else
+                    message = bex.Message;
+
                 return false;
             }
             catch (Exception ex)
             {
-                // Unexpected errors
-                LoggerService.WriteError("Ocurrió un error al cambiar la contraseña: " + ex.Message);
+                // Unexpected errors - log in English
+                LoggerService.WriteError("An error occurred while changing the password: " + ex.Message);
                 message = "An error occurred while changing the password.";
                 return false;
             }

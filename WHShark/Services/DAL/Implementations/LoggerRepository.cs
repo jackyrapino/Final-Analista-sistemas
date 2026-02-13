@@ -25,6 +25,11 @@ namespace Services.DAL.Implementations
         private LoggerRepository()
         {
             //Implement here the initialization code
+            // Ensure path settings have safe defaults
+            if (string.IsNullOrWhiteSpace(pathLog))
+                pathLog = AppDomain.CurrentDomain.BaseDirectory;
+            if (string.IsNullOrWhiteSpace(pathFile))
+                pathFile = "_app.log";
         }
         #endregion
 
@@ -35,10 +40,20 @@ namespace Services.DAL.Implementations
         // New signature: use domain Severity and user string
         public void WriteLog(global::Services.DomainModel.Severity severity, string message, string user)
         {
-            string fileName = pathLog + DateTime.Now.ToString("yyyyMMdd") + pathFile;
-
             try
             {
+                // Ensure directory exists
+                string directory = pathLog;
+                if (string.IsNullOrWhiteSpace(directory))
+                    directory = AppDomain.CurrentDomain.BaseDirectory;
+
+                if (!Directory.Exists(directory))
+                    Directory.CreateDirectory(directory);
+
+                // Build filename: yyyyMMdd + pathFile (which can include extension)
+                string fileName = Path.Combine(directory, DateTime.Now.ToString("yyyyMMdd") + pathFile);
+
+                // Ensure file exists and then append line
                 using (StreamWriter streamWriter = new StreamWriter(fileName, true, System.Text.Encoding.UTF8))
                 {
                     string ts = DateTime.UtcNow.ToString("o"); // ISO 8601
@@ -48,7 +63,7 @@ namespace Services.DAL.Implementations
             }
             catch
             {
-                // swallow IO exceptions
+                // swallow IO exceptions - do not throw from logger
             }
         }
     }
