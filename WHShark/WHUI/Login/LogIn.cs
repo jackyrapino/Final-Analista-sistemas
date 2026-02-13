@@ -47,7 +47,13 @@ namespace WHUI.Login
         {
             using (var frm = new ResetPass())
             {
-                frm.ShowDialog(this);
+                var result = frm.ShowDialog(this);
+                if (result == DialogResult.OK)
+                {
+                    txtPass.Text = string.Empty;
+                    MessageBox.Show(this, "Password changed. Please login with your new password.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtPass.Focus();
+                }
             }
         }
     }

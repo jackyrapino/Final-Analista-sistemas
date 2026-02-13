@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2AC614AD-B65F-4390-AFD2-3CC7127D72FC}|WHUI\\WHUI.csproj|D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\whui\\login\\resetpass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AC614AD-B65F-4390-AFD2-3CC7127D72FC}|WHUI\\WHUI.csproj|solutionrelative:whui\\login\\resetpass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AC614AD-B65F-4390-AFD2-3CC7127D72FC}|WHUI\\WHUI.csproj|D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\whui\\login\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AC614AD-B65F-4390-AFD2-3CC7127D72FC}|WHUI\\WHUI.csproj|solutionrelative:whui\\login\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\services\\dal\\implementations\\adapter\\useradapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|solutionrelative:services\\dal\\implementations\\adapter\\useradapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\services\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|solutionrelative:services\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\services\\bll\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|solutionrelative:services\\bll\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|d:\\facultad\\3er a\u00F1o\\trabajo de diploma\\final final sistemas\\final-analista-sistemas\\whshark\\services\\dal\\implementations\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|solutionrelative:services\\dal\\implementations\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,20 +35,8 @@
       "RelativeMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|solutionrelative:services\\domainmodel\\security\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\services\\bll\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|solutionrelative:services\\bll\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\services\\dal\\implementations\\adapter\\useradapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|solutionrelative:services\\dal\\implementations\\adapter\\useradapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|d:\\facultad\\3er a\u00F1o\\trabajo de diploma\\final final sistemas\\final-analista-sistemas\\whshark\\services\\dal\\contracts\\iadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|solutionrelative:services\\dal\\contracts\\iadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\services\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|solutionrelative:services\\services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\services\\services\\loggerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|d:\\facultad\\3er a\u00F1o\\trabajo de diploma\\final final sistemas\\final-analista-sistemas\\whshark\\services\\dal\\implementations\\familyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|solutionrelative:services\\dal\\implementations\\familyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AC614AD-B65F-4390-AFD2-3CC7127D72FC}|WHUI\\WHUI.csproj|D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\whui\\login\\resetpass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AC614AD-B65F-4390-AFD2-3CC7127D72FC}|WHUI\\WHUI.csproj|solutionrelative:whui\\login\\resetpass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{567F972C-FFAB-4F26-B8FA-42EE2E4F0F4C}|BLL\\BLL.csproj|D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\bll\\businessexceptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -53,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\services\\services\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5B68FC2-EC11-44AF-B3AB-01D62B34D312}|Services\\Services.csproj|solutionrelative:services\\services\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2AC614AD-B65F-4390-AFD2-3CC7127D72FC}|WHUI\\WHUI.csproj|D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\whui\\login\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2AC614AD-B65F-4390-AFD2-3CC7127D72FC}|WHUI\\WHUI.csproj|solutionrelative:whui\\login\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2AC614AD-B65F-4390-AFD2-3CC7127D72FC}|WHUI\\WHUI.csproj|D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\whui\\login\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -518,50 +518,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 247,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IAdapter.cs",
-              "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\DAL\\Contracts\\IAdapter.cs",
-              "RelativeDocumentMoniker": "Services\\DAL\\Contracts\\IAdapter.cs",
-              "ToolTip": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\DAL\\Contracts\\IAdapter.cs",
-              "RelativeToolTip": "Services\\DAL\\Contracts\\IAdapter.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-13T00:42:45.382Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "ResetPass.cs",
               "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\WHUI\\Login\\ResetPass.cs",
               "RelativeDocumentMoniker": "WHUI\\Login\\ResetPass.cs",
               "ToolTip": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\WHUI\\Login\\ResetPass.cs",
               "RelativeToolTip": "WHUI\\Login\\ResetPass.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAgwDgAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAYwCwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-10T17:06:36.056Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "LoginService.cs",
               "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\Services\\LoginService.cs",
               "RelativeDocumentMoniker": "Services\\Services\\LoginService.cs",
               "ToolTip": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\Services\\LoginService.cs",
               "RelativeToolTip": "Services\\Services\\LoginService.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAYwFsAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAswHAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-30T23:25:15.958Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Session.cs",
               "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\Services\\Session.cs",
               "RelativeDocumentMoniker": "Services\\Services\\Session.cs",
@@ -574,7 +561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "LoggerService.cs",
               "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\Services\\LoggerService.cs",
               "RelativeDocumentMoniker": "Services\\Services\\LoggerService.cs",
@@ -587,7 +574,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "BusinessExceptions.cs",
               "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\BLL\\BusinessExceptions.cs",
               "RelativeDocumentMoniker": "BLL\\BusinessExceptions.cs",
@@ -600,33 +587,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "LoginService.cs",
               "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\BLL\\LoginService.cs",
               "RelativeDocumentMoniker": "Services\\BLL\\LoginService.cs",
               "ToolTip": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\BLL\\LoginService.cs",
               "RelativeToolTip": "Services\\BLL\\LoginService.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAqwEIAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAgwIYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-04T19:42:29.229Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\DAL\\Implementations\\UserRepository.cs",
               "RelativeDocumentMoniker": "Services\\DAL\\Implementations\\UserRepository.cs",
               "ToolTip": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\DAL\\Implementations\\UserRepository.cs",
               "RelativeToolTip": "Services\\DAL\\Implementations\\UserRepository.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAnwDcAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAgwFEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-12T04:35:54.954Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\DomainModel\\Security\\Composite\\User.cs",
               "RelativeDocumentMoniker": "Services\\DomainModel\\Security\\Composite\\User.cs",
@@ -639,7 +626,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\DomainModel\\Security\\User.cs",
               "RelativeDocumentMoniker": "Services\\DomainModel\\Security\\User.cs",
@@ -652,20 +639,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "UserAdapter.cs",
               "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\DAL\\Implementations\\Adapter\\UserAdapter.cs",
               "RelativeDocumentMoniker": "Services\\DAL\\Implementations\\Adapter\\UserAdapter.cs",
               "ToolTip": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\DAL\\Implementations\\Adapter\\UserAdapter.cs",
               "RelativeToolTip": "Services\\DAL\\Implementations\\Adapter\\UserAdapter.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAgwC4AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAYwB8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-31T15:34:08.912Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LogIn.cs",
+              "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\WHUI\\Login\\LogIn.cs",
+              "RelativeDocumentMoniker": "WHUI\\Login\\LogIn.cs",
+              "ToolTip": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\WHUI\\Login\\LogIn.cs",
+              "RelativeToolTip": "WHUI\\Login\\LogIn.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAEwDMAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T16:20:04.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "IAdapter.cs",
+              "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\DAL\\Contracts\\IAdapter.cs",
+              "RelativeDocumentMoniker": "Services\\DAL\\Contracts\\IAdapter.cs",
+              "ToolTip": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\DAL\\Contracts\\IAdapter.cs",
+              "RelativeToolTip": "Services\\DAL\\Contracts\\IAdapter.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T00:42:45.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "FamilyRepository.cs",
               "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\Services\\DAL\\Implementations\\FamilyRepository.cs",
               "RelativeDocumentMoniker": "Services\\DAL\\Implementations\\FamilyRepository.cs",
@@ -678,7 +691,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ResetPass.cs [Design]",
               "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\WHUI\\Login\\ResetPass.cs",
               "RelativeDocumentMoniker": "WHUI\\Login\\ResetPass.cs",
@@ -687,19 +700,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-10T17:06:46.853Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "LogIn.cs",
-              "DocumentMoniker": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\WHUI\\Login\\LogIn.cs",
-              "RelativeDocumentMoniker": "WHUI\\Login\\LogIn.cs",
-              "ToolTip": "D:\\Facultad\\3er A\u00F1o\\trabajo de diploma\\Final final sistemas\\Final-Analista-sistemas\\WHShark\\WHUI\\Login\\LogIn.cs",
-              "RelativeToolTip": "WHUI\\Login\\LogIn.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAASwC4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-10T16:20:04.954Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",

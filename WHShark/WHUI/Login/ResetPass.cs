@@ -14,11 +14,8 @@ namespace WHUI.Login
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            // Just close the dialog and return to the owner (original LogIn) if any
             this.Close();
-            using (var login = new LogIn())
-            {
-                login.ShowDialog();
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,17 +34,18 @@ namespace WHUI.Login
 
             try
             {
+                // Use service facade which returns bool and message
                 string serviceMessage;
                 var ok = LoginService.ChangePassword(username, current, newPass, out serviceMessage);
+
                 if (ok)
                 {
                     LoggerService.WriteInfo($"Password changed for user: {username}", username);
                     MessageBox.Show(this, serviceMessage ?? "Password changed successfully.", "Change password", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
-                    using (var login = new LogIn())
-                    {
-                        login.ShowDialog();
-                    }
+                    return;
                 }
                 else
                 {
