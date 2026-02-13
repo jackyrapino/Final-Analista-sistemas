@@ -22,7 +22,7 @@ namespace Services.Services
             try
             {
                 // Delegate authentication to BLL
-                var u = global::Services.BLL.LoginService.Login(loginName, password);
+                var u = global::Services.BLL.LoginBLL.Login(loginName, password);
 
                 if (u == null)
                 {
@@ -104,7 +104,7 @@ namespace Services.Services
             message = string.Empty;
             try
             {
-                global::Services.BLL.LoginService.ChangePassword(username, currentPassword, newPassword);
+                global::Services.BLL.LoginBLL.ChangePassword(username, currentPassword, newPassword);
                 LoggerService.WriteInfo($"Password changed for user: {username}", username);
                 message = "Password changed successfully.";
                 return true;
@@ -132,6 +132,29 @@ namespace Services.Services
                 LoggerService.WriteError("An error occurred while changing the password: " + ex.Message);
                 message = "An error occurred while changing the password.";
                 return false;
+            }
+        }
+
+        // New: expose list of users to UI by delegating to BLL
+        public static IEnumerable<User> ListAllUsers(out string message)
+        {
+            message = string.Empty;
+            try
+            {
+                var users = global::Services.BLL.LoginBLL.SelectAllUsers();
+                return users ?? new List<User>();
+            }
+            catch (global::Services.BLL.BusinessException bex)
+            {
+                LoggerService.WriteWarning(bex.Message);
+                message = bex.Message;
+                return new List<User>();
+            }
+            catch (Exception ex)
+            {
+                LoggerService.WriteError("An error occurred while retrieving users: " + ex.Message);
+                message = "An unexpected error occurred while retrieving users.";
+                return new List<User>();
             }
         }
 

@@ -45,7 +45,7 @@
     <Compile Include="BLL\ExceptionBLL.cs" />
     <Compile Include="BLL\LanguageBLL.cs" />
     <Compile Include="BLL\LoggerBLL.cs" />
-    <Compile Include="BLL\LoginService.cs" />
+    <Compile Include="BLL\LoginBLL.cs" />
     <Compile Include="DAL\Contracts\IAdapter.cs" />
     <Compile Include="DAL\Contracts\IBackupRepository.cs" />
     <Compile Include="DAL\Contracts\IGenericRepository.cs" />

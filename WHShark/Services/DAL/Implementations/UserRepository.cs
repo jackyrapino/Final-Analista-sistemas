@@ -42,8 +42,37 @@ namespace Services.DAL.Implementations
 
         public IEnumerable<User> SelectAll()
         {
-            throw new NotImplementedException();
+            var users = new List<User>();
+            try
+            {
+                using (var reader = SqlHelper.ExecuteReader("ManagerAuth", "Usuario_SelectAll", System.Data.CommandType.StoredProcedure))
+                {
+                    while (reader.Read())
+                    {
+                        var u = new User
+                        {
+                            IdUser = Guid.Parse(reader["IdUsuario"].ToString()),
+                            Name = reader["Nombre"].ToString(),
+                            Username = reader["Username"].ToString(),
+                            Password = reader["PasswordHash"].ToString(),
+                            State = (DomainModel.Security.UserState)(int)reader["Estado"],
+                            FailedAttempts = (int)reader["FailedAttempts"],
+                            IsAdmin = (bool)reader["IsAdmin"]
+                        };
+
+                        users.Add(u);
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.Handle(this);
+            }
+
+            return users;
         }
+
 
         public User SelectOne(Guid id)
         {
@@ -81,7 +110,6 @@ namespace Services.DAL.Implementations
 
         }
 
-        // New stubs used by authentication logic
         public User GetByLoginName(string loginName)
         {
             User user = null;

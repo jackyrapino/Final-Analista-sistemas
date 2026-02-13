@@ -41,12 +41,11 @@ namespace WHUI.Users
             this.btnRefresh = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.colUserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colState = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFailedAttempts = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIsAdmin = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lblStatus = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -66,7 +65,7 @@ namespace WHUI.Users
             this.pnlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.pnlTop.Size = new System.Drawing.Size(1124, 45);
+            this.pnlTop.Size = new System.Drawing.Size(1141, 45);
             this.pnlTop.TabIndex = 0;
             // 
             // btnDelete
@@ -115,7 +114,7 @@ namespace WHUI.Users
             // btnClear
             // 
             this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClear.Location = new System.Drawing.Point(1006, 10);
+            this.btnClear.Location = new System.Drawing.Point(1023, 10);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(70, 24);
@@ -126,7 +125,7 @@ namespace WHUI.Users
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(910, 10);
+            this.btnRefresh.Location = new System.Drawing.Point(927, 10);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(90, 24);
@@ -137,7 +136,7 @@ namespace WHUI.Users
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Location = new System.Drawing.Point(544, 11);
+            this.txtSearch.Location = new System.Drawing.Point(561, 11);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(360, 22);
@@ -150,12 +149,11 @@ namespace WHUI.Users
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeight = 29;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colUserId,
             this.colUsername,
-            this.colEmail,
-            this.colRole,
-            this.colBranch,
-            this.colCreatedAt});
+            this.colName,
+            this.colState,
+            this.colFailedAttempts,
+            this.colIsAdmin});
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.Location = new System.Drawing.Point(0, 45);
             this.dgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -165,17 +163,8 @@ namespace WHUI.Users
             this.dgv.RowHeadersVisible = false;
             this.dgv.RowHeadersWidth = 51;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1124, 420);
+            this.dgv.Size = new System.Drawing.Size(1141, 443);
             this.dgv.TabIndex = 1;
-            // 
-            // colUserId
-            // 
-            this.colUserId.DataPropertyName = "UserId";
-            this.colUserId.HeaderText = "UserId";
-            this.colUserId.MinimumWidth = 6;
-            this.colUserId.Name = "colUserId";
-            this.colUserId.ReadOnly = true;
-            this.colUserId.Visible = false;
             // 
             // colUsername
             // 
@@ -185,43 +174,43 @@ namespace WHUI.Users
             this.colUsername.Name = "colUsername";
             this.colUsername.ReadOnly = true;
             // 
-            // colEmail
+            // colName
             // 
-            this.colEmail.DataPropertyName = "Email";
-            this.colEmail.HeaderText = "Email";
-            this.colEmail.MinimumWidth = 6;
-            this.colEmail.Name = "colEmail";
-            this.colEmail.ReadOnly = true;
+            this.colName.DataPropertyName = "Name";
+            this.colName.HeaderText = "Name";
+            this.colName.MinimumWidth = 6;
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
             // 
-            // colRole
+            // colState
             // 
-            this.colRole.DataPropertyName = "Role";
-            this.colRole.HeaderText = "Role";
-            this.colRole.MinimumWidth = 6;
-            this.colRole.Name = "colRole";
-            this.colRole.ReadOnly = true;
+            this.colState.DataPropertyName = "State";
+            this.colState.HeaderText = "State";
+            this.colState.MinimumWidth = 6;
+            this.colState.Name = "colState";
+            this.colState.ReadOnly = true;
             // 
-            // colBranch
+            // colFailedAttempts
             // 
-            this.colBranch.DataPropertyName = "Branch";
-            this.colBranch.HeaderText = "Branch";
-            this.colBranch.MinimumWidth = 6;
-            this.colBranch.Name = "colBranch";
-            this.colBranch.ReadOnly = true;
+            this.colFailedAttempts.DataPropertyName = "FailedAttempts";
+            this.colFailedAttempts.HeaderText = "Failed Attempts";
+            this.colFailedAttempts.MinimumWidth = 6;
+            this.colFailedAttempts.Name = "colFailedAttempts";
+            this.colFailedAttempts.ReadOnly = true;
             // 
-            // colCreatedAt
+            // colIsAdmin
             // 
-            this.colCreatedAt.DataPropertyName = "CreatedAt";
-            this.colCreatedAt.HeaderText = "Created";
-            this.colCreatedAt.MinimumWidth = 6;
-            this.colCreatedAt.Name = "colCreatedAt";
-            this.colCreatedAt.ReadOnly = true;
+            this.colIsAdmin.DataPropertyName = "IsAdmin";
+            this.colIsAdmin.HeaderText = "Is Admin";
+            this.colIsAdmin.MinimumWidth = 6;
+            this.colIsAdmin.Name = "colIsAdmin";
+            this.colIsAdmin.ReadOnly = true;
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblStatus.Location = new System.Drawing.Point(0, 465);
+            this.lblStatus.Location = new System.Drawing.Point(0, 488);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
             this.lblStatus.Size = new System.Drawing.Size(16, 28);
@@ -231,7 +220,7 @@ namespace WHUI.Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1124, 493);
+            this.ClientSize = new System.Drawing.Size(1141, 516);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.lblStatus);
@@ -256,13 +245,11 @@ namespace WHUI.Users
         private System.Windows.Forms.Button btnManagePermissions;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colUserId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUsername;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRole;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colBranch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCreatedAt;
-
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colState;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFailedAttempts;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colIsAdmin;
 
         #endregion
     }
