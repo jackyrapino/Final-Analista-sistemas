@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Services.Services;
+using System.Threading.Tasks;
 
 namespace WHUI.Menu
 {
@@ -31,6 +32,70 @@ namespace WHUI.Menu
             panelContent.Tag = child;
             child.BringToFront();
             child.Show();
+        }
+
+        private async void btnBackup_Click(object sender, EventArgs e)
+        {
+            using (var dlg = new FolderBrowserDialog())
+            {
+                dlg.Description = "Select destination folder for database backups";
+                dlg.ShowNewFolderButton = true;
+
+                if (dlg.ShowDialog(this) != DialogResult.OK)
+                    return;
+
+                var folder = dlg.SelectedPath;
+
+                try
+                {
+                    // Run backup off UI thread
+                    var result = await Task.Run(() => BackupService.BackupBoth(folder));
+
+                    // Log and inform user
+                    LoggerService.WriteInfo($"Backup completed. Business: {result.BusinessBackupPath}, Auth: {result.AuthBackupPath}", Session.CurrentUser?.Name ?? string.Empty);
+
+                    MessageBox.Show(this, $"Backup completed:\nBusiness: {result.BusinessBackupPath}\nAuth: {result.AuthBackupPath}", "Backup", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    // Log error and show message
+                    LoggerService.WriteError("Backup failed: " + ex.Message, Session.CurrentUser?.Name ?? string.Empty);
+                    MessageBox.Show(this, "Backup failed: " + ex.Message, "Backup", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private async void btnRestore_Click(object sender, EventArgs e)
+        {
+            using (var dlg = new FolderBrowserDialog())
+            {
+                dlg.Description = "Select folder that contains the .bak files to restore";
+                dlg.ShowNewFolderButton = false;
+
+                if (dlg.ShowDialog(this) != DialogResult.OK)
+                    return;
+
+                var folder = dlg.SelectedPath;
+
+                // Confirm because restore will replace databases
+                var confirm = MessageBox.Show(this, "Restoring will replace the current databases. Are you sure you want to continue?", "Confirm Restore", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (confirm != DialogResult.Yes)
+                    return;
+
+                try
+                {
+                    // Run restore off UI thread (RestoreDatabase will pick the two most recent .bak files and call RestoreBoth)
+                    await Task.Run(() => BackupService.RestoreDatabase(folder));
+
+                    LoggerService.WriteInfo($"Restore completed from folder: {folder}", Session.CurrentUser?.Name ?? string.Empty);
+                    MessageBox.Show(this, "Restore completed successfully.", "Restore", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    LoggerService.WriteError("Restore failed: " + ex.Message, Session.CurrentUser?.Name ?? string.Empty);
+                    MessageBox.Show(this, "Restore failed: " + ex.Message, "Restore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -70,11 +135,6 @@ namespace WHUI.Menu
         private void btnProducts_Click(object sender, EventArgs e)
         {
             ShowChildForm(new WHUI.Products.Products());
-        }
-
-        private void btnBackup_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)

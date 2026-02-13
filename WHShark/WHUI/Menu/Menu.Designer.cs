@@ -179,6 +179,7 @@ namespace WHUI.Menu
             // 
             resources.ApplyResources(this.btnRestore, "btnRestore");
             this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
             // btnBackup
             // 

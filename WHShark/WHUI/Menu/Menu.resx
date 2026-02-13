@@ -201,14 +201,11 @@
   <data name="btnSales.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="btnSales.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 100</value>
-  </data>
   <data name="btnPurchases.Text" xml:space="preserve">
     <value>Purchases</value>
   </data>
-  <data name="btnProducts.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="panelMiddle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 30</value>
   </data>
   <data name="&gt;&gt;cbLanguage.Parent" xml:space="preserve">
     <value>panelSidebar</value>
@@ -267,8 +264,8 @@
   <data name="panelMiddle.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="panelMiddle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 30</value>
+  <data name="&gt;&gt;btnCustomers.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="btnPurchases.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -333,8 +330,8 @@
   <data name="&gt;&gt;btnRestore.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelSidebar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnCustomers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Menu</value>
@@ -357,17 +354,17 @@
   <data name="&gt;&gt;btnSales.Parent" xml:space="preserve">
     <value>tlpButtons</value>
   </data>
-  <data name="cbLanguage.Items1" xml:space="preserve">
-    <value>es</value>
-  </data>
   <data name="&gt;&gt;btnStockMovements.Parent" xml:space="preserve">
     <value>tlpButtons</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>8, 20</value>
   </data>
-  <data name="&gt;&gt;btnCustomers.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;btnLogout.Name" xml:space="preserve">
+    <value>btnLogout</value>
+  </data>
+  <data name="btnBranches.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;btnBranches.Parent" xml:space="preserve">
     <value>tlpButtons</value>
@@ -390,6 +387,9 @@
   <data name="btnRestore.TabIndex" type="System.Int32, mscorlib">
     <value>102</value>
   </data>
+  <data name="&gt;&gt;btnSuppliers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;btnRestore.Parent" xml:space="preserve">
     <value>panelBottom</value>
   </data>
@@ -408,23 +408,20 @@
   <data name="&gt;&gt;btnSuppliers.Parent" xml:space="preserve">
     <value>tlpButtons</value>
   </data>
-  <data name="&gt;&gt;panelContent.Name" xml:space="preserve">
-    <value>panelContent</value>
-  </data>
   <data name="btnReports.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 50</value>
   </data>
   <data name="btnLogout.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 50</value>
   </data>
-  <data name="cbLanguage.Items" xml:space="preserve">
-    <value>en</value>
-  </data>
   <data name="&gt;&gt;panelMiddle.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;btnLogout.Name" xml:space="preserve">
-    <value>btnLogout</value>
+  <data name="cbLanguage.Items1" xml:space="preserve">
+    <value>es</value>
+  </data>
+  <data name="btnProducts.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
   </data>
   <data name="&gt;&gt;btnBackup.Name" xml:space="preserve">
     <value>btnBackup</value>
@@ -444,8 +441,8 @@
   <data name="&gt;&gt;btnLogout.Parent" xml:space="preserve">
     <value>tlpButtons</value>
   </data>
-  <data name="&gt;&gt;btnSuppliers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnSales.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 100</value>
   </data>
   <data name="&gt;&gt;btnLogout.ZOrder" xml:space="preserve">
     <value>10</value>
@@ -480,10 +477,16 @@
   <data name="&gt;&gt;btnStock.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="cbLanguage.Items2" xml:space="preserve">
-    <value>pt</value>
+  <data name="&gt;&gt;panelSidebar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnStockMovements.Text" xml:space="preserve">
+    <value>Stock Movements</value>
   </data>
   <data name="&gt;&gt;btnStockMovements.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStock.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -522,9 +525,6 @@
   <data name="&gt;&gt;panelBottom.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnProducts.Text" xml:space="preserve">
-    <value>Products</value>
-  </data>
   <data name="panelBottom.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 502</value>
   </data>
@@ -549,11 +549,14 @@
   <data name="&gt;&gt;panelBottom.Name" xml:space="preserve">
     <value>panelBottom</value>
   </data>
-  <data name="btnCustomers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="cbLanguage.Items2" xml:space="preserve">
+    <value>pt</value>
   </data>
-  <data name="btnStockMovements.Text" xml:space="preserve">
-    <value>Stock Movements</value>
+  <data name="btnProducts.Text" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="btnPurchases.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 50</value>
   </data>
   <data name="btnLogout.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>System</value>
@@ -567,17 +570,14 @@
   <data name="btnBranches.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 356</value>
   </data>
-  <data name="&gt;&gt;btnReports.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="panelSidebar.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 688</value>
   </data>
   <data name="&gt;&gt;cbLanguage.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="btnPurchases.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 50</value>
+  <data name="cbLanguage.Items" xml:space="preserve">
+    <value>en</value>
   </data>
   <data name="&gt;&gt;btnStockMovements.Name" xml:space="preserve">
     <value>btnStockMovements</value>
@@ -603,7 +603,7 @@
   <data name="btnUsers.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>System</value>
   </data>
-  <data name="&gt;&gt;btnStock.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnReports.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbLanguage.Type" xml:space="preserve">
@@ -612,8 +612,8 @@
   <data name="btnProducts.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 300</value>
   </data>
-  <data name="btnBranches.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="&gt;&gt;panelContent.Name" xml:space="preserve">
+    <value>panelContent</value>
   </data>
   <data name="&gt;&gt;btnSales.ZOrder" xml:space="preserve">
     <value>6</value>
