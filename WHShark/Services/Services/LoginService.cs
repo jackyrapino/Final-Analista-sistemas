@@ -225,5 +225,28 @@ namespace Services.Services
         {
             return DAL.Implementations.FamilyRepository.Current.SelectOne(id);
         }
+
+        // New: expose list of families to UI by delegating to BLL
+        public static IEnumerable<Family> ListAllFamilies(out string message)
+        {
+            message = string.Empty;
+            try
+            {
+                var families = global::Services.BLL.LoginBLL.SelectAllFamilies();
+                return families ?? new List<Family>();
+            }
+            catch (global::Services.BLL.BusinessException bex)
+            {
+                LoggerService.WriteWarning(bex.Message);
+                message = bex.Message;
+                return new List<Family>();
+            }
+            catch (Exception ex)
+            {
+                LoggerService.WriteError("An error occurred while retrieving families: " + ex.Message);
+                message = "An unexpected error occurred while retrieving families.";
+                return new List<Family>();
+            }
+        }
     }
 }

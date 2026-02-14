@@ -56,7 +56,6 @@ namespace Services.DAL.Implementations
 
         private FamilyRepository()
         {
-            //Implement here the initialization code
         }
         #endregion
         public void Add(Family obj)
@@ -107,7 +106,26 @@ namespace Services.DAL.Implementations
 
         public IEnumerable<Family> SelectAll()
         {
-            throw new NotImplementedException();
+            var familias = new List<Family>();
+            try
+            {
+                using (var reader = SqlHelper.ExecuteReader("ManagerAuth", "Familia_SelectAll", System.Data.CommandType.StoredProcedure))
+                {
+                    object[] values = new object[reader.FieldCount];
+                    while (reader.Read())
+                    {
+                        reader.GetValues(values);
+                        var fam = FamilyAdapter.Current.Adapt(values);
+                        familias.Add(fam);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.Handle(this);
+            }
+
+            return familias;
         }
     }
 }

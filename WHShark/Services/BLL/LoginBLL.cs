@@ -19,7 +19,6 @@ namespace Services.BLL
             if (string.IsNullOrWhiteSpace(password))
                 throw new ArgumentException("password is required", nameof(password));
 
-            // Get user by login name (retrieve basic user record including stored password hash)
             var user = UserRepository.Current.GetByLoginName(loginName);
             if (user == null)
                 throw new UsuarioInexistenteException();
@@ -42,14 +41,10 @@ namespace Services.BLL
                     user.State = global::Services.DomainModel.Security.UserState.Blocked;
                     // Persist only when user becomes blocked
                     UserRepository.Current.Update(user);
-
-                    // Log the blocking event
                     LoggerService.WriteWarning($"User '{loginName}' blocked after {user.FailedAttempts} failed login attempts.", loginName);
 
                     throw new UsuarioBloqueadoException();
                 }
-
-                // Log the failed attempt (no DB write)
                 LoggerService.WriteWarning($"Failed login attempt for user '{loginName}' (attempt {user.FailedAttempts}).", loginName);
 
                 // Do not persist simple failed attempt here to avoid unnecessary writes
@@ -78,7 +73,6 @@ namespace Services.BLL
             }
             catch (Exception ex)
             {
-                // log but continue
                 ex.Handle(ServiceFactory.LoggerRepository as object);
             }
 
@@ -153,7 +147,6 @@ namespace Services.BLL
             }
             catch (Exception ex)
             {
-                // Log the error and rethrow
                 LoggerService.WriteError($"An error occurred while updating user '{user?.Username}': {ex.Message}");
                 throw;
             }
@@ -174,6 +167,14 @@ namespace Services.BLL
                 LoggerService.WriteError($"An error occurred while deleting user '{id}': {ex.Message}");
                 throw;
             }
+        }
+
+        /// <summary>
+        /// Return all families
+        /// </summary>
+        public static IEnumerable<Family> SelectAllFamilies()
+        {
+            return FamilyRepository.Current.SelectAll();
         }
     }
 }

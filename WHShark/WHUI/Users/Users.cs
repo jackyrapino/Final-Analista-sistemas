@@ -15,6 +15,8 @@ namespace WHUI.Users
 {
     public partial class Users : Form
     {
+        private List<User> _usersCache = new List<User>();
+
         public Users()
         {
             InitializeComponent();
@@ -32,7 +34,10 @@ namespace WHUI.Users
             try
             {
                 string message;
-                var users = LoginService.ListAllUsers(out message);
+                var users = LoginService.ListAllUsers(out message).ToList();
+
+                // cache users for selection/edit
+                _usersCache = users;
 
                 var rows = (from u in users
                             select new
@@ -46,7 +51,6 @@ namespace WHUI.Users
 
                 dgv.DataSource = rows;
 
-
                 lblStatus.Text = string.IsNullOrWhiteSpace(message) ? $"Loaded {rows.Count} users." : message;
             }
             catch (Exception ex)
@@ -58,18 +62,35 @@ namespace WHUI.Users
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-           
             using (var frm = new UsersEdit())
             {
-                frm.ShowDialog(this);
+                if (frm.ShowDialog(this) == DialogResult.OK)
+                    LoadUsers();
             }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (dgv.CurrentRow == null)
+            {
+                MessageBox.Show(this, "Please select a user to edit.", "Edit User", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int rowIndex = dgv.CurrentRow.Index;
+            if (rowIndex < 0 || rowIndex >= _usersCache.Count)
+            {
+                MessageBox.Show(this, "Invalid selection.", "Edit User", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var user = _usersCache[rowIndex];
+
             using (var frm = new UsersEdit())
             {
-                frm.ShowDialog(this);
+                frm.LoadUser(user);
+                if (frm.ShowDialog(this) == DialogResult.OK)
+                    LoadUsers();
             }
         }
 
