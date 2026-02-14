@@ -46,7 +46,7 @@ namespace Services.Services
             catch (global::Services.BLL.BusinessException bex)
             {
                 LoggerService.WriteWarning(bex.Message);
-                    message = bex.Message; 
+                message = bex.Message;
 
                 return false;
             }
@@ -155,6 +155,54 @@ namespace Services.Services
                 LoggerService.WriteError("An error occurred while retrieving users: " + ex.Message);
                 message = "An unexpected error occurred while retrieving users.";
                 return new List<User>();
+            }
+        }
+
+        public static bool UpdateUser(User user, out string message)
+        {
+            message = string.Empty;
+            try
+            {
+                global::Services.BLL.LoginBLL.UpdateUser(user);
+                LoggerService.WriteInfo($"User updated: {user?.Username}", user?.Name ?? string.Empty);
+                message = "User updated successfully.";
+                return true;
+            }
+            catch (global::Services.BLL.BusinessException bex)
+            {
+                LoggerService.WriteWarning(bex.Message);
+                message = bex.Message;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                LoggerService.WriteError("An error occurred while updating the user: " + ex.Message);
+                message = "An error occurred while updating the user.";
+                return false;
+            }
+        }
+
+        public static bool DeleteUser(Guid id, out string message)
+        {
+            message = string.Empty;
+            try
+            {
+                global::Services.BLL.LoginBLL.DeleteUser(id);
+                LoggerService.WriteInfo($"User deleted: {id}", id.ToString());
+                message = "User deleted successfully.";
+                return true;
+            }
+            catch (global::Services.BLL.BusinessException bex)
+            {
+                LoggerService.WriteWarning(bex.Message);
+                message = bex.Message;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                LoggerService.WriteError("An error occurred while deleting the user: " + ex.Message);
+                message = "An error occurred while deleting the user.";
+                return false;
             }
         }
 

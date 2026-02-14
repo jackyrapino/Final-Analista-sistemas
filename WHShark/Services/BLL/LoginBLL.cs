@@ -134,11 +134,46 @@ namespace Services.BLL
 
             LoggerService.WriteInfo($"Password changed successfully for user '{username}'.", username);
         }
-
-        // New: return all users by delegating to DAL repository
         public static IEnumerable<User> SelectAllUsers()
         {
             return UserRepository.Current.SelectAll();
+        }
+
+        /// <summary>
+        /// Update user by delegating to repository and logging the operation.
+        /// </summary>
+        public static void UpdateUser(User user)
+        {
+            if (user == null) throw new ArgumentNullException(nameof(user));
+
+            try
+            {
+                UserRepository.Current.Update(user);
+                LoggerService.WriteInfo($"User updated: {user.Username}", user?.Name ?? string.Empty);
+            }
+            catch (Exception ex)
+            {
+                // Log the error and rethrow
+                LoggerService.WriteError($"An error occurred while updating user '{user?.Username}': {ex.Message}");
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Delete a user by id via repository and log the action.
+        /// </summary>
+        public static void DeleteUser(Guid id)
+        {
+            try
+            {
+                UserRepository.Current.Delete(id);
+                LoggerService.WriteInfo($"User deleted: {id}", id.ToString());
+            }
+            catch (Exception ex)
+            {
+                LoggerService.WriteError($"An error occurred while deleting user '{id}': {ex.Message}");
+                throw;
+            }
         }
     }
 }

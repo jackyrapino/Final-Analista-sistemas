@@ -1,10 +1,11 @@
 ﻿using Services.DAL.Contracts;
-using Services.DomainModel.Security.Composite;
-using Services.DAL.Tools;
 using Services.DAL.Implementations.Adapter;
+using Services.DAL.Tools;
+using Services.DomainModel.Security.Composite;
 using Services.Services.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -32,12 +33,40 @@ namespace Services.DAL.Implementations
         #endregion
         public void Add(User obj)
         {
-            throw new NotImplementedException();
+            try
+            {
+                SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Insert", CommandType.StoredProcedure,
+                    new SqlParameter[]
+                    {
+                    new SqlParameter("@IdUsuario", obj.IdUser),
+                    new SqlParameter("@Nombre", obj.Name),
+                    new SqlParameter("@Username", obj.Username),
+                    new SqlParameter("@PasswordHash", obj.Password),
+                    new SqlParameter("@Estado", (int)obj.State),
+                    new SqlParameter("@FailedAttempts", obj.FailedAttempts),
+                    new SqlParameter("@IsAdmin", obj.IsAdmin)
+                    });
+            }
+            catch (Exception ex)
+            {
+                ex.Handle(this);
+            }
+
         }
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Delete", CommandType.StoredProcedure,
+                    new SqlParameter[] {
+                        new SqlParameter("@IdUsuario", id)
+                    });
+            }
+            catch (Exception ex)
+            {
+                ex.Handle(this);
+            }
         }
 
         public IEnumerable<User> SelectAll()
