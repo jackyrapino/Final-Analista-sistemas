@@ -15,57 +15,101 @@ namespace WHUI.Users
     public partial class UserPermissions : Form
     {
         public Guid UserId { get; private set; }
+        private List<Family> _families = new List<Family>();
+        private List<Patent> _patents = new List<Patent>();
+
         public UserPermissions()
         {
             InitializeComponent();
         }
 
-        public void LoadForUser(Guid userId, string username)
+        public void LoadForUser(User user)
         {
-            UserId = userId;
-            txtUser.Text = username;
+            if (user == null) throw new ArgumentNullException(nameof(user));
 
-            // If permissions/roles already loaded on form load, just set selection here
-            if (cmbRole.Items.Count == 0 || clbPermissions.Items.Count == 0)
+            UserId = user.IdUser;
+            txtUser.Text = user.Username;
+            EnsureListsLoaded();
+
+            try
             {
-                // Trigger load now
-                UserPermissions_Load(this, EventArgs.Empty);
+                MarkUserPermissions(user);
+            }
+            catch (Exception ex)
+            {
+                LoggerService.WriteWarning($"Failed to mark roles/permissions for user {user?.Username ?? UserId.ToString()}: {ex.Message}");
             }
 
-            // TODO: load user's assigned permissions from repository and set checked items accordingly
         }
 
         private void UserPermissions_Load(object sender, EventArgs e)
         {
             try
             {
-                string msg;
-                // Load roles (families)
-                var families = PermissionService.ListAllRoles(out msg)?.ToList() ?? new List<Family>();
-                cmbRole.Items.Clear();
-                foreach (var f in families)
-                {
-                    cmbRole.Items.Add(f.Nombre);
-                }
-
-                if (cmbRole.Items.Count > 0)
-                    cmbRole.SelectedIndex = 0;
-
-                // Load patents (permissions)
-                var patents = PermissionService.ListAllPermissions(out msg)?.ToList() ?? new List<Patent>();
-                clbPermissions.Items.Clear();
-                foreach (var p in patents)
-                {
-                    // Prefer MenuItemName if present, otherwise FormName
-                    var label = string.IsNullOrWhiteSpace(p.MenuItemName) ? p.FormName : p.MenuItemName;
-                    clbPermissions.Items.Add(label, false);
-                }
+                EnsureListsLoaded();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(this, "Failed to load roles and permissions: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LoggerService.WriteError("An error occurred while loading roles and permissions: " + ex.Message); 
             }
         }
+
+        private void EnsureListsLoaded()
+        {
+            if (lstRoles.Items.Count > 0 && clbPermissions.Items.Count > 0)
+                return;
+
+            string msg;
+
+            _families = PermissionService.ListAllRoles(out msg)?.ToList() ?? new List<Family>();
+            lstRoles.Items.Clear();
+            lstRoles.DisplayMember = "Nombre";
+            foreach (var f in _families)
+            {
+                lstRoles.Items.Add(f, false);
+            }
+
+            if (lstRoles.Items.Count > 0)
+                lstRoles.SelectedIndex = 0;
+
+            _patents = PermissionService.ListAllPermissions(out msg)?.ToList() ?? new List<Patent>();
+            clbPermissions.Items.Clear();
+            clbPermissions.DisplayMember = "MenuItemName"; 
+            foreach (var p in _patents)
+            {
+                clbPermissions.Items.Add(p, false);
+            }
+        }
+
+        private void MarkUserPermissions(User user)
+        {
+            if (user == null) throw new ArgumentNullException(nameof(user));
+            var userRoles = user.Permisos?.OfType<Family>()
+                                .Select(f => f.IdComponent)
+                                .ToHashSet() ?? new HashSet<Guid>();
+
+            for (int i = 0; i < lstRoles.Items.Count; i++)
+            {
+                var family = (Family)lstRoles.Items[i];
+                bool assigned = userRoles.Contains(family.IdComponent);
+                lstRoles.SetItemChecked(i, assigned);
+            }
+            var userPatents = user.Permisos?.OfType<Family>()
+                          .SelectMany(f => f.GetChildrens()) 
+                          .OfType<Patent>()               
+                          .Select(p => p.IdComponent)
+                          .ToHashSet() ?? new HashSet<Guid>();
+
+
+            for (int i = 0; i < clbPermissions.Items.Count; i++)
+            {
+                var patent = (Patent)clbPermissions.Items[i];
+                bool assigned = userPatents.Contains(patent.IdComponent);
+                clbPermissions.SetItemChecked(i, assigned);
+            }
+        }
+
+
 
         private void btnApply_Click(object sender, EventArgs e)
         {
@@ -76,14 +120,20 @@ namespace WHUI.Users
                 selected.Add(item.ToString());
             }
 
-            // TODO: persist selected permissions and role for the user (call service/repository)
-            MessageBox.Show($"Permissions applied: {selected.Count}", "Manage Permissions", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Collect selected roles
+            var selectedRoles = new List<string>();
+            foreach (var item in lstRoles.CheckedItems)
+            {
+                selectedRoles.Add(item.ToString());
+            }
+
+            // TODO: persist selected permissions and roles for the user (call service/repository)
+            MessageBox.Show($"Roles: {selectedRoles.Count} - Permissions: {selected.Count}", "Manage Permissions", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            // Revert changes: simply reload current user permissions
-            LoadForUser(UserId, txtUser.Text);
+            this.Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

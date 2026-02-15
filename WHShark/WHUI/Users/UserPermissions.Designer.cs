@@ -31,14 +31,15 @@
             this.pnlTop = new System.Windows.Forms.Panel();
             this.lblUser = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
-            this.lblRole = new System.Windows.Forms.Label();
-            this.cmbRole = new System.Windows.Forms.ComboBox();
+            this.pnlCenter = new System.Windows.Forms.TableLayoutPanel();
+            this.lstRoles = new System.Windows.Forms.CheckedListBox();
             this.clbPermissions = new System.Windows.Forms.CheckedListBox();
             this.pnlButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
+            this.pnlCenter.SuspendLayout();
             this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,8 +47,6 @@
             // 
             this.pnlTop.Controls.Add(this.lblUser);
             this.pnlTop.Controls.Add(this.txtUser);
-            this.pnlTop.Controls.Add(this.lblRole);
-            this.pnlTop.Controls.Add(this.cmbRole);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
@@ -72,32 +71,40 @@
             this.txtUser.Size = new System.Drawing.Size(220, 22);
             this.txtUser.TabIndex = 1;
             // 
-            // lblRole
+            // pnlCenter
             // 
-            this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(292, 18);
-            this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(39, 16);
-            this.lblRole.TabIndex = 2;
-            this.lblRole.Text = "Role:";
+            this.pnlCenter.ColumnCount = 2;
+            this.pnlCenter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.pnlCenter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.pnlCenter.Controls.Add(this.lstRoles, 0, 0);
+            this.pnlCenter.Controls.Add(this.clbPermissions, 1, 0);
+            this.pnlCenter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCenter.Location = new System.Drawing.Point(0, 52);
+            this.pnlCenter.Name = "pnlCenter";
+            this.pnlCenter.RowCount = 1;
+            this.pnlCenter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.pnlCenter.Size = new System.Drawing.Size(772, 430);
+            this.pnlCenter.TabIndex = 2;
             // 
-            // cmbRole
+            // lstRoles
             // 
-            this.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbRole.Location = new System.Drawing.Point(330, 14);
-            this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(160, 24);
-            this.cmbRole.TabIndex = 3;
+            this.lstRoles.CheckOnClick = true;
+            this.lstRoles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstRoles.FormattingEnabled = true;
+            this.lstRoles.Location = new System.Drawing.Point(3, 3);
+            this.lstRoles.Name = "lstRoles";
+            this.lstRoles.Size = new System.Drawing.Size(302, 424);
+            this.lstRoles.TabIndex = 0;
             // 
             // clbPermissions
             // 
             this.clbPermissions.CheckOnClick = true;
             this.clbPermissions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clbPermissions.FormattingEnabled = true;
-            this.clbPermissions.Location = new System.Drawing.Point(0, 52);
+            this.clbPermissions.Location = new System.Drawing.Point(311, 3);
             this.clbPermissions.Name = "clbPermissions";
-            this.clbPermissions.Size = new System.Drawing.Size(772, 430);
-            this.clbPermissions.TabIndex = 0;
+            this.clbPermissions.Size = new System.Drawing.Size(458, 424);
+            this.clbPermissions.TabIndex = 1;
             // 
             // pnlButtons
             // 
@@ -110,7 +117,7 @@
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Padding = new System.Windows.Forms.Padding(8);
             this.pnlButtons.Size = new System.Drawing.Size(772, 48);
-            this.pnlButtons.TabIndex = 2;
+            this.pnlButtons.TabIndex = 3;
             // 
             // btnClose
             // 
@@ -145,7 +152,7 @@
             // UserPermissions
             // 
             this.ClientSize = new System.Drawing.Size(772, 530);
-            this.Controls.Add(this.clbPermissions);
+            this.Controls.Add(this.pnlCenter);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlButtons);
             this.Name = "UserPermissions";
@@ -154,6 +161,7 @@
             this.Load += new System.EventHandler(this.UserPermissions_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
+            this.pnlCenter.ResumeLayout(false);
             this.pnlButtons.ResumeLayout(false);
             this.pnlButtons.PerformLayout();
             this.ResumeLayout(false);
@@ -165,8 +173,8 @@
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.TextBox txtUser;
-        private System.Windows.Forms.Label lblRole;
-        private System.Windows.Forms.ComboBox cmbRole;
+        private System.Windows.Forms.TableLayoutPanel pnlCenter;
+        private System.Windows.Forms.CheckedListBox lstRoles;
         private System.Windows.Forms.CheckedListBox clbPermissions;
         private System.Windows.Forms.FlowLayoutPanel pnlButtons;
         private System.Windows.Forms.Button btnApply;

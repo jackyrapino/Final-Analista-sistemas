@@ -56,6 +56,7 @@ namespace WHUI.Users
             catch (Exception ex)
             {
                 lblStatus.Text = "Failed to load users.";
+                LoggerService.WriteError("Failed to load users: " + ex.Message);
                 MessageBox.Show(this, "Failed to load users: " + ex.Message, "Users", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -85,18 +86,16 @@ namespace WHUI.Users
             }
 
             var user = _usersCache[rowIndex];
-
-            // Ensure user's permissions are loaded before opening the editor
             try
             {
                 global::Services.BLL.LoginBLL.PopulatePermissions(user);
             }
-            catch
+            catch (Exception ex)
             {
-                // ignore errors here; editor will handle empty perms
+                LoggerService.WriteError($"An error occurred while loading permissions for user '{user?.Username}': {ex.Message}", user?.Username ?? string.Empty);
+                MessageBox.Show(this, "An error occurred while loading user permissions.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            // Open UsersEdit in edit mode
             using (var frm = new UsersEdit(true))
             {
                 frm.LoadUser(user);
@@ -141,9 +140,35 @@ namespace WHUI.Users
 
         private void btnManagePermissions_Click(object sender, EventArgs e)
         {
+            if (dgv.CurrentRow == null)
+            {
+                MessageBox.Show(this, "Please select a user.", "Manage Permissions", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int rowIndex = dgv.CurrentRow.Index;
+            if (rowIndex < 0 || rowIndex >= _usersCache.Count)
+            {
+                MessageBox.Show(this, "Invalid selection.", "Manage Permissions", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var user = _usersCache[rowIndex];
+
+            try
+            {
+                global::Services.BLL.LoginBLL.PopulatePermissions(user);
+            }
+            catch (Exception ex)
+            {
+                LoggerService.WriteError($"An error occurred while populating permissions for user '{user?.Username}': {ex.Message}", user?.Username ?? string.Empty);
+                MessageBox.Show(this, "An error occurred while loading user permissions.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             using (var frm = new UserPermissions())
             {
-                frm.ShowDialog(this);
+                frm.LoadForUser(user);
+                 frm.ShowDialog(this);
             }
         }
     }

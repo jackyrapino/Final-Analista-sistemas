@@ -273,6 +273,12 @@ namespace Services.DAL.Implementations
 
             try
             {
+                // Ensure the Permisos collection is initialized and not accumulating duplicates
+                if (user.Permisos == null)
+                    user.Permisos = new List<Component>();
+                else
+                    user.Permisos.Clear();
+
                 // Load user families
                 using (var r2 = SqlHelper.ExecuteReader("ManagerAuth", "Usuario_Familia_SelectParticular", System.Data.CommandType.StoredProcedure,
                     new SqlParameter[] { new SqlParameter("@IdUsuario", user.IdUser) }))
@@ -309,8 +315,6 @@ namespace Services.DAL.Implementations
             }
         }
 
-     
-    
     }
 
 }
