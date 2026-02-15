@@ -316,6 +316,9 @@
     <EmbeddedResource Include="Suppliers\SuppliersEdit.resx">
       <DependentUpon>SuppliersEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Users\UserPermissions.resx">
+      <DependentUpon>UserPermissions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users\Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>

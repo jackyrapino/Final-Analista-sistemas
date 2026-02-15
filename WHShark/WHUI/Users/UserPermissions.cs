@@ -7,28 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Services.Services;
+using Services.DomainModel.Security.Composite;
 
 namespace WHUI.Users
 {
     public partial class UserPermissions : Form
     {
         public Guid UserId { get; private set; }
-
-        // Example list of all possible permissions in the system
-        private readonly List<string> _allPermissions = new List<string>
-        {
-            "PRODUCTS.VIEW",
-            "PRODUCTS.ADD",
-            "PRODUCTS.EDIT",
-            "PRODUCTS.DELETE",
-            "STOCK.VIEW",
-            "STOCK.ADJUST",
-            "SALES.CREATE",
-            "SALES.VIEW",
-            "PURCHASES.CREATE",
-            "USERS.MANAGE",
-        };
-
         public UserPermissions()
         {
             InitializeComponent();
@@ -39,22 +25,46 @@ namespace WHUI.Users
             UserId = userId;
             txtUser.Text = username;
 
-            // Load roles into combo (for demo using static list)
-            cmbRole.Items.Clear();
-            cmbRole.Items.Add("Administrator");
-            cmbRole.Items.Add("Manager");
-            cmbRole.Items.Add("Clerk");
-
-            cmbRole.SelectedIndex = 0;
-
-            // Populate the checked list box with all permissions
-            clbPermissions.Items.Clear();
-            foreach (var p in _allPermissions)
+            // If permissions/roles already loaded on form load, just set selection here
+            if (cmbRole.Items.Count == 0 || clbPermissions.Items.Count == 0)
             {
-                clbPermissions.Items.Add(p, false);
+                // Trigger load now
+                UserPermissions_Load(this, EventArgs.Empty);
             }
 
             // TODO: load user's assigned permissions from repository and set checked items accordingly
+        }
+
+        private void UserPermissions_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                string msg;
+                // Load roles (families)
+                var families = PermissionService.ListAllRoles(out msg)?.ToList() ?? new List<Family>();
+                cmbRole.Items.Clear();
+                foreach (var f in families)
+                {
+                    cmbRole.Items.Add(f.Nombre);
+                }
+
+                if (cmbRole.Items.Count > 0)
+                    cmbRole.SelectedIndex = 0;
+
+                // Load patents (permissions)
+                var patents = PermissionService.ListAllPermissions(out msg)?.ToList() ?? new List<Patent>();
+                clbPermissions.Items.Clear();
+                foreach (var p in patents)
+                {
+                    // Prefer MenuItemName if present, otherwise FormName
+                    var label = string.IsNullOrWhiteSpace(p.MenuItemName) ? p.FormName : p.MenuItemName;
+                    clbPermissions.Items.Add(label, false);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, "Failed to load roles and permissions: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnApply_Click(object sender, EventArgs e)

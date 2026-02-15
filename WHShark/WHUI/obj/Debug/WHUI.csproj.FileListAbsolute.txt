@@ -53,3 +53,4 @@ D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sist
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.pdb
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.exe.config
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Login.ForceChangePass.resources
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Users.UserPermissions.resources

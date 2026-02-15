@@ -58,47 +58,7 @@ namespace Services.Services
             }
         }
 
-        public static bool ResetPassword(string token, string newPassword, out string message)
-        {
-            message = string.Empty;
-            try
-            {
-                var repoUser = DAL.Implementations.UserRepository.Current.GetByPasswordResetToken(token);
-                if (repoUser == null)
-                {
-                    message = "The provided code is invalid or has expired.";
-                    return false;
-                }
-
-                repoUser.Password = CryptographyService.HashPassword(newPassword);
-                repoUser.FailedAttempts = 0;
-                repoUser.State = global::Services.DomainModel.Security.UserState.Active;
-
-                DAL.Implementations.UserRepository.Current.Update(repoUser);
-
-                // Log in English
-                LoggerService.WriteInfo("Password reset successfully", repoUser?.Name ?? string.Empty);
-                message = "Password reset successfully.";
-                return true;
-            }
-            catch (global::Services.BLL.BusinessException bex)
-            {
-                LoggerService.WriteWarning(bex.Message);
-                // Map known business exceptions to English
-                if (bex is global::Services.BLL.UsuarioInexistenteException)
-                    message = "User does not exist.";
-                else
-                    message = bex.Message;
-                return false;
-            }
-            catch (Exception ex)
-            {
-                LoggerService.WriteError("An error occurred while resetting the password: " + ex.Message);
-                message = "An error occurred while resetting the password.";
-                return false;
-            }
-        }
-
+       
         public static bool ChangePassword(string username, string currentPassword, string newPassword, out string message)
         {
             message = string.Empty;

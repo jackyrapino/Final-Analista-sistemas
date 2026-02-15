@@ -309,29 +309,7 @@ namespace Services.DAL.Implementations
             }
         }
 
-        public User GetByPasswordResetToken(string token)
-        {
-            User user = null;
-            try
-            {
-                using (var reader = SqlHelper.ExecuteReader("ManagerAuth", "User_SelectByPasswordResetToken", System.Data.CommandType.StoredProcedure,
-                    new SqlParameter[] { new SqlParameter("@Token", token) }))
-                {
-                    object[] values = new object[reader.FieldCount];
-                    if (reader.Read())
-                    {
-                        reader.GetValues(values);
-                        user = UserAdapter.Current.Adapt(values);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                ex.Handle(this);
-            }
-            return user;
-        }
-
+     
     
     }
 

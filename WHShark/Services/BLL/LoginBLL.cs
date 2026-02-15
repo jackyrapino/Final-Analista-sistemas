@@ -3,7 +3,7 @@ using Services.DAL.Factories;
 using Services.DomainModel.Security.Composite;
 using Services.Services.Extensions;
 using System;
-using Services.Services; // for LoggerService
+using Services.Services; 
 using System.Collections.Generic;
 
 namespace Services.BLL
