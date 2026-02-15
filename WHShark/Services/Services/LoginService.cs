@@ -135,6 +135,39 @@ namespace Services.Services
             }
         }
 
+        public static User FindUserForReset(string username, out string message)
+        {
+            message = string.Empty;
+
+            try
+            {
+                var u = global::Services.BLL.LoginBLL.ResetPassword(username);
+                if (u == null)
+                {
+                    message = "User does not exist.";
+                    return null;
+                }
+                if (u.State == global::Services.DomainModel.Security.UserState.ForceChange)
+                {
+                    message = "You can change your password.";
+                    return u;
+                }
+
+                return null;
+            }
+            catch (global::Services.BLL.UsuarioInexistenteException)
+            {
+                message = "User does not exist.";
+                return null;
+            }
+            catch (Exception ex)
+            {
+                LoggerService.WriteError("An error occurred while looking up user for reset: " + ex.Message);
+                message = "An unexpected error occurred while processing the request.";
+                return null;
+            }
+        }
+
         // New: expose list of users to UI by delegating to BLL
         public static IEnumerable<User> ListAllUsers(out string message)
         {
@@ -155,6 +188,30 @@ namespace Services.Services
                 LoggerService.WriteError("An error occurred while retrieving users: " + ex.Message);
                 message = "An unexpected error occurred while retrieving users.";
                 return new List<User>();
+            }
+        }
+
+        public static bool AddUser(User user, out string message)
+        {
+            message = string.Empty;
+            try
+            {
+                global::Services.BLL.LoginBLL.AddUser(user);
+                LoggerService.WriteInfo($"User added: {user?.Username}", user?.Name ?? string.Empty);
+                message = "User added successfully.";
+                return true;
+            }
+            catch (global::Services.BLL.BusinessException bex)
+            {
+                LoggerService.WriteWarning(bex.Message);
+                message = bex.Message;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                LoggerService.WriteError("An error occurred while adding the user: " + ex.Message);
+                message = "An error occurred while adding the user.";
+                return false;
             }
         }
 

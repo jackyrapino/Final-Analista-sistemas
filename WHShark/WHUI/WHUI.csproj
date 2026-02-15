@@ -82,29 +82,11 @@
     <Compile Include="Login\ForgetPass.Designer.cs">
       <DependentUpon>ForgetPass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\ForgetPassCode.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login\ForgetPassCode.Designer.cs">
-      <DependentUpon>ForgetPassCode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login\ForgetPassNew.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login\ForgetPassNew.Designer.cs">
-      <DependentUpon>ForgetPassNew.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login\Register.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login\Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\ResetPass.cs">
       <SubType>Form</SubType>
@@ -240,20 +222,14 @@
     <EmbeddedResource Include="Customers\CustomersEdit.resx">
       <DependentUpon>CustomersEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Login\ForceChangePass.resx">
+      <DependentUpon>ForceChangePass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login\ForgetPass.resx">
       <DependentUpon>ForgetPass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login\ForgetPassCode.resx">
-      <DependentUpon>ForgetPassCode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login\ForgetPassNew.resx">
-      <DependentUpon>ForgetPassNew.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login\Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\ResetPass.resx">
       <DependentUpon>ResetPass.cs</DependentUpon>

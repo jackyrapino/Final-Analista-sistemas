@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Services.Services;
 using Services.DomainModel.Security.Composite;
+using Services.DAL.Implementations;
 
 namespace WHUI.Users
 {
@@ -36,7 +37,6 @@ namespace WHUI.Users
                 string message;
                 var users = LoginService.ListAllUsers(out message).ToList();
 
-                // cache users for selection/edit
                 _usersCache = users;
 
                 var rows = (from u in users
@@ -86,11 +86,56 @@ namespace WHUI.Users
 
             var user = _usersCache[rowIndex];
 
-            using (var frm = new UsersEdit())
+            // Ensure user's permissions are loaded before opening the editor
+            try
+            {
+                global::Services.BLL.LoginBLL.PopulatePermissions(user);
+            }
+            catch
+            {
+                // ignore errors here; editor will handle empty perms
+            }
+
+            // Open UsersEdit in edit mode
+            using (var frm = new UsersEdit(true))
             {
                 frm.LoadUser(user);
                 if (frm.ShowDialog(this) == DialogResult.OK)
                     LoadUsers();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgv.CurrentRow == null)
+            {
+                MessageBox.Show(this, "Please select a user to delete.", "Delete User", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int rowIndex = dgv.CurrentRow.Index;
+            if (rowIndex < 0 || rowIndex >= _usersCache.Count)
+            {
+                MessageBox.Show(this, "Invalid selection.", "Delete User", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var user = _usersCache[rowIndex];
+
+            var confirm = MessageBox.Show(this, $"Are you sure you want to delete user '{user.Username}'?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (confirm != DialogResult.Yes)
+                return;
+
+            string message;
+            var ok = LoginService.DeleteUser(user.IdUser, out message);
+            if (ok)
+            {
+                MessageBox.Show(this, message ?? "User deleted.", "Delete User", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadUsers();
+            }
+            else
+            {
+                MessageBox.Show(this, message ?? "Failed to delete user.", "Delete User", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

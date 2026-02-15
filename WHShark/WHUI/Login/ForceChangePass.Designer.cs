@@ -27,78 +27,76 @@ namespace WHUI.Login
 
         private void InitializeComponent()
         {
-            txtNewPassword = new TextBox();
-            txtRepeatPassword = new TextBox();
-            btnSet = new Button();
-            lblNew = new Label();
-            lblRepeat = new Label();
-            SuspendLayout();
+            this.txtNewPassword = new System.Windows.Forms.TextBox();
+            this.txtRepeatPassword = new System.Windows.Forms.TextBox();
+            this.btnSet = new System.Windows.Forms.Button();
+            this.lblNew = new System.Windows.Forms.Label();
+            this.lblRepeat = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // txtNewPassword
             // 
-            txtNewPassword.Location = new Point(149, 16);
-            txtNewPassword.Margin = new Padding(3, 4, 3, 4);
-            txtNewPassword.Name = "txtNewPassword";
-            txtNewPassword.Size = new Size(228, 27);
-            txtNewPassword.TabIndex = 1;
-            txtNewPassword.UseSystemPasswordChar = true;
+            this.txtNewPassword.Location = new System.Drawing.Point(149, 13);
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.Size = new System.Drawing.Size(228, 22);
+            this.txtNewPassword.TabIndex = 1;
+            this.txtNewPassword.UseSystemPasswordChar = true;
             // 
             // txtRepeatPassword
             // 
-            txtRepeatPassword.Location = new Point(149, 61);
-            txtRepeatPassword.Margin = new Padding(3, 4, 3, 4);
-            txtRepeatPassword.Name = "txtRepeatPassword";
-            txtRepeatPassword.Size = new Size(228, 27);
-            txtRepeatPassword.TabIndex = 3;
-            txtRepeatPassword.UseSystemPasswordChar = true;
+            this.txtRepeatPassword.Location = new System.Drawing.Point(149, 49);
+            this.txtRepeatPassword.Name = "txtRepeatPassword";
+            this.txtRepeatPassword.Size = new System.Drawing.Size(228, 22);
+            this.txtRepeatPassword.TabIndex = 3;
+            this.txtRepeatPassword.UseSystemPasswordChar = true;
             // 
             // btnSet
             // 
-            btnSet.Location = new Point(291, 113);
-            btnSet.Margin = new Padding(3, 4, 3, 4);
-            btnSet.Name = "btnSet";
-            btnSet.Size = new Size(86, 33);
-            btnSet.TabIndex = 4;
-            btnSet.Text = "Set";
-            btnSet.UseVisualStyleBackColor = true;
+            this.btnSet.Location = new System.Drawing.Point(291, 90);
+            this.btnSet.Name = "btnSet";
+            this.btnSet.Size = new System.Drawing.Size(86, 26);
+            this.btnSet.TabIndex = 4;
+            this.btnSet.Text = "Set";
+            this.btnSet.UseVisualStyleBackColor = true;
+            this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
             // 
             // lblNew
             // 
-            lblNew.AutoSize = true;
-            lblNew.Location = new Point(14, 20);
-            lblNew.Name = "lblNew";
-            lblNew.Size = new Size(109, 20);
-            lblNew.TabIndex = 0;
-            lblNew.Text = "New password:";
+            this.lblNew.AutoSize = true;
+            this.lblNew.Location = new System.Drawing.Point(14, 16);
+            this.lblNew.Name = "lblNew";
+            this.lblNew.Size = new System.Drawing.Size(99, 16);
+            this.lblNew.TabIndex = 0;
+            this.lblNew.Text = "New password:";
             // 
             // lblRepeat
             // 
-            lblRepeat.AutoSize = true;
-            lblRepeat.Location = new Point(14, 67);
-            lblRepeat.Name = "lblRepeat";
-            lblRepeat.Size = new Size(126, 20);
-            lblRepeat.TabIndex = 2;
-            lblRepeat.Text = "Repeat password:";
+            this.lblRepeat.AutoSize = true;
+            this.lblRepeat.Location = new System.Drawing.Point(14, 54);
+            this.lblRepeat.Name = "lblRepeat";
+            this.lblRepeat.Size = new System.Drawing.Size(117, 16);
+            this.lblRepeat.TabIndex = 2;
+            this.lblRepeat.Text = "Repeat password:";
             // 
             // ForceChangePass
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(400, 167);
-            Controls.Add(lblNew);
-            Controls.Add(txtNewPassword);
-            Controls.Add(lblRepeat);
-            Controls.Add(txtRepeatPassword);
-            Controls.Add(btnSet);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            Margin = new Padding(3, 4, 3, 4);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "ForceChangePass";
-            StartPosition = FormStartPosition.CenterParent;
-            Text = "Change password";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(400, 134);
+            this.Controls.Add(this.lblNew);
+            this.Controls.Add(this.txtNewPassword);
+            this.Controls.Add(this.lblRepeat);
+            this.Controls.Add(this.txtRepeatPassword);
+            this.Controls.Add(this.btnSet);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ForceChangePass";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Change password";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
     }
 }

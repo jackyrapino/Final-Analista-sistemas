@@ -4,10 +4,7 @@ D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sist
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Customers.Customers.resources
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Customers.CustomersEdit.resources
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Login.ForgetPass.resources
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Login.ForgetPassCode.resources
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Login.ForgetPassNew.resources
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Login.LogIn.resources
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Login.Register.resources
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Login.ResetPass.resources
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Menu.Menu.resources
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Menu.Welcome.resources
@@ -55,3 +52,4 @@ D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sist
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.exe
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.pdb
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.exe.config
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Login.ForceChangePass.resources

@@ -171,6 +171,7 @@ namespace WHUI.Login
             this.linkforget.TabIndex = 7;
             this.linkforget.TabStop = true;
             this.linkforget.Text = "I forget my password";
+            this.linkforget.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkforget_LinkClicked);
             // 
             // LinkpassChange
             // 

@@ -38,14 +38,35 @@ namespace Services.DAL.Implementations
                 SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Insert", CommandType.StoredProcedure,
                     new SqlParameter[]
                     {
-                    new SqlParameter("@IdUsuario", obj.IdUser),
-                    new SqlParameter("@Nombre", obj.Name),
-                    new SqlParameter("@Username", obj.Username),
-                    new SqlParameter("@PasswordHash", obj.Password),
-                    new SqlParameter("@Estado", (int)obj.State),
-                    new SqlParameter("@FailedAttempts", obj.FailedAttempts),
-                    new SqlParameter("@IsAdmin", obj.IsAdmin)
+                        new SqlParameter("@IdUsuario", obj.IdUser),
+                        new SqlParameter("@Nombre", obj.Name),
+                        new SqlParameter("@Username", obj.Username),
+                        new SqlParameter("@PasswordHash", obj.Password),
+                        new SqlParameter("@Estado", (int)obj.State),
+                        new SqlParameter("@FailedAttempts", obj.FailedAttempts),
+                        new SqlParameter("@IsAdmin", obj.IsAdmin)
                     });
+
+                // Insert family associations (if any)
+                if (obj.Permisos != null)
+                {
+                    var families = obj.Permisos.OfType<Family>().ToList();
+                    foreach (var f in families)
+                    {
+                        try
+                        {
+                            SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Familia_Insert", CommandType.StoredProcedure,
+                                new SqlParameter[] {
+                                    new SqlParameter("@IdUsuario", obj.IdUser),
+                                    new SqlParameter("@IdFamilia", f.IdComponent)
+                                });
+                        }
+                        catch (Exception exInner)
+                        {
+                            exInner.Handle(this);
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -58,6 +79,26 @@ namespace Services.DAL.Implementations
         {
             try
             {
+                try
+                {
+                    SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Patente_DeleteParticular", CommandType.StoredProcedure,
+                        new SqlParameter[] { new SqlParameter("@IdUsuario", id) });
+                }
+                catch (Exception exPat)
+                {
+                    exPat.Handle(this);
+                }
+
+                try
+                {
+                    SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Familia_DeleteParticular", CommandType.StoredProcedure,
+                        new SqlParameter[] { new SqlParameter("@IdUsuario", id) });
+                }
+                catch (Exception exFam)
+                {
+                    exFam.Handle(this);
+                }
+
                 SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Delete", CommandType.StoredProcedure,
                     new SqlParameter[] {
                         new SqlParameter("@IdUsuario", id)
@@ -131,6 +172,37 @@ namespace Services.DAL.Implementations
                         new SqlParameter("@FailedAttempts", failedAttempts),
                         new SqlParameter("@IsAdmin", isAdmin)
                     });
+
+                // Replace family associations for this user: delete existing then insert current
+                try
+                {
+                    SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Familia_DeleteParticular", CommandType.StoredProcedure,
+                        new SqlParameter[] { new SqlParameter("@IdUsuario", idUsuario) });
+
+                    if (obj.Permisos != null)
+                    {
+                        var families = obj.Permisos.OfType<Family>().ToList();
+                        foreach (var f in families)
+                        {
+                            try
+                            {
+                                SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Familia_Insert", CommandType.StoredProcedure,
+                                    new SqlParameter[] {
+                                        new SqlParameter("@IdUsuario", idUsuario),
+                                        new SqlParameter("@IdFamilia", f.IdComponent)
+                                    });
+                            }
+                            catch (Exception exInner)
+                            {
+                                exInner.Handle(this);
+                            }
+                        }
+                    }
+                }
+                catch (Exception exAssoc)
+                {
+                    exAssoc.Handle(this);
+                }
             }
             catch (Exception ex)
             {
@@ -160,6 +232,34 @@ namespace Services.DAL.Implementations
             {
                 ex.Handle(this);
             }
+            return user;
+        }
+
+        /// <summary>
+        /// Variant of GetByLoginName that will include additional logic for reset password.
+        /// </summary>
+        public User GetByLoginNameForReset(string username)
+        {
+            User user = null;
+            try
+            {
+                using (var reader = SqlHelper.ExecuteReader("ManagerAuth", "User_SelectByLoginName", System.Data.CommandType.StoredProcedure,
+                    new SqlParameter[] { new SqlParameter("@LoginName", username) }))
+                {
+                    object[] values = new object[reader.FieldCount];
+                    if (reader.Read())
+                    {
+                        reader.GetValues(values);
+                        user = UserAdapter.Current.Adapt(values);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ex.Handle(this);
+            }
+
             return user;
         }
 
@@ -232,23 +332,7 @@ namespace Services.DAL.Implementations
             return user;
         }
 
-        public void SavePasswordResetToken(Guid userId, string token, DateTime expiration)
-        {
-            try
-            {
-                SqlHelper.ExecuteNonQuery("ManagerAuth", "User_SavePasswordResetToken",
-                    System.Data.CommandType.StoredProcedure,
-                    new SqlParameter[] {
-                        new SqlParameter("@IdUser", userId),
-                        new SqlParameter("@Token", token),
-                        new SqlParameter("@Expiration", expiration)
-                    });
-            }
-            catch (Exception ex)
-            {
-                ex.Handle(this);
-            }
-        }
+    
     }
 
 }

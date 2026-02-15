@@ -33,121 +33,141 @@ namespace WHUI.Login
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForgetPass));
-            tlpMain = new TableLayoutPanel();
-            pictureBox1 = new PictureBox();
-            tlpContent = new TableLayoutPanel();
-            label1 = new Label();
-            label2 = new Label();
-            txtuser = new TextBox();
-            btnsenduser = new Button();
-            tlpMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            tlpContent.SuspendLayout();
-            SuspendLayout();
+            this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tlpContent = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtuser = new System.Windows.Forms.TextBox();
+            this.btnsenduser = new System.Windows.Forms.Button();
+            this.btnBackToLogin = new System.Windows.Forms.Button();
+            this.tlpMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tlpContent.SuspendLayout();
+            this.SuspendLayout();
             // 
             // tlpMain
             // 
-            tlpMain.ColumnCount = 2;
-            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 280F));
-            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpMain.Controls.Add(pictureBox1, 0, 0);
-            tlpMain.Controls.Add(tlpContent, 1, 0);
-            tlpMain.Dock = DockStyle.Fill;
-            tlpMain.Location = new Point(0, 0);
-            tlpMain.Name = "tlpMain";
-            tlpMain.RowCount = 1;
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpMain.Size = new Size(800, 450);
-            tlpMain.TabIndex = 0;
+            this.tlpMain.ColumnCount = 2;
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 280F));
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.Controls.Add(this.pictureBox1, 0, 0);
+            this.tlpMain.Controls.Add(this.tlpContent, 1, 0);
+            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMain.Location = new System.Drawing.Point(0, 0);
+            this.tlpMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpMain.Name = "tlpMain";
+            this.tlpMain.RowCount = 1;
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.Size = new System.Drawing.Size(800, 360);
+            this.tlpMain.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(274, 444);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(274, 356);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // tlpContent
             // 
-            tlpContent.ColumnCount = 1;
-            tlpContent.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpContent.Controls.Add(label1, 0, 0);
-            tlpContent.Controls.Add(label2, 0, 1);
-            tlpContent.Controls.Add(txtuser, 0, 2);
-            tlpContent.Controls.Add(btnsenduser, 0, 3);
-            tlpContent.Dock = DockStyle.Fill;
-            tlpContent.Location = new Point(283, 3);
-            tlpContent.Name = "tlpContent";
-            tlpContent.RowCount = 6;
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpContent.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
-            tlpContent.Size = new Size(514, 444);
-            tlpContent.TabIndex = 1;
+            this.tlpContent.ColumnCount = 1;
+            this.tlpContent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpContent.Controls.Add(this.label1, 0, 0);
+            this.tlpContent.Controls.Add(this.label2, 0, 1);
+            this.tlpContent.Controls.Add(this.txtuser, 0, 2);
+            this.tlpContent.Controls.Add(this.btnsenduser, 0, 3);
+            this.tlpContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpContent.Location = new System.Drawing.Point(283, 2);
+            this.tlpContent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpContent.Name = "tlpContent";
+            this.tlpContent.RowCount = 6;
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpContent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tlpContent.Size = new System.Drawing.Size(514, 356);
+            this.tlpContent.TabIndex = 1;
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Left;
-            label1.AutoSize = true;
-            label1.Location = new Point(10, 20);
-            label1.Margin = new Padding(10, 0, 3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(319, 20);
-            label1.TabIndex = 1;
-            label1.Text = "Complate with your user and we send the code";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(366, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Enter your username and we will verify the password change.";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Left;
-            label2.AutoSize = true;
-            label2.Location = new Point(10, 65);
-            label2.Margin = new Padding(10, 0, 3, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 20);
-            label2.TabIndex = 2;
-            label2.Text = "User";
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 52);
+            this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "User";
             // 
             // txtuser
             // 
-            txtuser.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtuser.Location = new Point(10, 96);
-            txtuser.Margin = new Padding(10, 3, 10, 3);
-            txtuser.Name = "txtuser";
-            txtuser.Size = new Size(494, 27);
-            txtuser.TabIndex = 3;
+            this.txtuser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtuser.Location = new System.Drawing.Point(10, 77);
+            this.txtuser.Margin = new System.Windows.Forms.Padding(10, 2, 10, 2);
+            this.txtuser.Name = "txtuser";
+            this.txtuser.Size = new System.Drawing.Size(494, 22);
+            this.txtuser.TabIndex = 3;
             // 
             // btnsenduser
             // 
-            btnsenduser.Anchor = AnchorStyles.Left;
-            btnsenduser.Location = new Point(10, 140);
-            btnsenduser.Margin = new Padding(10, 3, 3, 3);
-            btnsenduser.Name = "btnsenduser";
-            btnsenduser.Size = new Size(94, 29);
-            btnsenduser.TabIndex = 4;
-            btnsenduser.Text = "Send";
-            btnsenduser.UseVisualStyleBackColor = true;
+            this.btnsenduser.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnsenduser.Location = new System.Drawing.Point(10, 112);
+            this.btnsenduser.Margin = new System.Windows.Forms.Padding(10, 2, 3, 2);
+            this.btnsenduser.Name = "btnsenduser";
+            this.btnsenduser.Size = new System.Drawing.Size(94, 23);
+            this.btnsenduser.TabIndex = 4;
+            this.btnsenduser.Text = "Send";
+            this.btnsenduser.UseVisualStyleBackColor = true;
+            this.btnsenduser.Click += new System.EventHandler(this.btnsenduser_Click);
+            // 
+            // btnBackToLogin
+            // 
+            this.btnBackToLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBackToLogin.Location = new System.Drawing.Point(664, 320);
+            this.btnBackToLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBackToLogin.Name = "btnBackToLogin";
+            this.btnBackToLogin.Size = new System.Drawing.Size(120, 28);
+            this.btnBackToLogin.TabIndex = 5;
+            this.btnBackToLogin.Text = "Back to Login";
+            this.btnBackToLogin.UseVisualStyleBackColor = true;
+            this.btnBackToLogin.Click += new System.EventHandler(this.btnBackToLogin_Click);
             // 
             // ForgetPass
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(tlpMain);
-            Name = "ForgetPass";
-            Text = "ForgetPass";
-            Load += ForgetPass_Load;
-            tlpMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            tlpContent.ResumeLayout(false);
-            tlpContent.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 360);
+            this.Controls.Add(this.btnBackToLogin);
+            this.Controls.Add(this.tlpMain);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "ForgetPass";
+            this.Text = "ForgetPass";
+            this.tlpMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tlpContent.ResumeLayout(false);
+            this.tlpContent.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         private void ForgetPass_Load(object sender, EventArgs e)
@@ -164,5 +184,6 @@ namespace WHUI.Login
         private Label label2;
         private TextBox txtuser;
         private Button btnsenduser;
+        private Button btnBackToLogin;
     }
 }

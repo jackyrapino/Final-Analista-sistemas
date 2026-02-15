@@ -56,5 +56,14 @@ namespace WHUI.Login
                 }
             }
         }
+
+        private void linkforget_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+           using (var frm = new ForgetPass())
+           {
+             frm.ShowDialog(this);
+           }
+           
+        }
     }
 }
