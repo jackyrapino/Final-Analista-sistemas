@@ -35,7 +35,6 @@
             this.lstRoles = new System.Windows.Forms.CheckedListBox();
             this.clbPermissions = new System.Windows.Forms.CheckedListBox();
             this.pnlButtons = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
@@ -108,7 +107,6 @@
             // 
             // pnlButtons
             // 
-            this.pnlButtons.Controls.Add(this.btnClose);
             this.pnlButtons.Controls.Add(this.btnCancel);
             this.pnlButtons.Controls.Add(this.btnApply);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -119,20 +117,10 @@
             this.pnlButtons.Size = new System.Drawing.Size(772, 48);
             this.pnlButtons.TabIndex = 3;
             // 
-            // btnClose
-            // 
-            this.btnClose.AutoSize = true;
-            this.btnClose.Location = new System.Drawing.Point(678, 11);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 26);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "Close";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // btnCancel
             // 
             this.btnCancel.AutoSize = true;
-            this.btnCancel.Location = new System.Drawing.Point(597, 11);
+            this.btnCancel.Location = new System.Drawing.Point(678, 11);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 26);
             this.btnCancel.TabIndex = 1;
@@ -142,7 +130,7 @@
             // btnApply
             // 
             this.btnApply.AutoSize = true;
-            this.btnApply.Location = new System.Drawing.Point(516, 11);
+            this.btnApply.Location = new System.Drawing.Point(597, 11);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 26);
             this.btnApply.TabIndex = 2;
@@ -179,6 +167,5 @@
         private System.Windows.Forms.FlowLayoutPanel pnlButtons;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnClose;
     }
 }

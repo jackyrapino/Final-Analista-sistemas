@@ -315,6 +315,131 @@ namespace Services.DAL.Implementations
             }
         }
 
+        public void UpdateUserFamilies(Guid idUsuario, IEnumerable<Family> families)
+        {
+            try
+            {
+                try
+                {
+                    SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Familia_DeleteParticular", CommandType.StoredProcedure,
+                        new SqlParameter[] { new SqlParameter("@IdUsuario", idUsuario) });
+                }
+                catch (Exception exDel)
+                {
+                    exDel.Handle(this);
+                }
+
+                if (families != null)
+                {
+                    foreach (var f in families)
+                    {
+                        try
+                        {
+                            SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Familia_Insert", CommandType.StoredProcedure,
+                                new SqlParameter[] {
+                                    new SqlParameter("@IdUsuario", idUsuario),
+                                    new SqlParameter("@IdFamilia", f.IdComponent)
+                                });
+                        }
+                        catch (Exception exInner)
+                        {
+                            exInner.Handle(this);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.Handle(this);
+            }
+        }
+
+        public void UpdateUserPatents(Guid idUsuario, IEnumerable<Patent> patents)
+        {
+            try
+            {
+                try
+                {
+                    SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Patente_DeleteParticular", CommandType.StoredProcedure,
+                        new SqlParameter[] { new SqlParameter("@IdUsuario", idUsuario) });
+                }
+                catch (Exception exDel)
+                {
+                    exDel.Handle(this);
+                }
+
+                if (patents != null)
+                {
+                    foreach (var p in patents)
+                    {
+                        try
+                        {
+                            SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Patente_Insert", CommandType.StoredProcedure,
+                                new SqlParameter[] {
+                                    new SqlParameter("@IdUsuario", idUsuario),
+                                    new SqlParameter("@IdPatente", p.IdComponent)
+                                });
+                        }
+                        catch (Exception exInner)
+                        {
+                            exInner.Handle(this);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.Handle(this);
+            }
+        }
+
+        public void DeleteUserPatentsSpecific(Guid idUsuario, IEnumerable<Guid> patentIds)
+        {
+            if (patentIds == null) return;
+            try
+            {
+                foreach (var idPat in patentIds)
+                {
+                    try
+                    {
+                        SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Patente_Delete", System.Data.CommandType.StoredProcedure,
+                            new SqlParameter[] { new SqlParameter("@IdUsuario", idUsuario), new SqlParameter("@IdPatente", idPat) });
+                    }
+                    catch (Exception exInner)
+                    {
+                        exInner.Handle(this);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.Handle(this);
+            }
+        }
+
+        public void InsertUserPatents(Guid idUsuario, IEnumerable<Patent> patents)
+        {
+            if (patents == null) return;
+            try
+            {
+                foreach (var p in patents)
+                {
+                    try
+                    {
+                        SqlHelper.ExecuteNonQuery("ManagerAuth", "Usuario_Patente_Insert", System.Data.CommandType.StoredProcedure,
+                            new SqlParameter[] { new SqlParameter("@IdUsuario", idUsuario), new SqlParameter("@IdPatente", p.IdComponent) });
+                    }
+                    catch (Exception exInner)
+                    {
+                        exInner.Handle(this);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.Handle(this);
+            }
+        }
     }
 
 }
