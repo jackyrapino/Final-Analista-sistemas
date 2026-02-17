@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,7 +42,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IBranchRepository.cs" />
+    <Compile Include="Contracts\IBrandRepository.cs" />
+    <Compile Include="Contracts\ICategoryRepository.cs" />
+    <Compile Include="Contracts\ICustomerRepository.cs" />
+    <Compile Include="Contracts\IGenericRepository.cs" />
+    <Compile Include="Contracts\IProductRepository.cs" />
+    <Compile Include="Contracts\IPurchaseItemRepository.cs" />
+    <Compile Include="Contracts\IPurchaseRepository.cs" />
+    <Compile Include="Implementations\BranchRepository.cs" />
+    <Compile Include="Implementations\BrandRepository.cs" />
+    <Compile Include="Implementations\CategoryRepository.cs" />
+    <Compile Include="Implementations\CustomerRepository.cs" />
+    <Compile Include="Implementations\ProductRepository.cs" />
+    <Compile Include="Implementations\PurchaseItemRepository.cs" />
+    <Compile Include="Implementations\PurchaseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\SqlHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
+      <Project>{9d25d6e8-cd5b-481e-bfcb-8403a814a7a8}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{f5b68fc2-ec11-44af-b3ab-01d62b34d312}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Factories\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

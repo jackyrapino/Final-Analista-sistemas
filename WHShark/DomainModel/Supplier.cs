@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace DomainModel
 {
-    // Entidad que representa un proveedor (tabla Suppliers)
     public class Supplier
     {
         public Guid SupplierId { get; set; }

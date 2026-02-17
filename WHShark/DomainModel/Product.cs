@@ -8,7 +8,6 @@ namespace DomainModel
 {
     public class Product
     {
-        // Primary key
         public Guid ProductId { get; set; }
         public string SKU { get; set; }
         public string Barcode { get; set; }
