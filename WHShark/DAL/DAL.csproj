@@ -50,6 +50,13 @@
     <Compile Include="Contracts\IProductRepository.cs" />
     <Compile Include="Contracts\IPurchaseItemRepository.cs" />
     <Compile Include="Contracts\IPurchaseRepository.cs" />
+    <Compile Include="Contracts\ISaleItemRepository.cs" />
+    <Compile Include="Contracts\ISaleRepository.cs" />
+    <Compile Include="Contracts\IStockMovementItemRepository.cs" />
+    <Compile Include="Contracts\IStockMovementRepository.cs" />
+    <Compile Include="Contracts\IStockRepository.cs" />
+    <Compile Include="Contracts\ISupplierRepository.cs" />
+    <Compile Include="Contracts\IUserRepository.cs" />
     <Compile Include="Implementations\BranchRepository.cs" />
     <Compile Include="Implementations\BrandRepository.cs" />
     <Compile Include="Implementations\CategoryRepository.cs" />
@@ -57,6 +64,13 @@
     <Compile Include="Implementations\ProductRepository.cs" />
     <Compile Include="Implementations\PurchaseItemRepository.cs" />
     <Compile Include="Implementations\PurchaseRepository.cs" />
+    <Compile Include="Implementations\SaleItemRepository.cs" />
+    <Compile Include="Implementations\SaleRepository.cs" />
+    <Compile Include="Implementations\StockMovementItemRepository.cs" />
+    <Compile Include="Implementations\StockMovementRepository.cs" />
+    <Compile Include="Implementations\StockRepository.cs" />
+    <Compile Include="Implementations\SupplierRepository.cs" />
+    <Compile Include="Implementations\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\SqlHelper.cs" />
   </ItemGroup>
