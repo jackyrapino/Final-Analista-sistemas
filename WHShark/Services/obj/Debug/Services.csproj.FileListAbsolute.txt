@@ -1,9 +1,0 @@
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\Services\bin\Debug\Services.dll
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\Services\bin\Debug\Services.pdb
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\Services\bin\Debug\BLL.dll
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\Services\bin\Debug\BLL.pdb
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\Services\obj\Debug\Services.csproj.AssemblyReference.cache
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\Services\obj\Debug\Services.csproj.Up2Date
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\Services\obj\Debug\Services.dll
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\Services\obj\Debug\Services.pdb

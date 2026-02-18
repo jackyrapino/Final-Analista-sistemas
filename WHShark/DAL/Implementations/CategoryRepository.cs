@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using DAL.Contracts;
 using DomainModel;
 using DAL.Tools;
-using Services.Services.Extensions;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -32,7 +31,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while inserting category data.", ex);
             }
         }
 
@@ -49,7 +48,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while updating category data.", ex);
             }
         }
 
@@ -62,7 +61,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while deleting category data.", ex);
             }
         }
 
@@ -89,7 +88,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while selecting all categories.", ex);
             }
             return list;
         }
@@ -117,7 +116,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while selecting a category by id.", ex);
             }
             return category;
         }

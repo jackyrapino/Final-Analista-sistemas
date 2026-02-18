@@ -79,10 +79,6 @@
       <Project>{9d25d6e8-cd5b-481e-bfcb-8403a814a7a8}</Project>
       <Name>DomainModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Services\Services.csproj">
-      <Project>{f5b68fc2-ec11-44af-b3ab-01d62b34d312}</Project>
-      <Name>Services</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Factories\" />

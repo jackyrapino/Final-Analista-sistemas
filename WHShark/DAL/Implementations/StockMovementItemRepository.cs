@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using DAL.Contracts;
 using DomainModel;
 using DAL.Tools;
-using Services.Services.Extensions;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -34,7 +33,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while inserting stock movement item data.", ex);
             }
         }
 
@@ -53,7 +52,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while updating stock movement item data.", ex);
             }
         }
 
@@ -66,7 +65,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while deleting stock movement item data.", ex);
             }
         }
 
@@ -94,7 +93,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while selecting all stock movement items.", ex);
             }
             return list;
         }
@@ -123,7 +122,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while selecting a stock movement item by id.", ex);
             }
             return item;
         }
@@ -153,7 +152,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while selecting stock movement items by movement id.", ex);
             }
             return list;
         }

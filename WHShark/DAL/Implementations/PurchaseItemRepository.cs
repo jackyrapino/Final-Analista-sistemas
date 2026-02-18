@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using DAL.Contracts;
 using DomainModel;
 using DAL.Tools;
-using Services.Services.Extensions;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -36,7 +35,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while inserting purchase item data.", ex);
             }
         }
 
@@ -57,7 +56,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while updating purchase item data.", ex);
             }
         }
 
@@ -70,7 +69,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while deleting purchase item data.", ex);
             }
         }
 
@@ -100,7 +99,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while selecting all purchase items.", ex);
             }
             return list;
         }
@@ -131,7 +130,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while selecting a purchase item by id.", ex);
             }
             return pi;
         }
@@ -163,7 +162,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while selecting purchase items by purchase id.", ex);
             }
             return list;
         }

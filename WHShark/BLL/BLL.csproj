@@ -41,9 +41,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builders\Contracts\ISaleBuilder.cs" />
+    <Compile Include="Builders\Contracts\IStockMovementBuilder.cs" />
+    <Compile Include="Builders\SaleBuilder.cs" />
+    <Compile Include="Builders\StockMovementBuilder.cs" />
     <Compile Include="BusinessExceptions.cs" />
-    <Compile Include="ProductBLL.cs" />
+    <Compile Include="Factories\PricingServiceFactory.cs" />
+    <Compile Include="Factories\SaleBuilderFactory.cs" />
+    <Compile Include="Factories\ServicesFactory.cs" />
+    <Compile Include="Factories\StockValidationServiceFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Contracts\ICustomerService.cs" />
+    <Compile Include="Services\Contracts\IPricingService.cs" />
+    <Compile Include="Services\Contracts\IStockValidationService.cs" />
+    <Compile Include="Services\CustomerService.cs" />
+    <Compile Include="Services\PricingService.cs" />
+    <Compile Include="Services\StockValidationService.cs" />
+    <Compile Include="Strategies\BirthdayDiscountStrategy.cs" />
+    <Compile Include="Strategies\CashPaymentDiscountStrategy.cs" />
+    <Compile Include="Strategies\CreditCardSurchargeStrategy.cs" />
+    <Compile Include="Strategies\Contracts\IPricingStrategy.cs" />
+    <Compile Include="Strategies\WeekdayTwoForOneStrategy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{2322f3bd-5c5f-4940-8b65-41727db942fb}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
+      <Project>{9d25d6e8-cd5b-481e-bfcb-8403a814a7a8}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

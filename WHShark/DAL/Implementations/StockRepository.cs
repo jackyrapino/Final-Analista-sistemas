@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using DAL.Contracts;
 using DomainModel;
 using DAL.Tools;
-using Services.Services.Extensions;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -35,7 +34,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while inserting stock data.", ex);
             }
         }
 
@@ -55,7 +54,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while updating stock data.", ex);
             }
         }
 
@@ -68,7 +67,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while deleting stock data.", ex);
             }
         }
 
@@ -97,7 +96,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while selecting all stocks.", ex);
             }
             return list;
         }
@@ -127,9 +126,35 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while selecting a stock by id.", ex);
             }
             return stock;
         }
+
+        public int GetAvailableStock(Guid productId, Guid branchId)
+        {
+            int availableStock = 0;
+            try
+            {
+                using (var reader = SqlHelper.ExecuteReader(ConnectionName, "Stock_GetAvailable", CommandType.StoredProcedure,
+                    new SqlParameter[]
+                    {
+                new SqlParameter("@ProductId", productId),
+                new SqlParameter("@BranchId", branchId)
+                    }))
+                {
+                    if (reader.Read())
+                    {
+                        availableStock = int.Parse(reader[0].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while selecting an available  stock by product.", ex);
+            }
+            return availableStock;
+        }
+
     }
 }

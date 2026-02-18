@@ -2,7 +2,6 @@ using DAL.Contracts;
 using DomainModel;
 using DAL.Tools;
 
-using Services.Services.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -52,7 +51,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while inserting product data.", ex);
             }
 
         }
@@ -83,7 +82,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while updating product data.", ex);
             }
 
         }
@@ -100,7 +99,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while deleting product data.", ex);
             }
 
         }
@@ -142,7 +141,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while selecting all products.", ex);
             }
             return list;
 
@@ -185,7 +184,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while selecting a product by id.", ex);
             }
             return product;
 
@@ -229,7 +228,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while selecting products by category.", ex);
             }
             return list;
 
@@ -273,7 +272,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while searching products.", ex);
             }
             return list;
 

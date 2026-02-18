@@ -1,7 +1,6 @@
 using DAL.Contracts;
 using DAL.Tools;
 using DomainModel;
-using Services.Services.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -38,7 +37,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while inserting customer data.", ex);
             }
 
         }
@@ -61,7 +60,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while updating customer data.", ex);
             }
 
         }
@@ -78,7 +77,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while deleting customer data.", ex);
             }
 
         }
@@ -111,7 +110,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while selecting all customers.", ex);
             }
 
             return customers;
@@ -147,7 +146,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                ex.Handle(this);
+                throw new Exception("An error occurred while selecting a customer by id.", ex);
             }
 
             return customer;

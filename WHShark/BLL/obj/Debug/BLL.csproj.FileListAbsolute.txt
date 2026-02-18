@@ -1,6 +1,0 @@
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\bin\Debug\BLL.dll
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\bin\Debug\BLL.pdb
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\obj\Debug\BLL.dll
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\obj\Debug\BLL.pdb
