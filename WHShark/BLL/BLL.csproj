@@ -45,10 +45,14 @@
     <Compile Include="Builders\Contracts\IStockMovementBuilder.cs" />
     <Compile Include="Builders\SaleBuilder.cs" />
     <Compile Include="Builders\StockMovementBuilder.cs" />
-    <Compile Include="BusinessExceptions.cs" />
+    <Compile Include="BusinessExceptios\BusinessExceptions.cs" />
+    <Compile Include="BusinessExceptios\SalesExceptions.cs" />
+    <Compile Include="BusinessExceptios\StockMovementExceptions.cs" />
+    <Compile Include="BusinessExceptios\UserExceptions.cs" />
     <Compile Include="Factories\PricingServiceFactory.cs" />
     <Compile Include="Factories\SaleBuilderFactory.cs" />
     <Compile Include="Factories\ServicesFactory.cs" />
+    <Compile Include="Factories\StockMovementBuilderFactory.cs" />
     <Compile Include="Factories\StockValidationServiceFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Contracts\ICustomerService.cs" />

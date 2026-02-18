@@ -1,0 +1,11 @@
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\bin\Debug\BLL.dll
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\bin\Debug\BLL.pdb
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\bin\Debug\DAL.dll
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\bin\Debug\DomainModel.dll
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\bin\Debug\DAL.pdb
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\bin\Debug\DomainModel.pdb
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\obj\Debug\BLL.csproj.Up2Date
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\obj\Debug\BLL.dll
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\BLL\obj\Debug\BLL.pdb
