@@ -55,6 +55,10 @@
     <Compile Include="Factories\StockMovementBuilderFactory.cs" />
     <Compile Include="Factories\StockValidationServiceFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BrandService.cs" />
+    <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="Services\Contracts\IBrandService.cs" />
+    <Compile Include="Services\Contracts\ICategoryService.cs" />
     <Compile Include="Services\Contracts\ICustomerService.cs" />
     <Compile Include="Services\Contracts\IPricingService.cs" />
     <Compile Include="Services\Contracts\IStockValidationService.cs" />

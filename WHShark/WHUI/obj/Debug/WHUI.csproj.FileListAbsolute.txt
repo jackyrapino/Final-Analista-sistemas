@@ -57,4 +57,3 @@ D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sist
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.csproj.Up2Date
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.exe
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.pdb
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.exe.config
