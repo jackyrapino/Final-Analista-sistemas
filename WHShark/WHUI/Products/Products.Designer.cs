@@ -82,12 +82,14 @@ namespace WHUI.Products
             resources.ApplyResources(this.btnAddBrand, "btnAddBrand");
             this.btnAddBrand.Name = "btnAddBrand";
             this.btnAddBrand.UseVisualStyleBackColor = true;
+            this.btnAddBrand.Click += new System.EventHandler(this.btnAddBrand_Click);
             // 
             // btnAddCategory
             // 
             resources.ApplyResources(this.btnAddCategory, "btnAddCategory");
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.UseVisualStyleBackColor = true;
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // btnClear
             // 

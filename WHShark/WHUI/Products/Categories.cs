@@ -1,35 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WHUI.Products
 {
-    public partial class Products : Form
+    public partial class Categories : Form
     {
-        public Products()
+        public Categories()
         {
             InitializeComponent();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            using (var frm = new ProductEdit())
-            {
-                frm.ShowDialog(this);
-            }
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
-        private void btnAddBrand_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnAddCategory_Click(object sender, EventArgs e)
-        {
-
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

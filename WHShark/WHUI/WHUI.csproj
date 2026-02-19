@@ -106,6 +106,18 @@
     <Compile Include="Menu\Welcome.Designer.cs">
       <DependentUpon>Welcome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Products\Brands.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products\Brands.Designer.cs">
+      <DependentUpon>Brands.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products\Categories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products\Categories.Designer.cs">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Products\ProductEdit.cs">
       <SubType>Form</SubType>
     </Compile>
