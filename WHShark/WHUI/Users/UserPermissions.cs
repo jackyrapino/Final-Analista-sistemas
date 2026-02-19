@@ -19,6 +19,7 @@ namespace WHUI.Users
         private List<Patent> _patents = new List<Patent>();
         private Dictionary<Guid, int> _patentIndexById = new Dictionary<Guid, int>();
         private User _currentUser;
+        private HashSet<Guid> _impliedPatentIds = new HashSet<Guid>();
 
         public UserPermissions()
         {
@@ -51,6 +52,7 @@ namespace WHUI.Users
             try
             {
                 EnsureListsLoaded();
+                clbPermissions.CheckOnClick = true;
             }
             catch (Exception ex)
             {
@@ -78,12 +80,11 @@ namespace WHUI.Users
 
             _patents = PermissionService.ListAllPermissions(out msg)?.ToList() ?? new List<Patent>();
             clbPermissions.Items.Clear();
-            clbPermissions.DisplayMember = "MenuItemName";
             _patentIndexById.Clear();
             for (int i = 0; i < _patents.Count; i++)
             {
                 var p = _patents[i];
-                clbPermissions.Items.Add(p, false);
+                clbPermissions.Items.Add(p.MenuItemName, false);
                 _patentIndexById[p.IdComponent] = i;
             }
         }
@@ -115,12 +116,23 @@ namespace WHUI.Users
                 CollectPatentIds(fam, patentIds);
             }
 
+            _impliedPatentIds.Clear();
+            foreach (var fam in familyList)
+            {
+                var ids = new HashSet<Guid>();
+                CollectPatentIds(fam, ids);
+                foreach (var id in ids)
+                    _impliedPatentIds.Add(id);
+            }
+
             for (int i = 0; i < clbPermissions.Items.Count; i++)
             {
-                var patent = (Patent)clbPermissions.Items[i];
+                var patent = _patents[i];
                 bool assigned = patentIds.Contains(patent.IdComponent);
                 clbPermissions.SetItemChecked(i, assigned);
+                UpdatePermissionItemText(i, patent);
             }
+            clbPermissions.Invalidate();
         }
 
         private void LstRoles_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -130,22 +142,91 @@ namespace WHUI.Users
                 int idx = e.Index;
                 if (idx < 0 || idx >= _families.Count) return;
 
-                var family = _families[idx];
-                var patentIds = new HashSet<Guid>();
-                CollectPatentIds(family, patentIds);
+                // Compute which roles will be checked after this change
+                var checkedRoleIds = new HashSet<Guid>();
+                for (int i = 0; i < lstRoles.Items.Count; i++)
+                {
+                    bool willBeChecked;
+                    if (i == e.Index)
+                        willBeChecked = e.NewValue == CheckState.Checked;
+                    else
+                        willBeChecked = lstRoles.GetItemChecked(i);
 
+                    if (willBeChecked)
+                    {
+                        var fam = (Family)lstRoles.Items[i];
+                        checkedRoleIds.Add(fam.IdComponent);
+                    }
+                }
+
+                var newImplied = new HashSet<Guid>();
+                foreach (var famId in checkedRoleIds)
+                {
+                    var fam = _families.FirstOrDefault(f => f.IdComponent == famId);
+                    if (fam != null)
+                    {
+                        CollectPatentIds(fam, newImplied);
+                    }
+                }
+
+                _impliedPatentIds = newImplied;
+
+                // Update check state of patents according to the toggled role
                 bool check = e.NewValue == CheckState.Checked;
-                foreach (var pid in patentIds)
+                // will set checked state for all patents that belong to that toggled family
+                var toggledFamily = _families[idx];
+                var toggledPatentIds = new HashSet<Guid>();
+                CollectPatentIds(toggledFamily, toggledPatentIds);
+
+                for (int i = 0; i < _patents.Count; i++)
+                {
+                    var p = _patents[i];
+                    UpdatePermissionItemText(i, p);
+                }
+
+                foreach (var pid in toggledPatentIds)
                 {
                     if (_patentIndexById.TryGetValue(pid, out int pIndex))
                     {
-                        clbPermissions.SetItemChecked(pIndex, check);
+                        // Determine final checked state: if any other checked role implies it, keep checked
+                        if (!check)
+                        {
+                            if (!newImplied.Contains(pid))
+                                clbPermissions.SetItemChecked(pIndex, false);
+                        }
+                        else
+                        {
+                            clbPermissions.SetItemChecked(pIndex, true);
+                        }
                     }
                 }
+
+                clbPermissions.Invalidate();
             }
             catch (Exception ex)
             {
                 LoggerService.WriteWarning("Failed to update patents when role toggled: " + ex.Message);
+            }
+        }
+
+        private void UpdatePermissionItemText(int index, Patent patent)
+        {
+            try
+            {
+                if (index < 0 || index >= clbPermissions.Items.Count) return;
+                var baseText = patent.MenuItemName;
+                bool implied = _impliedPatentIds.Contains(patent.IdComponent);
+                var displayText = implied ? $"{baseText} (via role)" : baseText;
+
+                // Only update if different to avoid flicker
+                if (!object.Equals(clbPermissions.Items[index], displayText))
+                {
+                    clbPermissions.Items[index] = displayText;
+                }
+            }
+            catch
+            {
+                // ignore
             }
         }
 
@@ -178,25 +259,60 @@ namespace WHUI.Users
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            var updatedUser = _currentUser;
-            var selectedRoles = lstRoles.CheckedItems.Cast<Family>().ToList();
-
-            var selectedPatents = clbPermissions.CheckedItems.Cast<Patent>().ToList();
-            updatedUser.Permisos = new List<Services.DomainModel.Security.Composite.Component>();
-            updatedUser.Permisos.AddRange(selectedRoles);
-            updatedUser.Permisos.AddRange(selectedPatents);
-
-            string msg;
-            var ok = PermissionService.UpdateUserPermissions(updatedUser, out msg);
-            if (ok)
+            try
             {
-                MessageBox.Show(this, msg ?? "Permissions updated successfully.", "Manage Permissions", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                var updatedUser = new Services.DomainModel.Security.Composite.User
+                {
+                    IdUser = _currentUser.IdUser,
+                    Username = _currentUser.Username,
+                    Name = _currentUser.Name,
+                    IsAdmin = _currentUser.IsAdmin,
+                    State = _currentUser.State,
+                    FailedAttempts = _currentUser.FailedAttempts,
+                    Permisos = new List<Services.DomainModel.Security.Composite.Component>()
+                };
+
+                var selectedRoles = lstRoles.CheckedItems.Cast<Services.DomainModel.Security.Composite.Family>().ToList();
+
+                // Build selected patents from checked indices using _patents mapping
+                var selectedPatents = new List<Services.DomainModel.Security.Composite.Patent>();
+                for (int i = 0; i < clbPermissions.Items.Count; i++)
+                {
+                    if (clbPermissions.GetItemChecked(i))
+                    {
+                        selectedPatents.Add(_patents[i]);
+                    }
+                }
+
+                try
+                {
+                    var roleIds = selectedRoles.Select(r => r.IdComponent).ToList();
+                    var patentIds = selectedPatents.Select(p => p.IdComponent).ToList();
+                    Services.Services.LoggerService.WriteInfo($"Updating permissions for user {updatedUser.Username} (Id: {updatedUser.IdUser}). Roles: {string.Join(",", roleIds)}. Patents: {string.Join(",", patentIds)}", updatedUser.Username);
+                }
+                catch { /* swallow logging errors */ }
+
+                updatedUser.Permisos.AddRange(selectedRoles);
+                updatedUser.Permisos.AddRange(selectedPatents);
+
+                string msg;
+                var ok = PermissionService.UpdateUserPermissions(updatedUser, out msg);
+                if (ok)
+                {
+                    MessageBox.Show(this, msg ?? "Permissions updated successfully.", "Manage Permissions", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    Services.Services.LoggerService.WriteWarning($"UpdateUserPermissions returned false for user {updatedUser.Username}: {msg}");
+                    MessageBox.Show(this, msg ?? "Failed to update permissions.", "Manage Permissions", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(this, msg ?? "Failed to update permissions.", "Manage Permissions", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Services.Services.LoggerService.WriteError("Unexpected error while applying permissions: " + ex.Message);
+                MessageBox.Show(this, "An unexpected error occurred while applying permissions.", "Manage Permissions", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -65,5 +65,10 @@ namespace WHUI.Login
            }
            
         }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

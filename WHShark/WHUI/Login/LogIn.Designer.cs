@@ -147,6 +147,8 @@ namespace WHUI.Login
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(474, 22);
             this.txtPass.TabIndex = 4;
+            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
