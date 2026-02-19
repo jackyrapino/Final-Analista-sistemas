@@ -24,12 +24,24 @@ namespace WHUI.Products
 
         private void btnAddBrand_Click(object sender, EventArgs e)
         {
-
+            using (var frm = new Brands())
+            {
+                if (frm.ShowDialog(this) == DialogResult.OK)
+                {
+                  
+                }
+            }
         }
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-
+            using (var frm = new Categories())
+            {
+                if (frm.ShowDialog(this) == DialogResult.OK)
+                {
+                   
+                }
+            }
         }
     }
 }

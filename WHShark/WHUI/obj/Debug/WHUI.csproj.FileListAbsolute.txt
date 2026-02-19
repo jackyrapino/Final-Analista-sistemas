@@ -4,14 +4,14 @@ D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sist
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\en\WHUI.resources.dll
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\es\WHUI.resources.dll
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\pt\WHUI.resources.dll
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\Services.dll
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\BLL.dll
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\DomainModel.dll
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\DAL.dll
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\Services.pdb
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\DomainModel.dll
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\Services.dll
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\BLL.pdb
-D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\DomainModel.pdb
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\DAL.pdb
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\DomainModel.pdb
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\bin\Debug\Services.pdb
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.csproj.AssemblyReference.cache
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Branches.BranchEdit.resources
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.Branches.Branches.resources
@@ -57,3 +57,4 @@ D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sist
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.csproj.Up2Date
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.exe
 D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.pdb
+D:\Facultad\3er Año\trabajo de diploma\Final final sistemas\Final-Analista-sistemas\WHShark\WHUI\obj\Debug\WHUI.exe.config
