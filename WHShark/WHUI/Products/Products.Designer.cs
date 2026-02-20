@@ -63,12 +63,14 @@ namespace WHUI.Products
             resources.ApplyResources(this.btnDelete, "btnDelete");
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
             resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 

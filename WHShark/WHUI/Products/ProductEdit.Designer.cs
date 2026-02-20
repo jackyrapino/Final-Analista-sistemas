@@ -31,254 +31,276 @@ namespace WHUI.Products
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductEdit));
-            lblSKU = new Label();
-            txtSKU = new TextBox();
-            lblBarcode = new Label();
-            txtBarcode = new TextBox();
-            lblName = new Label();
-            txtName = new TextBox();
-            lblDescription = new Label();
-            txtDescription = new TextBox();
-            lblBrand = new Label();
-            cbBrand = new ComboBox();
-            lblCategory = new Label();
-            cbCategory = new ComboBox();
-            lblBranch = new Label();
-            cbBranch = new ComboBox();
-            lblVolume = new Label();
-            nudVolume = new NumericUpDown();
-            lblVolumeUnit = new Label();
-            txtVolumeUnit = new TextBox();
-            lblWeight = new Label();
-            nudWeight = new NumericUpDown();
-            lblWeightUnit = new Label();
-            txtWeightUnit = new TextBox();
-            lblCostPrice = new Label();
-            nudCostPrice = new NumericUpDown();
-            lblListPrice = new Label();
-            nudListPrice = new NumericUpDown();
-            lblAlertStock = new Label();
-            nudAlertStock = new NumericUpDown();
-            btnOK = new Button();
-            btnCancel = new Button();
-            ((System.ComponentModel.ISupportInitialize)nudVolume).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudWeight).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudCostPrice).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudListPrice).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudAlertStock).BeginInit();
-            SuspendLayout();
+            this.lblSKU = new System.Windows.Forms.Label();
+            this.txtSKU = new System.Windows.Forms.TextBox();
+            this.lblBarcode = new System.Windows.Forms.Label();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.lblBrand = new System.Windows.Forms.Label();
+            this.cbBrand = new System.Windows.Forms.ComboBox();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.lblBranch = new System.Windows.Forms.Label();
+            this.cbBranch = new System.Windows.Forms.ComboBox();
+            this.lblVolume = new System.Windows.Forms.Label();
+            this.nudVolume = new System.Windows.Forms.NumericUpDown();
+            this.lblVolumeUnit = new System.Windows.Forms.Label();
+            this.txtVolumeUnit = new System.Windows.Forms.TextBox();
+            this.lblWeight = new System.Windows.Forms.Label();
+            this.nudWeight = new System.Windows.Forms.NumericUpDown();
+            this.lblWeightUnit = new System.Windows.Forms.Label();
+            this.txtWeightUnit = new System.Windows.Forms.TextBox();
+            this.lblCostPrice = new System.Windows.Forms.Label();
+            this.nudCostPrice = new System.Windows.Forms.NumericUpDown();
+            this.lblListPrice = new System.Windows.Forms.Label();
+            this.nudListPrice = new System.Windows.Forms.NumericUpDown();
+            this.lblAlertStock = new System.Windows.Forms.Label();
+            this.nudAlertStock = new System.Windows.Forms.NumericUpDown();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVolume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCostPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudListPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAlertStock)).BeginInit();
+            this.SuspendLayout();
             // 
             // lblSKU
             // 
-            resources.ApplyResources(lblSKU, "lblSKU");
-            lblSKU.Name = "lblSKU";
+            resources.ApplyResources(this.lblSKU, "lblSKU");
+            this.lblSKU.Name = "lblSKU";
             // 
             // txtSKU
             // 
-            resources.ApplyResources(txtSKU, "txtSKU");
-            txtSKU.Name = "txtSKU";
+            resources.ApplyResources(this.txtSKU, "txtSKU");
+            this.txtSKU.Name = "txtSKU";
             // 
             // lblBarcode
             // 
-            resources.ApplyResources(lblBarcode, "lblBarcode");
-            lblBarcode.Name = "lblBarcode";
+            resources.ApplyResources(this.lblBarcode, "lblBarcode");
+            this.lblBarcode.Name = "lblBarcode";
             // 
             // txtBarcode
             // 
-            resources.ApplyResources(txtBarcode, "txtBarcode");
-            txtBarcode.Name = "txtBarcode";
+            resources.ApplyResources(this.txtBarcode, "txtBarcode");
+            this.txtBarcode.Name = "txtBarcode";
             // 
             // lblName
             // 
-            resources.ApplyResources(lblName, "lblName");
-            lblName.Name = "lblName";
+            resources.ApplyResources(this.lblName, "lblName");
+            this.lblName.Name = "lblName";
             // 
             // txtName
             // 
-            resources.ApplyResources(txtName, "txtName");
-            txtName.Name = "txtName";
+            resources.ApplyResources(this.txtName, "txtName");
+            this.txtName.Name = "txtName";
             // 
             // lblDescription
             // 
-            resources.ApplyResources(lblDescription, "lblDescription");
-            lblDescription.Name = "lblDescription";
+            resources.ApplyResources(this.lblDescription, "lblDescription");
+            this.lblDescription.Name = "lblDescription";
             // 
             // txtDescription
             // 
-            resources.ApplyResources(txtDescription, "txtDescription");
-            txtDescription.Name = "txtDescription";
+            resources.ApplyResources(this.txtDescription, "txtDescription");
+            this.txtDescription.Name = "txtDescription";
             // 
             // lblBrand
             // 
-            resources.ApplyResources(lblBrand, "lblBrand");
-            lblBrand.Name = "lblBrand";
+            resources.ApplyResources(this.lblBrand, "lblBrand");
+            this.lblBrand.Name = "lblBrand";
             // 
             // cbBrand
             // 
-            cbBrand.DropDownStyle = ComboBoxStyle.DropDownList;
-            resources.ApplyResources(cbBrand, "cbBrand");
-            cbBrand.Name = "cbBrand";
+            this.cbBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbBrand, "cbBrand");
+            this.cbBrand.Name = "cbBrand";
             // 
             // lblCategory
             // 
-            resources.ApplyResources(lblCategory, "lblCategory");
-            lblCategory.Name = "lblCategory";
+            resources.ApplyResources(this.lblCategory, "lblCategory");
+            this.lblCategory.Name = "lblCategory";
             // 
             // cbCategory
             // 
-            cbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
-            resources.ApplyResources(cbCategory, "cbCategory");
-            cbCategory.Name = "cbCategory";
+            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbCategory, "cbCategory");
+            this.cbCategory.Name = "cbCategory";
             // 
             // lblBranch
             // 
-            resources.ApplyResources(lblBranch, "lblBranch");
-            lblBranch.Name = "lblBranch";
+            resources.ApplyResources(this.lblBranch, "lblBranch");
+            this.lblBranch.Name = "lblBranch";
             // 
             // cbBranch
             // 
-            cbBranch.DropDownStyle = ComboBoxStyle.DropDownList;
-            resources.ApplyResources(cbBranch, "cbBranch");
-            cbBranch.Name = "cbBranch";
+            this.cbBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbBranch, "cbBranch");
+            this.cbBranch.Name = "cbBranch";
             // 
             // lblVolume
             // 
-            resources.ApplyResources(lblVolume, "lblVolume");
-            lblVolume.Name = "lblVolume";
+            resources.ApplyResources(this.lblVolume, "lblVolume");
+            this.lblVolume.Name = "lblVolume";
             // 
             // nudVolume
             // 
-            nudVolume.DecimalPlaces = 2;
-            resources.ApplyResources(nudVolume, "nudVolume");
-            nudVolume.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-            nudVolume.Name = "nudVolume";
+            this.nudVolume.DecimalPlaces = 2;
+            resources.ApplyResources(this.nudVolume, "nudVolume");
+            this.nudVolume.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudVolume.Name = "nudVolume";
             // 
             // lblVolumeUnit
             // 
-            resources.ApplyResources(lblVolumeUnit, "lblVolumeUnit");
-            lblVolumeUnit.Name = "lblVolumeUnit";
+            resources.ApplyResources(this.lblVolumeUnit, "lblVolumeUnit");
+            this.lblVolumeUnit.Name = "lblVolumeUnit";
             // 
             // txtVolumeUnit
             // 
-            resources.ApplyResources(txtVolumeUnit, "txtVolumeUnit");
-            txtVolumeUnit.Name = "txtVolumeUnit";
+            resources.ApplyResources(this.txtVolumeUnit, "txtVolumeUnit");
+            this.txtVolumeUnit.Name = "txtVolumeUnit";
             // 
             // lblWeight
             // 
-            resources.ApplyResources(lblWeight, "lblWeight");
-            lblWeight.Name = "lblWeight";
+            resources.ApplyResources(this.lblWeight, "lblWeight");
+            this.lblWeight.Name = "lblWeight";
             // 
             // nudWeight
             // 
-            nudWeight.DecimalPlaces = 2;
-            resources.ApplyResources(nudWeight, "nudWeight");
-            nudWeight.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-            nudWeight.Name = "nudWeight";
+            this.nudWeight.DecimalPlaces = 2;
+            resources.ApplyResources(this.nudWeight, "nudWeight");
+            this.nudWeight.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudWeight.Name = "nudWeight";
             // 
             // lblWeightUnit
             // 
-            resources.ApplyResources(lblWeightUnit, "lblWeightUnit");
-            lblWeightUnit.Name = "lblWeightUnit";
+            resources.ApplyResources(this.lblWeightUnit, "lblWeightUnit");
+            this.lblWeightUnit.Name = "lblWeightUnit";
             // 
             // txtWeightUnit
             // 
-            resources.ApplyResources(txtWeightUnit, "txtWeightUnit");
-            txtWeightUnit.Name = "txtWeightUnit";
+            resources.ApplyResources(this.txtWeightUnit, "txtWeightUnit");
+            this.txtWeightUnit.Name = "txtWeightUnit";
             // 
             // lblCostPrice
             // 
-            resources.ApplyResources(lblCostPrice, "lblCostPrice");
-            lblCostPrice.Name = "lblCostPrice";
+            resources.ApplyResources(this.lblCostPrice, "lblCostPrice");
+            this.lblCostPrice.Name = "lblCostPrice";
             // 
             // nudCostPrice
             // 
-            nudCostPrice.DecimalPlaces = 2;
-            resources.ApplyResources(nudCostPrice, "nudCostPrice");
-            nudCostPrice.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
-            nudCostPrice.Name = "nudCostPrice";
+            this.nudCostPrice.DecimalPlaces = 2;
+            resources.ApplyResources(this.nudCostPrice, "nudCostPrice");
+            this.nudCostPrice.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.nudCostPrice.Name = "nudCostPrice";
             // 
             // lblListPrice
             // 
-            resources.ApplyResources(lblListPrice, "lblListPrice");
-            lblListPrice.Name = "lblListPrice";
+            resources.ApplyResources(this.lblListPrice, "lblListPrice");
+            this.lblListPrice.Name = "lblListPrice";
             // 
             // nudListPrice
             // 
-            nudListPrice.DecimalPlaces = 2;
-            resources.ApplyResources(nudListPrice, "nudListPrice");
-            nudListPrice.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
-            nudListPrice.Name = "nudListPrice";
+            this.nudListPrice.DecimalPlaces = 2;
+            resources.ApplyResources(this.nudListPrice, "nudListPrice");
+            this.nudListPrice.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.nudListPrice.Name = "nudListPrice";
             // 
             // lblAlertStock
             // 
-            resources.ApplyResources(lblAlertStock, "lblAlertStock");
-            lblAlertStock.Name = "lblAlertStock";
+            resources.ApplyResources(this.lblAlertStock, "lblAlertStock");
+            this.lblAlertStock.Name = "lblAlertStock";
             // 
             // nudAlertStock
             // 
-            resources.ApplyResources(nudAlertStock, "nudAlertStock");
-            nudAlertStock.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-            nudAlertStock.Name = "nudAlertStock";
+            resources.ApplyResources(this.nudAlertStock, "nudAlertStock");
+            this.nudAlertStock.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudAlertStock.Name = "nudAlertStock";
             // 
             // btnOK
             // 
-            resources.ApplyResources(btnOK, "btnOK");
-            btnOK.Name = "btnOK";
-            btnOK.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnOK, "btnOK");
+            this.btnOK.Name = "btnOK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
-            btnCancel.DialogResult = DialogResult.Cancel;
-            resources.ApplyResources(btnCancel, "btnCancel");
-            btnCancel.Name = "btnCancel";
-            btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // ProductEdit
             // 
-            AcceptButton = btnOK;
-            CancelButton = btnCancel;
+            this.AcceptButton = this.btnOK;
+            this.CancelButton = this.btnCancel;
             resources.ApplyResources(this, "$this");
-            Controls.Add(lblSKU);
-            Controls.Add(txtSKU);
-            Controls.Add(lblBarcode);
-            Controls.Add(txtBarcode);
-            Controls.Add(lblName);
-            Controls.Add(txtName);
-            Controls.Add(lblDescription);
-            Controls.Add(txtDescription);
-            Controls.Add(lblBrand);
-            Controls.Add(cbBrand);
-            Controls.Add(lblCategory);
-            Controls.Add(cbCategory);
-            Controls.Add(lblBranch);
-            Controls.Add(cbBranch);
-            Controls.Add(lblVolume);
-            Controls.Add(nudVolume);
-            Controls.Add(lblVolumeUnit);
-            Controls.Add(txtVolumeUnit);
-            Controls.Add(lblWeight);
-            Controls.Add(nudWeight);
-            Controls.Add(lblWeightUnit);
-            Controls.Add(txtWeightUnit);
-            Controls.Add(lblCostPrice);
-            Controls.Add(nudCostPrice);
-            Controls.Add(lblListPrice);
-            Controls.Add(nudListPrice);
-            Controls.Add(lblAlertStock);
-            Controls.Add(nudAlertStock);
-            Controls.Add(btnOK);
-            Controls.Add(btnCancel);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "ProductEdit";
-            ((System.ComponentModel.ISupportInitialize)nudVolume).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudWeight).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudCostPrice).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudListPrice).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudAlertStock).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.Controls.Add(this.lblSKU);
+            this.Controls.Add(this.txtSKU);
+            this.Controls.Add(this.lblBarcode);
+            this.Controls.Add(this.txtBarcode);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.lblBrand);
+            this.Controls.Add(this.cbBrand);
+            this.Controls.Add(this.lblCategory);
+            this.Controls.Add(this.cbCategory);
+            this.Controls.Add(this.lblBranch);
+            this.Controls.Add(this.cbBranch);
+            this.Controls.Add(this.lblVolume);
+            this.Controls.Add(this.nudVolume);
+            this.Controls.Add(this.lblVolumeUnit);
+            this.Controls.Add(this.txtVolumeUnit);
+            this.Controls.Add(this.lblWeight);
+            this.Controls.Add(this.nudWeight);
+            this.Controls.Add(this.lblWeightUnit);
+            this.Controls.Add(this.txtWeightUnit);
+            this.Controls.Add(this.lblCostPrice);
+            this.Controls.Add(this.nudCostPrice);
+            this.Controls.Add(this.lblListPrice);
+            this.Controls.Add(this.nudListPrice);
+            this.Controls.Add(this.lblAlertStock);
+            this.Controls.Add(this.nudAlertStock);
+            this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.btnCancel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "ProductEdit";
+            ((System.ComponentModel.ISupportInitialize)(this.nudVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCostPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudListPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAlertStock)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
