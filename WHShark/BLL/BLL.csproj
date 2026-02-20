@@ -51,7 +51,6 @@
     <Compile Include="BusinessExceptios\UserExceptions.cs" />
     <Compile Include="Factories\PricingServiceFactory.cs" />
     <Compile Include="Factories\SaleBuilderFactory.cs" />
-    <Compile Include="Factories\ServiceFactory.cs" />
     <Compile Include="Factories\ServicesFactory.cs" />
     <Compile Include="Factories\StockMovementBuilderFactory.cs" />
     <Compile Include="Factories\StockValidationServiceFactory.cs" />
