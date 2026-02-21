@@ -90,6 +90,17 @@ namespace DAL.Implementations
                             Quantity = int.Parse(values[3].ToString()),
                             LastUpdated = DateTime.Parse(values[4].ToString())
                         };
+                        // populate navigation properties
+                        try
+                        {
+                            s.Product = ProductRepository.Current.SelectOne(s.ProductId);
+                        }
+                        catch { s.Product = null; }
+                        try
+                        {
+                            s.Branch = BranchRepository.Current.SelectOne(s.BranchId);
+                        }
+                        catch { s.Branch = null; }
                         list.Add(s);
                     }
                 }
@@ -121,6 +132,9 @@ namespace DAL.Implementations
                             Quantity = int.Parse(values[3].ToString()),
                             LastUpdated = DateTime.Parse(values[4].ToString())
                         };
+                        // populate navigation properties
+                        try { s.Product = ProductRepository.Current.SelectOne(s.ProductId); } catch { s.Product = null; }
+                        try { s.Branch = BranchRepository.Current.SelectOne(s.BranchId); } catch { s.Branch = null; }
                         list.Add(s);
                     }
                 }
@@ -152,6 +166,9 @@ namespace DAL.Implementations
                             Quantity = int.Parse(values[3].ToString()),
                             LastUpdated = DateTime.Parse(values[4].ToString())
                         };
+                        // populate navigation properties
+                        try { stock.Product = ProductRepository.Current.SelectOne(stock.ProductId); } catch { stock.Product = null; }
+                        try { stock.Branch = BranchRepository.Current.SelectOne(stock.BranchId); } catch { stock.Branch = null; }
                     }
                 }
             }
