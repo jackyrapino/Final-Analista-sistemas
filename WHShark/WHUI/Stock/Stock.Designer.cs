@@ -200,10 +200,11 @@ namespace WHUI.Stock
             this.colId.Name = "colId";
             this.colId.ReadOnly = true;
             this.colId.Visible = false;
+            this.colId.DataPropertyName = "StockId";
             // 
             // colName
             // 
-            this.colName.DataPropertyName = "Name";
+            this.colName.DataPropertyName = "Product.Name";
             this.colName.HeaderText = "Product Name";
             this.colName.MinimumWidth = 120;
             this.colName.Name = "colName";
@@ -211,6 +212,7 @@ namespace WHUI.Stock
             // 
             // colPrice
             // 
+            this.colPrice.DataPropertyName = "Product.ListPrice";
             this.colPrice.HeaderText = "List Price";
             this.colPrice.MinimumWidth = 90;
             this.colPrice.Name = "colPrice";
@@ -218,6 +220,7 @@ namespace WHUI.Stock
             // 
             // colQty
             // 
+            this.colQty.DataPropertyName = "Quantity";
             this.colQty.HeaderText = "Quantity";
             this.colQty.MinimumWidth = 80;
             this.colQty.Name = "colQty";
@@ -226,7 +229,7 @@ namespace WHUI.Stock
             // colBranch
             // 
             this.colBranch.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colBranch.DataPropertyName = "BranchName";
+            this.colBranch.DataPropertyName = "Branch.Name";
             this.colBranch.HeaderText = "Branch";
             this.colBranch.MinimumWidth = 6;
             this.colBranch.Name = "colBranch";

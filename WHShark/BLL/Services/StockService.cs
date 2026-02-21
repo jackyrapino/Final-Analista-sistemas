@@ -23,91 +23,42 @@ namespace BLL.Services
 
         public void Add(Stock stock)
         {
-            try
-            {
-                if (stock == null) throw new ArgumentNullException(nameof(stock));
-                if (stock.StockId == Guid.Empty) stock.StockId = Guid.NewGuid();
-                stock.LastUpdated = DateTime.Now;
-                _repo.Add(stock);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error adding stock.", ex);
-            }
+            if (stock == null) throw new ArgumentNullException(nameof(stock));
+            if (stock.StockId == Guid.Empty) stock.StockId = Guid.NewGuid();
+            stock.LastUpdated = DateTime.Now;
+            _repo.Add(stock);
         }
 
         public void Update(Stock stock)
         {
-            try
-            {
-                if (stock == null) throw new ArgumentNullException(nameof(stock));
-                stock.LastUpdated = DateTime.Now;
-                _repo.Update(stock);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error updating stock.", ex);
-            }
+            if (stock == null) throw new ArgumentNullException(nameof(stock));
+            stock.LastUpdated = DateTime.Now;
+            _repo.Update(stock);
         }
 
         public void Delete(Guid stockId)
         {
-            try
-            {
-                _repo.Delete(stockId);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error deleting stock.", ex);
-            }
+            _repo.Delete(stockId);
         }
 
         public IEnumerable<Stock> SelectAll()
         {
-            try
-            {
-                return _repo.SelectAll();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error retrieving stocks.", ex);
-            }
+            return _repo.SelectAll();
         }
 
         public Stock SelectOne(Guid stockId)
         {
-            try
-            {
-                return _repo.SelectOne(stockId);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error retrieving stock.", ex);
-            }
+            return _repo.SelectOne(stockId);
         }
 
         public int GetAvailableStock(Guid productId, Guid branchId)
         {
-            try
-            {
-                return _repo.GetAvailableStock(productId, branchId);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error retrieving available stock.", ex);
-            }
+            return _repo.GetAvailableStock(productId, branchId);
         }
 
         public IEnumerable<Stock> StockByBranch(Guid branchId)
         {
-            try
-            {
-                return _repo.StockByBranch(branchId);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error retrieving stock by branch.", ex);
-            }
+            return _repo.StockByBranch(branchId);
         }
     }
 }

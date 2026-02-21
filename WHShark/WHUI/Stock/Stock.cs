@@ -24,6 +24,14 @@ namespace WHUI.Stock
         {
             base.OnLoad(e);
             PopulateSites();
+            try
+            {
+                LoadStock();
+            }
+            catch (Exception ex)
+            {
+                LoggerService.WriteError(ex.ToString());
+            }
         }
 
         private void PopulateSites()
@@ -46,7 +54,7 @@ namespace WHUI.Stock
             }
             catch (Exception ex)
             {
-                LoggerService.WriteError("Failed to load branches for sites combo: " + ex.Message);
+                LoggerService.WriteError(ex.ToString());
             }
             finally
             {
@@ -60,12 +68,54 @@ namespace WHUI.Stock
             {
                 var svc = new StockService();
                 var items = svc.SelectAll().ToList();
-                dgv.DataSource = items;
+                var rows = items.Select(s => new
+                {
+                    StockId = s.StockId,
+                    ProductName = s.Product?.Name ?? string.Empty,
+                    ListPrice = s.Product != null ? (decimal?)s.Product.ListPrice : null,
+                    Quantity = s.Quantity,
+                    BranchName = s.Branch?.Name ?? string.Empty,
+                    Product = s.Product,
+                    Branch = s.Branch,
+                    LastUpdated = s.LastUpdated
+                }).ToList();
+
+                dgv.AutoGenerateColumns = false;
+                colId.DataPropertyName = "StockId";
+                colName.DataPropertyName = "ProductName";
+                colPrice.DataPropertyName = "ListPrice";
+                colQty.DataPropertyName = "Quantity";
+                colBranch.DataPropertyName = "BranchName";
+
+                dgv.DataSource = rows;
+
+                for (int i = 0; i < items.Count && i < dgv.Rows.Count; i++)
+                {
+                    try
+                    {
+                        var stock = items[i];
+                        if (stock.Product != null && stock.Product.AlertStock >= 0 && stock.Quantity <= stock.Product.AlertStock)
+                        {
+                            dgv.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                            dgv.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                        }
+                        else
+                        {
+                            dgv.Rows[i].DefaultCellStyle.BackColor = dgv.DefaultCellStyle.BackColor;
+                            dgv.Rows[i].DefaultCellStyle.ForeColor = dgv.DefaultCellStyle.ForeColor;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        LoggerService.WriteError("Failed loading alert for stock row: " + ex.ToString());
+                    }
+                }
+
                 lblLoading.Text = $"Loaded {items.Count} stock item(s).";
             }
             catch (Exception ex)
             {
-                LoggerService.WriteError("Failed to load stock: " + ex);
+                LoggerService.WriteError(ex.ToString());
                 MessageBox.Show(this, "Failed to load stock: " + ex.Message, "Stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -76,12 +126,55 @@ namespace WHUI.Stock
             {
                 var svc = new StockService();
                 var items = svc.StockByBranch(branchId).ToList();
-                dgv.DataSource = items;
+
+                var rows = items.Select(s => new
+                {
+                    StockId = s.StockId,
+                    ProductName = s.Product?.Name ?? string.Empty,
+                    ListPrice = s.Product != null ? (decimal?)s.Product.ListPrice : null,
+                    Quantity = s.Quantity,
+                    BranchName = s.Branch?.Name ?? string.Empty,
+                    Product = s.Product,
+                    Branch = s.Branch,
+                    LastUpdated = s.LastUpdated
+                }).ToList();
+
+                dgv.AutoGenerateColumns = false;
+                colId.DataPropertyName = "StockId";
+                colName.DataPropertyName = "ProductName";
+                colPrice.DataPropertyName = "ListPrice";
+                colQty.DataPropertyName = "Quantity";
+                colBranch.DataPropertyName = "BranchName";
+
+                dgv.DataSource = rows;
+
+                for (int i = 0; i < items.Count && i < dgv.Rows.Count; i++)
+                {
+                    try
+                    {
+                        var stock = items[i];
+                        if (stock.Product != null && stock.Product.AlertStock >= 0 && stock.Quantity <= stock.Product.AlertStock)
+                        {
+                            dgv.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                            dgv.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                        }
+                        else
+                        {
+                            dgv.Rows[i].DefaultCellStyle.BackColor = dgv.DefaultCellStyle.BackColor;
+                            dgv.Rows[i].DefaultCellStyle.ForeColor = dgv.DefaultCellStyle.ForeColor;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        LoggerService.WriteError("Failed loading alert for stock row: " + ex.ToString());
+                    }
+                }
+
                 lblLoading.Text = $"Loaded {items.Count} stock item(s) for branch.";
             }
             catch (Exception ex)
             {
-                LoggerService.WriteError("Failed to load stock by branch: " + ex);
+                LoggerService.WriteError(ex.ToString());
                 MessageBox.Show(this, "Failed to load stock by branch: " + ex.Message, "Stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -114,7 +207,7 @@ namespace WHUI.Stock
             }
             catch (Exception ex)
             {
-                LoggerService.WriteError("Error handling site selection: " + ex.Message);
+                LoggerService.WriteError(ex.ToString());
             }
         }
 
@@ -133,7 +226,7 @@ namespace WHUI.Stock
             }
             catch (Exception ex)
             {
-                LoggerService.WriteError("Failed to open stock editor: " + ex.Message);
+                LoggerService.WriteError(ex.ToString());
                 MessageBox.Show(this, "Failed to open stock editor: " + ex.Message, "Stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -173,7 +266,7 @@ namespace WHUI.Stock
             }
             catch (Exception ex)
             {
-                LoggerService.WriteError("Failed to open stock editor: " + ex);
+                LoggerService.WriteError(ex.ToString());
                 MessageBox.Show(this, "Failed to open stock editor: " + ex.Message, "Stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -208,7 +301,7 @@ namespace WHUI.Stock
             }
             catch (Exception ex)
             {
-                LoggerService.WriteError("Failed to delete stock: " + ex);
+                LoggerService.WriteError(ex.ToString());
                 MessageBox.Show(this, "Failed to delete stock: " + ex.Message, "Stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

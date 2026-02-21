@@ -22,12 +22,15 @@ namespace DAL.Implementations
         {
             try
             {
+                var productId = obj.Product?.ProductId ?? Guid.Empty;
+                var branchId = obj.Branch?.BranchId ?? Guid.Empty;
+
                 SqlHelper.ExecuteNonQuery(ConnectionName, "Stock_Insert", CommandType.StoredProcedure,
                     new SqlParameter[]
                     {
                         new SqlParameter("@StockId", obj.StockId),
-                        new SqlParameter("@ProductId", obj.ProductId),
-                        new SqlParameter("@BranchId", obj.BranchId),
+                        new SqlParameter("@ProductId", productId),
+                        new SqlParameter("@BranchId", branchId),
                         new SqlParameter("@Quantity", obj.Quantity),
                         new SqlParameter("@LastUpdated", obj.LastUpdated)
                     });
@@ -42,12 +45,15 @@ namespace DAL.Implementations
         {
             try
             {
+                var productId = obj.Product?.ProductId ?? Guid.Empty;
+                var branchId = obj.Branch?.BranchId ?? Guid.Empty;
+
                 SqlHelper.ExecuteNonQuery(ConnectionName, "Stock_Update", CommandType.StoredProcedure,
                     new SqlParameter[]
                     {
                         new SqlParameter("@StockId", obj.StockId),
-                        new SqlParameter("@ProductId", obj.ProductId),
-                        new SqlParameter("@BranchId", obj.BranchId),
+                        new SqlParameter("@ProductId", productId),
+                        new SqlParameter("@BranchId", branchId),
                         new SqlParameter("@Quantity", obj.Quantity),
                         new SqlParameter("@LastUpdated", obj.LastUpdated)
                     });
@@ -85,20 +91,20 @@ namespace DAL.Implementations
                         var s = new Stock
                         {
                             StockId = Guid.Parse(values[0].ToString()),
-                            ProductId = Guid.Parse(values[1].ToString()),
-                            BranchId = Guid.Parse(values[2].ToString()),
                             Quantity = int.Parse(values[3].ToString()),
                             LastUpdated = DateTime.Parse(values[4].ToString())
                         };
                         // populate navigation properties
                         try
                         {
-                            s.Product = ProductRepository.Current.SelectOne(s.ProductId);
+                            var pid = Guid.Parse(values[1].ToString());
+                            s.Product = ProductRepository.Current.SelectOne(pid);
                         }
                         catch { s.Product = null; }
                         try
                         {
-                            s.Branch = BranchRepository.Current.SelectOne(s.BranchId);
+                            var bid = Guid.Parse(values[2].ToString());
+                            s.Branch = BranchRepository.Current.SelectOne(bid);
                         }
                         catch { s.Branch = null; }
                         list.Add(s);
@@ -107,7 +113,7 @@ namespace DAL.Implementations
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while selecting all stocks.", ex);
+                throw;
             }
             return list;
         }
@@ -127,21 +133,19 @@ namespace DAL.Implementations
                         var s = new Stock
                         {
                             StockId = Guid.Parse(values[0].ToString()),
-                            ProductId = Guid.Parse(values[1].ToString()),
-                            BranchId = Guid.Parse(values[2].ToString()),
                             Quantity = int.Parse(values[3].ToString()),
                             LastUpdated = DateTime.Parse(values[4].ToString())
                         };
                         // populate navigation properties
-                        try { s.Product = ProductRepository.Current.SelectOne(s.ProductId); } catch { s.Product = null; }
-                        try { s.Branch = BranchRepository.Current.SelectOne(s.BranchId); } catch { s.Branch = null; }
+                        try { s.Product = ProductRepository.Current.SelectOne(Guid.Parse(values[1].ToString())); } catch { s.Product = null; }
+                        try { s.Branch = BranchRepository.Current.SelectOne(Guid.Parse(values[2].ToString())); } catch { s.Branch = null; }
                         list.Add(s);
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while selecting stocks by branch.", ex);
+                throw;
             }
             return list;
         }
@@ -161,20 +165,18 @@ namespace DAL.Implementations
                         stock = new Stock
                         {
                             StockId = Guid.Parse(values[0].ToString()),
-                            ProductId = Guid.Parse(values[1].ToString()),
-                            BranchId = Guid.Parse(values[2].ToString()),
                             Quantity = int.Parse(values[3].ToString()),
                             LastUpdated = DateTime.Parse(values[4].ToString())
                         };
                         // populate navigation properties
-                        try { stock.Product = ProductRepository.Current.SelectOne(stock.ProductId); } catch { stock.Product = null; }
-                        try { stock.Branch = BranchRepository.Current.SelectOne(stock.BranchId); } catch { stock.Branch = null; }
+                        try { stock.Product = ProductRepository.Current.SelectOne(Guid.Parse(values[1].ToString())); } catch { stock.Product = null; }
+                        try { stock.Branch = BranchRepository.Current.SelectOne(Guid.Parse(values[2].ToString())); } catch { stock.Branch = null; }
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while selecting a stock by id.", ex);
+                throw;
             }
             return stock;
         }

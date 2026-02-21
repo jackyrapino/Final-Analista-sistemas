@@ -19,7 +19,6 @@ namespace WHUI.Stock
         {
             _stock = stock;
 
-            // Load products and branches into comboboxes
             try
             {
                 var prodSvc = new ProductService();
@@ -36,9 +35,9 @@ namespace WHUI.Stock
 
                 if (_stock != null)
                 {
-                    // set selections
-                    cbProduct.SelectedValue = _stock.ProductId;
-                    cbBranch.SelectedValue = _stock.BranchId;
+                    // set selections using navigation properties
+                    cbProduct.SelectedValue = _stock.Product?.ProductId ?? Guid.Empty;
+                    cbBranch.SelectedValue = _stock.Branch?.BranchId ?? Guid.Empty;
                     nudQuantity.Value = _stock.Quantity;
 
                     this.Text = "Edit Stock";
@@ -54,16 +53,41 @@ namespace WHUI.Stock
             }
             catch (Exception ex)
             {
-                Services.Services.LoggerService.WriteError(ex.Message);
+                Services.Services.LoggerService.WriteError(ex.Source);
                 MessageBox.Show(this, "Failed to load lookup data: " + ex.Message, "Stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        private DomainModel.Product ProdFromSelectedValue(object val)
+        {
+            try
+            {
+                if (val == null) return null;
+                var id = val is Guid g ? g : Guid.Parse(val.ToString());
+                return DAL.Implementations.ProductRepository.Current.SelectOne(id);
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
+        private DomainModel.Branch BranchFromSelectedValue(object val)
+        {
+            try
+            {
+                if (val == null) return null;
+                var id = val is Guid g ? g : Guid.Parse(val.ToString());
+                return DAL.Implementations.BranchRepository.Current.SelectOne(id);
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-
             if (cbProduct.SelectedValue == null || cbBranch.SelectedValue == null)
             {
                 MessageBox.Show(this, "Please select product and branch.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -73,24 +97,34 @@ namespace WHUI.Stock
             try
             {
                 var svc = new StockService();
+
+                var selectedProduct = cbProduct.SelectedItem as DomainModel.Product ?? ProdFromSelectedValue(cbProduct.SelectedValue);
+                var selectedBranch = cbBranch.SelectedItem as DomainModel.Branch ?? BranchFromSelectedValue(cbBranch.SelectedValue);
+
+                if (selectedProduct == null || selectedBranch == null)
+                {
+                    MessageBox.Show(this, "Invalid product or branch selection.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (_stock == null)
                 {
                     var newStock = new DomainModel.Stock
                     {
                         StockId = Guid.Empty,
-                        ProductId = (Guid)cbProduct.SelectedValue,
-                        BranchId = (Guid)cbBranch.SelectedValue,
+                        Product = selectedProduct,
+                        Branch = selectedBranch,
                         Quantity = (int)nudQuantity.Value,
                         LastUpdated = DateTime.Now
                     };
 
                     svc.Add(newStock);
-                    Services.Services.LoggerService.WriteInfo($"Stock added: product {newStock.ProductId} at branch {newStock.BranchId}");
+                    Services.Services.LoggerService.WriteInfo($"Stock added: product {newStock.Product.ProductId} at branch {newStock.Branch.BranchId}");
                 }
                 else
                 {
-                    _stock.ProductId = (Guid)cbProduct.SelectedValue;
-                    _stock.BranchId = (Guid)cbBranch.SelectedValue;
+                    _stock.Product = selectedProduct;
+                    _stock.Branch = selectedBranch;
                     _stock.Quantity = (int)nudQuantity.Value;
                     _stock.LastUpdated = DateTime.Now;
 
@@ -103,7 +137,7 @@ namespace WHUI.Stock
             }
             catch (Exception ex)
             {
-                Services.Services.LoggerService.WriteError(ex.Message);
+                Services.Services.LoggerService.WriteError(ex.Source);
                 MessageBox.Show(this, "Failed to save stock: " + ex.Message, "Stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

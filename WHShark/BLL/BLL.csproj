@@ -54,6 +54,7 @@
     <Compile Include="Factories\ServicesFactory.cs" />
     <Compile Include="Factories\StockMovementBuilderFactory.cs" />
     <Compile Include="Factories\StockValidationServiceFactory.cs" />
+    <Compile Include="Helpers\ExceptionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BranchService.cs" />
     <Compile Include="Services\BrandService.cs" />

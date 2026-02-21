@@ -54,7 +54,6 @@
     <Compile Include="Stock.cs" />
     <Compile Include="StockMovement.cs" />
     <Compile Include="StockMovementItem.cs" />
-    <Compile Include="StockView.cs" />
     <Compile Include="Supplier.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
