@@ -65,6 +65,7 @@ namespace WHUI.Customers
             this.pnlTop.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
             this.pnlTop.Size = new System.Drawing.Size(1141, 45);
             this.pnlTop.TabIndex = 0;
+            this.pnlTop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTop_Paint);
             // 
             // btnDelete
             // 

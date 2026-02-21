@@ -99,5 +99,10 @@ namespace WHUI.Customers
                 MessageBox.Show(this, "Failed to delete customer: " + ex.Message, "Customers", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void pnlTop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

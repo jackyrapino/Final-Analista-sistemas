@@ -144,13 +144,12 @@ namespace WHUI.Menu
 
         private void btnBranches_Click(object sender, EventArgs e)
         {
-            // Open Branches form inside panelContent using the correct namespace
             ShowChildForm(new WHUI.Branches.Branches());
         }
 
         private void btnSuppliers_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new WHUI.Customers.Customers());
+            ShowChildForm(new WHUI.Suppliers.Suppliers());
         }
 
         private void btnStockMovements_Click(object sender, EventArgs e)

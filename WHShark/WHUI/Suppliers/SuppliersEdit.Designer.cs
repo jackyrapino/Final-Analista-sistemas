@@ -44,164 +44,176 @@ namespace WHUI.Suppliers
         /// </summary>
         private void InitializeComponent()
         {
-            tlp = new TableLayoutPanel();
-            lblName = new Label();
-            txtName = new TextBox();
-            lblEmail = new Label();
-            txtEmail = new TextBox();
-            lblPhone = new Label();
-            txtPhone = new TextBox();
-            lblAddress = new Label();
-            txtAddress = new TextBox();
-            pnlButtons = new FlowLayoutPanel();
-            btnCancel = new Button();
-            btnOK = new Button();
-            tlp.SuspendLayout();
-            pnlButtons.SuspendLayout();
-            SuspendLayout();
+            this.tlp = new System.Windows.Forms.TableLayoutPanel();
+            this.lblName = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.pnlButtons = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.tlp.SuspendLayout();
+            this.pnlButtons.SuspendLayout();
+            this.SuspendLayout();
             // 
             // tlp
             // 
-            tlp.ColumnCount = 2;
-            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120F));
-            tlp.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlp.Controls.Add(lblName, 0, 0);
-            tlp.Controls.Add(txtName, 1, 0);
-            tlp.Controls.Add(lblEmail, 0, 1);
-            tlp.Controls.Add(txtEmail, 1, 1);
-            tlp.Controls.Add(lblPhone, 0, 2);
-            tlp.Controls.Add(txtPhone, 1, 2);
-            tlp.Controls.Add(lblAddress, 0, 3);
-            tlp.Controls.Add(txtAddress, 1, 3);
-            tlp.Controls.Add(pnlButtons, 0, 4);
-            tlp.Dock = DockStyle.Fill;
-            tlp.Location = new Point(0, 0);
-            tlp.Name = "tlp";
-            tlp.RowCount = 5;
-            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tlp.RowStyles.Add(new RowStyle(SizeType.Absolute, 120F));
-            tlp.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlp.Size = new Size(520, 300);
-            tlp.TabIndex = 0;
+            this.tlp.ColumnCount = 2;
+            this.tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp.Controls.Add(this.lblName, 0, 0);
+            this.tlp.Controls.Add(this.txtName, 1, 0);
+            this.tlp.Controls.Add(this.lblEmail, 0, 1);
+            this.tlp.Controls.Add(this.txtEmail, 1, 1);
+            this.tlp.Controls.Add(this.lblPhone, 0, 2);
+            this.tlp.Controls.Add(this.txtPhone, 1, 2);
+            this.tlp.Controls.Add(this.lblAddress, 0, 3);
+            this.tlp.Controls.Add(this.txtAddress, 1, 3);
+            this.tlp.Controls.Add(this.pnlButtons, 0, 4);
+            this.tlp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp.Location = new System.Drawing.Point(0, 0);
+            this.tlp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlp.Name = "tlp";
+            this.tlp.RowCount = 5;
+            this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 96F));
+            this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp.Size = new System.Drawing.Size(520, 240);
+            this.tlp.TabIndex = 0;
             // 
             // lblName
             // 
-            lblName.Dock = DockStyle.Fill;
-            lblName.Location = new Point(3, 0);
-            lblName.Name = "lblName";
-            lblName.Size = new Size(114, 40);
-            lblName.TabIndex = 0;
-            lblName.Text = "Name";
-            lblName.TextAlign = ContentAlignment.MiddleLeft;
+            this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblName.Location = new System.Drawing.Point(3, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(114, 32);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Name";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtName
             // 
-            txtName.Dock = DockStyle.Fill;
-            txtName.Location = new Point(123, 3);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(394, 27);
-            txtName.TabIndex = 1;
+            this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtName.Location = new System.Drawing.Point(123, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(394, 22);
+            this.txtName.TabIndex = 1;
             // 
             // lblEmail
             // 
-            lblEmail.Dock = DockStyle.Fill;
-            lblEmail.Location = new Point(3, 40);
-            lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(114, 40);
-            lblEmail.TabIndex = 2;
-            lblEmail.Text = "Email";
-            lblEmail.TextAlign = ContentAlignment.MiddleLeft;
+            this.lblEmail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblEmail.Location = new System.Drawing.Point(3, 32);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(114, 32);
+            this.lblEmail.TabIndex = 2;
+            this.lblEmail.Text = "Email";
+            this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtEmail
             // 
-            txtEmail.Dock = DockStyle.Fill;
-            txtEmail.Location = new Point(123, 43);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(394, 27);
-            txtEmail.TabIndex = 3;
+            this.txtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtEmail.Location = new System.Drawing.Point(123, 34);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(394, 22);
+            this.txtEmail.TabIndex = 3;
             // 
             // lblPhone
             // 
-            lblPhone.Dock = DockStyle.Fill;
-            lblPhone.Location = new Point(3, 80);
-            lblPhone.Name = "lblPhone";
-            lblPhone.Size = new Size(114, 40);
-            lblPhone.TabIndex = 4;
-            lblPhone.Text = "Phone";
-            lblPhone.TextAlign = ContentAlignment.MiddleLeft;
+            this.lblPhone.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblPhone.Location = new System.Drawing.Point(3, 64);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(114, 32);
+            this.lblPhone.TabIndex = 4;
+            this.lblPhone.Text = "Phone";
+            this.lblPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtPhone
             // 
-            txtPhone.Dock = DockStyle.Fill;
-            txtPhone.Location = new Point(123, 83);
-            txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(394, 27);
-            txtPhone.TabIndex = 5;
+            this.txtPhone.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPhone.Location = new System.Drawing.Point(123, 66);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(394, 22);
+            this.txtPhone.TabIndex = 5;
             // 
             // lblAddress
             // 
-            lblAddress.Dock = DockStyle.Fill;
-            lblAddress.Location = new Point(3, 120);
-            lblAddress.Name = "lblAddress";
-            lblAddress.Size = new Size(114, 120);
-            lblAddress.TabIndex = 6;
-            lblAddress.Text = "Address";
-            lblAddress.TextAlign = ContentAlignment.MiddleLeft;
+            this.lblAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAddress.Location = new System.Drawing.Point(3, 96);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(114, 96);
+            this.lblAddress.TabIndex = 6;
+            this.lblAddress.Text = "Address";
+            this.lblAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtAddress
             // 
-            txtAddress.Dock = DockStyle.Fill;
-            txtAddress.Location = new Point(123, 123);
-            txtAddress.Multiline = true;
-            txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(394, 114);
-            txtAddress.TabIndex = 7;
+            this.txtAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAddress.Location = new System.Drawing.Point(123, 98);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(394, 92);
+            this.txtAddress.TabIndex = 7;
             // 
             // pnlButtons
             // 
-            tlp.SetColumnSpan(pnlButtons, 2);
-            pnlButtons.Controls.Add(btnCancel);
-            pnlButtons.Controls.Add(btnOK);
-            pnlButtons.Dock = DockStyle.Fill;
-            pnlButtons.FlowDirection = FlowDirection.RightToLeft;
-            pnlButtons.Location = new Point(3, 243);
-            pnlButtons.Name = "pnlButtons";
-            pnlButtons.Size = new Size(514, 54);
-            pnlButtons.TabIndex = 8;
+            this.tlp.SetColumnSpan(this.pnlButtons, 2);
+            this.pnlButtons.Controls.Add(this.btnCancel);
+            this.pnlButtons.Controls.Add(this.btnOK);
+            this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlButtons.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.pnlButtons.Location = new System.Drawing.Point(3, 194);
+            this.pnlButtons.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(514, 44);
+            this.pnlButtons.TabIndex = 8;
             // 
             // btnCancel
             // 
-            btnCancel.AutoSize = true;
-            btnCancel.Location = new Point(436, 3);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(75, 30);
-            btnCancel.TabIndex = 0;
-            btnCancel.Text = "Cancel";
+            this.btnCancel.AutoSize = true;
+            this.btnCancel.Location = new System.Drawing.Point(436, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 26);
+            this.btnCancel.TabIndex = 0;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
-            btnOK.AutoSize = true;
-            btnOK.Location = new Point(355, 3);
-            btnOK.Name = "btnOK";
-            btnOK.Size = new Size(75, 30);
-            btnOK.TabIndex = 1;
-            btnOK.Text = "OK";
+            this.btnOK.AutoSize = true;
+            this.btnOK.Location = new System.Drawing.Point(355, 2);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(75, 26);
+            this.btnOK.TabIndex = 1;
+            this.btnOK.Text = "OK";
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // SuppliersEdit
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(520, 300);
-            Controls.Add(tlp);
-            Name = "SuppliersEdit";
-            Text = "Supplier";
-            tlp.ResumeLayout(false);
-            tlp.PerformLayout();
-            pnlButtons.ResumeLayout(false);
-            pnlButtons.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(520, 240);
+            this.Controls.Add(this.tlp);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "SuppliersEdit";
+            this.Text = "Supplier";
+            this.tlp.ResumeLayout(false);
+            this.tlp.PerformLayout();
+            this.pnlButtons.ResumeLayout(false);
+            this.pnlButtons.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
