@@ -7,6 +7,6 @@ namespace DAL.Contracts
     public interface IStockRepository : IGenericRepository<Stock>
     {
         int GetAvailableStock(Guid productId, Guid branchId);
-
+        IEnumerable<Stock> StockByBranch(Guid branchId);
     }
 }

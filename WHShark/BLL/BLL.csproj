@@ -64,11 +64,13 @@
     <Compile Include="Services\Contracts\ICustomerService.cs" />
     <Compile Include="Services\Contracts\IPricingService.cs" />
     <Compile Include="Services\Contracts\IProductService.cs" />
+    <Compile Include="Services\Contracts\IStockService.cs" />
     <Compile Include="Services\Contracts\IStockValidationService.cs" />
     <Compile Include="Services\Contracts\ISupplierService.cs" />
     <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\PricingService.cs" />
     <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\StockService.cs" />
     <Compile Include="Services\StockValidationService.cs" />
     <Compile Include="Services\SupplierService.cs" />
     <Compile Include="Strategies\BirthdayDiscountStrategy.cs" />

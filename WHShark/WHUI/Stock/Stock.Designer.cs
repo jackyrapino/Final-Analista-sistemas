@@ -85,36 +85,40 @@ namespace WHUI.Stock
             this.cbSite.Name = "cbSite";
             this.cbSite.Size = new System.Drawing.Size(180, 24);
             this.cbSite.TabIndex = 1;
+            this.cbSite.SelectedIndexChanged += new System.EventHandler(this.cbSite_SelectedIndexChanged);
             // 
             // btnAddStock
             // 
             this.btnAddStock.Location = new System.Drawing.Point(250, 11);
             this.btnAddStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddStock.Name = "btnAddStock";
-            this.btnAddStock.Size = new System.Drawing.Size(88, 22);
+            this.btnAddStock.Size = new System.Drawing.Size(88, 27);
             this.btnAddStock.TabIndex = 2;
             this.btnAddStock.Text = "Add";
             this.btnAddStock.UseVisualStyleBackColor = true;
+            this.btnAddStock.Click += new System.EventHandler(this.btnAddStock_Click);
             // 
             // btnEditStock
             // 
             this.btnEditStock.Location = new System.Drawing.Point(344, 11);
             this.btnEditStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditStock.Name = "btnEditStock";
-            this.btnEditStock.Size = new System.Drawing.Size(88, 22);
+            this.btnEditStock.Size = new System.Drawing.Size(88, 27);
             this.btnEditStock.TabIndex = 3;
             this.btnEditStock.Text = "Edit";
             this.btnEditStock.UseVisualStyleBackColor = true;
+            this.btnEditStock.Click += new System.EventHandler(this.btnEditStock_Click);
             // 
             // btnDeleteStock
             // 
             this.btnDeleteStock.Location = new System.Drawing.Point(438, 11);
             this.btnDeleteStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeleteStock.Name = "btnDeleteStock";
-            this.btnDeleteStock.Size = new System.Drawing.Size(88, 22);
+            this.btnDeleteStock.Size = new System.Drawing.Size(88, 27);
             this.btnDeleteStock.TabIndex = 4;
             this.btnDeleteStock.Text = "Delete";
             this.btnDeleteStock.UseVisualStyleBackColor = true;
+            this.btnDeleteStock.Click += new System.EventHandler(this.btnDeleteStock_Click);
             // 
             // pnlAlertIndicator
             // 

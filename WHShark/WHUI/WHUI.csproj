@@ -168,6 +168,7 @@
     <Compile Include="Sales\SalesEdit.Designer.cs">
       <DependentUpon>SalesEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\UiLogger.cs" />
     <Compile Include="StockMovements\StockMovementEdit.cs">
       <SubType>Form</SubType>
     </Compile>

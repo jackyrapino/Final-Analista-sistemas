@@ -32,111 +32,124 @@ namespace WHUI.Stock
         /// </summary>
         private void InitializeComponent()
         {
-            lblProduct = new Label();
-            cbProduct = new ComboBox();
-            lblBranch = new Label();
-            cbBranch = new ComboBox();
-            lblQuantity = new Label();
-            nudQuantity = new NumericUpDown();
-            btnOK = new Button();
-            btnCancel = new Button();
-            ((System.ComponentModel.ISupportInitialize)nudQuantity).BeginInit();
-            SuspendLayout();
+            this.lblProduct = new System.Windows.Forms.Label();
+            this.cbProduct = new System.Windows.Forms.ComboBox();
+            this.lblBranch = new System.Windows.Forms.Label();
+            this.cbBranch = new System.Windows.Forms.ComboBox();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
+            this.SuspendLayout();
             // 
             // lblProduct
             // 
-            lblProduct.AutoSize = true;
-            lblProduct.Location = new Point(12, 16);
-            lblProduct.Name = "lblProduct";
-            lblProduct.Size = new Size(60, 20);
-            lblProduct.TabIndex = 0;
-            lblProduct.Text = "Product";
+            this.lblProduct.AutoSize = true;
+            this.lblProduct.Location = new System.Drawing.Point(12, 13);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(53, 16);
+            this.lblProduct.TabIndex = 0;
+            this.lblProduct.Text = "Product";
             // 
             // cbProduct
             // 
-            cbProduct.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbProduct.Location = new Point(100, 12);
-            cbProduct.Name = "cbProduct";
-            cbProduct.Size = new Size(320, 28);
-            cbProduct.TabIndex = 1;
+            this.cbProduct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProduct.Location = new System.Drawing.Point(100, 10);
+            this.cbProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbProduct.Name = "cbProduct";
+            this.cbProduct.Size = new System.Drawing.Size(320, 24);
+            this.cbProduct.TabIndex = 1;
             // 
             // lblBranch
             // 
-            lblBranch.AutoSize = true;
-            lblBranch.Location = new Point(12, 52);
-            lblBranch.Name = "lblBranch";
-            lblBranch.Size = new Size(54, 20);
-            lblBranch.TabIndex = 2;
-            lblBranch.Text = "Branch";
+            this.lblBranch.AutoSize = true;
+            this.lblBranch.Location = new System.Drawing.Point(12, 42);
+            this.lblBranch.Name = "lblBranch";
+            this.lblBranch.Size = new System.Drawing.Size(49, 16);
+            this.lblBranch.TabIndex = 2;
+            this.lblBranch.Text = "Branch";
             // 
             // cbBranch
             // 
-            cbBranch.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbBranch.Location = new Point(100, 48);
-            cbBranch.Name = "cbBranch";
-            cbBranch.Size = new Size(320, 28);
-            cbBranch.TabIndex = 3;
+            this.cbBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBranch.Location = new System.Drawing.Point(100, 38);
+            this.cbBranch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbBranch.Name = "cbBranch";
+            this.cbBranch.Size = new System.Drawing.Size(320, 24);
+            this.cbBranch.TabIndex = 3;
             // 
             // lblQuantity
             // 
-            lblQuantity.AutoSize = true;
-            lblQuantity.Location = new Point(12, 88);
-            lblQuantity.Name = "lblQuantity";
-            lblQuantity.Size = new Size(65, 20);
-            lblQuantity.TabIndex = 4;
-            lblQuantity.Text = "Quantity";
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Location = new System.Drawing.Point(12, 70);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(55, 16);
+            this.lblQuantity.TabIndex = 4;
+            this.lblQuantity.Text = "Quantity";
             // 
             // nudQuantity
             // 
-            nudQuantity.Location = new Point(100, 84);
-            nudQuantity.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
-            nudQuantity.Name = "nudQuantity";
-            nudQuantity.Size = new Size(120, 27);
-            nudQuantity.TabIndex = 5;
+            this.nudQuantity.Location = new System.Drawing.Point(100, 67);
+            this.nudQuantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudQuantity.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudQuantity.Name = "nudQuantity";
+            this.nudQuantity.Size = new System.Drawing.Size(120, 22);
+            this.nudQuantity.TabIndex = 5;
             // 
             // btnOK
             // 
-            btnOK.Location = new Point(264, 125);
-            btnOK.Name = "btnOK";
-            btnOK.Size = new Size(75, 27);
-            btnOK.TabIndex = 6;
-            btnOK.Text = "OK";
-            btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Location = new System.Drawing.Point(264, 95);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(75, 27);
+            this.btnOK.TabIndex = 6;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
-            btnCancel.DialogResult = DialogResult.Cancel;
-            btnCancel.Location = new Point(345, 125);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(75, 27);
-            btnCancel.TabIndex = 7;
-            btnCancel.Text = "Cancel";
-            btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(345, 95);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 27);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // StockEdit
             // 
-            AcceptButton = btnOK;
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            CancelButton = btnCancel;
-            ClientSize = new Size(440, 165);
-            Controls.Add(lblProduct);
-            Controls.Add(cbProduct);
-            Controls.Add(lblBranch);
-            Controls.Add(cbBranch);
-            Controls.Add(lblQuantity);
-            Controls.Add(nudQuantity);
-            Controls.Add(btnOK);
-            Controls.Add(btnCancel);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "StockEdit";
-            StartPosition = FormStartPosition.CenterParent;
-            Text = "Stock";
-            ((System.ComponentModel.ISupportInitialize)nudQuantity).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AcceptButton = this.btnOK;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
+            this.ClientSize = new System.Drawing.Size(440, 132);
+            this.Controls.Add(this.lblProduct);
+            this.Controls.Add(this.cbProduct);
+            this.Controls.Add(this.lblBranch);
+            this.Controls.Add(this.cbBranch);
+            this.Controls.Add(this.lblQuantity);
+            this.Controls.Add(this.nudQuantity);
+            this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.btnCancel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "StockEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Stock";
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

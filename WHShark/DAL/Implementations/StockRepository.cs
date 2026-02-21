@@ -101,6 +101,37 @@ namespace DAL.Implementations
             return list;
         }
 
+        public IEnumerable<Stock> StockByBranch(Guid branchId)
+        {
+            var list = new List<Stock>();
+            try
+            {
+                using (var reader = SqlHelper.ExecuteReader(ConnectionName, "StockByBranch", CommandType.StoredProcedure,
+                    new SqlParameter[] { new SqlParameter("@BranchId", branchId) }))
+                {
+                    object[] values = new object[reader.FieldCount];
+                    while (reader.Read())
+                    {
+                        reader.GetValues(values);
+                        var s = new Stock
+                        {
+                            StockId = Guid.Parse(values[0].ToString()),
+                            ProductId = Guid.Parse(values[1].ToString()),
+                            BranchId = Guid.Parse(values[2].ToString()),
+                            Quantity = int.Parse(values[3].ToString()),
+                            LastUpdated = DateTime.Parse(values[4].ToString())
+                        };
+                        list.Add(s);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("An error occurred while selecting stocks by branch.", ex);
+            }
+            return list;
+        }
+
         public Stock SelectOne(Guid id)
         {
             Stock stock = null;
