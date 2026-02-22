@@ -398,7 +398,7 @@ namespace WHUI.Sales
             this.btnCancel.Location = new System.Drawing.Point(851, 2);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 18);
+            this.btnCancel.Size = new System.Drawing.Size(100, 31);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Cancel";
             // 
@@ -407,7 +407,7 @@ namespace WHUI.Sales
             this.btnOK.Location = new System.Drawing.Point(745, 2);
             this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(100, 18);
+            this.btnOK.Size = new System.Drawing.Size(100, 29);
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "OK";
             // 

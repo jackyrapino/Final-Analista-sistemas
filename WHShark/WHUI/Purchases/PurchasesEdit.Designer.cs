@@ -32,351 +32,394 @@ namespace WHUI.Purchases
         /// </summary>
         private void InitializeComponent()
         {
-            tlpMain = new TableLayoutPanel();
-            lblSupplier = new Label();
-            cmbSupplier = new ComboBox();
-            lblBranch = new Label();
-            cmbBranch = new ComboBox();
-            lblUser = new Label();
-            cmbUser = new ComboBox();
-            lblDate = new Label();
-            dtpPurchaseDate = new DateTimePicker();
-            lblStatus = new Label();
-            cmbStatus = new ComboBox();
-            lblTotal = new Label();
-            numTotal = new NumericUpDown();
-            grpItems = new GroupBox();
-            dgvItems = new DataGridView();
-            colProductId = new DataGridViewTextBoxColumn();
-            colSKU = new DataGridViewTextBoxColumn();
-            colName = new DataGridViewTextBoxColumn();
-            colQuantity = new DataGridViewTextBoxColumn();
-            colUnitCost = new DataGridViewTextBoxColumn();
-            colTotalCost = new DataGridViewTextBoxColumn();
-            pnlItemsTop = new Panel();
-            btnRemoveItem = new Button();
-            btnAddItem = new Button();
-            txtItemSearch = new TextBox();
-            pnlButtons = new FlowLayoutPanel();
-            btnCancel = new Button();
-            btnOK = new Button();
-            tlpMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numTotal).BeginInit();
-            grpItems.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvItems).BeginInit();
-            pnlItemsTop.SuspendLayout();
-            pnlButtons.SuspendLayout();
-            SuspendLayout();
+            this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
+            this.lblSupplier = new System.Windows.Forms.Label();
+            this.cmbSupplier = new System.Windows.Forms.ComboBox();
+            this.lblBranch = new System.Windows.Forms.Label();
+            this.cmbBranch = new System.Windows.Forms.ComboBox();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.cmbUser = new System.Windows.Forms.ComboBox();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.dtpPurchaseDate = new System.Windows.Forms.DateTimePicker();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.numTotal = new System.Windows.Forms.NumericUpDown();
+            this.grpItems = new System.Windows.Forms.GroupBox();
+            this.dgvItems = new System.Windows.Forms.DataGridView();
+            this.colPurchaseItemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSKU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUnitCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotalCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlItemsTop = new System.Windows.Forms.Panel();
+            this.btnRemoveItem = new System.Windows.Forms.Button();
+            this.btnAddItem = new System.Windows.Forms.Button();
+            this.txtItemSearch = new System.Windows.Forms.TextBox();
+            this.pnlButtons = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.tlpMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTotal)).BeginInit();
+            this.grpItems.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
+            this.pnlItemsTop.SuspendLayout();
+            this.pnlButtons.SuspendLayout();
+            this.SuspendLayout();
             // 
             // tlpMain
             // 
-            tlpMain.ColumnCount = 2;
-            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140F));
-            tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpMain.Controls.Add(lblSupplier, 0, 0);
-            tlpMain.Controls.Add(cmbSupplier, 1, 0);
-            tlpMain.Controls.Add(lblBranch, 0, 1);
-            tlpMain.Controls.Add(cmbBranch, 1, 1);
-            tlpMain.Controls.Add(lblUser, 0, 2);
-            tlpMain.Controls.Add(cmbUser, 1, 2);
-            tlpMain.Controls.Add(lblDate, 0, 3);
-            tlpMain.Controls.Add(dtpPurchaseDate, 1, 3);
-            tlpMain.Controls.Add(lblStatus, 0, 4);
-            tlpMain.Controls.Add(cmbStatus, 1, 4);
-            tlpMain.Controls.Add(lblTotal, 0, 5);
-            tlpMain.Controls.Add(numTotal, 1, 5);
-            tlpMain.Controls.Add(grpItems, 0, 6);
-            tlpMain.Controls.Add(pnlButtons, 0, 7);
-            tlpMain.Dock = DockStyle.Fill;
-            tlpMain.Location = new Point(0, 0);
-            tlpMain.Name = "tlpMain";
-            tlpMain.RowCount = 8;
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 44F));
-            tlpMain.Size = new Size(960, 640);
-            tlpMain.TabIndex = 0;
+            this.tlpMain.ColumnCount = 2;
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.Controls.Add(this.lblSupplier, 0, 0);
+            this.tlpMain.Controls.Add(this.cmbSupplier, 1, 0);
+            this.tlpMain.Controls.Add(this.lblBranch, 0, 1);
+            this.tlpMain.Controls.Add(this.cmbBranch, 1, 1);
+            this.tlpMain.Controls.Add(this.lblUser, 0, 2);
+            this.tlpMain.Controls.Add(this.cmbUser, 1, 2);
+            this.tlpMain.Controls.Add(this.lblDate, 0, 3);
+            this.tlpMain.Controls.Add(this.dtpPurchaseDate, 1, 3);
+            this.tlpMain.Controls.Add(this.lblStatus, 0, 4);
+            this.tlpMain.Controls.Add(this.cmbStatus, 1, 4);
+            this.tlpMain.Controls.Add(this.lblTotal, 0, 5);
+            this.tlpMain.Controls.Add(this.numTotal, 1, 5);
+            this.tlpMain.Controls.Add(this.grpItems, 0, 6);
+            this.tlpMain.Controls.Add(this.pnlButtons, 0, 7);
+            this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpMain.Location = new System.Drawing.Point(0, 0);
+            this.tlpMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tlpMain.Name = "tlpMain";
+            this.tlpMain.RowCount = 8;
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tlpMain.Size = new System.Drawing.Size(960, 558);
+            this.tlpMain.TabIndex = 0;
             // 
             // lblSupplier
             // 
-            lblSupplier.Dock = DockStyle.Fill;
-            lblSupplier.Location = new Point(3, 0);
-            lblSupplier.Name = "lblSupplier";
-            lblSupplier.Size = new Size(134, 34);
-            lblSupplier.TabIndex = 0;
-            lblSupplier.Text = "Supplier";
-            lblSupplier.TextAlign = ContentAlignment.MiddleLeft;
+            this.lblSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSupplier.Location = new System.Drawing.Point(3, 0);
+            this.lblSupplier.Name = "lblSupplier";
+            this.lblSupplier.Size = new System.Drawing.Size(134, 27);
+            this.lblSupplier.TabIndex = 0;
+            this.lblSupplier.Text = "Supplier";
+            this.lblSupplier.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cmbSupplier
             // 
-            cmbSupplier.Dock = DockStyle.Fill;
-            cmbSupplier.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbSupplier.Location = new Point(143, 3);
-            cmbSupplier.Name = "cmbSupplier";
-            cmbSupplier.Size = new Size(814, 28);
-            cmbSupplier.TabIndex = 1;
+            this.cmbSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSupplier.Location = new System.Drawing.Point(143, 2);
+            this.cmbSupplier.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbSupplier.Name = "cmbSupplier";
+            this.cmbSupplier.Size = new System.Drawing.Size(814, 24);
+            this.cmbSupplier.TabIndex = 1;
             // 
             // lblBranch
             // 
-            lblBranch.Dock = DockStyle.Fill;
-            lblBranch.Location = new Point(3, 34);
-            lblBranch.Name = "lblBranch";
-            lblBranch.Size = new Size(134, 34);
-            lblBranch.TabIndex = 2;
-            lblBranch.Text = "Branch";
-            lblBranch.TextAlign = ContentAlignment.MiddleLeft;
+            this.lblBranch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblBranch.Location = new System.Drawing.Point(3, 27);
+            this.lblBranch.Name = "lblBranch";
+            this.lblBranch.Size = new System.Drawing.Size(134, 27);
+            this.lblBranch.TabIndex = 2;
+            this.lblBranch.Text = "Branch";
+            this.lblBranch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cmbBranch
             // 
-            cmbBranch.Dock = DockStyle.Fill;
-            cmbBranch.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbBranch.Location = new Point(143, 37);
-            cmbBranch.Name = "cmbBranch";
-            cmbBranch.Size = new Size(814, 28);
-            cmbBranch.TabIndex = 3;
+            this.cmbBranch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBranch.Location = new System.Drawing.Point(143, 29);
+            this.cmbBranch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbBranch.Name = "cmbBranch";
+            this.cmbBranch.Size = new System.Drawing.Size(814, 24);
+            this.cmbBranch.TabIndex = 3;
             // 
             // lblUser
             // 
-            lblUser.Dock = DockStyle.Fill;
-            lblUser.Location = new Point(3, 68);
-            lblUser.Name = "lblUser";
-            lblUser.Size = new Size(134, 34);
-            lblUser.TabIndex = 4;
-            lblUser.Text = "User";
-            lblUser.TextAlign = ContentAlignment.MiddleLeft;
+            this.lblUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblUser.Location = new System.Drawing.Point(3, 54);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(134, 27);
+            this.lblUser.TabIndex = 4;
+            this.lblUser.Text = "User";
+            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cmbUser
             // 
-            cmbUser.Dock = DockStyle.Fill;
-            cmbUser.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbUser.Location = new Point(143, 71);
-            cmbUser.Name = "cmbUser";
-            cmbUser.Size = new Size(814, 28);
-            cmbUser.TabIndex = 5;
+            this.cmbUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUser.Location = new System.Drawing.Point(143, 56);
+            this.cmbUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbUser.Name = "cmbUser";
+            this.cmbUser.Size = new System.Drawing.Size(814, 24);
+            this.cmbUser.TabIndex = 5;
             // 
             // lblDate
             // 
-            lblDate.Dock = DockStyle.Fill;
-            lblDate.Location = new Point(3, 102);
-            lblDate.Name = "lblDate";
-            lblDate.Size = new Size(134, 34);
-            lblDate.TabIndex = 6;
-            lblDate.Text = "Date";
-            lblDate.TextAlign = ContentAlignment.MiddleLeft;
+            this.lblDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDate.Location = new System.Drawing.Point(3, 81);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(134, 27);
+            this.lblDate.TabIndex = 6;
+            this.lblDate.Text = "Date";
+            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dtpPurchaseDate
             // 
-            dtpPurchaseDate.Dock = DockStyle.Left;
-            dtpPurchaseDate.Location = new Point(143, 105);
-            dtpPurchaseDate.Name = "dtpPurchaseDate";
-            dtpPurchaseDate.Size = new Size(220, 27);
-            dtpPurchaseDate.TabIndex = 7;
+            this.dtpPurchaseDate.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dtpPurchaseDate.Location = new System.Drawing.Point(143, 83);
+            this.dtpPurchaseDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpPurchaseDate.Name = "dtpPurchaseDate";
+            this.dtpPurchaseDate.Size = new System.Drawing.Size(220, 22);
+            this.dtpPurchaseDate.TabIndex = 7;
             // 
             // lblStatus
             // 
-            lblStatus.Dock = DockStyle.Fill;
-            lblStatus.Location = new Point(3, 136);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(134, 34);
-            lblStatus.TabIndex = 8;
-            lblStatus.Text = "Status";
-            lblStatus.TextAlign = ContentAlignment.MiddleLeft;
+            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblStatus.Location = new System.Drawing.Point(3, 108);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(134, 27);
+            this.lblStatus.TabIndex = 8;
+            this.lblStatus.Text = "Status";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cmbStatus
             // 
-            cmbStatus.Dock = DockStyle.Left;
-            cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbStatus.Location = new Point(143, 139);
-            cmbStatus.Name = "cmbStatus";
-            cmbStatus.Size = new Size(220, 28);
-            cmbStatus.TabIndex = 9;
+            this.cmbStatus.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.Location = new System.Drawing.Point(143, 110);
+            this.cmbStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(220, 24);
+            this.cmbStatus.TabIndex = 9;
             // 
             // lblTotal
             // 
-            lblTotal.Dock = DockStyle.Fill;
-            lblTotal.Location = new Point(3, 170);
-            lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(134, 34);
-            lblTotal.TabIndex = 10;
-            lblTotal.Text = "Total";
-            lblTotal.TextAlign = ContentAlignment.MiddleLeft;
+            this.lblTotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTotal.Location = new System.Drawing.Point(3, 135);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(134, 27);
+            this.lblTotal.TabIndex = 10;
+            this.lblTotal.Text = "Total";
+            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // numTotal
             // 
-            numTotal.DecimalPlaces = 2;
-            numTotal.Dock = DockStyle.Left;
-            numTotal.Location = new Point(143, 173);
-            numTotal.Maximum = new decimal(new int[] { 1000000000, 0, 0, 0 });
-            numTotal.Name = "numTotal";
-            numTotal.Size = new Size(160, 27);
-            numTotal.TabIndex = 11;
+            this.numTotal.DecimalPlaces = 2;
+            this.numTotal.Dock = System.Windows.Forms.DockStyle.Left;
+            this.numTotal.Location = new System.Drawing.Point(143, 137);
+            this.numTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numTotal.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.numTotal.Name = "numTotal";
+            this.numTotal.Size = new System.Drawing.Size(160, 22);
+            this.numTotal.TabIndex = 11;
             // 
             // grpItems
             // 
-            tlpMain.SetColumnSpan(grpItems, 2);
-            grpItems.Controls.Add(dgvItems);
-            grpItems.Controls.Add(pnlItemsTop);
-            grpItems.Dock = DockStyle.Fill;
-            grpItems.Location = new Point(3, 207);
-            grpItems.Name = "grpItems";
-            grpItems.Padding = new Padding(8);
-            grpItems.Size = new Size(954, 386);
-            grpItems.TabIndex = 12;
-            grpItems.TabStop = false;
-            grpItems.Text = "Items";
+            this.tlpMain.SetColumnSpan(this.grpItems, 2);
+            this.grpItems.Controls.Add(this.dgvItems);
+            this.grpItems.Controls.Add(this.pnlItemsTop);
+            this.grpItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpItems.Location = new System.Drawing.Point(3, 164);
+            this.grpItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpItems.Name = "grpItems";
+            this.grpItems.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.grpItems.Size = new System.Drawing.Size(954, 357);
+            this.grpItems.TabIndex = 12;
+            this.grpItems.TabStop = false;
+            this.grpItems.Text = "Items";
             // 
             // dgvItems
             // 
-            dgvItems.AllowUserToAddRows = false;
-            dgvItems.AllowUserToDeleteRows = false;
-            dgvItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvItems.ColumnHeadersHeight = 29;
-            dgvItems.Columns.AddRange(new DataGridViewColumn[] { colProductId, colSKU, colName, colQuantity, colUnitCost, colTotalCost });
-            dgvItems.Dock = DockStyle.Fill;
-            dgvItems.Location = new Point(8, 72);
-            dgvItems.MultiSelect = false;
-            dgvItems.Name = "dgvItems";
-            dgvItems.ReadOnly = true;
-            dgvItems.RowHeadersVisible = false;
-            dgvItems.RowHeadersWidth = 51;
-            dgvItems.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvItems.Size = new Size(938, 306);
-            dgvItems.TabIndex = 1;
+            this.dgvItems.AllowUserToAddRows = false;
+            this.dgvItems.AllowUserToDeleteRows = false;
+            this.dgvItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvItems.ColumnHeadersHeight = 29;
+            this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colPurchaseItemId,
+            this.colProductId,
+            this.colSKU,
+            this.colName,
+            this.colQuantity,
+            this.colUnitCost,
+            this.colTotalCost});
+            this.dgvItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvItems.Location = new System.Drawing.Point(8, 56);
+            this.dgvItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvItems.MultiSelect = false;
+            this.dgvItems.Name = "dgvItems";
+            this.dgvItems.ReadOnly = true;
+            this.dgvItems.RowHeadersVisible = false;
+            this.dgvItems.RowHeadersWidth = 51;
+            this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItems.Size = new System.Drawing.Size(938, 295);
+            this.dgvItems.TabIndex = 1;
+            // 
+            // colPurchaseItemId
+            // 
+            this.colPurchaseItemId.DataPropertyName = "PurchaseItemId";
+            this.colPurchaseItemId.HeaderText = "PurchaseItemId";
+            this.colPurchaseItemId.MinimumWidth = 6;
+            this.colPurchaseItemId.Name = "colPurchaseItemId";
+            this.colPurchaseItemId.ReadOnly = true;
+            this.colPurchaseItemId.Visible = false;
             // 
             // colProductId
             // 
-            colProductId.DataPropertyName = "ProductId";
-            colProductId.HeaderText = "ProductId";
-            colProductId.MinimumWidth = 6;
-            colProductId.Name = "colProductId";
-            colProductId.ReadOnly = true;
-            colProductId.Visible = false;
+            this.colProductId.DataPropertyName = "ProductId";
+            this.colProductId.HeaderText = "ProductId";
+            this.colProductId.MinimumWidth = 6;
+            this.colProductId.Name = "colProductId";
+            this.colProductId.ReadOnly = true;
+            this.colProductId.Visible = false;
             // 
             // colSKU
             // 
-            colSKU.DataPropertyName = "SKU";
-            colSKU.HeaderText = "SKU";
-            colSKU.MinimumWidth = 6;
-            colSKU.Name = "colSKU";
-            colSKU.ReadOnly = true;
+            this.colSKU.DataPropertyName = "SKU";
+            this.colSKU.HeaderText = "SKU";
+            this.colSKU.MinimumWidth = 6;
+            this.colSKU.Name = "colSKU";
+            this.colSKU.ReadOnly = true;
             // 
             // colName
             // 
-            colName.DataPropertyName = "Name";
-            colName.HeaderText = "Product";
-            colName.MinimumWidth = 6;
-            colName.Name = "colName";
-            colName.ReadOnly = true;
+            this.colName.DataPropertyName = "Name";
+            this.colName.HeaderText = "Product";
+            this.colName.MinimumWidth = 6;
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
             // 
             // colQuantity
             // 
-            colQuantity.DataPropertyName = "Quantity";
-            colQuantity.HeaderText = "Qty";
-            colQuantity.MinimumWidth = 6;
-            colQuantity.Name = "colQuantity";
-            colQuantity.ReadOnly = true;
+            this.colQuantity.DataPropertyName = "Quantity";
+            this.colQuantity.HeaderText = "Qty";
+            this.colQuantity.MinimumWidth = 6;
+            this.colQuantity.Name = "colQuantity";
+            this.colQuantity.ReadOnly = true;
             // 
             // colUnitCost
             // 
-            colUnitCost.DataPropertyName = "UnitCost";
-            colUnitCost.HeaderText = "Unit Cost";
-            colUnitCost.MinimumWidth = 6;
-            colUnitCost.Name = "colUnitCost";
-            colUnitCost.ReadOnly = true;
+            this.colUnitCost.DataPropertyName = "UnitCost";
+            this.colUnitCost.HeaderText = "Unit Cost";
+            this.colUnitCost.MinimumWidth = 6;
+            this.colUnitCost.Name = "colUnitCost";
+            this.colUnitCost.ReadOnly = true;
             // 
             // colTotalCost
             // 
-            colTotalCost.DataPropertyName = "TotalCost";
-            colTotalCost.HeaderText = "Total";
-            colTotalCost.MinimumWidth = 6;
-            colTotalCost.Name = "colTotalCost";
-            colTotalCost.ReadOnly = true;
+            this.colTotalCost.DataPropertyName = "TotalCost";
+            this.colTotalCost.HeaderText = "Total";
+            this.colTotalCost.MinimumWidth = 6;
+            this.colTotalCost.Name = "colTotalCost";
+            this.colTotalCost.ReadOnly = true;
             // 
             // pnlItemsTop
             // 
-            pnlItemsTop.Controls.Add(btnRemoveItem);
-            pnlItemsTop.Controls.Add(btnAddItem);
-            pnlItemsTop.Controls.Add(txtItemSearch);
-            pnlItemsTop.Dock = DockStyle.Top;
-            pnlItemsTop.Location = new Point(8, 28);
-            pnlItemsTop.Name = "pnlItemsTop";
-            pnlItemsTop.Padding = new Padding(8);
-            pnlItemsTop.Size = new Size(938, 44);
-            pnlItemsTop.TabIndex = 2;
+            this.pnlItemsTop.Controls.Add(this.btnRemoveItem);
+            this.pnlItemsTop.Controls.Add(this.btnAddItem);
+            this.pnlItemsTop.Controls.Add(this.txtItemSearch);
+            this.pnlItemsTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlItemsTop.Location = new System.Drawing.Point(8, 21);
+            this.pnlItemsTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlItemsTop.Name = "pnlItemsTop";
+            this.pnlItemsTop.Padding = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.pnlItemsTop.Size = new System.Drawing.Size(938, 35);
+            this.pnlItemsTop.TabIndex = 2;
             // 
             // btnRemoveItem
             // 
-            btnRemoveItem.Location = new Point(116, 8);
-            btnRemoveItem.Name = "btnRemoveItem";
-            btnRemoveItem.Size = new Size(120, 23);
-            btnRemoveItem.TabIndex = 0;
-            btnRemoveItem.Text = "Remove Item";
+            this.btnRemoveItem.Location = new System.Drawing.Point(116, 6);
+            this.btnRemoveItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoveItem.Name = "btnRemoveItem";
+            this.btnRemoveItem.Size = new System.Drawing.Size(120, 25);
+            this.btnRemoveItem.TabIndex = 0;
+            this.btnRemoveItem.Text = "Remove Item";
+            this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
             // 
             // btnAddItem
             // 
-            btnAddItem.Location = new Point(8, 8);
-            btnAddItem.Name = "btnAddItem";
-            btnAddItem.Size = new Size(100, 23);
-            btnAddItem.TabIndex = 1;
-            btnAddItem.Text = "Add Item";
+            this.btnAddItem.Location = new System.Drawing.Point(8, 6);
+            this.btnAddItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(100, 25);
+            this.btnAddItem.TabIndex = 1;
+            this.btnAddItem.Text = "Add Item";
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
             // txtItemSearch
             // 
-            txtItemSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            txtItemSearch.Location = new Point(1398, 10);
-            txtItemSearch.Name = "txtItemSearch";
-            txtItemSearch.Size = new Size(280, 27);
-            txtItemSearch.TabIndex = 2;
+            this.txtItemSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtItemSearch.Location = new System.Drawing.Point(1398, 8);
+            this.txtItemSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtItemSearch.Name = "txtItemSearch";
+            this.txtItemSearch.Size = new System.Drawing.Size(280, 22);
+            this.txtItemSearch.TabIndex = 2;
             // 
             // pnlButtons
             // 
-            tlpMain.SetColumnSpan(pnlButtons, 2);
-            pnlButtons.Controls.Add(btnCancel);
-            pnlButtons.Controls.Add(btnOK);
-            pnlButtons.Dock = DockStyle.Fill;
-            pnlButtons.FlowDirection = FlowDirection.RightToLeft;
-            pnlButtons.Location = new Point(3, 599);
-            pnlButtons.Name = "pnlButtons";
-            pnlButtons.Size = new Size(954, 38);
-            pnlButtons.TabIndex = 13;
+            this.tlpMain.SetColumnSpan(this.pnlButtons, 2);
+            this.pnlButtons.Controls.Add(this.btnCancel);
+            this.pnlButtons.Controls.Add(this.btnOK);
+            this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlButtons.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.pnlButtons.Location = new System.Drawing.Point(3, 525);
+            this.pnlButtons.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(954, 31);
+            this.pnlButtons.TabIndex = 13;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(851, 3);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(100, 23);
-            btnCancel.TabIndex = 0;
-            btnCancel.Text = "Cancel";
+            this.btnCancel.Location = new System.Drawing.Point(851, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(100, 31);
+            this.btnCancel.TabIndex = 0;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
-            btnOK.Location = new Point(745, 3);
-            btnOK.Name = "btnOK";
-            btnOK.Size = new Size(100, 23);
-            btnOK.TabIndex = 1;
-            btnOK.Text = "OK";
+            this.btnOK.Location = new System.Drawing.Point(745, 2);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(100, 29);
+            this.btnOK.TabIndex = 1;
+            this.btnOK.Text = "OK";
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // PurchasesEdit
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(960, 640);
-            Controls.Add(tlpMain);
-            Name = "PurchasesEdit";
-            Text = "Purchase";
-            tlpMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)numTotal).EndInit();
-            grpItems.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvItems).EndInit();
-            pnlItemsTop.ResumeLayout(false);
-            pnlItemsTop.PerformLayout();
-            pnlButtons.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(960, 558);
+            this.Controls.Add(this.tlpMain);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "PurchasesEdit";
+            this.Text = "Purchase";
+            this.tlpMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numTotal)).EndInit();
+            this.grpItems.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
+            this.pnlItemsTop.ResumeLayout(false);
+            this.pnlItemsTop.PerformLayout();
+            this.pnlButtons.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.TableLayoutPanel tlpMain;
@@ -401,6 +444,7 @@ namespace WHUI.Purchases
         private System.Windows.Forms.FlowLayoutPanel pnlButtons;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseItemId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProductId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSKU;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;

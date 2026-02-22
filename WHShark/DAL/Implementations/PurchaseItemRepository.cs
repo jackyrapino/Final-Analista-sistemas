@@ -29,8 +29,7 @@ namespace DAL.Implementations
                         new SqlParameter("@PurchaseId", obj.PurchaseId),
                         new SqlParameter("@ProductId", obj.ProductId),
                         new SqlParameter("@Quantity", obj.Quantity),
-                        new SqlParameter("@UnitCost", obj.UnitCost),
-                        new SqlParameter("@TotalCost", (object)obj.TotalCost ?? DBNull.Value)
+                        new SqlParameter("@UnitCost", obj.UnitCost)
                     });
             }
             catch (Exception ex)
@@ -50,8 +49,7 @@ namespace DAL.Implementations
                         new SqlParameter("@PurchaseId", obj.PurchaseId),
                         new SqlParameter("@ProductId", obj.ProductId),
                         new SqlParameter("@Quantity", obj.Quantity),
-                        new SqlParameter("@UnitCost", obj.UnitCost),
-                        new SqlParameter("@TotalCost", (object)obj.TotalCost ?? DBNull.Value)
+                        new SqlParameter("@UnitCost", obj.UnitCost)
                     });
             }
             catch (Exception ex)

@@ -46,6 +46,7 @@
     <Compile Include="Builders\SaleBuilder.cs" />
     <Compile Include="Builders\StockMovementBuilder.cs" />
     <Compile Include="BusinessExceptios\BusinessExceptions.cs" />
+    <Compile Include="BusinessExceptios\DuplicatePurchaseItemException.cs" />
     <Compile Include="BusinessExceptios\SalesExceptions.cs" />
     <Compile Include="BusinessExceptios\StockMovementExceptions.cs" />
     <Compile Include="BusinessExceptios\UserExceptions.cs" />
@@ -54,7 +55,6 @@
     <Compile Include="Factories\ServicesFactory.cs" />
     <Compile Include="Factories\StockMovementBuilderFactory.cs" />
     <Compile Include="Factories\StockValidationServiceFactory.cs" />
-    <Compile Include="Helpers\ExceptionHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BranchService.cs" />
     <Compile Include="Services\BrandService.cs" />
@@ -65,12 +65,14 @@
     <Compile Include="Services\Contracts\ICustomerService.cs" />
     <Compile Include="Services\Contracts\IPricingService.cs" />
     <Compile Include="Services\Contracts\IProductService.cs" />
+    <Compile Include="Services\Contracts\IPurchaseService.cs" />
     <Compile Include="Services\Contracts\IStockService.cs" />
     <Compile Include="Services\Contracts\IStockValidationService.cs" />
     <Compile Include="Services\Contracts\ISupplierService.cs" />
     <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\PricingService.cs" />
     <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\PurcheseService.cs" />
     <Compile Include="Services\StockService.cs" />
     <Compile Include="Services\StockValidationService.cs" />
     <Compile Include="Services\SupplierService.cs" />
